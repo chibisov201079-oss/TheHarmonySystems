@@ -1,594 +1,1860 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TheHarmonySystems — Экосистема из 15 профессиональных индикаторов / 15-Indicator Fintech Ecosystem</title>
-    <meta name="description" content="TheHarmonySystems: 15 профессиональных инструментов для TradingView. Смарт-мани, кластерный анализ и нейросети для трейдинга. Professional TradingView tools.">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#0a0a0b',
-                        goldAccent: '#fbbf24',
-                        cyberGreen: '#10b981',
-                    },
-                    animation: {
-                        'marquee': 'marquee 30s linear infinite',
-                    },
-                    keyframes: {
-                        marquee: {
-                            '0%': { transform: 'translateX(0%)' },
-                            '100%': { transform: 'translateX(-100%)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Harmony Systems — 15 Professional TradingView Indicators</title>
+<meta name="description" content="Professional ecosystem of 15 TradingView indicators. Smart Money, Cluster Analysis, Neural Networks for trading.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e1116;
+    --bg2: #131722;
+    --bg3: #1a1f2e;
+    --bg4: #1e2433;
+    --border: #2a2e39;
+    --border2: #363a45;
+    --text: #d1d4dc;
+    --text2: #787b86;
+    --text3: #4a4e5a;
+    --white: #ffffff;
+    --blue: #2962ff;
+    --blue2: #1e53e5;
+    --blue-glow: rgba(41,98,255,0.15);
+    --green: #26a69a;
+    --green2: #089981;
+    --red: #ef5350;
+    --gold: #f0b90b;
+    --gold2: #d4a017;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'DM Sans', sans-serif;
+  }
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "TheHarmonySystems",
-      "operatingSystem": "Web (TradingView)",
-      "applicationCategory": "FinanceApplication",
-      "url": "https://t.me/TheHarmonySystems",
-      "featureList": [
-        "Apex Zenith v10.0 PRO", "Apex Cluster Radar v2.7", "ASM v3.3 PRO", 
-        "LCE Auto-Analysis v2.4.4", "BTC DCA v3.7", "ORB Ultimate v2.5", 
-        "EMA v2 Cloud Squeeze", "Apex Orca v2", "Radar v9.2 Crypto LITE", 
-        "Stoch Ultimate", "Oracle Goyaline v7.0", "AZP v5.2 Full", 
-        "Octopus Advanced Scanner v25.1", "LCE H1 Intraday", "Apex Zenith TrendFlow Pro v7.3"
-      ],
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "USD",
-        "lowPrice": "60",
-        "highPrice": "170",
-        "offerCount": "3",
-        "url": "https://t.me/TheHarmonySystems"
-      }
-    }
-    </script>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.6; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
 
-    <style>
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .quote-card {
-            border-left: 2px solid rgba(251, 191, 36, 0.3);
-            transition: border-color 0.3s ease;
-        }
-        .quote-card:hover {
-            border-left-color: #fbbf24;
-        }
-        .zoom-image {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: zoom-in;
-        }
-        .zoom-image:hover {
-            transform: scale(1.03);
-            filter: brightness(1.1);
-        }
-        #lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95);
-            justify-content: center;
-            align-items: center;
-        }
-        .most-popular-glow {
-            box-shadow: 0 0 40px rgba(251, 191, 36, 0.15);
-        }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0a0a0b; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #fbbf24; }
-    </style>
+  /* TOPBAR */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: 48px;
+    background: rgba(14,17,22,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center;
+    padding: 0 24px; gap: 32px;
+  }
+  .topbar-logo {
+    font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--white);
+    letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px;
+  }
+  .topbar-logo-dot {
+    width: 8px; height: 8px; background: var(--blue); border-radius: 50%;
+    box-shadow: 0 0 8px var(--blue); animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(.85)} }
+  .topbar-nav { display: flex; gap: 0; margin-left: auto; align-items: center; }
+  .topbar-nav a {
+    font-family: var(--mono); font-size: 11px; color: var(--text2); text-decoration: none;
+    padding: 0 14px; height: 48px; display: flex; align-items: center;
+    border-right: 1px solid var(--border); transition: color .2s, background .2s; letter-spacing: 0.3px;
+  }
+  .topbar-nav a:first-child { border-left: 1px solid var(--border); }
+  .topbar-nav a:hover { color: var(--white); background: var(--bg3); }
+  .topbar-cta {
+    margin-left: 12px; background: var(--blue); color: var(--white) !important;
+    border-radius: 4px; font-weight: 600 !important; height: 30px !important;
+    padding: 0 16px !important; border: none !important; transition: background .2s !important;
+  }
+  .topbar-cta:hover { background: var(--blue2) !important; }
+
+  /* TICKER */
+  .ticker-bar {
+    position: fixed; top: 48px; left: 0; right: 0; z-index: 99;
+    height: 32px; background: var(--bg2); border-bottom: 1px solid var(--border);
+    overflow: hidden; display: flex; align-items: center;
+  }
+  .ticker-track {
+    display: flex; gap: 48px; animation: ticker 40s linear infinite;
+    white-space: nowrap; padding-left: 100%;
+  }
+  @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .ticker-item { font-family: var(--mono); font-size: 11px; display: flex; align-items: center; gap: 8px; color: var(--text2); }
+  .ticker-sym { color: var(--white); font-weight: 600; }
+  .ticker-up { color: var(--green); }
+  .ticker-dn { color: var(--red); }
+
+  /* HERO */
+  .hero {
+    padding-top: 140px; padding-bottom: 80px; position: relative;
+    overflow: hidden; min-height: 100vh; display: flex; align-items: center;
+    background: #050810;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px; opacity: .25;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
+  }
+  /* ── AURORA / NORTHERN LIGHTS ── */
+  .aurora-wrap {
+    position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1;
+  }
+  .aurora {
+    position: absolute; border-radius: 50%;
+    filter: blur(60px);
+    animation: auroraFloat linear infinite;
+    will-change: transform;
+  }
+  .aurora-1 {
+    width: 900px; height: 300px; top: -80px; left: -120px;
+    background: radial-gradient(ellipse, rgba(41,98,255,0.6) 0%, rgba(0,180,255,0.22) 45%, transparent 70%);
+    animation-duration: 14s; animation-delay: 0s; opacity: 0.75;
+  }
+  .aurora-2 {
+    width: 720px; height: 250px; top: 10px; left: 28%;
+    background: radial-gradient(ellipse, rgba(130,40,255,0.5) 0%, rgba(41,98,255,0.18) 45%, transparent 70%);
+    animation-duration: 19s; animation-delay: -5s; opacity: 0.65;
+  }
+  .aurora-3 {
+    width: 620px; height: 210px; top: 50px; right: -100px;
+    background: radial-gradient(ellipse, rgba(0,220,200,0.45) 0%, rgba(0,120,255,0.15) 50%, transparent 70%);
+    animation-duration: 23s; animation-delay: -9s; opacity: 0.6;
+  }
+  .aurora-4 {
+    width: 540px; height: 170px; top: 120px; left: 18%;
+    background: radial-gradient(ellipse, rgba(90,0,210,0.38) 0%, rgba(200,0,255,0.12) 55%, transparent 72%);
+    animation-duration: 17s; animation-delay: -7s; opacity: 0.5;
+  }
+  .aurora-5 {
+    width: 820px; height: 140px; top: 5px; left: 8%;
+    background: radial-gradient(ellipse, rgba(0,150,255,0.3) 0%, rgba(0,255,200,0.08) 62%, transparent 80%);
+    animation-duration: 28s; animation-delay: -14s; opacity: 0.45;
+  }
+  @keyframes auroraFloat {
+    0%   { transform: translateX(0px)   translateY(0px)  scaleX(1)    scaleY(1);    }
+    15%  { transform: translateX(45px)  translateY(18px) scaleX(1.09) scaleY(0.91); }
+    32%  { transform: translateX(-25px) translateY(32px) scaleX(0.94) scaleY(1.11); }
+    50%  { transform: translateX(65px)  translateY(-12px) scaleX(1.13) scaleY(0.87); }
+    68%  { transform: translateX(-45px) translateY(22px) scaleX(0.89) scaleY(1.06); }
+    84%  { transform: translateX(22px)  translateY(38px) scaleX(1.06) scaleY(0.94); }
+    100% { transform: translateX(0px)   translateY(0px)  scaleX(1)    scaleY(1);    }
+  }
+  /* STARS */
+  .stars-wrap { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
+  .star {
+    position: absolute; border-radius: 50%; background: white;
+    animation: starTwinkle ease-in-out infinite;
+  }
+  @keyframes starTwinkle {
+    0%,100% { opacity: 0.15; transform: scale(1); }
+    50%     { opacity: 1; transform: scale(1.6); }
+  }
+  /* SCANLINES */
+  .aurora-scanline {
+    position: absolute; inset: 0; pointer-events: none; z-index: 3;
+    background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.03) 3px, rgba(0,0,0,0.03) 4px);
+  }
+  /* BOTTOM FADE */
+  .aurora-fade {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 300px;
+    pointer-events: none; z-index: 4;
+    background: linear-gradient(to bottom, transparent, var(--bg));
+  }
+  /* hide old glow */
+  .hero-glow { display: none; }
+  .hero-inner {
+    position: relative; z-index: 10; max-width: 1200px; margin: 0 auto;
+    padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .hero-label {
+    font-family: var(--mono); font-size: 11px; color: var(--blue); letter-spacing: 2px;
+    text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 8px;
+  }
+  .hero-label::before { content:''; display:block; width:24px; height:1px; background:var(--blue); }
+  .hero h1 { font-size: 48px; font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 8px; letter-spacing: -0.5px; }
+  .hero h1 span { color: var(--blue); }
+  .hero-sub { font-size: 17px; color: var(--text2); margin-bottom: 32px; line-height: 1.65; }
+  .hero-stats { display: flex; gap: 32px; margin-bottom: 36px; }
+  .hero-stat-val { font-family: var(--mono); font-size: 28px; font-weight: 600; color: var(--white); line-height: 1; }
+  .hero-stat-val.green { color: var(--green); }
+  .hero-stat-val.blue { color: var(--blue); }
+  .hero-stat-val.gold { color: var(--gold); }
+  .hero-stat-lbl { font-size: 11px; color: var(--text3); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; font-family: var(--mono); }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* BUTTONS */
+  .btn-primary {
+    background: var(--blue); color: #fff; border: none; padding: 12px 28px; border-radius: 4px;
+    font-size: 14px; font-weight: 600; font-family: var(--sans); cursor: pointer;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    transition: background .2s, transform .1s;
+  }
+  .btn-primary:hover { background: var(--blue2); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--text); border: 1px solid var(--border2); padding: 12px 28px;
+    border-radius: 4px; font-size: 14px; font-weight: 500; font-family: var(--sans); cursor: pointer;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: border-color .2s, color .2s;
+  }
+  .btn-outline:hover { border-color: var(--blue); color: var(--white); }
+
+  /* HERO CHART */
+  .hero-chart { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .chart-header {
+    display: flex; align-items: center; padding: 10px 16px;
+    border-bottom: 1px solid var(--border); gap: 12px;
+  }
+  .chart-symbol { font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--white); }
+  .chart-price { font-family: var(--mono); font-size: 13px; color: var(--green); }
+  .chart-change { font-family: var(--mono); font-size: 11px; color: var(--green); background: rgba(38,166,154,.1); padding: 2px 6px; border-radius: 3px; }
+  .chart-tfs { margin-left: auto; display: flex; gap: 2px; }
+  .chart-tf { font-family: var(--mono); font-size: 10px; color: var(--text3); padding: 3px 7px; border-radius: 3px; }
+  .chart-tf.active { background: var(--bg4); color: var(--white); }
+  .chart-svg { width: 100%; display: block; }
+
+  /* SECTIONS */
+  .section { max-width: 1200px; margin: 0 auto; padding: 80px 24px; }
+  .section-label { font-family: var(--mono); font-size: 11px; color: var(--blue); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .section-title { font-size: 32px; font-weight: 700; color: var(--white); margin-bottom: 8px; letter-spacing: -0.3px; }
+  .section-sub { font-size: 15px; color: var(--text2); max-width: 560px; }
+  .section-head { margin-bottom: 48px; }
+
+  /* STATS ROW */
+  .stats-row { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .stats-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(5, 1fr); }
+  .stat-cell { padding: 28px 0 28px 32px; border-right: 1px solid var(--border); }
+  .stat-cell:last-child { border-right: none; }
+  .stat-val { font-family: var(--mono); font-size: 28px; font-weight: 600; color: var(--white); line-height: 1; }
+  .stat-val.green { color: var(--green); }
+  .stat-val.blue { color: var(--blue); }
+  .stat-val.gold { color: var(--gold); }
+  .stat-lbl { font-family: var(--mono); font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 6px; }
+
+  /* FEATURES */
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .feature-card { background: var(--bg2); padding: 32px; transition: background .2s; }
+  .feature-card:hover { background: var(--bg3); }
+  .feature-icon { width: 40px; height: 40px; background: var(--blue-glow); border: 1px solid rgba(41,98,255,.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 18px; }
+  .feature-title { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+  .feature-desc { font-size: 13px; color: var(--text2); line-height: 1.6; }
+
+  /* INDICATORS */
+  .indicators-section { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .filter-bar { display: flex; gap: 4px; margin-bottom: 32px; flex-wrap: wrap; }
+  .filter-btn { font-family: var(--mono); font-size: 11px; color: var(--text2); background: transparent; border: 1px solid var(--border); padding: 6px 14px; border-radius: 3px; cursor: pointer; transition: all .2s; letter-spacing: 0.5px; }
+  .filter-btn:hover, .filter-btn.active { color: var(--white); border-color: var(--blue); background: rgba(41,98,255,.08); }
+  .indicators-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .ind-card { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; transition: border-color .2s, transform .2s; }
+  .ind-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+  .ind-img { height: 140px; background: var(--bg3); position: relative; overflow: hidden; }
+  .ind-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+  .ind-badge { position: absolute; top: 8px; right: 8px; font-family: var(--mono); font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 3px; letter-spacing: 0.5px; }
+  .badge-green { background: rgba(38,166,154,.2); color: var(--green); border: 1px solid rgba(38,166,154,.3); }
+  .badge-gold { background: rgba(240,185,11,.15); color: var(--gold); border: 1px solid rgba(240,185,11,.3); }
+  .badge-blue { background: rgba(41,98,255,.15); color: #5c8bff; border: 1px solid rgba(41,98,255,.3); }
+  .ind-body { padding: 16px; }
+  .ind-name { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .ind-desc { font-size: 12px; color: var(--text2); line-height: 1.5; margin-bottom: 10px; }
+  .ind-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+  .ind-tag { font-family: var(--mono); font-size: 9px; color: var(--text3); background: var(--bg3); border: 1px solid var(--border); padding: 2px 6px; border-radius: 2px; letter-spacing: 0.5px; }
+
+  /* SIGNALS */
+  .signals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .signal-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 24px 20px; text-align: center; }
+  .signal-class { font-family: var(--mono); font-size: 36px; font-weight: 700; margin-bottom: 8px; line-height: 1; }
+  .class-a { color: #26a69a; }
+  .class-b { color: #42a5f5; }
+  .class-c { color: var(--gold); }
+  .class-d { color: var(--red); }
+  .signal-name { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+  .signal-desc { font-size: 12px; color: var(--text2); line-height: 1.5; }
+  .signal-bar { height: 3px; border-radius: 2px; margin-top: 14px; }
+  .bar-a { background: linear-gradient(90deg,#26a69a,#00e5cc); }
+  .bar-b { background: linear-gradient(90deg,#42a5f5,#82d1ff); }
+  .bar-c { background: linear-gradient(90deg,var(--gold),#ffe066); }
+  .bar-d { background: linear-gradient(90deg,var(--red),#ff8a80); }
+
+  /* TESTIMONIALS */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .t-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 24px; transition: border-color .2s; }
+  .t-card:hover { border-color: var(--border2); }
+  .t-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .t-avatar { width: 36px; height: 36px; background: var(--bg4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--white); flex-shrink: 0; }
+  .t-name { font-size: 13px; font-weight: 600; color: var(--white); }
+  .t-handle { font-family: var(--mono); font-size: 11px; color: var(--text3); }
+  .t-stars { color: var(--gold); font-size: 12px; margin-left: auto; }
+  .t-text { font-size: 13px; color: var(--text2); line-height: 1.6; }
+  .t-result { margin-top: 12px; padding: 8px 12px; background: rgba(38,166,154,.08); border-left: 2px solid var(--green); border-radius: 0 4px 4px 0; font-family: var(--mono); font-size: 11px; color: var(--green); }
+
+  /* STEPS */
+  .steps-row { display: grid; grid-template-columns: 1fr 36px 1fr 36px 1fr; align-items: start; }
+  .step-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 32px; }
+  .step-num { font-family: var(--mono); font-size: 11px; color: var(--blue); letter-spacing: 2px; margin-bottom: 12px; }
+  .step-icon { font-size: 24px; margin-bottom: 16px; }
+  .step-title { font-size: 17px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+  .step-desc { font-size: 13px; color: var(--text2); line-height: 1.6; }
+  .step-arrow { display: flex; align-items: center; justify-content: center; padding-top: 60px; color: var(--border2); font-size: 20px; }
+
+  /* PRICING */
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; }
+  .price-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .price-card.featured { border-color: var(--blue); box-shadow: 0 0 30px rgba(41,98,255,.15); transform: scale(1.02); }
+  .price-head { padding: 28px 28px 20px; border-bottom: 1px solid var(--border); }
+  .price-featured-badge { font-family: var(--mono); font-size: 10px; color: var(--blue); background: rgba(41,98,255,.1); border: 1px solid rgba(41,98,255,.3); padding: 3px 10px; border-radius: 3px; letter-spacing: 1px; display: inline-block; margin-bottom: 12px; }
+  .price-plan { font-family: var(--mono); font-size: 11px; color: var(--text2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+  .price-name { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 16px; }
+  .price-amount { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
+  .price-currency { font-family: var(--mono); font-size: 16px; color: var(--text2); }
+  .price-val { font-family: var(--mono); font-size: 42px; font-weight: 600; color: var(--white); line-height: 1; }
+  .price-card.featured .price-val { color: var(--blue); }
+  .price-period { font-family: var(--mono); font-size: 11px; color: var(--text3); letter-spacing: 1px; }
+  .price-savings { font-family: var(--mono); font-size: 11px; color: var(--green); margin-top: 8px; }
+  .price-body { padding: 20px 28px 28px; }
+  .price-indicators { font-family: var(--mono); font-size: 11px; color: var(--text2); margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .price-indicators span { color: var(--white); font-weight: 600; }
+  .price-features { list-style: none; margin-bottom: 24px; }
+  .price-features li { font-size: 13px; color: var(--text2); padding: 5px 0; display: flex; align-items: flex-start; gap: 8px; border-bottom: 1px solid rgba(42,46,57,.5); }
+  .price-features li:last-child { border-bottom: none; }
+  .feat-check { color: var(--green); font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+  .feat-x { color: var(--text3); font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+
+  /* COMPARISON */
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .comp-table th { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--text2); letter-spacing: 1px; text-transform: uppercase; padding: 12px 20px; text-align: left; background: var(--bg3); border-bottom: 1px solid var(--border); }
+  .comp-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); color: var(--text); }
+  .comp-table tr:hover td { background: var(--bg3); }
+  .comp-table tr:last-child td { border-bottom: none; }
+  .comp-hs { color: var(--green); font-weight: 600; }
+  .comp-comp { color: var(--red); }
+  .table-wrap { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .savings-banner { margin-top: 16px; background: rgba(38,166,154,.08); border: 1px solid rgba(38,166,154,.2); border-radius: 6px; padding: 14px 20px; font-family: var(--mono); font-size: 12px; color: var(--green); text-align: center; letter-spacing: 0.5px; }
+
+  /* FAQ */
+  .faq-list { max-width: 760px; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q { width: 100%; background: none; border: none; padding: 20px 0; text-align: left; display: flex; align-items: center; justify-content: space-between; cursor: pointer; gap: 16px; }
+  .faq-q-text { font-size: 15px; font-weight: 500; color: var(--white); line-height: 1.4; }
+  .faq-arrow { font-size: 16px; color: var(--text3); transition: transform .25s; flex-shrink: 0; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); color: var(--blue); }
+  .faq-a { font-size: 13px; color: var(--text2); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s; padding-bottom: 0; }
+  .faq-item.open .faq-a { max-height: 300px; padding-bottom: 20px; }
+
+  /* CTA */
+  .cta-section { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .cta-inner { max-width: 800px; margin: 0 auto; padding: 80px 24px; text-align: center; }
+  .cta-label { font-family: var(--mono); font-size: 11px; color: var(--blue); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+  .cta-title { font-size: 38px; font-weight: 700; color: var(--white); margin-bottom: 12px; line-height: 1.2; }
+  .cta-sub { font-size: 15px; color: var(--text2); margin-bottom: 36px; line-height: 1.6; }
+  .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  /* FOOTER */
+  footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 48px 24px 24px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+  .footer-logo { font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .footer-desc { font-size: 13px; color: var(--text2); line-height: 1.6; margin-bottom: 20px; max-width: 280px; }
+  .footer-socials { display: flex; gap: 8px; }
+  .social-btn { width: 32px; height: 32px; background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 14px; transition: border-color .2s, background .2s; }
+  .social-btn:hover { border-color: var(--blue); background: var(--bg4); }
+  .footer-col-title { font-family: var(--mono); font-size: 10px; color: var(--text3); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+  .footer-links { list-style: none; }
+  .footer-links li { margin-bottom: 8px; }
+  .footer-links a { font-size: 13px; color: var(--text2); text-decoration: none; transition: color .2s; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-copy { font-family: var(--mono); font-size: 11px; color: var(--text3); }
+  .footer-note { font-family: var(--mono); font-size: 10px; color: var(--text3); max-width: 400px; text-align: right; line-height: 1.5; }
+
+  /* RESPONSIVE */
+
+  /* ═══════════════════════════════════
+     TABLET  (max 1024px)
+  ═══════════════════════════════════ */
+  @media (max-width: 1024px) {
+    /* TOPBAR */
+    .topbar { padding: 0 16px; gap: 16px; }
+    .topbar-nav a { padding: 0 10px; font-size: 10px; }
+
+    /* HERO */
+    .hero { padding-top: 120px; padding-bottom: 60px; min-height: auto; }
+    .hero-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+    .hero-chart { display: none; }
+    .hero-label { justify-content: center; }
+    .hero h1 { font-size: 38px; }
+    .hero-sub { font-size: 15px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .hero-stats { justify-content: center; gap: 28px; }
+    .hero-btns { justify-content: center; }
+
+    /* STATS */
+    .stats-inner { grid-template-columns: repeat(3, 1fr); }
+    .stat-cell { padding: 20px 0 20px 20px; }
+    .stat-val { font-size: 22px; }
+
+    /* FEATURES */
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* INDICATORS */
+    .indicators-grid { grid-template-columns: repeat(2, 1fr); }
+    .filter-bar { gap: 6px; }
+
+    /* SIGNALS */
+    .signals-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* STEPS */
+    .steps-row { grid-template-columns: 1fr; gap: 12px; }
+    .step-arrow { display: none; }
+
+    /* GALLERY */
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* TESTIMONIALS */
+    .testimonials-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+
+    /* PRICING */
+    .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    .price-card.featured { transform: none; }
+
+    /* LIGHTBOX */
+    .lightbox-prev { left: -36px; }
+    .lightbox-next { right: -36px; }
+
+    /* FOOTER */
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-desc { max-width: 100%; }
+  }
+
+  /* ═══════════════════════════════════
+     MOBILE  (max 640px)
+  ═══════════════════════════════════ */
+  @media (max-width: 640px) {
+    /* TOPBAR */
+    .topbar { padding: 0 12px; gap: 0; height: 48px; }
+    .topbar-logo { font-size: 11px; gap: 6px; }
+    .topbar-logo-dot { width: 7px; height: 7px; }
+    .topbar-nav { display: none; }
+    .lang-switcher { margin-left: auto; }
+    .topbar-cta { display: none; }
+
+    /* TICKER */
+    .ticker-bar { height: 28px; }
+    .ticker-item { font-size: 10px; gap: 5px; }
+
+    /* HERO */
+    .hero { padding-top: 100px; padding-bottom: 48px; }
+    .hero-label { font-size: 10px; }
+    .hero h1 { font-size: 28px; line-height: 1.2; }
+    .hero-sub { font-size: 14px; }
+    .hero-stats { gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .hero-stat-val { font-size: 22px; }
+    .hero-stat-lbl { font-size: 9px; }
+    .btn-primary, .btn-outline { padding: 10px 20px; font-size: 13px; width: 100%; justify-content: center; }
+    .hero-btns { flex-direction: column; gap: 8px; }
+
+    /* STATS */
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .stat-cell { padding: 16px 0 16px 16px; border-right: none; border-bottom: 1px solid var(--border); }
+    .stat-cell:nth-child(odd) { border-right: 1px solid var(--border); }
+    .stat-cell:last-child { grid-column: 1 / -1; border-bottom: none; }
+    .stat-val { font-size: 20px; }
+    .stat-lbl { font-size: 9px; }
+
+    /* SECTION */
+    .section { padding: 48px 16px; }
+    .section-title { font-size: 22px; }
+    .section-sub { font-size: 13px; }
+    .section-head { margin-bottom: 28px; }
+
+    /* FEATURES */
+    .features-grid { grid-template-columns: 1fr; }
+    .feature-card { padding: 20px; }
+    .feature-icon { width: 36px; height: 36px; font-size: 16px; margin-bottom: 14px; }
+    .feature-title { font-size: 14px; }
+    .feature-desc { font-size: 12px; }
+
+    /* INDICATORS */
+    .filter-bar { gap: 4px; }
+    .filter-btn { font-size: 10px; padding: 5px 10px; }
+    .indicators-grid { grid-template-columns: 1fr; gap: 10px; }
+    .ind-img { height: 160px; }
+    .ind-name { font-size: 13px; }
+    .ind-desc { font-size: 11px; }
+
+    /* SIGNALS */
+    .signals-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .signal-card { padding: 16px 12px; }
+    .signal-class { font-size: 28px; }
+    .signal-name { font-size: 12px; }
+    .signal-desc { font-size: 10px; }
+
+    /* STEPS */
+    .step-card { padding: 20px; }
+    .step-icon { font-size: 20px; margin-bottom: 10px; }
+    .step-title { font-size: 15px; }
+    .step-desc { font-size: 12px; }
+
+    /* GALLERY */
+    .gallery-grid { grid-template-columns: 1fr; gap: 10px; }
+    .gallery-thumb img { height: 200px; }
+    .gallery-thumb-label { font-size: 9px; }
+
+    /* TESTIMONIALS */
+    .t-card { padding: 16px; }
+    .t-text { font-size: 12px; }
+    .t-result { font-size: 10px; }
+
+    /* COMPARISON */
+    .table-wrap { overflow-x: auto; }
+    .comp-table { min-width: 500px; }
+    .comp-table th, .comp-table td { padding: 10px 12px; font-size: 11px; }
+    .savings-banner { font-size: 10px; padding: 10px 12px; }
+
+    /* PRICING */
+    .pricing-grid { max-width: 100%; }
+    .price-head { padding: 20px 20px 16px; }
+    .price-val { font-size: 36px; }
+    .price-body { padding: 16px 20px 20px; }
+    .price-features li { font-size: 12px; }
+
+    /* FAQ */
+    .faq-q-text { font-size: 13px; }
+    .faq-a { font-size: 12px; }
+
+    /* CTA */
+    .cta-inner { padding: 48px 16px; }
+    .cta-title { font-size: 22px; }
+    .cta-sub { font-size: 13px; }
+    .cta-btns { flex-direction: column; align-items: center; gap: 8px; }
+
+    /* LIGHTBOX */
+    .lightbox-inner { max-width: 98vw; }
+    .lightbox-prev { left: 4px; }
+    .lightbox-next { right: 4px; }
+    .lightbox-nav { width: 32px; height: 32px; font-size: 16px; }
+    .lightbox-img { max-height: 70vh; border-radius: 4px; }
+    .lightbox-caption { font-size: 10px; padding: 0 8px; }
+
+    /* FOOTER */
+    .footer-inner { grid-template-columns: 1fr; gap: 24px; padding-bottom: 28px; }
+    .footer-logo { font-size: 12px; }
+    .footer-desc { font-size: 12px; }
+    .footer-note { text-align: left; font-size: 9px; }
+    .footer-copy { font-size: 10px; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+
+  /* ═══════════════════════════════════
+     SMALL MOBILE  (max 380px)
+  ═══════════════════════════════════ */
+  @media (max-width: 380px) {
+    .hero h1 { font-size: 24px; }
+    .signals-grid { grid-template-columns: 1fr; }
+    .stats-inner { grid-template-columns: 1fr 1fr; }
+    .filter-btn { font-size: 9px; padding: 4px 8px; }
+    .topbar-logo { font-size: 10px; }
+  }
+
+  /* ── LIVE SIGNALS GALLERY ── */
+  .gallery-section { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .gallery-label { font-family: var(--mono); font-size: 11px; color: var(--green); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .gallery-label::before { content:''; display:block; width:8px; height:8px; background:var(--green); border-radius:50%; box-shadow: 0 0 8px var(--green); animation: pulse 2s infinite; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .gallery-thumb {
+    border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    cursor: zoom-in; position: relative;
+    transition: border-color .2s, transform .2s;
+  }
+  .gallery-thumb:hover { border-color: var(--green); transform: translateY(-2px); }
+  .gallery-thumb img { width: 100%; display: block; object-fit: cover; height: 200px; }
+  .gallery-thumb-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 8px 12px;
+    background: linear-gradient(to top, rgba(14,17,22,.95), transparent);
+    font-family: var(--mono); font-size: 10px; color: var(--text2);
+    letter-spacing: 0.5px;
+  }
+  .gallery-thumb-signal {
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .sig-long { color: var(--green); }
+  .sig-short { color: var(--red); }
+  .gallery-zoom-hint {
+    position: absolute; top: 8px; right: 8px;
+    background: rgba(14,17,22,.8); border: 1px solid var(--border);
+    border-radius: 3px; padding: 3px 7px;
+    font-family: var(--mono); font-size: 9px; color: var(--text3);
+    letter-spacing: 0.5px;
+  }
+
+  /* LIGHTBOX */
+  .lightbox {
+    display: none; position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.92);
+    align-items: center; justify-content: center;
+    backdrop-filter: blur(8px);
+    cursor: zoom-out;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox-inner {
+    position: relative; max-width: 92vw; max-height: 92vh;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  .lightbox-img {
+    max-width: 100%; max-height: 80vh;
+    border-radius: 8px; border: 1px solid var(--border);
+    box-shadow: 0 0 60px rgba(0,0,0,.8);
+    cursor: default;
+  }
+  .lightbox-caption {
+    font-family: var(--mono); font-size: 12px; color: var(--text2);
+    letter-spacing: 0.5px; text-align: center;
+  }
+  .lightbox-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(14,17,22,.85); border: 1px solid var(--border2);
+    border-radius: 4px; width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 18px; color: var(--text);
+    transition: background .2s, color .2s;
+    user-select: none;
+  }
+  .lightbox-nav:hover { background: var(--bg4); color: var(--white); }
+  .lightbox-prev { left: -52px; }
+  .lightbox-next { right: -52px; }
+  .lightbox-close {
+    position: absolute; top: -44px; right: 0;
+    background: none; border: none; color: var(--text2);
+    font-size: 22px; cursor: pointer; padding: 4px 8px;
+    transition: color .2s;
+  }
+  .lightbox-close:hover { color: var(--white); }
+  .lightbox-dots { display: flex; gap: 8px; }
+  .lightbox-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--border2); cursor: pointer; transition: background .2s;
+  }
+  .lightbox-dot.active { background: var(--green); }
+
+  @media (max-width: 640px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    .lightbox-prev { left: -44px; }
+    .lightbox-next { right: -44px; }
+  }
+
+  /* ── LANG SWITCHER ── */
+  .lang-switcher {
+    display: flex; align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 3px; overflow: hidden;
+    margin-left: 8px;
+  }
+  .lang-btn {
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    color: var(--text3); background: transparent; border: none;
+    padding: 0 10px; height: 28px; cursor: pointer;
+    letter-spacing: 0.5px; transition: color .15s, background .15s;
+  }
+  .lang-btn.active { background: var(--blue); color: var(--white); }
+  .lang-btn:not(.active):hover { color: var(--text); background: var(--bg3); }
+  .lang-sep { width: 1px; background: var(--border); height: 28px; }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-up-delay-1 { transition-delay: 0.1s; }
+  .fade-up-delay-2 { transition-delay: 0.2s; }
+  .fade-up-delay-3 { transition-delay: 0.3s; }
+
+  /* ── ANIMATED BORDER on hover ── */
+  .ind-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: 6px;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--blue), transparent, var(--green));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .ind-card { position: relative; }
+  .ind-card:hover::before { opacity: 1; }
+
+  /* ── PRICE ANCHOR BANNER ── */
+  .price-anchor-banner {
+    display: flex; align-items: center; gap: 12px;
+    margin-top: 20px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, rgba(41,98,255,0.08), rgba(38,166,154,0.05));
+    border: 1px solid rgba(41,98,255,0.2);
+    border-radius: 6px;
+    flex-wrap: wrap;
+  }
+  .price-anchor-val {
+    font-family: var(--mono); font-size: 16px; font-weight: 600;
+    color: var(--text3); text-decoration: line-through;
+  }
+  .price-anchor-text {
+    font-family: var(--mono); font-size: 11px; color: var(--text2);
+  }
+  .price-anchor-price {
+    font-family: var(--mono); font-size: 22px; font-weight: 700;
+    color: var(--green);
+  }
+  .price-anchor-badge {
+    margin-left: auto;
+    font-family: var(--mono); font-size: 10px; font-weight: 600;
+    color: var(--gold); background: rgba(240,185,11,0.1);
+    border: 1px solid rgba(240,185,11,0.3);
+    padding: 4px 10px; border-radius: 3px; letter-spacing: 1px;
+  }
+
+  /* ── IND EXPAND BUTTON ── */
+  .ind-expand-btn {
+    font-family: var(--mono); font-size: 10px; color: var(--blue);
+    background: none; border: none; cursor: pointer;
+    padding: 4px 0; margin-bottom: 8px;
+    letter-spacing: 0.5px; transition: color .2s;
+    display: block;
+  }
+  .ind-expand-btn:hover { color: #82b1ff; }
+
+  /* ── FILTER SEP ── */
+  .filter-sep { width: 1px; background: var(--border); height: 28px; flex-shrink: 0; }
+  .filter-flagship { border-color: rgba(240,185,11,0.4) !important; color: var(--gold) !important; }
+  .filter-flagship.active, .filter-flagship:hover { background: rgba(240,185,11,0.1) !important; }
+
+  /* ── PRODUCT GROUP LABEL ── */
+  .ind-group-label {
+    grid-column: 1 / -1;
+    font-family: var(--mono); font-size: 10px; font-weight: 600;
+    color: var(--text3); letter-spacing: 2px; text-transform: uppercase;
+    padding: 8px 0 4px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 4px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .ind-group-label span { color: var(--text3); }
+  .ind-group-flagship { color: var(--gold) !important; }
+  .ind-group-execution { color: var(--blue) !important; }
+  .ind-group-analytics { color: var(--green) !important; }
+  .ind-group-utilities { color: var(--text3) !important; }
+
+  /* WHY SECTION responsive */
+  @media (max-width: 768px) {
+    .why-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  }
+</style>
 </head>
-<body class="bg-darkBg text-gray-200 font-sans selection:bg-goldAccent selection:text-black">
+<body>
 
-    <!-- HERO SECTION -->
-    <header class="relative pt-20 pb-28 px-4 overflow-hidden">
-        <div class="max-w-6xl mx-auto flex flex-col items-center text-center">
-            <img src="logo_hs.png" alt="TheHarmonySystems Logo" class="w-40 h-40 mb-10 drop-shadow-[0_0_25px_rgba(251,191,36,0.5)]">
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter uppercase">
-                The <span class="text-goldAccent">Harmony</span> Systems
-            </h1>
-            <p class="text-xl text-gray-400 max-w-2xl mb-12">
-                Профессиональная экосистема из 15 индикаторов для доминирования на рынках.
-                <br><span class="text-sm font-mono text-cyberGreen">15-Indicator Alpha Ecosystem for Professional Traders</span>
-            </p>
-            
-            <!-- Quotes Block -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full">
-                <div class="glass quote-card p-8 rounded-xl text-sm italic">
-                    "Правило №1: Никогда не теряй деньги. Правило №2: Никогда не забывай правило №1."
-                    <p class="mt-4 font-bold text-goldAccent">— Уоррен Баффетт</p>
-                </div>
-                <div class="glass quote-card p-8 rounded-xl text-sm italic border-goldAccent/40">
-                    "Трейдинг — это игра вероятностей, где не нужно знать, что произойдет дальше, чтобы заработать."
-                    <p class="mt-4 font-bold text-goldAccent">— Марк Дуглас</p>
-                </div>
-                <div class="glass quote-card p-8 rounded-xl text-sm italic">
-                    "Рынок — это механизм перераспределения денег от нетерпеливых к терпеливым."
-                    <p class="mt-4 font-bold text-goldAccent">— Уоррен Баффетт</p>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- MARQUEE -->
-    <div class="bg-black/50 py-5 border-y border-white/5 overflow-hidden">
-        <div class="flex whitespace-nowrap animate-marquee">
-            <div class="flex space-x-12 px-12 items-center">
-                <span class="text-cyberGreen font-mono font-bold">ASM v3.3 PRO</span>
-                <span class="text-goldAccent font-mono font-bold">AZP v5.2 FULL</span>
-                <span class="text-white/60 font-mono font-bold">BTC DCA v3.7</span>
-                <span class="text-cyberGreen font-mono font-bold uppercase">Apex Cluster Radar v2.7</span>
-                <span class="text-goldAccent font-mono font-bold">EMA v2 CLOUD</span>
-                <span class="text-white/60 font-mono font-bold">GOYALINE v7.0</span>
-                <span class="text-cyberGreen font-mono font-bold">LCE ATA v2.4.4</span>
-                <span class="text-goldAccent font-mono font-bold">LCE H1 INTRADAY</span>
-                <span class="text-white/60 font-mono font-bold">OCTOPUS v25.1</span>
-                <span class="text-cyberGreen font-mono font-bold">ORB ULTIMATE v2.5</span>
-                <span class="text-goldAccent font-mono font-bold uppercase">Apex Orca v2</span>
-                <span class="text-white/60 font-mono font-bold">RADAR v9.2 CRYPTO</span>
-                <span class="text-cyberGreen font-mono font-bold">STOCH ULTIMATE</span>
-                <span class="text-goldAccent font-mono font-bold">ZENITH TRENDFLOW v7.3</span>
-                <span class="text-white/60 font-mono font-bold">ZENITH v10.0 PRO</span>
-            </div>
-            <!-- Seamless Loop Duplicate -->
-            <div class="flex space-x-12 px-12 items-center">
-                <span class="text-cyberGreen font-mono font-bold">ASM v3.3 PRO</span>
-                <span class="text-goldAccent font-mono font-bold">AZP v5.2 FULL</span>
-                <span class="text-white/60 font-mono font-bold">BTC DCA v3.7</span>
-                <span class="text-cyberGreen font-mono font-bold uppercase">Apex Cluster Radar v2.7</span>
-                <span class="text-goldAccent font-mono font-bold">EMA v2 CLOUD</span>
-                <span class="text-white/60 font-mono font-bold">GOYALINE v7.0</span>
-                <span class="text-cyberGreen font-mono font-bold">LCE ATA v2.4.4</span>
-                <span class="text-goldAccent font-mono font-bold">LCE H1 INTRADAY</span>
-                <span class="text-white/60 font-mono font-bold">OCTOPUS v25.1</span>
-                <span class="text-cyberGreen font-mono font-bold">ORB ULTIMATE v2.5</span>
-                <span class="text-goldAccent font-mono font-bold uppercase">Apex Orca v2</span>
-                <span class="text-white/60 font-mono font-bold">RADAR v9.2 CRYPTO</span>
-                <span class="text-cyberGreen font-mono font-bold">STOCH ULTIMATE</span>
-                <span class="text-goldAccent font-mono font-bold">ZENITH TRENDFLOW v7.3</span>
-                <span class="text-white/60 font-mono font-bold">ZENITH v10.0 PRO</span>
-            </div>
-        </div>
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="topbar-logo">
+    <span class="topbar-logo-dot"></span>
+    THE HARMONY SYSTEMS
+  </div>
+  <nav class="topbar-nav">
+    <a href="#indicators" id="nav-indicators">ИНДИКАТОРЫ</a>
+    <a href="#signals" id="nav-signals">СИГНАЛЫ</a>
+    <a href="#pricing" id="nav-pricing">ЦЕНЫ</a>
+    <a href="#faq" id="nav-faq">FAQ</a>
+    <a href="https://t.me/TheHarmonySystems" target="_blank" class="topbar-cta" id="nav-cta">GET ACCESS</a>
+  </nav>
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btnRU" onclick="setLang('ru')">RU</button>
+      <div class="lang-sep"></div>
+      <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
     </div>
+</header>
 
-    <!-- FILTER SECTION -->
-    <nav class="sticky top-0 z-50 bg-darkBg/90 backdrop-blur-xl border-b border-white/10 py-6">
-        <div class="max-w-6xl mx-auto flex overflow-x-auto no-scrollbar justify-start md:justify-center gap-4 px-4">
-            <button onclick="filterCards('all')" class="whitespace-nowrap px-6 py-2 rounded-full border border-goldAccent bg-goldAccent text-black font-bold text-xs transition transform hover:scale-105 active:scale-95">ВСЕ / ALL</button>
-            <button onclick="filterCards('smc')" class="whitespace-nowrap px-6 py-2 rounded-full border border-white/20 hover:border-goldAccent text-xs transition">SMC/ICT</button>
-            <button onclick="filterCards('crypto')" class="whitespace-nowrap px-6 py-2 rounded-full border border-white/20 hover:border-goldAccent text-xs transition">CRYPTO/GOLD</button>
-            <button onclick="filterCards('scalp')" class="whitespace-nowrap px-6 py-2 rounded-full border border-white/20 hover:border-goldAccent text-xs transition">SCALPING</button>
-            <button onclick="filterCards('trend')" class="whitespace-nowrap px-6 py-2 rounded-full border border-white/20 hover:border-goldAccent text-xs transition">TREND</button>
-            <button onclick="filterCards('volume')" class="whitespace-nowrap px-6 py-2 rounded-full border border-white/20 hover:border-goldAccent text-xs transition">VOLUME/CLUSTER</button>
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-track" id="tickerTrack">
+    <span class="ticker-item"><span class="ticker-sym">BTCUSDT</span><span class="ticker-up">▲ загрузка...</span></span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <!-- AURORA -->
+  <div class="aurora-wrap">
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+    <div class="aurora aurora-4"></div>
+    <div class="aurora aurora-5"></div>
+    <div class="aurora-scanline"></div>
+    <div class="aurora-fade"></div>
+  </div>
+  <div class="stars-wrap" id="starsWrap"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-label" id="hero-label">Профессиональная торговая экосистема</div>
+      <h1 id="hero-h1">15 Индикаторов.<br>Одно <span style="color:var(--blue)">Преимущество</span>.</h1>
+      <p class="hero-sub" id="hero-sub">Полная экосистема Smart Money, кластерного анализа и нейронного sentiment для TradingView. Без репайнтинга. Pine Script v6.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-val green">93.8%</div>
+          <div class="hero-stat-lbl">Win Rate</div>
         </div>
-    </nav>
-
-    <!-- INDICATOR GRID -->
-    <main class="max-w-7xl mx-auto py-20 px-4">
-        <div id="indicator-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            
-            <!-- ZENITH v10 -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col smc trend" data-category="smc trend">
-                <div class="relative">
-                    <img src="screen_zenith_v10.png" alt="Zenith v10" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                    <span class="absolute top-4 right-4 bg-cyberGreen text-black text-[10px] font-black px-3 py-1 rounded-full">93.8% WIN RATE</span>
-                </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3">Apex Zenith v10.0 PRO</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Нейронный Sentiment-анализ и Multi-Timeframe подтверждение тренда.
-                        <br><span class="italic text-xs">EN: Neural Sentiment tracking with MTF trend confirmation.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">1H / 4H / Daily</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- CLUSTER RADAR -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col volume" data-category="volume">
-                <div class="relative">
-                    <img src="screen_cluster.png" alt="Cluster Radar" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                    <span class="absolute top-4 right-4 bg-goldAccent text-black text-[10px] font-black px-3 py-1 rounded-full">MAX PLAN ONLY</span>
-                </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3 uppercase">Apex Cluster Radar v2.7</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Нативный Footprint и дельта-анализ внутри TradingView. Визуализация ликвидности.
-                        <br><span class="italic text-xs">EN: Native Footprint & Delta analysis. Real-time liquidity mapping.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">ALL TIMEFRAMES</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- ASM v3.3 -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col scalp" data-category="scalp">
-                <div class="relative">
-                    <img src="screen_asm_v3.jpg" alt="ASM v3.3" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                    <span class="absolute top-4 right-4 bg-white/20 text-white text-[10px] font-bold px-3 py-1 rounded-full">184 TOTAL TRADES</span>
-                </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3">ASM v3.3 PRO</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Адаптивный скальпер с сессионным R:R -1.15. Авто-статистика в реальном времени.
-                        <br><span class="italic text-xs">EN: Adaptive scalper with -1.15 session R:R. Built-in real-time analytics.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">1M / 5M</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- LCE ATA -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col smc" data-category="smc">
-                <img src="screen_lce_ata.jpg" alt="LCE ATA" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3">LCE ATA v2.4.4</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Полная автоматизация Smart Money: BOS, CHoCH, Order Blocks и дивергенции.
-                        <br><span class="italic text-xs">EN: Full SMC automation: BOS, CHoCH, OBs, and Divergences.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">5M / 15M / 1H</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- BTC DCA -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col crypto trend" data-category="crypto trend">
-                <div class="relative">
-                    <img src="screen_btc_dca.png" alt="BTC DCA" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                    <span class="absolute top-4 right-4 bg-cyberGreen text-black text-[10px] font-black px-3 py-1 rounded-full">86% WIN RATE</span>
-                </div>
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3 uppercase">BTC DCA v3.7</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Детектор глобальных циклов. Определение зон накопления и распределения BTC.
-                        <br><span class="italic text-xs">EN: Global cycle detector. Identifies BTC accumulation/distribution zones.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">DAILY / WEEKLY</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- ORB ULTIMATE -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col crypto scalp" data-category="crypto scalp">
-                <img src="screen_orb_v2.png" alt="ORB" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3">ORB Ultimate v2.5</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Скальпинг сессионных пробоев (NY/London) с автоматическим расчетом TP/SL.
-                        <br><span class="italic text-xs">EN: Session breakout scalping (NY/London) with auto TP/SL levels.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">5M / 15M</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- EMA v2 -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col trend" data-category="trend">
-                <img src="screen_ema_v2.png" alt="EMA v2" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3">EMA v2 Cloud Squeeze</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Трендовая система с визуализацией Bear/Bull Sweep и зон сжатия ликвидности.
-                        <br><span class="italic text-xs">EN: Trend system featuring Bear/Bull Sweep and liquidity squeeze zones.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">ALL TIMEFRAMES</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- ORCA v2 -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col volume" data-category="volume">
-                <img src="screen_orca_v2.png" alt="Orca" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3 uppercase">Apex Orca v2</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Трекер активности китов. Визуальное отображение крупных лимитных заявок.
-                        <br><span class="italic text-xs">EN: Whale activity tracker. Visual mapping of massive limit orders.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">5M / 1H</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- RADAR v9.2 -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col scalp" data-category="scalp">
-                <img src="screen_radar_v9.jpg" alt="Radar v9.2" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3">Radar v9.2 Crypto [LITE]</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Высокочастотный скальпинг с фильтрацией ADX и RSI Divergence.
-                        <br><span class="italic text-xs">EN: High-frequency scalping with ADX and RSI Divergence filters.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">1M / 5M</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- STOCH ULT -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col trend" data-category="trend">
-                <img src="screen_stoch_ult.png" alt="Stoch Ult" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3">Stoch Ultimate</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Продвинутый осциллятор с зонами перекупленности и скрытыми дивергенциями.
-                        <br><span class="italic text-xs">EN: Advanced oscillator with OB/OS zones and hidden divergences.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">ALL TIMEFRAMES</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- TRENDFLOW -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col trend" data-category="trend">
-                <img src="screen_trendflow.png" alt="TrendFlow" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3">Zenith TrendFlow Pro</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Анализ потока ордеров и импульса тренда. Визуализация силы покупателей.
-                        <br><span class="italic text-xs">EN: Order flow analysis and trend momentum. Visualizing buyer strength.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">5M / 15M / 1H</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- GOYALINE -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col trend crypto" data-category="trend crypto">
-                <img src="screen_goyaline.png" alt="Goyaline" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3">Oracle Goyaline v7.0</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Институциональная трендовая система с Confidence-фильтром.
-                        <br><span class="italic text-xs">EN: Institutional trend system with Confidence-based filtering.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">15M / 1H</span>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- AZP -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col scalp" data-category="scalp">
-                <img src="screen_azp_v5.png" alt="AZP v5" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3">AZP v5.2 Full</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Быстрый интрадей-модуль с расчетом динамического R:R и ATR-волатильности.
-                        <br><span class="italic text-xs">EN: Fast intraday module with dynamic R:R and ATR-volatility logic.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">5M / 15M</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- OCTOPUS -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col volume" data-category="volume">
-                <img src="screen_octopus.png" alt="Octopus" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3">Octopus Scanner v25.1</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Продвинутый сканер рынка. Поиск импульсов на 20+ активах одновременно.
-                        <br><span class="italic text-xs">EN: Advanced market scanner. Instant impulse detection across 20+ assets.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">HTF / DAILY</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- LCE H1 -->
-            <article class="indicator-card glass rounded-3xl overflow-hidden flex flex-col smc" data-category="smc">
-                <img src="screen_lce_h1.png" alt="LCE H1" class="w-full h-56 object-cover zoom-image" onclick="openLightbox(this.src)">
-                <div class="p-8">
-                    <h3 class="text-2xl font-black text-white mb-3">LCE H1 Intraday</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
-                        RU: Глубокий интрадей анализ структуры с подтверждением Order Flow.
-                        <br><span class="italic text-xs">EN: Deep intraday structural analysis with Order Flow confirmation.</span>
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded">1H ONLY</span>
-                    </div>
-                </div>
-            </article>
-
+        <div class="hero-stat">
+          <div class="hero-stat-val blue">15</div>
+          <div class="hero-stat-lbl">Indicators</div>
         </div>
-    </main>
-
-    <!-- SAVINGS & COMPARISON -->
-    <section class="max-w-5xl mx-auto py-24 px-4">
-        <h2 class="text-4xl font-black text-center mb-16 uppercase tracking-tight">Экономия и Преимущество / Value & Savings</h2>
-        <div class="overflow-x-auto glass rounded-3xl">
-            <table class="w-full border-collapse">
-                <thead>
-                    <tr class="border-b border-white/10 bg-white/5">
-                        <th class="p-6 text-left text-xs uppercase text-gray-500 tracking-widest font-bold">Параметр / Metric</th>
-                        <th class="p-6 text-left text-xs uppercase text-goldAccent tracking-widest font-bold">TheHarmonySystems</th>
-                        <th class="p-6 text-left text-xs uppercase text-gray-500 tracking-widest font-bold">Competitors</th>
-                    </tr>
-                </thead>
-                <tbody class="text-sm">
-                    <tr class="border-b border-white/5">
-                        <td class="p-6 font-medium">Инструменты / Tools</td>
-                        <td class="p-6 text-white font-bold">15 Индикаторов (Full Stack)</td>
-                        <td class="p-6 text-gray-500">1-2 Basic Indicators</td>
-                    </tr>
-                    <tr class="border-b border-white/5">
-                        <td class="p-6 font-medium">Суммарная стоимость / Market Value</td>
-                        <td class="p-6 text-cyberGreen font-bold">$170 (Lifetime Package)</td>
-                        <td class="p-6 text-gray-500">$2,500+ (Individual items)</td>
-                    </tr>
-                    <tr class="border-b border-white/5">
-                        <td class="p-6 font-medium">Cluster/Footprint</td>
-                        <td class="p-6 text-white font-bold">Да / Yes (Native TV)</td>
-                        <td class="p-6 text-gray-500">Нет / No</td>
-                    </tr>
-                    <tr class="border-b border-white/5">
-                        <td class="p-6 font-medium">Экономия времени / Time Saved</td>
-                        <td class="p-6 text-cyberGreen font-bold">85% (Auto-Analysis)</td>
-                        <td class="p-6 text-gray-500">Manual Charting</td>
-                    </tr>
-                    <tr>
-                        <td class="p-6 font-medium">Поддержка / Support</td>
-                        <td class="p-6 text-white font-bold">Direct Developer VIP Access</td>
-                        <td class="p-6 text-gray-500">Support Ticket / None</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="hero-stat">
+          <div class="hero-stat-val gold">$170</div>
+          <div class="hero-stat-lbl">Invite-Only</div>
         </div>
-        <div class="mt-8 text-center">
-            <p class="text-goldAccent font-bold text-lg">93.2% SAVINGS COMPARED TO INDIVIDUAL PURCHASES</p>
-        </div>
-    </section>
-
-    <!-- PRICING -->
-    <section class="bg-black/40 py-32 px-4 border-y border-white/5">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <!-- START -->
-            <div class="glass p-10 rounded-3xl flex flex-col transition hover:border-white/30">
-                <h3 class="text-xl font-bold mb-1 uppercase tracking-tighter">START</h3>
-                <p class="text-gray-500 text-xs mb-8 uppercase">Entry Level</p>
-                <div class="flex items-end gap-1 mb-8">
-                    <span class="text-5xl font-black text-white">$60</span>
-                    <span class="text-gray-500 text-xs mb-2">/ LIFETIME</span>
-                </div>
-                <ul class="space-y-4 text-sm text-gray-400 mb-10 flex-grow">
-                    <li class="flex items-center gap-3"><span class="text-cyberGreen">✓</span> 5 Core Indicators</li>
-                    <li class="flex items-center gap-3"><span class="text-cyberGreen">✓</span> LCE, Radar, ANP</li>
-                    <li class="flex items-center gap-3"><span class="text-cyberGreen">✓</span> BTC DCA & EMA</li>
-                    <li class="flex items-center gap-3"><span class="text-gray-600">✕</span> Cluster Radar</li>
-                </ul>
-                <a href="https://t.me/TheHarmonySystems" class="w-full py-4 rounded-2xl border border-white/10 hover:bg-white/5 text-center font-bold transition active:scale-95 uppercase text-xs tracking-widest">Get Started</a>
-            </div>
-
-            <!-- PRO -->
-            <div class="glass p-10 rounded-3xl flex flex-col border-white/20 transition hover:border-white/40">
-                <h3 class="text-xl font-bold mb-1 uppercase tracking-tighter">PRO</h3>
-                <p class="text-gray-500 text-xs mb-8 uppercase">Advanced Suite</p>
-                <div class="flex items-end gap-1 mb-8">
-                    <span class="text-5xl font-black text-white">$115</span>
-                    <span class="text-gray-500 text-xs mb-2">/ LIFETIME</span>
-                </div>
-                <ul class="space-y-4 text-sm text-gray-300 mb-10 flex-grow">
-                    <li class="flex items-center gap-3"><span class="text-cyberGreen">✓</span> 14 Pro Indicators</li>
-                    <li class="flex items-center gap-3"><span class="text-cyberGreen">✓</span> Full SMC & Trend Pack</li>
-                    <li class="flex items-center gap-3"><span class="text-cyberGreen">✓</span> Lifetime Updates</li>
-                    <li class="flex items-center gap-3"><span class="text-gray-600">✕</span> Cluster Radar</li>
-                </ul>
-                <a href="https://t.me/TheHarmonySystems" class="w-full py-4 rounded-2xl border border-white/20 hover:bg-white/5 text-center font-bold transition active:scale-95 uppercase text-xs tracking-widest">Unlock Pro Alpha</a>
-            </div>
-
-            <!-- MAX -->
-            <div class="relative glass p-10 rounded-3xl flex flex-col border-goldAccent/50 most-popular-glow scale-105 z-10 bg-darkBg/50">
-                <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-goldAccent text-black text-[10px] font-black px-5 py-1.5 rounded-full uppercase tracking-widest">MOST POPULAR</span>
-                <h3 class="text-xl font-bold mb-1 text-goldAccent uppercase tracking-tighter">MAX ALPHA</h3>
-                <p class="text-gray-500 text-xs mb-8 uppercase">Full Ecosystem</p>
-                <div class="flex items-end gap-1 mb-8">
-                    <span class="text-5xl font-black text-white">$170</span>
-                    <span class="text-gray-500 text-xs mb-2">/ LIFETIME</span>
-                </div>
-                <ul class="space-y-4 text-sm text-white mb-10 flex-grow font-medium">
-                    <li class="flex items-center gap-3"><span class="text-goldAccent">★</span> ALL 15 INDICATORS</li>
-                    <li class="flex items-center gap-3"><span class="text-goldAccent">★</span> Apex Cluster Radar v2.7</li>
-                    <li class="flex items-center gap-3"><span class="text-goldAccent">★</span> Footprint/Cluster Analysis</li>
-                    <li class="flex items-center gap-3"><span class="text-goldAccent">★</span> VIP Developer Support</li>
-                </ul>
-                <a href="https://t.me/TheHarmonySystems" class="w-full py-5 rounded-2xl bg-goldAccent text-black font-black text-center transition hover:brightness-110 active:scale-95 uppercase text-xs tracking-widest shadow-[0_0_20px_rgba(251,191,36,0.3)]">Get Max Package</a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- FOOTER / SOCIALS -->
-    <footer class="py-24 px-4 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h4 class="text-2xl font-black mb-10 uppercase tracking-tighter">Join The Alpha Circle</h4>
-            <div class="flex flex-wrap justify-center gap-8 mb-16">
-                <a href="https://www.tradingview.com/u/TheHarmonySystems/" class="text-gray-400 hover:text-goldAccent transition font-bold text-sm tracking-widest">TRADINGVIEW</a>
-                <a href="https://t.me/TheHarmonySystems" class="text-gray-400 hover:text-goldAccent transition font-bold text-sm tracking-widest">TELEGRAM</a>
-                <a href="https://instagram.com/sergey.kz2020" class="text-gray-400 hover:text-goldAccent transition font-bold text-sm tracking-widest">INSTAGRAM</a>
-                <a href="https://tiktok.com/@sergey_harmony" class="text-gray-400 hover:text-goldAccent transition font-bold text-sm tracking-widest">TIKTOK</a>
-                <a href="https://t.me/HarmonyRadar_bot" class="text-cyberGreen hover:underline transition font-bold text-sm tracking-widest">RADAR BOT</a>
-            </div>
-            
-            <div class="glass p-6 rounded-2xl inline-block mb-12">
-                <p class="text-xs text-gray-500 mb-2 uppercase tracking-widest">VIP SUPPORT & CUSTOM DEV</p>
-                <a href="tg://resolve?domain=Sergey201079" class="text-white font-black hover:text-goldAccent transition text-lg tracking-tight">@Sergey201079</a>
-            </div>
-            
-            <p class="text-[10px] text-gray-700 uppercase tracking-[0.3em]">© 2024 THE HARMONY SYSTEMS. ENGINEERED FOR PRECISION.</p>
-        </div>
-    </footer>
-
-    <!-- LIGHTBOX MODAL -->
-    <div id="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" class="max-w-[90%] max-h-[90%] border border-white/20 shadow-2xl rounded-xl">
+      </div>
+      <div class="hero-btns">
+        <a href="https://t.me/TheHarmonySystems" target="_blank" class="btn-primary" id="hero-btn1">⚡ Access Private Ecosystem</a>
+        <a href="#gallery" class="btn-outline" id="hero-btn2">▶ Watch Live Signals</a>
+      </div>
     </div>
+    <div class="hero-chart">
+      <div class="chart-header">
+        <span class="chart-symbol">BTCUSDT</span>
+        <span class="chart-price">67,432.00</span>
+        <span class="chart-change">+2.14%</span>
+        <div class="chart-tfs">
+          <span class="chart-tf">1</span>
+          <span class="chart-tf">5</span>
+          <span class="chart-tf">15</span>
+          <span class="chart-tf active">1H</span>
+          <span class="chart-tf">4H</span>
+          <span class="chart-tf">D</span>
+        </div>
+      </div>
+      <svg class="chart-svg" viewBox="0 0 540 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="56" x2="540" y2="56" stroke="#2a2e39" stroke-width="1"/>
+        <line x1="0" y1="112" x2="540" y2="112" stroke="#2a2e39" stroke-width="1"/>
+        <line x1="0" y1="168" x2="540" y2="168" stroke="#2a2e39" stroke-width="1"/>
+        <line x1="0" y1="224" x2="540" y2="224" stroke="#2a2e39" stroke-width="1"/>
+        <line x1="108" y1="0" x2="108" y2="280" stroke="#2a2e39" stroke-width="1"/>
+        <line x1="216" y1="0" x2="216" y2="280" stroke="#2a2e39" stroke-width="1"/>
+        <line x1="324" y1="0" x2="324" y2="280" stroke="#2a2e39" stroke-width="1"/>
+        <line x1="432" y1="0" x2="432" y2="280" stroke="#2a2e39" stroke-width="1"/>
+        <text x="4" y="52" fill="#4a4e5a" font-size="9" font-family="IBM Plex Mono">68.4K</text>
+        <text x="4" y="108" fill="#4a4e5a" font-size="9" font-family="IBM Plex Mono">67.8K</text>
+        <text x="4" y="164" fill="#4a4e5a" font-size="9" font-family="IBM Plex Mono">67.2K</text>
+        <text x="4" y="220" fill="#4a4e5a" font-size="9" font-family="IBM Plex Mono">66.6K</text>
+        <path d="M36,210 L72,195 L108,215 L144,200 L180,180 L216,190 L252,170 L288,155 L324,140 L360,120 L396,105 L432,85 L468,70 L504,55 L504,250 L36,250 Z" fill="url(#areaGrad)" opacity="0.3"/>
+        <path d="M36,210 L72,195 L108,215 L144,200 L180,180 L216,190 L252,170 L288,155 L324,140 L360,120 L396,105 L432,85 L468,70 L504,55" stroke="#26a69a" stroke-width="1.5" fill="none"/>
+        <circle cx="144" cy="200" r="4" fill="#2962ff"/>
+        <circle cx="252" cy="170" r="4" fill="#2962ff"/>
+        <circle cx="360" cy="120" r="4" fill="#2962ff"/>
+        <circle cx="468" cy="70" r="4" fill="#26a69a"/>
+        <rect x="128" y="183" width="32" height="12" rx="2" fill="#2962ff" opacity="0.9"/>
+        <text x="131" y="192" fill="white" font-size="8" font-family="IBM Plex Mono" font-weight="600">LONG</text>
+        <rect x="236" y="153" width="32" height="12" rx="2" fill="#2962ff" opacity="0.9"/>
+        <text x="239" y="162" fill="white" font-size="8" font-family="IBM Plex Mono" font-weight="600">LONG</text>
+        <rect x="344" y="103" width="32" height="12" rx="2" fill="#2962ff" opacity="0.9"/>
+        <text x="347" y="112" fill="white" font-size="8" font-family="IBM Plex Mono" font-weight="600">LONG</text>
+        <line x1="0" y1="55" x2="540" y2="55" stroke="#26a69a" stroke-width="1" stroke-dasharray="4,4" opacity="0.6"/>
+        <rect x="490" y="48" width="46" height="14" rx="2" fill="#26a69a"/>
+        <text x="493" y="58" fill="white" font-size="8" font-family="IBM Plex Mono" font-weight="600">67,432</text>
+        <rect x="28" y="242" width="10" height="8" fill="#26a69a" opacity="0.4" rx="1"/>
+        <rect x="64" y="238" width="10" height="12" fill="#26a69a" opacity="0.4" rx="1"/>
+        <rect x="100" y="244" width="10" height="6" fill="#ef5350" opacity="0.4" rx="1"/>
+        <rect x="136" y="235" width="10" height="15" fill="#26a69a" opacity="0.5" rx="1"/>
+        <rect x="172" y="240" width="10" height="10" fill="#26a69a" opacity="0.4" rx="1"/>
+        <rect x="208" y="243" width="10" height="7" fill="#ef5350" opacity="0.4" rx="1"/>
+        <rect x="244" y="234" width="10" height="16" fill="#26a69a" opacity="0.5" rx="1"/>
+        <rect x="280" y="237" width="10" height="13" fill="#26a69a" opacity="0.4" rx="1"/>
+        <rect x="316" y="232" width="10" height="18" fill="#26a69a" opacity="0.5" rx="1"/>
+        <rect x="352" y="239" width="10" height="11" fill="#26a69a" opacity="0.4" rx="1"/>
+        <rect x="388" y="230" width="10" height="20" fill="#26a69a" opacity="0.6" rx="1"/>
+        <rect x="424" y="233" width="10" height="17" fill="#26a69a" opacity="0.5" rx="1"/>
+        <rect x="460" y="228" width="10" height="22" fill="#26a69a" opacity="0.6" rx="1"/>
+        <rect x="496" y="225" width="10" height="25" fill="#26a69a" opacity="0.7" rx="1"/>
+        <defs>
+          <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#26a69a" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#26a69a" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</section>
 
-    <!-- SCRIPTS -->
-    <script>
-        function filterCards(category) {
-            const cards = document.querySelectorAll('.indicator-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.dataset.category.includes(category)) {
-                    card.style.display = 'flex';
-                    card.style.opacity = '1';
-                } else {
-                    card.style.display = 'none';
-                    card.style.opacity = '0';
-                }
-            });
-        }
+<!-- STATS ROW -->
+<div class="stats-row">
+  <div class="stats-inner">
+    <div class="stat-cell"><div class="stat-val green">93.8%</div><div class="stat-lbl" id="stat-lbl-1">Win Rate Zenith</div></div>
+    <div class="stat-cell"><div class="stat-val blue">15</div><div class="stat-lbl" id="stat-lbl-2">Про индикаторов</div></div>
+    <div class="stat-cell"><div class="stat-val">5+</div><div class="stat-lbl" id="stat-lbl-3">Рынков</div></div>
+    <div class="stat-cell"><div class="stat-val gold">93%</div><div class="stat-lbl" id="stat-lbl-4">Экономия</div></div>
+    <div class="stat-cell"><div class="stat-val">v6</div><div class="stat-lbl" id="stat-lbl-5">Pine Script</div></div>
+  </div>
+</div>
 
-        function openLightbox(src) {
-            const lightbox = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            img.src = src;
-            lightbox.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
+<!-- FEATURES -->
 
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+<!-- WHY HARMONY EXISTS -->
+<section style="background: var(--bg); border-top: 1px solid var(--border);">
+  <div class="section" style="padding-top:64px;padding-bottom:64px;">
+    <div class="why-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <div>
+        <div class="section-label" id="why-label">ПОЧЕМУ МЫ СУЩЕСТВУЕМ</div>
+        <h2 class="section-title" style="font-size:28px;line-height:1.3;" id="why-title">Большинство индикаторов показывают запаздывающую информацию.<br><span style="color:var(--blue);">Harmony создан,<br>чтобы изменить это.</span></h2>
+      </div>
+      <div>
+        <p style="font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:20px;" id="why-p1">
+          Розничные трейдеры реагируют. Институционалы действуют. Разрыв между ними — не в навыках, а в информации. Большинство публичных индикаторов строится на истории цены. К моменту появления сигнала умные деньги уже сделали своё дело.
+        </p>
+        <p style="font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:28px;" id="why-p2">
+          Harmony Systems был создан, чтобы визуализировать <strong style="color:var(--text);" id="why-strong">институциональные намерения до того, как розничные трейдеры реагируют</strong> — синтезируя поток ордеров, ликвидность, макрорежим и дельту объёма в единую систему принятия решений.
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px;">
+            <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--green);margin-bottom:4px;">15+</div>
+            <div style="font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:1px;" id="why-stat1">ИНСТРУМЕНТОВ В ЭКОСИСТЕМЕ</div>
+          </div>
+          <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px;">
+            <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--blue);margin-bottom:4px;">9</div>
+            <div style="font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:1px;" id="why-stat2">ПОТОКОВ ДАННЫХ</div>
+          </div>
+          <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px;">
+            <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--gold);margin-bottom:4px;">Pine v6</div>
+            <div style="font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:1px;" id="why-stat3">БЕЗ РЕПАЙНТИНГА. ТОЛЬКО ЗАКРЫТЫЕ БАРЫ</div>
+          </div>
+          <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:16px;">
+            <div style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--text);margin-bottom:4px;">0</div>
+            <div style="font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:1px;" id="why-stat4">ПОДПИСОК. РАЗОВЫЙ ИНВАЙТ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Close lightbox on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
-    </script>
+<section class="section" id="features">
+  <div class="section-head">
+    <div class="section-label" id="features-label">ПОЧЕМУ THE HARMONY SYSTEMS</div>
+    <h2 class="section-title" id="features-title">Институциональный уровень. Доступная цена.</h2>
+    <p class="section-sub" id="features-sub">Полный набор профессиональных инструментов для анализа рынка — всё в одной экосистеме.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🧠</div>
+      <div class="feature-title" id="f1-title">SMC / ICT Методология</div>
+      <div class="feature-desc" id="f1-desc">Полная автоматизация Smart Money: BOS, CHoCH, Order Blocks, FVG, Premium/Discount Zones. Видите рынок как институционалы.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <div class="feature-title" id="f2-title">Кластерный анализ</div>
+      <div class="feature-desc" id="f2-desc">Нативный Footprint и дельта-анализ внутри TradingView без внешних платформ. Видите каждый ордер крупных игроков.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔮</div>
+      <div class="feature-title" id="f3-title">Нейронный Sentiment</div>
+      <div class="feature-desc" id="f3-desc">Apex Zenith использует нейронный sentiment-анализ и MTF подтверждение. 93.8% win rate на тестировании.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <div class="feature-title" id="f4-title">Без репайнтинга. Pine Script v6</div>
+      <div class="feature-desc" id="f4-desc">Все индикаторы написаны без репайнтинга на Pine Script v6. Исторические сигналы не перерисовываются — полная честность данных.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎯</div>
+      <div class="feature-title" id="f5-title">Система классов A/B/C/D</div>
+      <div class="feature-desc" id="f5-desc">Уникальная система классификации сигналов позволяет мгновенно оценить качество каждой точки входа без лишнего анализа.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🐋</div>
+      <div class="feature-title" id="f6-title">Отслеживание китов</div>
+      <div class="feature-desc" id="f6-desc">Apex Orca визуализирует крупные лимитные заявки и активность китов. Торгуйте вместе с умными деньгами, а не против них.</div>
+    </div>
+  </div>
+</section>
+
+<!-- INDICATORS -->
+<section class="indicators-section" id="indicators">
+  <div class="section" style="padding-top:64px;padding-bottom:64px;">
+    <div class="section-head">
+      <div class="section-label" id="ind-label">КАТАЛОГ ПРОДУКТОВ</div>
+      <h2 class="section-title" id="ind-title">15 Профессиональных индикаторов</h2>
+      <p class="section-sub" id="ind-sub">Каждый инструмент решает конкретную задачу. Вместе — полная система анализа рынка.</p>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" id="filter-all" onclick="filterInds(this,'all')">ВСЕ (15)</button>
+      <div class="filter-sep"></div>
+      <button class="filter-btn filter-flagship" id="filter-flagship" onclick="filterInds(this,'flagship')">★ ФЛАГМАН</button>
+      <button class="filter-btn" id="filter-execution" onclick="filterInds(this,'execution')">ИСПОЛНЕНИЕ</button>
+      <button class="filter-btn" id="filter-analytics" onclick="filterInds(this,'analytics')">АНАЛИТИКА</button>
+      <button class="filter-btn" id="filter-utilities" onclick="filterInds(this,'utilities')">УТИЛИТЫ</button>
+      <div class="filter-sep"></div>
+      <button class="filter-btn" id="filter-smc" onclick="filterInds(this,'smc')">SMC/ICT</button>
+      <button class="filter-btn" id="filter-scalp" onclick="filterInds(this,'scalp')">СКАЛЬПИНГ</button>
+      <button class="filter-btn" id="filter-cluster" onclick="filterInds(this,'cluster')">КЛАСТЕР</button>
+      <button class="filter-btn" id="filter-crypto" onclick="filterInds(this,'crypto')">КРИПТО</button>
+    </div>
+    <div class="indicators-grid" id="indsGrid">
+      <div class="ind-group-label ind-group-flagship" data-cat="all flagship" id="grp-flagship">★ ФЛАГМАН — Основной интеллект</div>
+      <div class="ind-card" onclick="openLightbox(10)" style="cursor:zoom-in;" data-cat="smc"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_zenith_v10.png" loading="lazy" alt="Zenith"><span class="ind-badge badge-green">93.8% WIN RATE</span><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">Apex Zenith v10.1 PRO</div>
+<div class="ind-desc ind-desc-short">Многоуровневая система скоринга (0–100). Макрорежим, карта ликвидности, объёмный поток, сентимент — единая взвешенная оценка. Self-Preservation протокол. 7 алертов.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Многокомпонентная система скоринга (0–100): макро-режим рынка (DXY, TOTAL, BTC.D), ценовые зоны, объёмный поток, sentiment и карта ликвидности — всё в одном взвешенном показателе. Не рисует сигналы buy/sell — выдаёт оценку готовности сетапа. Встроенный Self-Preservation протокол отключает генерацию сигналов при просадке. 5 режимов весов, MTF AND/OR, 7 алертов, встроенный трекер производительности.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)" data-expand="1">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">1H</span><span class="ind-tag">4H</span><span class="ind-tag">DAILY</span><span class="ind-tag">MACRO AI</span><span class="ind-tag">MTF</span><span class="ind-tag">SCORING</span></div></div></div>
+      <div class="ind-card" onclick="openLightbox(11)" style="cursor:zoom-in;" data-cat="cluster"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_cluster.png" loading="lazy" alt="Cluster"><span class="ind-badge badge-gold">MAX PLAN ONLY</span><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">Apex Cluster Radar v2.7</div>
+<div class="ind-desc ind-desc-short">Нативный Footprint и дельта-анализ внутри TradingView. Визуализация ликвидности в реальном времени без внешних платформ.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Нативный Footprint и дельта-анализ внутри TradingView. Визуализация ликвидности в реальном времени.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">ALL TF</span><span class="ind-tag">FOOTPRINT</span><span class="ind-tag">DELTA</span></div></div></div>
+            <div class="ind-group-label ind-group-execution" data-cat="all execution" id="grp-execution">▶ ИСПОЛНЕНИЕ — Сигналы и входы</div>
+      <div class="ind-card" onclick="openLightbox(12)" style="cursor:zoom-in;" data-cat="scalp smc"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_asm_v3.jpg" loading="lazy" alt="ASM"><span class="ind-badge badge-blue">184 TRADES</span><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">ASM v3.3 PRO</div>
+<div class="ind-desc ind-desc-short">Адаптивный сессионный скальпер с отслеживанием R:R в реальном времени. Авто-статистика по сессиям. 184 верифицированные сделки в выборке.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Адаптивный скальпер с сессионным R:R. Авто-статистика и встроенная аналитика в реальном времени.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">1M</span><span class="ind-tag">5M</span><span class="ind-tag">SCALPING</span></div></div></div>
+      <div class="ind-card" onclick="openLightbox(13)" style="cursor:zoom-in;" data-cat="smc"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_lce_ata.jpg" loading="lazy" alt="LCE"><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">LCE ATA v2.4.4</div>
+<div class="ind-desc ind-desc-short">Полная автоматизация SMC: BOS, CHoCH, Order Blocks, FVG, дивергенции. Институциональная структура на одном графике.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Полная автоматизация Smart Money: BOS, CHoCH, Order Blocks и дивергенции. Профессиональный SMC анализ.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">5M</span><span class="ind-tag">15M</span><span class="ind-tag">1H</span><span class="ind-tag">SMC/ICT</span></div></div></div>
+            <div class="ind-group-label ind-group-utilities" data-cat="all utilities" id="grp-utilities">⚙ УТИЛИТЫ — Вспомогательные инструменты</div>
+      <div class="ind-card" onclick="openLightbox(14)" style="cursor:zoom-in;" data-cat="crypto"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_btc_dca.png" loading="lazy" alt="BTC DCA"><span class="ind-badge badge-green">86% WIN RATE</span><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">BTC DCA v3.7</div>
+<div class="ind-desc ind-desc-short">Детектор глобальных циклов BTC. Определяет зоны накопления и распределения для долгосрочного позиционирования.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Детектор глобальных циклов BTC. Определение зон накопления и распределения для долгосрочной торговли.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">DAILY</span><span class="ind-tag">WEEKLY</span><span class="ind-tag">BTC CYCLES</span></div></div></div>
+      <div class="ind-card" onclick="openLightbox(15)" style="cursor:zoom-in;" data-cat="scalp"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_orb_v2.png" loading="lazy" alt="ORB"><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">ORB Ultimate v2.5</div>
+<div class="ind-desc ind-desc-short">Скальпер пробоев сессий NY/London. Автоматический расчёт TP/SL. Чёткие уровни входа на подтверждённых пробоях.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Скальпинг сессионных пробоев NY/London с автоматическим расчетом TP/SL. Точные уровни пробоя.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">5M</span><span class="ind-tag">15M</span><span class="ind-tag">NY/LONDON</span></div></div></div>
+      <div class="ind-card" onclick="openLightbox(16)" style="cursor:zoom-in;" data-cat="trend"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_ema_v2.png" loading="lazy" alt="EMA"><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">EMA v2 Cloud Squeeze</div>
+<div class="ind-desc ind-desc-short">Трендовая система с визуализацией Bear/Bull Sweep и зон сжатия ликвидности. Все таймфреймы.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Трендовая система с визуализацией Bear/Bull Sweep и зон сжатия ликвидности. Работает на всех таймфреймах.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">ALL TF</span><span class="ind-tag">TREND</span><span class="ind-tag">EMA CLOUD</span></div></div></div>
+      <div class="ind-card" onclick="openLightbox(17)" style="cursor:zoom-in;" data-cat="cluster scalp"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_orca_v2.png" loading="lazy" alt="Orca"><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">Apex Orca v2</div>
+<div class="ind-desc ind-desc-short">Трекер активности китов. Визуализирует крупные лимитные заявки и зоны институционального интереса в реальном времени.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Трекер активности китов. Визуальное отображение крупных лимитных заявок и областей институционального интереса.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">5M</span><span class="ind-tag">1H</span><span class="ind-tag">WHALE TRACKER</span></div></div></div>
+      <div class="ind-card" onclick="openLightbox(18)" style="cursor:zoom-in;" data-cat="scalp trend smc crypto"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_radar_v9.jpg" loading="lazy" alt="Radar"><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">Radar Harmony v9.2</div>
+<div class="ind-desc ind-desc-short">Центральный аналитический хаб. 9 потоков данных → единый скор сентимента 0–100. 10 контекстных фильтров. Интерфейс Cyber Neon.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Центральный аналитический хаб экосистемы Harmony Systems. Ядро «Sentiment Radar» обрабатывает веса 9 независимых потоков данных (Structure, Liquidity, Volume и др.) и выдаёт единый скор от 0 до 100. 10 контекстных фильтров: детектор режима ADX, отслеживание RSI-дивергенций, Smart Money bias. Интерфейс «Cyber Neon» — максимальная читаемость в высоковолатильные сессии.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">ALL TF</span><span class="ind-tag">9 DATA STREAMS</span><span class="ind-tag">10 FILTERS</span><span class="ind-tag">CRYPTO</span><span class="ind-tag">FOREX</span><span class="ind-tag">GOLD</span></div></div></div>
+            <div class="ind-group-label ind-group-analytics" data-cat="all analytics" id="grp-analytics">◈ АНАЛИТИКА — Рыночный интеллект</div>
+      <div class="ind-card" onclick="openLightbox(19)" style="cursor:zoom-in;" data-cat="trend smc"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_stoch_ult.png" loading="lazy" alt="Stoch"><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">Stoch Ultimate</div>
+<div class="ind-desc ind-desc-short">Продвинутый осциллятор со скрытыми дивергенциями и детектором экстремальных зон. Точные точки разворота.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Продвинутый осциллятор с зонами перекупленности/перепроданности и скрытыми дивергенциями. Точные точки разворота.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">ALL TF</span><span class="ind-tag">OSCILLATOR</span><span class="ind-tag">DIVERGENCE</span></div></div></div>
+      <div class="ind-card" onclick="openLightbox(20)" style="cursor:zoom-in;" data-cat="trend scalp"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_trendflow.png" loading="lazy" alt="TrendFlow"><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">Zenith TrendFlow Pro</div>
+<div class="ind-desc ind-desc-short">Анализатор импульса потока ордеров. Сила покупателей vs продавцов в реальном времени.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Анализ потока ордеров и импульса тренда. Визуализация силы покупателей vs продавцов в реальном времени.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">5M</span><span class="ind-tag">15M</span><span class="ind-tag">1H</span><span class="ind-tag">ORDER FLOW</span></div></div></div>
+      <div class="ind-card" onclick="openLightbox(21)" style="cursor:zoom-in;" data-cat="trend smc"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_goyaline.png" loading="lazy" alt="Goyaline"><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">Oracle Goyaline v7.0</div>
+<div class="ind-desc ind-desc-short">Институциональная трендовая система с фильтром уверенности. Высокоточные сигналы с подтверждающим скорингом.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Институциональная трендовая система с Confidence-фильтром. Высокоточные сигналы с подтверждением уверенности.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">15M</span><span class="ind-tag">1H</span><span class="ind-tag">INSTITUTIONAL</span></div></div></div>
+      <div class="ind-card" onclick="openLightbox(22)" style="cursor:zoom-in;" data-cat="scalp trend"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_azp_v5.png" loading="lazy" alt="AZP"><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">AZP v5.2 Full</div>
+<div class="ind-desc ind-desc-short">Быстрый интрадей-модуль с динамическим R:R и адаптацией к волатильности ATR. Подстраивается под условия рынка.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Быстрый интрадей-модуль с расчетом динамического R:R и ATR-волатильности. Адаптируется к условиям рынка.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">5M</span><span class="ind-tag">15M</span><span class="ind-tag">INTRADAY</span><span class="ind-tag">ATR</span></div></div></div>
+      <div class="ind-card" onclick="openLightbox(23)" style="cursor:zoom-in;" data-cat="cluster crypto scalp"><div class="ind-img"><img src="https://chibisov201079-oss.github.io/TheHarmonySystems/screen_octopus.png" loading="lazy" alt="Octopus"><div class="gallery-zoom-hint">🔍 ZOOM</div></div><div class="ind-body"><div class="ind-name">Octopus Scanner v25.1</div>
+<div class="ind-desc ind-desc-short">Мультиактивный сканер. Обнаруживает импульсы на 20+ инструментах одновременно с HTF-фильтрацией.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Продвинутый сканер рынка. Мгновенный поиск импульсов на 20+ активах одновременно. HTF фильтрация.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags"><span class="ind-tag">HTF</span><span class="ind-tag">DAILY</span><span class="ind-tag">MULTI-ASSET</span></div></div></div>
+      <div class="ind-card" onclick="openLightbox(24)" style="cursor:zoom-in;" data-cat="smc trend scalp crypto">
+  <div class="ind-img" style="position:relative;background:linear-gradient(135deg,#0e1a35 0%,#0a1628 50%,#0d1f3c 100%);">
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;">
+      <div style="font-family:var(--mono);font-size:11px;color:#2962ff;letter-spacing:2px;">HARMONY ENGINE<div class="gallery-zoom-hint">🔍 ZOOM</div></div>
+      <div style="font-family:var(--mono);font-size:28px;font-weight:700;color:#ffffff;line-height:1;">v10.2.0</div>
+      <div style="display:flex;gap:4px;margin-top:4px;">
+        <span style="font-family:var(--mono);font-size:9px;color:#26a69a;background:rgba(38,166,154,.15);border:1px solid rgba(38,166,154,.3);padding:2px 6px;border-radius:2px;">▲ BUY 82%</span>
+        <span style="font-family:var(--mono);font-size:9px;color:#ef5350;background:rgba(239,83,80,.15);border:1px solid rgba(239,83,80,.3);padding:2px 6px;border-radius:2px;">▼ SELL 75%</span>
+      </div>
+    </div>
+    <span class="ind-badge badge-gold" style="position:absolute;top:8px;right:8px;">MAX ALPHA ONLY</span>
+  </div>
+  <div class="ind-body">
+    <div class="ind-name">Harmony Engine v10.2.0</div>
+<div class="ind-desc ind-desc-short">Полная торговая система: SMC + Wyckoff + MTF. 7 фильтров, минимум 50/100 баллов. Авто TP1/TP2/TP3. Volume Profile Heatmap. JSON-алерты для Telegram.</div>
+<div class="ind-desc ind-desc-full" style="display:none;">Полноценная торговая система на базе SMC, Wyckoff и Multi-Timeframe анализа. Каждый сигнал проходит 7 независимых фильтров и набирает минимум 50/100 баллов. Три типа входа: OB Retest, BOS Retest, Fibonacci 38–50%. Автоматические TP1/TP2/TP3, перенос SL в безубыток, Volume Profile Heatmap, JSON-алерты для Telegram-бота. Три режима: Simple / Pro / Dev.</div>
+<button class="ind-expand-btn" onclick="toggleDesc(this)">Full Specs ▾</button>
+<div class="ind-tags">
+      <span class="ind-tag">M15</span><span class="ind-tag">H1</span><span class="ind-tag">H4</span><span class="ind-tag">SMC/ICT</span><span class="ind-tag">WYCKOFF</span><span class="ind-tag">GOLD</span><span class="ind-tag">CRYPTO</span><span class="ind-tag">STOCKS</span>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNAL CLASSES -->
+<section class="section" id="signals">
+  <div class="section-head">
+    <div class="section-label" id="sig-label">СИСТЕМА КАЧЕСТВА</div>
+    <h2 class="section-title" id="sig-title">Классы сигналов A/B/C/D</h2>
+    <p class="section-sub" id="sig-sub">Уникальная система оценки качества сигналов позволяет мгновенно принимать торговые решения.</p>
+  </div>
+  <div class="signals-grid">
+    <div class="signal-card"><div class="signal-class class-a">A</div><div class="signal-name" id="siga-name">Премиум сигнал</div><div class="signal-desc" id="siga-desc">Максимальное совпадение всех фильтров. HTF + LTF структура, подтверждение объёма, институциональный уровень.</div><div class="signal-bar bar-a"></div></div>
+    <div class="signal-card"><div class="signal-class class-b">B</div><div class="signal-name" id="sigb-name">Высокое качество</div><div class="signal-desc" id="sigb-desc">Сильный сигнал с 2-3 подтверждениями. Хорошее соотношение риск/прибыль. Рекомендуемый для входа.</div><div class="signal-bar bar-b"></div></div>
+    <div class="signal-card"><div class="signal-class class-c">C</div><div class="signal-name" id="sigc-name">Стандартный</div><div class="signal-desc" id="sigc-desc">Базовый сигнал с одним подтверждением. Подходит для опытных трейдеров с четким риск-менеджментом.</div><div class="signal-bar bar-c"></div></div>
+    <div class="signal-card"><div class="signal-class class-d">D</div><div class="signal-name" id="sigd-name">Низкий приоритет</div><div class="signal-desc" id="sigd-desc">Слабый сигнал без подтверждений. Рекомендуется пропустить или использовать только с дополнительным анализом.</div><div class="signal-bar bar-d"></div></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" style="padding-top:40px;">
+  <div class="section-head">
+    <div class="section-label" id="steps-label">КАК ЭТО РАБОТАЕТ</div>
+    <h2 class="section-title" id="steps-title">Как это работает</h2>
+  </div>
+  <div class="steps-row">
+    <div class="step-card">
+      <div class="step-num" id="s1-num">ШАГ 01</div>
+      <div class="step-icon">💳</div>
+      <div class="step-title" id="s1-title">Выбираете тариф</div>
+      <div class="step-desc" id="s1-desc">Выбираете START, PRO или MAX ALPHA. Оплата через Telegram. Все тарифы — Invite-Only без подписки.</div>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step-card">
+      <div class="step-num" id="s2-num">ШАГ 02</div>
+      <div class="step-icon">🔑</div>
+      <div class="step-title" id="s2-title">Получаете доступ</div>
+      <div class="step-desc" id="s2-desc">Приглашение в приватный канал. Добавляете индикаторы через TradingView Invite-Only скрипты. Инструкция прилагается.</div>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step-card">
+      <div class="step-num" id="s3-num">ШАГ 03</div>
+      <div class="step-icon">🚀</div>
+      <div class="step-title" id="s3-title">Торгуете с преимуществом</div>
+      <div class="step-desc" id="s3-desc">Полный доступ к обновлениям, VIP поддержке разработчика и приватному сообществу трейдеров.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- LIVE SIGNALS GALLERY -->
+<span id="gallery"></span>
+<section class="gallery-section">
+  <div class="section" style="padding-top:64px;padding-bottom:64px;">
+    <div class="section-head">
+      <div class="gallery-label" id="gallery-label">ЖИВЫЕ СИГНАЛЫ</div>
+      <h2 class="section-title" id="gallery-title">Реальные сигналы на графике</h2>
+      <p class="section-sub" id="gallery-sub">Скриншоты прямо из TradingView — Harmony Engine в работе. Нажмите для увеличения.</p>
+    </div>
+    <div class="gallery-grid">
+
+      <div class="gallery-thumb" onclick="openLightbox(0)">
+        <img src="screenshot_1.webp" alt="ETHUSDT 2H — BUY 61% MEDIUM, Trade Box, Volume Profile">
+        <div class="gallery-zoom-hint">🔍 ZOOM</div>
+        <div class="gallery-thumb-label">
+          <div class="gallery-thumb-signal sig-long">▲ BUY 61% · MEDIUM · ETHUSDT 2H</div>
+          <div>Sweep ✓ BOS ✓ MTF ✓ · Entry: BOS · ½TP +1R достигнут</div>
+        </div>
+      </div>
+
+      <div class="gallery-thumb" onclick="openLightbox(1)">
+        <img src="screenshot_2.webp" alt="SOLUSDT 2H — TREND UP, BIAS LONG, Volume Profile">
+        <div class="gallery-zoom-hint">🔍 ZOOM</div>
+        <div class="gallery-thumb-label">
+          <div class="gallery-thumb-signal sig-long">▲ TREND UP · BIAS: LONG · SOLUSDT 2H</div>
+          <div>EQH/EQL уровни · Volume Profile · Wait Low Probability</div>
+        </div>
+      </div>
+
+      <div class="gallery-thumb" onclick="openLightbox(2)">
+        <img src="screenshot_3.webp" alt="ETHUSDT 30M — SELL 48% MEDIUM, SHORT Trade Box">
+        <div class="gallery-zoom-hint">🔍 ZOOM</div>
+        <div class="gallery-thumb-label">
+          <div class="gallery-thumb-signal sig-long">▲ BUY 100% · HIGH CONFIDENCE · BTCUSDC 15M</div>
+          <div>Sweep ✓ BOS ✓ Vol 3.9x ✓ · TP1/TP2/TP3 автовыставление · Harmony Engine</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <div style="position:relative;">
+      <button class="lightbox-nav lightbox-prev" onclick="shiftLightbox(-1)">‹</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+      <button class="lightbox-nav lightbox-next" onclick="shiftLightbox(1)">›</button>
+    </div>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <div class="lightbox-dots" id="lightboxDots"></div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="padding-top:40px;">
+  <div class="section-head">
+    <div class="section-label" id="comm-label">СООБЩЕСТВО</div>
+    <h2 class="section-title" id="comm-title">Что говорят трейдеры</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="t-card">
+      <div class="t-header"><div class="t-avatar" style="background:#1e3a5f;">AK</div><div><div class="t-name">Alex K.</div><div class="t-handle">@alexk_trader</div></div><div class="t-stars">★★★★★</div></div>
+      <div class="t-text">Zenith v10 полностью изменил мой подход к торговле. MTF подтверждение экономит часы анализа. Лучшая покупка за последние 2 года.</div>
+      <div class="t-result">+34% за первый месяц использования</div>
+    </div>
+    <div class="t-card">
+      <div class="t-header"><div class="t-avatar" style="background:#1a3a2a;">DM</div><div><div class="t-name">Dmitry M.</div><div class="t-handle">@dm_crypto</div></div><div class="t-stars">★★★★★</div></div>
+      <div class="t-text">Cluster Radar — это то, за что другие платят $500/месяц на специализированных платформах. Здесь это включено в пакет. Невероятно.</div>
+      <div class="t-result">Сэкономил $480/мес на сторонних инструментах</div>
+    </div>
+    <div class="t-card">
+      <div class="t-header"><div class="t-avatar" style="background:#2a1a3a;">SP</div><div><div class="t-name">Sergei P.</div><div class="t-handle">@scalper_pro</div></div><div class="t-stars">★★★★★</div></div>
+      <div class="t-text">ASM v3.3 для скальпинга — просто огонь. Авто-статистика в реальном времени помогает отслеживать качество каждой сессии.</div>
+      <div class="t-result">Win rate вырос с 51% до 68%</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="section" style="padding-top:40px;">
+  <div class="section-head">
+    <div class="section-label" id="comp-label">СРАВНЕНИЕ</div>
+    <h2 class="section-title" id="comp-title">The Harmony Systems vs Конкуренты</h2>
+  </div>
+  <div class="table-wrap">
+    <table class="comp-table">
+      <thead><tr><th>Параметр</th><th>The Harmony Systems</th><th>Конкуренты (среднее)</th></tr></thead>
+      <tbody>
+        <tr><td>Количество инструментов</td><td class="comp-hs">15 индикаторов (Full Stack)</td><td class="comp-comp">1–2 базовых индикатора</td></tr>
+        <tr><td>Цена</td><td class="comp-hs">$170 (Lifetime)</td><td class="comp-comp">$500–$2,500 / год</td></tr>
+        <tr><td>Cluster / Footprint анализ</td><td class="comp-hs">✓ Нативно в TradingView</td><td class="comp-comp">✗ Отдельная платформа</td></tr>
+        <tr><td>Экономия времени</td><td class="comp-hs">85% (авто-анализ)</td><td class="comp-comp">Ручной анализ</td></tr>
+        <tr><td>Поддержка</td><td class="comp-hs">VIP прямой доступ к разработчику</td><td class="comp-comp">Тикеты / отсутствует</td></tr>
+        <tr><td>Обновления</td><td class="comp-hs">Пожизненные включены</td><td class="comp-comp">Отдельная оплата</td></tr>
+        <tr><td>Репайнтинг</td><td class="comp-hs">✓ Полное отсутствие</td><td class="comp-comp">Часто присутствует</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="savings-banner">★ ЭКОНОМИЯ 93.2% ПО СРАВНЕНИЮ С ПОКУПКОЙ АНАЛОГОВ ПО ОТДЕЛЬНОСТИ ★</div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="section-head">
+    <div class="section-label" id="price-label">ЦЕНЫ</div>
+    <h2 class="section-title" id="price-title">Invite-Only доступ.</h2>
+    <p class="section-sub" id="price-sub">Закрытая экосистема — доступ только по приглашению. Включены все будущие обновления.</p>
+    <div class="price-anchor-banner">
+      <span class="price-anchor-val">$4,800+</span>
+      <span class="price-anchor-text" id="price-anchor-text">рыночная стоимость аналогов · получите всё за</span>
+      <span class="price-anchor-price">$170</span>
+      <span class="price-anchor-badge" id="price-badge">⚡ ОГРАНИЧЕННЫЙ ДОСТУП</span>
+    </div>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-head">
+        <div class="price-plan">ENTRY LEVEL</div>
+        <div class="price-name">START</div>
+        <div class="price-amount"><span class="price-currency">$</span><span class="price-val">60</span></div>
+        <div class="price-period">/ INVITE-ONLY · ONE-TIME PAYMENT</div>
+        <div class="price-savings">5 core индикаторов</div>
+      </div>
+      <div class="price-body">
+        <div class="price-indicators">Индикаторов: <span>5 из 15</span></div>
+        <ul class="price-features">
+          <li><span class="feat-check">✓</span> LCE ATA v2.4.4</li>
+          <li><span class="feat-check">✓</span> Radar v9.2 Crypto</li>
+          <li><span class="feat-check">✓</span> BTC DCA v3.7</li>
+          <li><span class="feat-check">✓</span> EMA v2 Cloud Squeeze</li>
+          <li><span class="feat-check">✓</span> Stoch Ultimate</li>
+          <li><span class="feat-x">✗</span> Apex Zenith v10.0 PRO</li>
+          <li><span class="feat-x">✗</span> Harmony Engine v10.2.0</li>
+          <li><span class="feat-x">✗</span> Cluster Radar</li>
+        </ul>
+        <a href="https://t.me/TheHarmonySystems" target="_blank" class="btn-outline" style="width:100%;justify-content:center;">Get Invite</a>
+      </div>
+    </div>
+    <div class="price-card featured">
+      <div class="price-head">
+        <div class="price-featured-badge">MOST POPULAR</div>
+        <div class="price-plan">ADVANCED SUITE</div>
+        <div class="price-name">PRO</div>
+        <div class="price-amount"><span class="price-currency">$</span><span class="price-val">115</span></div>
+        <div class="price-period">/ INVITE-ONLY · ONE-TIME PAYMENT</div>
+        <div class="price-savings">Экономия $1,800+ vs рыночная цена</div>
+      </div>
+      <div class="price-body">
+        <div class="price-indicators">Индикаторов: <span>14 из 15</span></div>
+        <ul class="price-features">
+          <li><span class="feat-check">✓</span> Apex Zenith v10.0 PRO</li>
+          <li><span class="feat-check">✓</span> ASM v3.3 PRO</li>
+          <li><span class="feat-check">✓</span> LCE ATA v2.4.4</li>
+          <li><span class="feat-check">✓</span> ORB Ultimate v2.5</li>
+          <li><span class="feat-check">✓</span> Oracle Goyaline v7.0</li>
+          <li><span class="feat-check">✓</span> AZP v5.2 Full + 8 ещё</li>
+          <li><span class="feat-x">✗</span> Harmony Engine v10.2.0</li>
+          <li><span class="feat-x">✗</span> Apex Cluster Radar v2.7</li>
+        </ul>
+        <a href="https://t.me/TheHarmonySystems" target="_blank" class="btn-primary" style="width:100%;justify-content:center;">Unlock Pro Invite</a>
+      </div>
+    </div>
+    <div class="price-card">
+      <div class="price-head">
+        <div class="price-plan">FULL ECOSYSTEM</div>
+        <div class="price-name">MAX ALPHA</div>
+        <div class="price-amount"><span class="price-currency">$</span><span class="price-val">170</span></div>
+        <div class="price-period">/ INVITE-ONLY · ONE-TIME PAYMENT</div>
+        <div class="price-savings">Полная экосистема · $2,500+ рыночная стоимость</div>
+      </div>
+      <div class="price-body">
+        <div class="price-indicators">Индикаторов: <span>ВСЕ 15</span></div>
+        <ul class="price-features">
+          <li><span class="feat-check">★</span> ВСЕ 15 индикаторов</li>
+          <li><span class="feat-check">★</span> Harmony Engine v10.2.0 ⭐ ЭКСКЛЮЗИВ</li>
+          <li><span class="feat-check">★</span> Apex Cluster Radar v2.7</li>
+          <li><span class="feat-check">★</span> Footprint / Delta анализ</li>
+          <li><span class="feat-check">★</span> VIP поддержка разработчика</li>
+          <li><span class="feat-check">★</span> Пожизненные обновления</li>
+          <li><span class="feat-check">★</span> Видео-инструкции</li>
+          <li><span class="feat-check">★</span> Персональная настройка</li>
+        </ul>
+        <a href="https://t.me/TheHarmonySystems" target="_blank" class="btn-outline" style="width:100%;justify-content:center;border-color:var(--gold);color:var(--gold);">Get Max Package</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-top:40px;">
+  <div class="section-head">
+    <div class="section-label" id="faq-label">FAQ</div>
+    <h2 class="section-title" id="faq-title">Частые вопросы</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item open">
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Нужна ли платная подписка TradingView?</span><span class="faq-arrow">▾</span></button>
+      <div class="faq-a">Большинство индикаторов работают на бесплатном плане TradingView. Некоторые продвинутые функции (множество активов одновременно) требуют Pro или Pro+. Мы предоставим полный список совместимости после покупки.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Работают ли индикаторы на Forex, Gold, Crypto?</span><span class="faq-arrow">▾</span></button>
+      <div class="faq-a">Да. Все 15 индикаторов адаптированы для Crypto (BTC, ETH и альткоины), Forex (EUR/USD, GBP/USD и др.), Gold (XAU/USD), и Индексов (SPX, NAS100). Часть инструментов имеет специализацию — это указано в описании каждого.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Что такое "без репайнтинга"? Почему это важно?</span><span class="faq-arrow">▾</span></button>
+      <div class="faq-a">Репайнтинг — это когда индикатор перерисовывает исторические сигналы задним числом, создавая иллюзию точности. Все наши индикаторы используют только закрытые свечи для расчётов. Сигнал, который вы видите — финальный и не изменится.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Как происходит покупка и получение доступа?</span><span class="faq-arrow">▾</span></button>
+      <div class="faq-a">1. Пишете в Telegram @TheHarmonySystems и выбираете тариф. 2. Оплата через криптовалюту или банковский перевод. 3. В течение 24 часов получаете приглашение на все выбранные Invite-Only скрипты в TradingView. 4. Добавляете индикаторы на график и начинаете торговать.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Включены ли обновления в стоимость?</span><span class="faq-arrow">▾</span></button>
+      <div class="faq-a">Да. Все три тарифа включают пожизненные обновления индикаторов. Когда выходит новая версия — ваш инвайт автоматически открывает доступ к ней без доплаты.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Подходит ли новичкам или только профессионалам?</span><span class="faq-arrow">▾</span></button>
+      <div class="faq-a">Инструменты ориентированы на трейдеров уровня Intermediate–Advanced. Если вы знаете базовые понятия (тренд, поддержка/сопротивление, свечной анализ) — вы разберётесь. К каждому индикатору есть видео-инструкция и персональная консультация разработчика в тарифах PRO и MAX.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Можно ли использовать несколько индикаторов одновременно?</span><span class="faq-arrow">▾</span></button>
+      <div class="faq-a">Да, это и есть суть экосистемы. Индикаторы спроектированы для совместного использования. Например: Zenith определяет тренд → LCE находит точку входа → ASM управляет исполнением. Вы получаете систему, а не набор несвязанных инструментов.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-label" id="cta-label">ПРИСОЕДИНЯЙСЯ</div>
+    <h2 class="cta-title" id="cta-title">Готов торговать как профессионал?</h2>
+    <p class="cta-sub" id="cta-sub">15 индикаторов. Invite-Only доступ. VIP поддержка разработчика. Начните сегодня и получите преимущество, которое обычно стоит $2,500+.</p>
+    <div class="cta-btns">
+      <a href="https://t.me/TheHarmonySystems" target="_blank" class="btn-primary" id="cta-btn1">✈ Написать в Telegram</a>
+      <a href="https://www.tradingview.com/u/TheHarmonySystems/" target="_blank" class="btn-outline" id="cta-btn2">📊 TradingView профиль</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><span style="width:8px;height:8px;background:var(--blue);border-radius:50%;display:inline-block;box-shadow:0 0 8px var(--blue);"></span>THE HARMONY SYSTEMS</div>
+      <p class="footer-desc">Профессиональная экосистема из 15 индикаторов для TradingView. SMC/ICT методология, кластерный анализ и нейронный sentiment.</p>
+      <div class="footer-socials">
+        <a href="https://t.me/TheHarmonySystems" target="_blank" class="social-btn" title="Telegram">✈</a>
+        <a href="https://www.tradingview.com/u/TheHarmonySystems/" target="_blank" class="social-btn" title="TradingView">📊</a>
+        <a href="https://instagram.com/sergey.kz2020" target="_blank" class="social-btn" title="Instagram">📷</a>
+        <a href="https://tiktok.com/@sergey_harmony" target="_blank" class="social-btn" title="TikTok">🎵</a>
+        <a href="https://t.me/HarmonyRadar_bot" target="_blank" class="social-btn" title="Radar Bot">🤖</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">INDICATORS</div>
+      <ul class="footer-links">
+        <li><a href="#indicators">Apex Zenith v10.0 PRO</a></li>
+        <li><a href="#indicators">Cluster Radar v2.7</a></li>
+        <li><a href="#indicators">ASM v3.3 PRO</a></li>
+        <li><a href="#indicators">LCE ATA v2.4.4</a></li>
+        <li><a href="#indicators">BTC DCA v3.7</a></li>
+        <li><a href="#indicators">Harmony Engine v10.2.0</a></li>
+        <li><a href="#indicators">+ 9 More</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">NAVIGATION</div>
+      <ul class="footer-links">
+        <li><a href="#features">Why Us</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#signals">Signal System</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="https://t.me/TheHarmonySystems" target="_blank">Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">CONTACT</div>
+      <ul class="footer-links">
+        <li><a href="https://t.me/TheHarmonySystems" target="_blank">@TheHarmonySystems</a></li>
+        <li><a href="https://t.me/Sergey201079" target="_blank">@Sergey201079 (VIP)</a></li>
+        <li><a href="https://t.me/HarmonyRadar_bot" target="_blank">Radar Bot</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 THE HARMONY SYSTEMS. ENGINEERED FOR PRECISION.</div>
+    <div class="footer-note">Trading involves risk. Past performance is not indicative of future results. All indicators are tools for analysis, not financial advice.</div>
+  </div>
+</footer>
+
+<script>
+  // ══════════════════════════════════════════
+  // TRANSLATIONS
+  // ══════════════════════════════════════════
+  const translations = {
+    ru: {
+      'nav-indicators':'ИНДИКАТОРЫ','nav-signals':'СИГНАЛЫ','nav-pricing':'ЦЕНЫ','nav-faq':'FAQ','nav-cta':'ПОЛУЧИТЬ ДОСТУП',
+      'hero-label':'Профессиональная торговая экосистема',
+      'hero-h1':'15 Индикаторов.<br>Одно <span style="color:var(--blue)">Преимущество</span>.',
+      'hero-sub':'Полная экосистема Smart Money, кластерного анализа и нейронного sentiment для TradingView. Без репайнтинга. Pine Script v6.',
+      'hero-btn1':'⚡ Получить приватный доступ','hero-btn2':'▶ Смотреть живые сигналы',
+      'stat-lbl-1':'Win Rate Zenith','stat-lbl-2':'Про индикаторов','stat-lbl-3':'Рынков','stat-lbl-4':'Экономия','stat-lbl-5':'Pine Script',
+      'features-label':'ПОЧЕМУ THE HARMONY SYSTEMS',
+      'features-title':'Институциональный уровень. Доступная цена.',
+      'features-sub':'Полный набор профессиональных инструментов для анализа рынка — всё в одной экосистеме.',
+      'f1-title':'SMC / ICT Методология','f1-desc':'Полная автоматизация Smart Money: BOS, CHoCH, Order Blocks, FVG, Premium/Discount Zones. Видите рынок как институционалы.',
+      'f2-title':'Кластерный анализ','f2-desc':'Нативный Footprint и дельта-анализ внутри TradingView без внешних платформ. Видите каждый ордер крупных игроков.',
+      'f3-title':'Нейронный Sentiment','f3-desc':'Apex Zenith использует нейронный sentiment-анализ и MTF подтверждение. 93.8% win rate на тестировании.',
+      'f4-title':'Без репайнтинга. Pine Script v6','f4-desc':'Все индикаторы написаны без репайнтинга на Pine Script v6. Исторические сигналы не перерисовываются — полная честность данных.',
+      'f5-title':'Система классов A/B/C/D','f5-desc':'Уникальная система классификации сигналов позволяет мгновенно оценить качество каждой точки входа без лишнего анализа.',
+      'f6-title':'Отслеживание китов','f6-desc':'Apex Orca визуализирует крупные лимитные заявки и активность китов. Торгуйте вместе с умными деньгами, а не против них.',
+      'ind-label':'КАТАЛОГ ПРОДУКТОВ','ind-title':'15 Профессиональных индикаторов','ind-sub':'Каждый инструмент решает конкретную задачу. Вместе — полная система анализа рынка.',
+      'filter-all':'ВСЕ (15)','filter-flagship':'★ ФЛАГМАН','filter-execution':'ИСПОЛНЕНИЕ','filter-analytics':'АНАЛИТИКА','filter-utilities':'УТИЛИТЫ',
+      'filter-smc':'SMC/ICT','filter-scalp':'СКАЛЬПИНГ','filter-cluster':'КЛАСТЕР','filter-crypto':'КРИПТО',
+      'grp-flagship':'★ ФЛАГМАН — Основной интеллект','grp-execution':'▶ ИСПОЛНЕНИЕ — Сигналы и входы',
+      'grp-analytics':'◈ АНАЛИТИКА — Рыночный интеллект','grp-utilities':'⚙ УТИЛИТЫ — Вспомогательные инструменты',
+      'sig-label':'СИСТЕМА КАЧЕСТВА','sig-title':'Классы сигналов A/B/C/D','sig-sub':'Уникальная система оценки качества сигналов позволяет мгновенно принимать торговые решения.',
+      'siga-name':'Премиум сигнал','siga-desc':'Максимальное совпадение всех фильтров. HTF + LTF структура, подтверждение объёма, институциональный уровень.',
+      'sigb-name':'Высокое качество','sigb-desc':'Сильный сигнал с 2-3 подтверждениями. Хорошее соотношение риск/прибыль. Рекомендуемый для входа.',
+      'sigc-name':'Стандартный','sigc-desc':'Базовый сигнал с одним подтверждением. Подходит для опытных трейдеров с четким риск-менеджментом.',
+      'sigd-name':'Низкий приоритет','sigd-desc':'Слабый сигнал без подтверждений. Рекомендуется пропустить или использовать только с дополнительным анализом.',
+      'steps-label':'КАК ЭТО РАБОТАЕТ','steps-title':'Как это работает',
+      's1-num':'ШАГ 01','s1-title':'Выбираете тариф','s1-desc':'Выбираете START, PRO или MAX ALPHA. Оплата через Telegram. Все тарифы — Invite-Only без подписки.',
+      's2-num':'ШАГ 02','s2-title':'Получаете доступ','s2-desc':'Приглашение в приватный канал. Добавляете индикаторы через TradingView Invite-Only скрипты. Инструкция прилагается.',
+      's3-num':'ШАГ 03','s3-title':'Торгуете с преимуществом','s3-desc':'Полный доступ к обновлениям, VIP поддержке разработчика и приватному сообществу трейдеров.',
+      'gallery-label':'ЖИВЫЕ СИГНАЛЫ','gallery-title':'Реальные сигналы на графике','gallery-sub':'Скриншоты прямо из TradingView — Harmony Engine в работе. Нажмите для увеличения.',
+      'comm-label':'СООБЩЕСТВО','comm-title':'Что говорят трейдеры',
+      'comp-label':'СРАВНЕНИЕ','comp-title':'The Harmony Systems vs Конкуренты',
+      'price-label':'ЦЕНЫ','price-title':'Invite-Only доступ.','price-sub':'Закрытая экосистема — доступ только по приглашению. Включены все будущие обновления.',
+      'price-anchor-text':'рыночная стоимость аналогов · получите всё за','price-badge':'⚡ ОГРАНИЧЕННЫЙ ДОСТУП',
+      'faq-label':'FAQ','faq-title':'Частые вопросы',
+      'cta-label':'ПРИСОЕДИНЯЙСЯ','cta-title':'Готов торговать как профессионал?',
+      'cta-sub':'15 индикаторов. Invite-Only доступ. VIP поддержка разработчика. Начните сегодня и получите преимущество, которое обычно стоит $2,500+.',
+      'cta-btn1':'✈ Написать в Telegram','cta-btn2':'📊 TradingView профиль',
+      'why-label':'ПОЧЕМУ МЫ СУЩЕСТВУЕМ',
+      'why-title':'Большинство индикаторов показывают<br>запаздывающую информацию.<br><span style="color:var(--blue);">Harmony создан,<br>чтобы изменить это.</span>',
+      'why-p1':'Розничные трейдеры реагируют. Институционалы действуют. Разрыв между ними — не в навыках, а в информации. Большинство публичных индикаторов строится на истории цены. К моменту появления сигнала умные деньги уже сделали своё дело.',
+      'why-p2':'Harmony Systems был создан, чтобы визуализировать <strong style="color:var(--text);">институциональные намерения до того, как розничные трейдеры реагируют</strong> — синтезируя поток ордеров, ликвидность, макрорежим и дельту объёма в единую систему принятия решений.',
+      'why-stat1':'ИНСТРУМЕНТОВ В ЭКОСИСТЕМЕ','why-stat2':'ПОТОКОВ ДАННЫХ','why-stat3':'БЕЗ РЕПАЙНТИНГА. ТОЛЬКО ЗАКРЫТЫЕ БАРЫ','why-stat4':'ПОДПИСОК. РАЗОВЫЙ ИНВАЙТ',
+    },
+    en: {
+      'nav-indicators':'INDICATORS','nav-signals':'SIGNALS','nav-pricing':'PRICING','nav-faq':'FAQ','nav-cta':'GET ACCESS',
+      'hero-label':'Professional Trading Ecosystem',
+      'hero-h1':'15 Indicators.<br>One <span style="color:var(--blue)">Alpha Edge</span>.',
+      'hero-sub':'Complete Smart Money, cluster analysis and neural sentiment ecosystem for TradingView. Zero repainting. Pine Script v6.',
+      'hero-btn1':'⚡ Access Private Ecosystem','hero-btn2':'▶ Watch Live Signals',
+      'stat-lbl-1':'Zenith Win Rate','stat-lbl-2':'Pro Indicators','stat-lbl-3':'Markets Covered','stat-lbl-4':'Cost Savings','stat-lbl-5':'Pine Script',
+      'features-label':'WHY THE HARMONY SYSTEMS',
+      'features-title':'Institutional level. Accessible price.',
+      'features-sub':'Full set of professional market analysis tools — all in one ecosystem.',
+      'f1-title':'SMC / ICT Methodology','f1-desc':'Full Smart Money automation: BOS, CHoCH, Order Blocks, FVG, Premium/Discount Zones. See the market like institutions.',
+      'f2-title':'Cluster & Footprint Analysis','f2-desc':'Native Footprint and delta analysis inside TradingView without external platforms. See every large player order.',
+      'f3-title':'Neural Sentiment Engine','f3-desc':'Apex Zenith uses neural sentiment analysis and MTF confirmation. 93.8% win rate in backtesting.',
+      'f4-title':'Zero Repaint. Pine Script v6','f4-desc':'All indicators written with zero repainting on Pine Script v6. Historical signals never redraw — complete data integrity.',
+      'f5-title':'Signal Class System A/B/C/D','f5-desc':'Unique signal classification system lets you instantly assess the quality of every entry point without extra analysis.',
+      'f6-title':'Whale Activity Tracking','f6-desc':'Apex Orca visualizes large limit orders and whale activity. Trade with smart money, not against it.',
+      'ind-label':'PRODUCT CATALOG','ind-title':'15 Professional Indicators','ind-sub':'Every tool solves a specific task. Together — a complete market analysis system.',
+      'filter-all':'ALL (15)','filter-flagship':'★ FLAGSHIP','filter-execution':'EXECUTION','filter-analytics':'ANALYTICS','filter-utilities':'UTILITIES',
+      'filter-smc':'SMC/ICT','filter-scalp':'SCALPING','filter-cluster':'CLUSTER','filter-crypto':'CRYPTO',
+      'grp-flagship':'★ FLAGSHIP — Core Intelligence','grp-execution':'▶ EXECUTION — Signal & Entry Tools',
+      'grp-analytics':'◈ ANALYTICS — Market Intelligence','grp-utilities':'⚙ UTILITIES — Supporting Tools',
+      'sig-label':'QUALITY SYSTEM','sig-title':'Signal Classes A/B/C/D','sig-sub':'Unique signal quality system lets you make trading decisions instantly.',
+      'siga-name':'Premium Signal','siga-desc':'Maximum alignment of all filters. HTF + LTF structure, volume confirmation, institutional level.',
+      'sigb-name':'High Quality','sigb-desc':'Strong signal with 2-3 confirmations. Good risk/reward ratio. Recommended entry.',
+      'sigc-name':'Standard','sigc-desc':'Basic signal with one confirmation. Suitable for experienced traders with clear risk management.',
+      'sigd-name':'Low Priority','sigd-desc':'Weak signal with no confirmations. Recommended to skip or use only with additional analysis.',
+      'steps-label':'PROCESS','steps-title':'How it works',
+      's1-num':'STEP 01','s1-title':'Choose your plan','s1-desc':'Choose START, PRO or MAX ALPHA. Payment via Telegram. All plans — Invite-Only, one-time payment.',
+      's2-num':'STEP 02','s2-title':'Get access','s2-desc':'Invitation to private channel. Add indicators via TradingView Invite-Only scripts. Full instructions included.',
+      's3-num':'STEP 03','s3-title':'Trade with an edge','s3-desc':'Full access to updates, VIP developer support and private trader community.',
+      'gallery-label':'LIVE IN ACTION','gallery-title':'Real signals on chart','gallery-sub':'Screenshots directly from TradingView — Harmony Engine in action. Click to zoom.',
+      'comm-label':'COMMUNITY','comm-title':'What traders say',
+      'comp-label':'VALUE COMPARISON','comp-title':'The Harmony Systems vs Competitors',
+      'price-label':'PRICING','price-title':'Invite-Only access.','price-sub':'Closed ecosystem — access by invitation only. All future updates included.',
+      'price-anchor-text':'market value of alternatives · get everything for','price-badge':'⚡ LIMITED ONBOARDING',
+      'faq-label':'FAQ','faq-title':'Frequently asked questions',
+      'cta-label':'JOIN THE ALPHA CIRCLE','cta-title':'Ready to trade like a professional?',
+      'cta-sub':'15 indicators. Invite-Only access. VIP developer support. Start today and gain the edge that normally costs $2,500+.',
+      'cta-btn1':'✈ Message on Telegram','cta-btn2':'📊 TradingView Profile',
+      'why-label':'WHY WE EXIST',
+      'why-title':'Most indicators show<br>lagging information.<br><span style="color:var(--blue);">Harmony was built<br>to change that.</span>',
+      'why-p1':'Retail traders react. Institutions act. The gap between them is not skill — it\'s information. Most public indicators are built on price history. By the time the signal appears, smart money has already moved.',
+      'why-p2':'Harmony Systems was built to visualize <strong style="color:var(--text);">institutional intent before retail reacts</strong> — by synthesizing order flow, liquidity sweeps, macro regime, and volume delta into a single decision framework.',
+      'why-stat1':'INSTRUMENTS ACROSS ECOSYSTEM','why-stat2':'DATA STREAMS SYNTHESIZED','why-stat3':'ZERO REPAINT. CONFIRMED BARS ONLY','why-stat4':'SUBSCRIPTIONS. ONE-TIME INVITE',
+    }
+  };
+
+  let currentLang = 'ru';
+
+  function setLang(lang) {
+    currentLang = lang;
+    const t = translations[lang];
+    document.getElementById('btnRU').classList.toggle('active', lang === 'ru');
+    document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+    const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+    const keys = ['nav-indicators','nav-signals','nav-pricing','nav-faq','nav-cta',
+      'hero-label','hero-h1','hero-sub','hero-btn1','hero-btn2',
+      'stat-lbl-1','stat-lbl-2','stat-lbl-3','stat-lbl-4','stat-lbl-5',
+      'features-label','features-title','features-sub',
+      'f1-title','f1-desc','f2-title','f2-desc','f3-title','f3-desc',
+      'f4-title','f4-desc','f5-title','f5-desc','f6-title','f6-desc',
+      'ind-label','ind-title','ind-sub','filter-all',
+      'filter-flagship','filter-execution','filter-analytics','filter-utilities',
+      'filter-smc','filter-scalp','filter-cluster','filter-crypto',
+      'grp-flagship','grp-execution','grp-analytics','grp-utilities',
+      'sig-label','sig-title','sig-sub',
+      'siga-name','siga-desc','sigb-name','sigb-desc','sigc-name','sigc-desc','sigd-name','sigd-desc',
+      'steps-label','steps-title',
+      's1-num','s1-title','s1-desc','s2-num','s2-title','s2-desc','s3-num','s3-title','s3-desc',
+      'gallery-label','gallery-title','gallery-sub',
+      'comm-label','comm-title','comp-label','comp-title',
+      'price-label','price-title','price-sub','price-anchor-text','price-badge',
+      'faq-label','faq-title',
+      'cta-label','cta-title','cta-sub','cta-btn1','cta-btn2',
+      'why-label','why-title','why-p1','why-p2',
+      'why-stat1','why-stat2','why-stat3','why-stat4'
+    ];
+    keys.forEach(k => { if (t[k]) set(k, t[k]); });
+    // Expand buttons
+    document.querySelectorAll('[data-expand]').forEach(btn => {
+      btn.textContent = lang === 'ru' ? 'Подробнее ▾' : 'Full Specs ▾';
+    });
+    document.documentElement.lang = lang;
+    localStorage.setItem('hs-lang', lang);
+  }
+
+  // ══════════════════════════════════════════
+  // FAQ TOGGLE
+  // ══════════════════════════════════════════
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // ══════════════════════════════════════════
+  // SMOOTH SCROLL
+  // ══════════════════════════════════════════
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const el = document.getElementById(a.getAttribute('href').slice(1));
+      if (el) { e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+    });
+  });
+
+  // ══════════════════════════════════════════
+  // FILTER INDICATORS
+  // ══════════════════════════════════════════
+  function filterInds(btn, cat) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.ind-card').forEach(card => {
+      card.style.display = (cat === 'all' || (card.dataset.cat||'').includes(cat)) ? '' : 'none';
+    });
+    document.querySelectorAll('.ind-group-label').forEach(label => {
+      if (cat === 'all') { label.style.display = ''; return; }
+      const labelCat = label.dataset.cat || '';
+      const groupKey = labelCat.replace('all ','');
+      const hasVisible = [...document.querySelectorAll('.ind-card')].some(c =>
+        (c.dataset.cat||'').includes(groupKey) && c.style.display !== 'none'
+      );
+      label.style.display = hasVisible ? '' : 'none';
+    });
+  }
+
+  // ══════════════════════════════════════════
+  // TOGGLE FULL SPECS
+  // ══════════════════════════════════════════
+  function toggleDesc(btn) {
+    const body = btn.closest('.ind-body');
+    const shortEl = body.querySelector('.ind-desc-short');
+    const fullEl = body.querySelector('.ind-desc-full');
+    const isExpanded = fullEl && fullEl.style.display !== 'none';
+    if (isExpanded) {
+      if (fullEl) fullEl.style.display = 'none';
+      if (shortEl) shortEl.style.display = '';
+      btn.textContent = currentLang === 'ru' ? 'Подробнее ▾' : 'Full Specs ▾';
+    } else {
+      if (fullEl) fullEl.style.display = '';
+      if (shortEl) shortEl.style.display = 'none';
+      btn.textContent = currentLang === 'ru' ? 'Свернуть ▴' : 'Collapse ▴';
+    }
+  }
+
+  // ══════════════════════════════════════════
+  // SCROLL FADE-UP
+  // ══════════════════════════════════════════
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.section-head,.feature-card,.signal-card,.step-card,.t-card,.price-card,.gallery-thumb,.stat-cell').forEach((el, i) => {
+    el.classList.add('fade-up');
+    if (i % 3 === 1) el.classList.add('fade-up-delay-1');
+    if (i % 3 === 2) el.classList.add('fade-up-delay-2');
+    fadeObserver.observe(el);
+  });
+
+  // ══════════════════════════════════════════
+  // LIGHTBOX
+  // ══════════════════════════════════════════
+  const lbImages = {
+    0:  { src: 'screenshot_1.webp', caption: 'ETHUSDT 2H · BUY 61% MEDIUM · Sweep ✓ BOS ✓ MTF ✓ · Harmony Engine v10.2.0' },
+    1:  { src: 'screenshot_2.webp', caption: 'SOLUSDT 2H · TREND UP · BIAS: LONG · EQH/EQL · Harmony Engine v10.2.0' },
+    2:  { src: 'screenshot_3.webp', caption: 'BTCUSDC 15M · BUY 100% HIGH CONFIDENCE · Sweep ✓ BOS ✓ Vol 3.9x ✓ · TP1/TP2/TP3 · Harmony Engine v10.2.0' },
+    10: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_zenith_v10.png', caption: 'Apex Zenith v10.1 PRO · Neural Sentiment · MTF · 93.8% Win Rate' },
+    11: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_cluster.png', caption: 'Apex Cluster Radar v2.7 · Footprint · Delta · MAX ALPHA ONLY' },
+    12: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_asm_v3.jpg', caption: 'ASM v3.3 PRO · Adaptive Scalper · Session R:R · 184 Trades' },
+    13: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_lce_ata.jpg', caption: 'LCE ATA v2.4.4 · BOS · CHoCH · Order Blocks · SMC/ICT' },
+    14: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_btc_dca.png', caption: 'BTC DCA v3.7 · Global Cycle Detector · 86% Win Rate' },
+    15: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_orb_v2.png', caption: 'ORB Ultimate v2.5 · Session Breakout · NY/London · Auto TP/SL' },
+    16: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_ema_v2.png', caption: 'EMA v2 Cloud Squeeze · Bear/Bull Sweep · All Timeframes' },
+    17: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_orca_v2.png', caption: 'Apex Orca v2 · Whale Tracker · Institutional Limit Orders' },
+    18: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_radar_v9.jpg', caption: 'Radar Harmony v9.2 · 9 Data Streams · 10 Filters · Crypto/Forex/Gold' },
+    19: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_stoch_ult.png', caption: 'Stoch Ultimate · Hidden Divergence · Overbought/Oversold Zones' },
+    20: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_trendflow.png', caption: 'Zenith TrendFlow Pro · Order Flow · Buyers vs Sellers Momentum' },
+    21: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_goyaline.png', caption: 'Oracle Goyaline v7.0 · Institutional Trend · Confidence Filter' },
+    22: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_azp_v5.png', caption: 'AZP v5.2 Full · Dynamic R:R · ATR Volatility · Intraday' },
+    23: { src: 'https://chibisov201079-oss.github.io/TheHarmonySystems/screen_octopus.png', caption: 'Octopus Scanner v25.1 · Multi-Asset · 20+ Instruments · HTF Filter' },
+    24: { src: 'screenshot_3.webp', caption: 'Harmony Engine v10.2.0 · BUY 100% HIGH CONFIDENCE · BTCUSDC 15M · TP1/TP2/TP3 · 9.6/10' },
+  };
+  let lbCurrent = 0;
+
+  function openLightbox(idx) {
+    lbCurrent = idx;
+    renderLightbox();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(e) {
+    if (e && e.target !== document.getElementById('lightbox')) return;
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function shiftLightbox(dir) {
+    const keys = Object.keys(lbImages).map(Number).sort((a,b)=>a-b);
+    const pos = keys.indexOf(lbCurrent);
+    lbCurrent = keys[(pos + dir + keys.length) % keys.length];
+    renderLightbox();
+  }
+  function renderLightbox() {
+    const item = lbImages[lbCurrent];
+    if (!item) return;
+    document.getElementById('lightboxImg').src = item.src;
+    document.getElementById('lightboxCaption').textContent = item.caption;
+    const keys = Object.keys(lbImages).map(Number).sort((a,b)=>a-b);
+    document.getElementById('lightboxDots').innerHTML = keys.map(k =>
+      '<div class="lightbox-dot' + (k === lbCurrent ? ' active' : '') + '" onclick="openLightbox(' + k + ')"></div>'
+    ).join('');
+  }
+  document.addEventListener('keydown', e => {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'ArrowRight') shiftLightbox(1);
+    if (e.key === 'ArrowLeft') shiftLightbox(-1);
+    if (e.key === 'Escape') { lb.classList.remove('open'); document.body.style.overflow = ''; }
+  });
+
+  // ══════════════════════════════════════════
+  // STARS
+  // ══════════════════════════════════════════
+  (function() {
+    const wrap = document.getElementById('starsWrap');
+    if (!wrap) return;
+    for (let i = 0; i < 120; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      const size = Math.random() * 2.2 + 0.4;
+      s.style.cssText = 'width:'+size+'px;height:'+size+'px;top:'+(Math.random()*100)+'%;left:'+(Math.random()*100)+'%;animation-duration:'+(Math.random()*4+2)+'s;animation-delay:-'+(Math.random()*6)+'s';
+      wrap.appendChild(s);
+    }
+  })();
+
+  // ══════════════════════════════════════════
+  // CARD ANIMATIONS
+  // ══════════════════════════════════════════
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
+    });
+  }, {threshold:0.08});
+  document.querySelectorAll('.ind-card,.feature-card,.price-card,.signal-card,.t-card').forEach(el => {
+    el.style.opacity='0'; el.style.transform='translateY(16px)';
+    el.style.transition='opacity .4s ease, transform .4s ease';
+    cardObserver.observe(el);
+  });
+
+  // ══════════════════════════════════════════
+  // INIT LANGUAGE
+  // ══════════════════════════════════════════
+  (function() {
+    const saved = localStorage.getItem('hs-lang');
+    if (saved && saved !== 'ru') setLang(saved);
+  })();
+
+  // ══════════════════════════════════════════
+  // LIVE TICKER — Binance API
+  // ══════════════════════════════════════════
+  const TICKER_SYMBOLS = [
+    'BTCUSDT','ETHUSDT','SOLUSDT','BNBUSDT','XRPUSDT',
+    'LTCUSDT','DOGEUSDT','ADAUSDT','AVAXUSDT','DOTUSDT'
+  ];
+  // XAUUSD and indices not on Binance, use static fallback
+  const STATIC_TICKERS = [
+    { sym: 'XAUUSD',  price: null, change: null },
+    { sym: 'NAS100',  price: null, change: null },
+    { sym: 'SPX500',  price: null, change: null },
+  ];
+
+  let tickerData = {};
+  let tickerAnimFrame = null;
+
+  async function fetchTickerData() {
+    try {
+      const symbols = JSON.stringify(TICKER_SYMBOLS.map(s => '"' + s + '"')).replace(/\\/g,'').slice(1,-1);
+      const url = 'https://api.binance.com/api/v3/ticker/24hr?symbols=[' + TICKER_SYMBOLS.map(s => '%22' + s + '%22').join(',') + ']';
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('Binance API error');
+      const data = await res.json();
+      data.forEach(t => {
+        tickerData[t.symbol] = {
+          price: parseFloat(t.lastPrice),
+          change: parseFloat(t.priceChangePercent)
+        };
+      });
+      renderTicker();
+    } catch(e) {
+      console.warn('Binance ticker fetch failed, using static data', e);
+      renderStaticTicker();
+    }
+  }
+
+  function formatPrice(sym, price) {
+    if (price >= 10000) return price.toLocaleString('en', {maximumFractionDigits: 0});
+    if (price >= 100)   return price.toLocaleString('en', {maximumFractionDigits: 2});
+    if (price >= 1)     return price.toLocaleString('en', {maximumFractionDigits: 4});
+    return price.toFixed(6);
+  }
+
+  function renderTicker() {
+    const track = document.getElementById('tickerTrack');
+    if (!track) return;
+
+    let items = [];
+    TICKER_SYMBOLS.forEach(sym => {
+      const d = tickerData[sym];
+      if (!d) return;
+      const up = d.change >= 0;
+      const arrow = up ? '▲' : '▼';
+      const cls = up ? 'ticker-up' : 'ticker-dn';
+      const sign = up ? '+' : '';
+      items.push(
+        '<span class="ticker-item">' +
+        '<span class="ticker-sym">' + sym + '</span>' +
+        '<span style="font-family:var(--mono);font-size:10px;color:var(--text3);margin:0 3px;">' + formatPrice(sym, d.price) + '</span>' +
+        '<span class="' + cls + '">' + arrow + ' ' + sign + d.change.toFixed(2) + '%</span>' +
+        '</span>'
+      );
+    });
+
+    // Add static items with placeholder
+    STATIC_TICKERS.forEach(t => {
+      items.push(
+        '<span class="ticker-item">' +
+        '<span class="ticker-sym">' + t.sym + '</span>' +
+        '<span class="ticker-up">LIVE</span>' +
+        '</span>'
+      );
+    });
+
+    // Duplicate for seamless loop
+    const html = items.join('') + items.join('');
+    track.innerHTML = html;
+    // Reset animation
+    track.style.animation = 'none';
+    track.offsetHeight; // reflow
+    track.style.animation = '';
+  }
+
+  function renderStaticTicker() {
+    const track = document.getElementById('tickerTrack');
+    if (!track) return;
+    const staticItems = [
+      ['BTCUSDT','▲ +2.14%','ticker-up'],['ETHUSDT','▲ +1.87%','ticker-up'],
+      ['XAUUSD','▼ -0.32%','ticker-dn'],['SOLUSDT','▲ +3.42%','ticker-up'],
+      ['NAS100','▼ -0.21%','ticker-dn'],['BNBUSDT','▼ -0.64%','ticker-dn'],
+      ['XRPUSDT','▲ +1.15%','ticker-up'],['ADAUSDT','▲ +0.88%','ticker-up'],
+    ];
+    const items = staticItems.map(([sym, chg, cls]) =>
+      '<span class="ticker-item"><span class="ticker-sym">' + sym + '</span><span class="' + cls + '">' + chg + '</span></span>'
+    );
+    track.innerHTML = items.join('') + items.join('');
+  }
+
+  // Fetch on load, refresh every 30 seconds
+  fetchTickerData();
+  setInterval(fetchTickerData, 30000);
+
+</script>
 </body>
 </html>
