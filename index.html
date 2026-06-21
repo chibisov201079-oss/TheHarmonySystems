@@ -288,8 +288,8 @@ a{text-decoration:none;}
 .filter-sep{width:1px;background:var(--border);height:24px;flex-shrink:0;}
 .group-label{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:14px 0 10px;border-bottom:1px solid var(--border);margin-bottom:14px;display:flex;align-items:center;gap:8px;width:100%;}
 .gl-f{color:var(--gold);}.gl-e{color:var(--blue);}.gl-a{color:var(--green);}.gl-u{color:var(--text3);}
-.ind-grid{columns:3;column-gap:12px;margin-bottom:8px;}
-.ind-card{background:var(--bg);border:1px solid var(--border);border-radius:6px;overflow:hidden;position:relative;transition:border-color .2s,transform .2s;cursor:zoom-in;break-inside:avoid;margin-bottom:12px;}
+.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:8px;}
+.ind-card{background:var(--bg);border:1px solid var(--border);border-radius:6px;overflow:hidden;position:relative;transition:border-color .2s,transform .2s;cursor:zoom-in;display:flex;flex-direction:column;}
 .ind-card:hover{border-color:var(--green);transform:translateY(-2px);}
 .ind-card::before{content:'';position:absolute;inset:0;border-radius:6px;padding:1px;background:linear-gradient(135deg,var(--green),transparent,var(--blue));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s;}
 .ind-card:hover::before{opacity:1;}
@@ -302,9 +302,9 @@ a{text-decoration:none;}
 .badge-g{background:rgba(38,166,154,.2);color:var(--green);border:1px solid rgba(38,166,154,.3);}
 .badge-au{background:rgba(240,185,11,.15);color:var(--gold);border:1px solid rgba(240,185,11,.3);}
 .badge-b{background:rgba(41,98,255,.15);color:#5c8bff;border:1px solid rgba(41,98,255,.3);}
-.ind-body{padding:14px;}
+.ind-body{padding:14px;flex:1;display:flex;flex-direction:column;}
 .ind-name{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;}
-.ind-desc{font-size:12px;color:var(--text2);line-height:1.55;margin-bottom:10px;}
+.ind-desc{font-size:12px;color:var(--text2);line-height:1.55;margin-bottom:10px;flex:1;}
 .ind-tags{display:flex;gap:4px;flex-wrap:wrap;}
 .ind-tag{font-family:var(--mono);font-size:9px;color:var(--text3);background:var(--bg3);border:1px solid var(--border);padding:2px 6px;border-radius:2px;}
 
@@ -569,7 +569,7 @@ body.ready .fade-up.in{opacity:1;transform:translateY(0);}
   .hero-sub{margin:0 auto 32px;}.hero-chart{display:none;}
   .strip-inner{grid-template-columns:repeat(3,1fr);}
   .bento-grid{grid-template-columns:1fr;}.two-cols{grid-template-columns:1fr;}
-  .ind-grid{columns:2;}
+  .ind-grid{grid-template-columns:repeat(2,1fr);}
   .signals-grid{grid-template-columns:repeat(2,1fr);}
   .steps-row{grid-template-columns:1fr;gap:12px;}.step-arrow{display:none;}
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
@@ -585,7 +585,7 @@ body.ready .fade-up.in{opacity:1;transform:translateY(0);}
   .hero-stats{gap:16px;flex-wrap:wrap;}
   .strip-inner{grid-template-columns:repeat(2,1fr);}.strip-cell{padding:18px 14px;}.strip-val{font-size:22px;}
   .section{padding:52px 16px;}.section-title{font-size:26px;}
-  .ind-grid{columns:1;}.signals-grid{grid-template-columns:1fr 1fr;}
+  .ind-grid{grid-template-columns:1fr;}.signals-grid{grid-template-columns:1fr 1fr;}
   .gallery-grid{grid-template-columns:1fr;}.pricing-grid{grid-template-columns:1fr;max-width:100%;}
   .path-grid{grid-template-columns:1fr;}.anchor-h{font-size:26px;}.anchor-vs{grid-template-columns:1fr;}
   .footer-inner{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;text-align:center;}
@@ -995,7 +995,7 @@ body.ready .fade-up.in{
 @media(max-width:768px){
   .pricing-grid{grid-template-columns:1fr !important;}
   .bento-grid{grid-template-columns:1fr !important;}
-  .ind-grid{columns:1 !important;}
+  .ind-grid{grid-template-columns:1fr !important;}
   .hero-inner{grid-template-columns:1fr !important;text-align:center;}
   .hero-btns{justify-content:center;}
   .hero-stats,.hero-benefits{align-items:center;}
@@ -1914,7 +1914,7 @@ html {
           <div class="tl-stat-row">
             <div><span class="tl-stat-val">3</span><span class="tl-stat-lbl">года разработки</span></div>
             <div><span class="tl-stat-val">800+</span><span class="tl-stat-lbl">верифицированных сделок</span></div>
-            <div><span class="tl-stat-val">17</span><span class="tl-stat-lbl">инструментов</span></div>
+            <div><span class="tl-stat-val">21</span><span class="tl-stat-lbl">инструмент</span></div>
           </div>
         </div>
       </div>
