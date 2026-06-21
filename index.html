@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<meta charset="UTF-8">
 
   <!-- ══ WEB ANALYTICS ══ -->
   <!-- Google Analytics 4 — замените G-VMQNHNFKMB на ваш ID -->
@@ -26,7 +27,6 @@
 
 
 
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Harmony Systems — 21 Профессиональный Индикатор TradingView</title>
 <meta name="description" content="Профессиональная экосистема 21 индикатор для TradingView. SMC/ICT, кластерный анализ, нейронный sentiment. Pine Script v6. Zero Repainting. Invite-Only от $60.">
@@ -36,7 +36,7 @@
 :root{
   --bg:#0e1116;--bg2:#131722;--bg3:#1a1f2e;--bg4:#1e2433;
   --border:#2a2e39;--border2:#363a45;
-  --text:#d1d4dc;--text2:#787b86;--text3:#4a4e5a;--white:#ffffff;
+  --text:#d1d4dc;--text2:#787b86;--text3:#6a6e7a;--white:#ffffff;
   --green:#26a69a;--green2:#089981;--green-glow:rgba(38,166,154,.12);
   --red:#ef5350;--gold:#f0b90b;--gold2:#d4a017;
   --blue:#2962ff;--blue2:#1e53e5;--blue-glow:rgba(41,98,255,.12);
@@ -115,7 +115,7 @@ a{text-decoration:none;}
 .hs-lbl{font-size:9px;color:var(--text2);}
 .class-badge{position:absolute;top:-14px;left:-14px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:10px 14px;font-family:var(--mono);box-shadow:0 8px 24px rgba(0,0,0,.4);z-index:6;}
 .class-badge-val{font-size:28px;font-weight:700;color:var(--green);line-height:1;}
-.class-badge-lbl{font-size:8px;color:var(--text3);letter-spacing:.5px;margin-top:2px;}
+.class-badge-lbl{font-size:10px;color:var(--text3);letter-spacing:.5px;margin-top:2px;}
 
 /* STRIP */
 .strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
@@ -216,7 +216,7 @@ a{text-decoration:none;}
 .tier-label{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.7);margin-top:8px;letter-spacing:1.5px;font-weight:600;text-align:center;transition:color .3s;}
 .tier-pw.active .tier-label{color:#fff;}
 .tier-price{font-family:var(--mono);font-size:10px;color:var(--text2);margin-top:3px;}
-.tier-badge{font-family:var(--mono);font-size:8px;padding:3px 8px;border-radius:8px;margin-top:4px;letter-spacing:.5px;text-transform:uppercase;}
+.tier-badge{font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:8px;margin-top:4px;letter-spacing:.5px;text-transform:uppercase;}
 .tier-panel-area{position:relative;z-index:4;width:100%;max-width:640px;min-height:40px;padding:0 16px;margin:0 auto;}
 .tier-pn{display:none;position:relative;animation:fadeUp .4s ease;background:rgba(14,17,22,.92);backdrop-filter:blur(14px);border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin-top:14px;}
 .tier-pn.active{display:block;}
@@ -234,7 +234,7 @@ a{text-decoration:none;}
 .tier-ii.tcr{background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.12);}
 .tier-ic{font-size:13px;margin-top:2px;flex-shrink:0;}
 .tier-in{font-family:var(--sans);font-size:14px;font-weight:500;color:var(--text);}
-.tier-tg{font-family:var(--mono);font-size:8px;padding:2px 6px;border-radius:4px;margin-left:5px;vertical-align:1px;}
+.tier-tg{font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:4px;margin-left:5px;vertical-align:1px;}
 .tier-tf{display:inline-flex;gap:3px;margin-left:auto;flex-shrink:0;margin-top:2px;}
 .tier-tf span{font-family:var(--mono);font-size:9px;padding:2px 6px;border-radius:3px;background:rgba(255,255,255,.1);color:var(--text);letter-spacing:.3px;}
 .tier-id{font-size:12px;color:var(--text2);margin-top:2px;}
@@ -245,7 +245,7 @@ a{text-decoration:none;}
 .tier-pp{display:flex;align-items:center;gap:5px;margin-bottom:10px;}
 .tier-pps{font-family:var(--mono);font-size:9px;padding:3px 8px;border-radius:8px;background:rgba(255,255,255,.05);color:var(--text2);}
 .tier-pps.tcur{color:#fff;}
-.tier-ppa{color:var(--text3);font-size:8px;}
+.tier-ppa{color:var(--text3);font-size:10px;}
 .tier-hint{text-align:center;color:var(--text2);font-family:var(--mono);font-size:11px;padding:18px 0;letter-spacing:.5px;}
 .tier-cursor{position:absolute;width:28px;height:28px;pointer-events:none;z-index:10;opacity:0;}
 .tier-cursor svg{width:100%;height:100%;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5));}
@@ -420,7 +420,7 @@ a{text-decoration:none;}
 .cd-block{text-align:center;}
 .cd-num{font-family:var(--mono);font-size:26px;font-weight:700;color:var(--white);background:var(--bg4);border:1px solid var(--border);border-radius:4px;padding:4px 10px;min-width:44px;display:block;text-align:center;line-height:1.2;}
 .cd-sep{font-family:var(--mono);font-size:20px;color:var(--border2);padding-bottom:8px;}
-.cd-unit{font-family:var(--mono);font-size:8px;color:var(--text3);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
+.cd-unit{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
 .cd-note{font-family:var(--mono);font-size:10px;color:var(--text3);margin-left:auto;}
 
 /* SCARCITY */
@@ -593,10 +593,10 @@ body.ready .fade-up.in{opacity:1;transform:translateY(0);}
   .tier-row{gap:20px;height:150px;}
   .tier-pl{transform:scale(.7);}
   .tier-panel-area{padding:0 6px;}.tier-pn{padding:14px 12px;}
-  .tier-label{font-size:9px;}.tier-price{font-size:8px;}
-  .tier-badge{font-size:6px;}
+  .tier-label{font-size:9px;}.tier-price{font-size:10px;}
+  .tier-badge{font-size:10px;}
   .tier-in{font-size:12px;}.tier-id{font-size:10px;}
-  .tier-tf span{font-size:8px;padding:1px 4px;}
+  .tier-tf span{font-size:10px;padding:1px 4px;}
   .tier-cursor{display:none;}
 }
 
@@ -749,7 +749,7 @@ body.ready .fade-up.in{
 }
 .eco-step-tools{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-bottom:10px;}
 .eco-tool{
-  font-family:var(--mono);font-size:8px;
+  font-family:var(--mono);font-size:10px;
   color:var(--text2);background:var(--bg3);
   border:1px solid var(--border);
   padding:2px 6px;border-radius:3px;
@@ -1310,6 +1310,16 @@ html {
 .price-card:hover::before {
   opacity: 1;
 }
+
+/* ══ ACCESSIBILITY: REDUCED MOTION ══ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}
 </style>
 
   <meta property="og:type" content="website">
@@ -1789,7 +1799,7 @@ html {
       <p class="section-sub">5 специализированных направлений. Нажмите — раскроется детальное описание.</p>
     </div>
     <div class="bento-grid fade-up d1">
-      <div class="bento-card open" onclick="toggleBento(this)">
+      <div class="bento-card open" role="button" tabindex="0" aria-expanded="true" onclick="toggleBento(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleBento(this)}">
         <div class="bento-head">
           <span class="bento-num">01 —</span><span class="bento-icon">🧠</span>
           <div class="bento-info"><div class="bento-title">SMC / ICT Структура</div><div class="bento-short">BOS, CHoCH, Order Blocks, FVG, Premium/Discount</div></div>
@@ -1801,7 +1811,7 @@ html {
           <div class="bento-tags"><span class="bento-tag">LCE ATA v2.4.4</span><span class="bento-tag">ORB Ultimate v2.5</span><span class="bento-tag">SMC/ICT</span><span class="bento-tag">5M·15M·1H·4H</span></div>
         </div></div>
       </div>
-      <div class="bento-card" onclick="toggleBento(this)">
+      <div class="bento-card" role="button" tabindex="0" aria-expanded="false" onclick="toggleBento(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleBento(this)}">
         <div class="bento-head">
           <span class="bento-num">02 —</span><span class="bento-icon">⚡</span>
           <div class="bento-info"><div class="bento-title">Нейронный Sentiment</div><div class="bento-short">93.8% Win Rate · Классы A/B/C/D · MTF подтверждение</div></div>
@@ -1813,7 +1823,7 @@ html {
           <div class="bento-tags"><span class="bento-tag">Apex Zenith Pro v10.1</span><span class="bento-tag">Harmony Engine v10.2</span><span class="bento-tag">Radar v9.2</span><span class="bento-tag">ALL TF</span></div>
         </div></div>
       </div>
-      <div class="bento-card" onclick="toggleBento(this)">
+      <div class="bento-card" role="button" tabindex="0" aria-expanded="false" onclick="toggleBento(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleBento(this)}">
         <div class="bento-head">
           <span class="bento-num">03 —</span><span class="bento-icon">📡</span>
           <div class="bento-info"><div class="bento-title">Кластерный анализ</div><div class="bento-short">Footprint · Delta · Whale Tracker нативно в TradingView</div></div>
@@ -1825,7 +1835,7 @@ html {
           <div class="bento-tags"><span class="bento-tag">Apex Orca v2.3</span><span class="bento-tag">Cluster Radar v2.7</span><span class="bento-tag">Footprint</span><span class="bento-tag">WHALE</span></div>
         </div></div>
       </div>
-      <div class="bento-card" onclick="toggleBento(this)">
+      <div class="bento-card" role="button" tabindex="0" aria-expanded="false" onclick="toggleBento(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleBento(this)}">
         <div class="bento-head">
           <span class="bento-num">04 —</span><span class="bento-icon">🎯</span>
           <div class="bento-info"><div class="bento-title">Исполнение сделок</div><div class="bento-short">Auto TP/SL · Dynamic R:R · ATR · Session Scalping</div></div>
@@ -1837,7 +1847,7 @@ html {
           <div class="bento-tags"><span class="bento-tag">ANP v4.4 CRYPTO</span><span class="bento-tag">ASM v3.3 PRO</span><span class="bento-tag">AZP v5.2</span><span class="bento-tag">AUTO TP/SL</span></div>
         </div></div>
       </div>
-      <div class="bento-card" onclick="toggleBento(this)" style="grid-column:1/-1;">
+      <div class="bento-card" role="button" tabindex="0" aria-expanded="false" onclick="toggleBento(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleBento(this)}" style="grid-column:1/-1;">
         <div class="bento-head">
           <span class="bento-num">05 —</span><span class="bento-icon">📊</span>
           <div class="bento-info"><div class="bento-title">Аналитика и утилиты</div><div class="bento-short">Order Flow · DCA · Oscillator · Trend · 2 Protected инструмента</div></div>
@@ -2387,12 +2397,12 @@ html {
   <div class="section" id="faq">
     <div class="section-head fade-up"><div class="section-label">FAQ</div><h2 class="section-title">Остались вопросы?</h2></div>
     <div class="faq-list fade-up d1">
-      <div class="faq-item open"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Нужна ли платная подписка TradingView?</span><span class="faq-arr">▾</span></button><div class="faq-a">Большинство индикаторов работают на бесплатном плане. Некоторые функции (MTF, многие активы) требуют Pro или Pro+. После покупки предоставим полный список совместимости.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Работают ли на Forex, Gold, Crypto?</span><span class="faq-arr">▾</span></button><div class="faq-a">Да. Все 17 адаптированы для Crypto, Forex, Gold и Индексов. Часть имеет специализацию — указана в описании каждого.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Что такое "без репайнтинга"?</span><span class="faq-arr">▾</span></button><div class="faq-a">Репайнтинг — индикатор перерисовывает исторические сигналы задним числом, создавая иллюзию точности. Все наши индикаторы используют только закрытые свечи. Сигнал финальный — не изменится никогда.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Как происходит покупка?</span><span class="faq-arr">▾</span></button><div class="faq-a">1. Пишете @TheHarmonySystems в Telegram, выбираете тариф. 2. Оплата крипто или перевод. 3. В течение 24 часов — Invite-Only на все скрипты в TradingView. 4. Добавляете на график и начинаете.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Обновления платные?</span><span class="faq-arr">▾</span></button><div class="faq-a">Нет. Все тарифы включают пожизненные обновления. Новая версия — ваш инвайт открывает её автоматически.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">93.8% — это Win Rate на всех сделках?</span><span class="faq-arr">▾</span></button><div class="faq-a">Нет. 93.8% — Win Rate на сигналах класса A (~20% всех сигналов). Общий Win Rate по всем классам — 64–67%. Детальный отчёт по запросу.</div></div>
+      <div class="faq-item open"><button class="faq-q" aria-expanded="true" onclick="toggleFaq(this)"><span class="faq-q-text">Нужна ли платная подписка TradingView?</span><span class="faq-arr">▾</span></button><div class="faq-a">Большинство индикаторов работают на бесплатном плане. Некоторые функции (MTF, многие активы) требуют Pro или Pro+. После покупки предоставим полный список совместимости.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span class="faq-q-text">Работают ли на Forex, Gold, Crypto?</span><span class="faq-arr">▾</span></button><div class="faq-a">Да. Все 17 адаптированы для Crypto, Forex, Gold и Индексов. Часть имеет специализацию — указана в описании каждого.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span class="faq-q-text">Что такое "без репайнтинга"?</span><span class="faq-arr">▾</span></button><div class="faq-a">Репайнтинг — индикатор перерисовывает исторические сигналы задним числом, создавая иллюзию точности. Все наши индикаторы используют только закрытые свечи. Сигнал финальный — не изменится никогда.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span class="faq-q-text">Как происходит покупка?</span><span class="faq-arr">▾</span></button><div class="faq-a">1. Пишете @TheHarmonySystems в Telegram, выбираете тариф. 2. Оплата крипто или перевод. 3. В течение 24 часов — Invite-Only на все скрипты в TradingView. 4. Добавляете на график и начинаете.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span class="faq-q-text">Обновления платные?</span><span class="faq-arr">▾</span></button><div class="faq-a">Нет. Все тарифы включают пожизненные обновления. Новая версия — ваш инвайт открывает её автоматически.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span class="faq-q-text">93.8% — это Win Rate на всех сделках?</span><span class="faq-arr">▾</span></button><div class="faq-a">Нет. 93.8% — Win Rate на сигналах класса A (~20% всех сигналов). Общий Win Rate по всем классам — 64–67%. Детальный отчёт по запросу.</div></div>
     </div>
   </div>
 </section>
@@ -2475,7 +2485,7 @@ html {
 </div>
 
 <script>
-function toggleBento(card){card.classList.toggle('open');}
+function toggleBento(card){card.classList.toggle('open');card.setAttribute('aria-expanded',card.classList.contains('open'));}
 function showTier(t){
   document.querySelectorAll('.tier-pw').forEach(function(el){el.classList.remove('active');});
   document.querySelectorAll('.tier-pn').forEach(function(el){el.classList.remove('active');});
@@ -2561,7 +2571,7 @@ function filterInds(cat,btn){
     grid.style.display = any ? '' : 'none';
   });
 }
-function toggleFaq(btn){btn.parentElement.classList.toggle('open');}
+function toggleFaq(btn){btn.parentElement.classList.toggle('open');btn.setAttribute('aria-expanded',btn.parentElement.classList.contains('open'));}
 (function(){
   const end=new Date();end.setHours(end.getHours()+23,end.getMinutes()+47,end.getSeconds()+12);
   function tick(){const now=new Date();let diff=Math.max(0,Math.floor((end-now)/1000));const h=String(Math.floor(diff/3600)).padStart(2,'0');const m=String(Math.floor((diff%3600)/60)).padStart(2,'0');const s=String(diff%60).padStart(2,'0');const he=document.getElementById('cd-h');const me=document.getElementById('cd-m');const se=document.getElementById('cd-s');if(he)he.textContent=h;if(me)me.textContent=m;if(se)se.textContent=s;if(diff<=0)end.setDate(end.getDate()+1);}
