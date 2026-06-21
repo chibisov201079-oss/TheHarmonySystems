@@ -288,8 +288,8 @@ a{text-decoration:none;}
 .filter-sep{width:1px;background:var(--border);height:24px;flex-shrink:0;}
 .group-label{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:14px 0 10px;border-bottom:1px solid var(--border);margin-bottom:14px;display:flex;align-items:center;gap:8px;width:100%;}
 .gl-f{color:var(--gold);}.gl-e{color:var(--blue);}.gl-a{color:var(--green);}.gl-u{color:var(--text3);}
-.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:8px;}
-.ind-card{background:var(--bg);border:1px solid var(--border);border-radius:6px;overflow:hidden;position:relative;transition:border-color .2s,transform .2s;cursor:zoom-in;}
+.ind-grid{columns:3;column-gap:12px;margin-bottom:8px;}
+.ind-card{background:var(--bg);border:1px solid var(--border);border-radius:6px;overflow:hidden;position:relative;transition:border-color .2s,transform .2s;cursor:zoom-in;break-inside:avoid;margin-bottom:12px;}
 .ind-card:hover{border-color:var(--green);transform:translateY(-2px);}
 .ind-card::before{content:'';position:absolute;inset:0;border-radius:6px;padding:1px;background:linear-gradient(135deg,var(--green),transparent,var(--blue));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s;}
 .ind-card:hover::before{opacity:1;}
@@ -569,7 +569,7 @@ body.ready .fade-up.in{opacity:1;transform:translateY(0);}
   .hero-sub{margin:0 auto 32px;}.hero-chart{display:none;}
   .strip-inner{grid-template-columns:repeat(3,1fr);}
   .bento-grid{grid-template-columns:1fr;}.two-cols{grid-template-columns:1fr;}
-  .ind-grid{grid-template-columns:repeat(2,1fr);}
+  .ind-grid{columns:2;}
   .signals-grid{grid-template-columns:repeat(2,1fr);}
   .steps-row{grid-template-columns:1fr;gap:12px;}.step-arrow{display:none;}
   .gallery-grid{grid-template-columns:repeat(2,1fr);}
@@ -585,7 +585,7 @@ body.ready .fade-up.in{opacity:1;transform:translateY(0);}
   .hero-stats{gap:16px;flex-wrap:wrap;}
   .strip-inner{grid-template-columns:repeat(2,1fr);}.strip-cell{padding:18px 14px;}.strip-val{font-size:22px;}
   .section{padding:52px 16px;}.section-title{font-size:26px;}
-  .ind-grid{grid-template-columns:1fr;}.signals-grid{grid-template-columns:1fr 1fr;}
+  .ind-grid{columns:1;}.signals-grid{grid-template-columns:1fr 1fr;}
   .gallery-grid{grid-template-columns:1fr;}.pricing-grid{grid-template-columns:1fr;max-width:100%;}
   .path-grid{grid-template-columns:1fr;}.anchor-h{font-size:26px;}.anchor-vs{grid-template-columns:1fr;}
   .footer-inner{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;text-align:center;}
@@ -995,7 +995,7 @@ body.ready .fade-up.in{
 @media(max-width:768px){
   .pricing-grid{grid-template-columns:1fr !important;}
   .bento-grid{grid-template-columns:1fr !important;}
-  .ind-grid{grid-template-columns:1fr !important;}
+  .ind-grid{columns:1 !important;}
   .hero-inner{grid-template-columns:1fr !important;text-align:center;}
   .hero-btns{justify-content:center;}
   .hero-stats,.hero-benefits{align-items:center;}
@@ -1910,7 +1910,7 @@ html {
         <div class="tl-body">
           <div class="tl-label a">РЕШЕНИЕ</div>
           <div class="tl-title">3+ лет разработки · Написано на Pine Script v6</div>
-          <p class="tl-desc">Написал с нуля, без репайнтинга, с реальной логикой SMC/ICT. Каждый индикатор решал задачу из моей торговли. 1 скрипт превратился в экосистему из 17 инструментов с единой Score System.</p>
+          <p class="tl-desc">Написал с нуля, без репайнтинга, с реальной логикой SMC/ICT. Каждый индикатор решал задачу из моей торговли. 1 скрипт превратился в экосистему из 21 инструмента с единой Score System.</p>
           <div class="tl-stat-row">
             <div><span class="tl-stat-val">3</span><span class="tl-stat-lbl">года разработки</span></div>
             <div><span class="tl-stat-val">800+</span><span class="tl-stat-lbl">верифицированных сделок</span></div>
@@ -2207,7 +2207,7 @@ html {
         <thead><tr><th>ПАРАМЕТР</th><th>THE HARMONY SYSTEMS</th><th>КОНКУРЕНТЫ</th></tr></thead>
         <tbody>
           <tr><td>Стоимость</td><td class="comp-hs">от $60 (full $170)</td><td class="comp-no">$500–2000+</td></tr>
-          <tr><td>Количество инструментов</td><td class="comp-hs">17 индикаторов</td><td class="comp-no">1–5 инструментов</td></tr>
+          <tr><td>Количество инструментов</td><td class="comp-hs">21 индикатор</td><td class="comp-no">1–5 инструментов</td></tr>
           <tr><td>SMC / ICT автоматизация</td><td class="comp-hs">✓ BOS, CHoCH, OB, FVG</td><td class="comp-no">Частичная</td></tr>
           <tr><td>Классы сигналов A/B/C/D</td><td class="comp-hs">✓ Встроено</td><td class="comp-no">Нет</td></tr>
           <tr><td>Zero Repainting</td><td class="comp-hs">✓ Гарантировано</td><td class="comp-no">Часто репайнтят</td></tr>
@@ -2398,7 +2398,7 @@ html {
     <div class="section-head fade-up"><div class="section-label">FAQ</div><h2 class="section-title">Остались вопросы?</h2></div>
     <div class="faq-list fade-up d1">
       <div class="faq-item open"><button class="faq-q" aria-expanded="true" onclick="toggleFaq(this)"><span class="faq-q-text">Нужна ли платная подписка TradingView?</span><span class="faq-arr">▾</span></button><div class="faq-a">Большинство индикаторов работают на бесплатном плане. Некоторые функции (MTF, многие активы) требуют Pro или Pro+. После покупки предоставим полный список совместимости.</div></div>
-      <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span class="faq-q-text">Работают ли на Forex, Gold, Crypto?</span><span class="faq-arr">▾</span></button><div class="faq-a">Да. Все 17 адаптированы для Crypto, Forex, Gold и Индексов. Часть имеет специализацию — указана в описании каждого.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span class="faq-q-text">Работают ли на Forex, Gold, Crypto?</span><span class="faq-arr">▾</span></button><div class="faq-a">Да. Все 21 адаптированы для Crypto, Forex, Gold и Индексов. Часть имеет специализацию — указана в описании каждого.</div></div>
       <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span class="faq-q-text">Что такое "без репайнтинга"?</span><span class="faq-arr">▾</span></button><div class="faq-a">Репайнтинг — индикатор перерисовывает исторические сигналы задним числом, создавая иллюзию точности. Все наши индикаторы используют только закрытые свечи. Сигнал финальный — не изменится никогда.</div></div>
       <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span class="faq-q-text">Как происходит покупка?</span><span class="faq-arr">▾</span></button><div class="faq-a">1. Пишете @TheHarmonySystems в Telegram, выбираете тариф. 2. Оплата крипто или перевод. 3. В течение 24 часов — Invite-Only на все скрипты в TradingView. 4. Добавляете на график и начинаете.</div></div>
       <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)"><span class="faq-q-text">Обновления платные?</span><span class="faq-arr">▾</span></button><div class="faq-a">Нет. Все тарифы включают пожизненные обновления. Новая версия — ваш инвайт открывает её автоматически.</div></div>
