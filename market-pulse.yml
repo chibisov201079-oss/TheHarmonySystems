@@ -1,0 +1,43 @@
+name: THS Market Pulse — обновление данных
+
+on:
+  schedule:
+    # Каждые 30 минут. GitHub Actions может опаздывать на несколько минут
+    # в моменты пиковой нагрузки — это нормально и не критично для дашборда.
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}   # позволяет запустить вручную из вкладки Actions
+
+permissions:
+  contents: write
+
+jobs:
+  update-market-pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install --quiet pandas requests ta
+
+      - name: Calculate Market Pulse
+        env:
+          ALPHA_VANTAGE_KEY: ${{ secrets.ALPHA_VANTAGE_KEY }}
+        run: python scripts/calculate_market_pulse.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "THS Market Pulse Bot"
+          git config user.email "actions@github.com"
+          git add data/market-pulse.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: обновление Market Pulse [skip ci]"
+            git push
+          fi
