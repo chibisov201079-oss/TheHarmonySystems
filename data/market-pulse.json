@@ -1,0 +1,38 @@
+{
+  "updated_at": "2026-08-17T00:00:00Z",
+  "next_update_at": "2026-08-17T00:30:00Z",
+  "forex_updated_at": "2026-08-17T00:00:00Z",
+  "assets": {
+    "BTC": {
+      "score": 50,
+      "status": "flat",
+      "indicators": {"macd": "neutral", "adx": "neutral", "rsi": "neutral", "mfi": "neutral", "bb": "neutral"},
+      "history_14d": [50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+      "price_context": {"prev_day_high": 0, "prev_day_low": 0, "session_high": 0, "session_low": 0},
+      "symbol": "BTCUSDT"
+    },
+    "ETH": {
+      "score": 50,
+      "status": "flat",
+      "indicators": {"macd": "neutral", "adx": "neutral", "rsi": "neutral", "mfi": "neutral", "bb": "neutral"},
+      "history_14d": [50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+      "price_context": {"prev_day_high": 0, "prev_day_low": 0, "session_high": 0, "session_low": 0},
+      "symbol": "ETHUSDT"
+    },
+    "XAU": {
+      "score": 50,
+      "status": "flat",
+      "indicators": {"macd": "neutral", "adx": "neutral", "rsi": "neutral", "mfi": "neutral", "bb": "neutral"},
+      "history_14d": [50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+      "price_context": {"prev_day_high": 0, "prev_day_low": 0, "session_high": 0, "session_low": 0}
+    },
+    "EURUSD": {
+      "score": 50,
+      "status": "flat",
+      "indicators": {"macd": "neutral", "adx": "neutral", "rsi": "neutral", "mfi": "neutral", "bb": "neutral"},
+      "history_14d": [50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+      "price_context": {"prev_day_high": 0, "prev_day_low": 0, "session_high": 0, "session_low": 0}
+    }
+  },
+  "fear_greed": {"value": 50, "label": "Neutral"}
+}
