@@ -1452,7 +1452,7 @@ html {
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com https://www.googletagmanager.com https://mc.yandex.ru https://*.yandex.ru; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://mc.yandex.ru https://*.yandex.ru https://api.binance.com; frame-src https://mc.yandex.ru;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com https://www.googletagmanager.com https://mc.yandex.ru https://*.yandex.ru; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://mc.yandex.ru https://*.yandex.ru https://data-api.binance.vision; frame-src https://mc.yandex.ru;">
 </head>
 <body>
 <div id="progress-bar"></div>
@@ -3210,7 +3210,7 @@ function openLbNew(key){
   }
 
   function mpFetchLivePrice(key, symbol){
-    fetch('https://api.binance.com/api/v3/ticker/24hr?symbol=' + symbol)
+    fetch('https://data-api.binance.vision/api/v3/ticker/24hr?symbol=' + symbol)
       .then(function(r){ return r.ok ? r.json() : null; })
       .then(function(json){
         if (!json || mpCurrentAsset !== key) return;
