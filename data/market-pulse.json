@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-08-18T11:52:54.806280Z",
-  "next_update_at": "2026-08-18T12:22:54.806280Z",
+  "updated_at": "2026-08-18T12:57:13.530572Z",
+  "next_update_at": "2026-08-18T13:27:13.530572Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
-      "score": 50,
+      "score": 40,
       "status": "flat",
       "indicators": {
-        "macd": "neutral",
+        "macd": "sell",
         "adx": "neutral",
         "rsi": "neutral",
         "mfi": "sell",
@@ -27,7 +27,7 @@
         10,
         10,
         40,
-        50
+        40
       ],
       "price_context": {
         "prev_day_high": 64610.01,
