@@ -46,8 +46,12 @@ SIGNAL_SCORE = {"buy": 100, "neutral": 50, "sell": 0}
 # ───────────────────────── DATA FETCHING ─────────────────────────
 
 def fetch_binance_klines(symbol: str, interval: str = "1d", limit: int = 60) -> pd.DataFrame:
-    """Fetch OHLCV candles from Binance public API (no key needed)."""
-    url = "https://api.binance.com/api/v3/klines"
+    """Fetch OHLCV candles from Binance's public data mirror.
+    Uses data-api.binance.vision instead of api.binance.com — the regular
+    domain returns HTTP 451 (geo-block) from US-hosted CI runners like
+    GitHub Actions; this mirror serves the same public market data without
+    that restriction."""
+    url = "https://data-api.binance.vision/api/v3/klines"
     params = {"symbol": symbol, "interval": interval, "limit": limit}
     r = requests.get(url, params=params, timeout=20)
     r.raise_for_status()
@@ -63,7 +67,7 @@ def fetch_binance_klines(symbol: str, interval: str = "1d", limit: int = 60) -> 
 
 
 def fetch_binance_24hr_ticker(symbol: str) -> dict:
-    url = "https://api.binance.com/api/v3/ticker/24hr"
+    url = "https://data-api.binance.vision/api/v3/ticker/24hr"
     r = requests.get(url, params={"symbol": symbol}, timeout=20)
     r.raise_for_status()
     return r.json()
