@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-08-18T12:57:13.530572Z",
-  "next_update_at": "2026-08-18T13:27:13.530572Z",
+  "updated_at": "2026-08-18T13:49:52.859585Z",
+  "next_update_at": "2026-08-18T14:19:52.859585Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
-      "score": 40,
+      "score": 50,
       "status": "flat",
       "indicators": {
-        "macd": "sell",
+        "macd": "neutral",
         "adx": "neutral",
         "rsi": "neutral",
         "mfi": "sell",
@@ -27,13 +27,13 @@
         10,
         10,
         40,
-        40
+        50
       ],
       "price_context": {
         "prev_day_high": 64610.01,
         "prev_day_low": 62751.1,
         "session_high": 64610.01,
-        "session_low": 63444.17
+        "session_low": 63588.0
       },
       "symbol": "BTCUSDT"
     },
