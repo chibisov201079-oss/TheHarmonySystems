@@ -25,6 +25,8 @@
   --mono:'IBM Plex Mono',monospace;--sans:'DM Sans',sans-serif;--r:6px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
+:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:2px;}
+.calc-slider:focus-visible{outline-offset:4px;}
 html{scroll-behavior:smooth;}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;}
 ::-webkit-scrollbar{width:5px;}
@@ -1448,10 +1450,11 @@ html {
   <meta name="robots" content="index, follow">
 
   <!-- ══ SECURITY HEADERS ══ -->
-  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <!-- X-Frame-Options и X-Content-Type-Options намеренно не заданы здесь:
+       браузеры игнорируют их при указании через <meta>, реальную защиту
+       дают только настоящие HTTP-заголовки сервера (недоступно на
+       статическом GitHub Pages без прокси вроде Cloudflare). -->
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com https://www.googletagmanager.com https://mc.yandex.ru https://*.yandex.ru; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://mc.yandex.ru https://*.yandex.ru https://data-api.binance.vision; frame-src https://mc.yandex.ru;">
 </head>
 <body>
@@ -2655,7 +2658,7 @@ html {
       <div><span class="apb-label">Рыночная цена</span><span class="apb-cross">$2,500+</span></div>
       <span class="apb-eq">=</span>
       <div><span class="apb-label">У нас от</span><span class="apb-price">$60</span></div>
-      <span class="apb-period">/ one-time · lifetime</span>
+      <span class="apb-period">/ мес · подписка</span>
     </div>
     <div class="anchor-cta">
       <a href="https://t.me/TheHarmonySystems/1" target="_blank" class="btn-primary" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24"><path d="M21.5 4.5 2.5 12l6 2.2m13-9.7L17 20l-8.5-6.2m13-9.3L8.5 13.8m0 0v5.7l3.2-3.4"/></svg> Написать в Telegram</a>
