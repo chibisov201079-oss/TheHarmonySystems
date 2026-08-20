@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-20T05:58:25.017556Z",
-  "next_update_at": "2026-08-20T06:28:25.017556Z",
+  "updated_at": "2026-08-20T07:00:15.555543Z",
+  "next_update_at": "2026-08-20T07:30:15.555543Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
-      "score": 90,
+      "score": 100,
       "status": "long",
       "indicators": {
         "macd": "buy",
         "adx": "buy",
         "rsi": "buy",
-        "mfi": "neutral",
+        "mfi": "buy",
         "bb": "buy"
       },
       "history_14d": [
@@ -27,13 +27,13 @@
         30,
         50,
         90,
-        90
+        100
       ],
       "price_context": {
         "prev_day_high": 70000.0,
         "prev_day_low": 64166.0,
         "session_high": 70000.0,
-        "session_low": 64166.0
+        "session_low": 64255.0
       },
       "symbol": "BTCUSDT"
     },
@@ -67,7 +67,7 @@
         "prev_day_high": 2333.65,
         "prev_day_low": 1906.0,
         "session_high": 2333.65,
-        "session_low": 1906.0
+        "session_low": 1915.32
       },
       "symbol": "ETHUSDT"
     },
