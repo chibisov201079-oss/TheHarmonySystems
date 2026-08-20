@@ -1,54 +1,53 @@
 {
-  "updated_at": "2026-08-19T23:52:20.992005Z",
-  "next_update_at": "2026-08-20T00:22:20.992005Z",
+  "updated_at": "2026-08-20T01:38:19.214943Z",
+  "next_update_at": "2026-08-20T02:08:19.214943Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
-      "score": 80,
+      "score": 90,
       "status": "long",
       "indicators": {
         "macd": "buy",
-        "adx": "neutral",
+        "adx": "buy",
         "rsi": "buy",
         "mfi": "neutral",
         "bb": "buy"
       },
       "history_14d": [
-        20,
         60,
-        80,
-        80,
-        40,
-        30,
+        70,
+        60,
         30,
         20,
-        10,
+        20,
         10,
         0,
-        40,
-        60,
-        80
+        0,
+        0,
+        30,
+        50,
+        90,
+        90
       ],
       "price_context": {
-        "prev_day_high": 65058.81,
-        "prev_day_low": 64027.85,
+        "prev_day_high": 70000.0,
+        "prev_day_low": 64166.0,
         "session_high": 70000.0,
         "session_low": 64166.0
       },
       "symbol": "BTCUSDT"
     },
     "ETH": {
-      "score": 90,
+      "score": 100,
       "status": "long",
       "indicators": {
         "macd": "buy",
-        "adx": "neutral",
+        "adx": "buy",
         "rsi": "buy",
         "mfi": "buy",
         "bb": "buy"
       },
       "history_14d": [
-        50,
         70,
         70,
         70,
@@ -61,11 +60,12 @@
         40,
         70,
         70,
-        90
+        90,
+        100
       ],
       "price_context": {
-        "prev_day_high": 1923.27,
-        "prev_day_low": 1885.78,
+        "prev_day_high": 2333.65,
+        "prev_day_low": 1906.0,
         "session_high": 2333.65,
         "session_low": 1906.0
       },
@@ -139,7 +139,7 @@
     }
   },
   "fear_greed": {
-    "value": 46,
-    "label": "Fear"
+    "value": 62,
+    "label": "Greed"
   }
 }
