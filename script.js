@@ -80,6 +80,16 @@ document.addEventListener('keydown',e=>{
 function filterInds(cat,btn){
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('on'));
   btn.classList.add('on');
+
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var allCards = document.querySelectorAll('.ind-card');
+  var firstRects = new Map();
+  if (!reduceMotion){
+    allCards.forEach(function(c){
+      if (c.style.display !== 'none') firstRects.set(c, c.getBoundingClientRect());
+    });
+  }
+
   ['flagship','execution','analytics','utilities'].forEach(g=>{
     const lbl=document.querySelector('.group-label[data-group="'+g+'"]');
     const grid=document.getElementById('grp-'+g);
@@ -90,12 +100,45 @@ function filterInds(cat,btn){
       const cats=(c.dataset.cat||'').split(' ').filter(Boolean);
       // show if 'all' selected, OR the card's categories include the selected filter
       const show = cat==='all' || cats.includes(cat);
+      const wasHidden = c.style.display === 'none';
       c.style.display = show ? '' : 'none';
-      if(show) any=true;
+      if(show){
+        any=true;
+        if (!reduceMotion && wasHidden) c.classList.add('filter-entering');
+      }
     });
     // Hide empty group labels and grids
     if(lbl) lbl.style.display = any ? '' : 'none';
     grid.style.display = any ? '' : 'none';
+  });
+
+  if (reduceMotion) return;
+
+  // FLIP: карточки, которые остаются видимыми и просто меняют позицию
+  // в сетке, плавно "доезжают" до нового места, а не прыгают мгновенно.
+  requestAnimationFrame(function(){
+    allCards.forEach(function(c){
+      if (c.style.display === 'none') return;
+      var first = firstRects.get(c);
+      if (!first) return; // была скрыта — за неё отвечает filter-entering
+      var last = c.getBoundingClientRect();
+      var dx = first.left - last.left;
+      var dy = first.top - last.top;
+      if (Math.abs(dx) < 1 && Math.abs(dy) < 1) return;
+      c.style.transition = 'none';
+      c.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
+      requestAnimationFrame(function(){
+        c.style.transition = 'transform .4s cubic-bezier(.4,0,.2,1)';
+        c.style.transform = '';
+        c.addEventListener('transitionend', function te(){
+          c.style.transition = '';
+          c.removeEventListener('transitionend', te);
+        });
+      });
+    });
+    document.querySelectorAll('.filter-entering').forEach(function(c){
+      setTimeout(function(){ c.classList.remove('filter-entering'); }, 380);
+    });
   });
 }
 function toggleFaq(btn){btn.parentElement.classList.toggle('open');btn.setAttribute('aria-expanded',btn.parentElement.classList.contains('open'));}
@@ -114,6 +157,35 @@ document.body.classList.add('ready');
 
 // ══ SCROLL ANIMATIONS ══
 document.body.classList.add('ready');
+
+// ══ PARALLAX (hero layers) — очень лёгкий, уважает prefers-reduced-motion ══
+(function(){
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var aurora = document.querySelector('.hero-aurora');
+  var bg = document.querySelector('.hero-bg');
+  var planet = document.querySelector('.planet-wrap');
+  var hero = document.querySelector('.hero');
+  if (reduceMotion || !hero || (!aurora && !bg && !planet)) return;
+
+  var ticking = false;
+  function updateParallax(){
+    var rect = hero.getBoundingClientRect();
+    // работаем только пока hero виден на экране — экономим на расчётах ниже
+    if (rect.bottom < 0 || rect.top > window.innerHeight){ ticking = false; return; }
+    var scrolled = -rect.top; // 0 в начале, растёт по мере скролла вниз
+    if (aurora) aurora.style.transform = 'translateY(' + (scrolled * 0.12) + 'px)';
+    if (bg) bg.style.transform = 'translateY(' + (scrolled * 0.06) + 'px)';
+    if (planet) planet.style.transform = 'translateY(' + (scrolled * 0.18) + 'px)';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking){
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, {passive:true});
+})();
+
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
@@ -384,6 +456,29 @@ function openLbNew(key){
   });
 })();
 
+// ══ MAGNETIC BUTTONS — только для точных указателей (мышь), не для touch ══
+(function(){
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+  if (reduceMotion || !finePointer) return;
+
+  var MAX_PULL = 8; // px, максимальное притяжение к курсору
+  document.querySelectorAll('.btn-primary, .btn-outline').forEach(function(btn){
+    // сохраняем базовый hover-подъём (-2px), чтобы магнит его не перекрывал
+    btn.addEventListener('mousemove', function(e){
+      var rect = btn.getBoundingClientRect();
+      var x = e.clientX - rect.left - rect.width / 2;
+      var y = e.clientY - rect.top - rect.height / 2;
+      var pullX = Math.max(-MAX_PULL, Math.min(MAX_PULL, x * 0.25));
+      var pullY = Math.max(-MAX_PULL, Math.min(MAX_PULL, y * 0.25));
+      btn.style.transform = 'translateY(-2px) translate(' + pullX + 'px,' + pullY + 'px)';
+    });
+    btn.addEventListener('mouseleave', function(){
+      btn.style.transform = '';
+    });
+  });
+})();
+
 
 /* ===== MARKET PULSE ===== */
 (function(){
@@ -421,6 +516,8 @@ function openLbNew(key){
   var mpCurrentAsset = 'BTC';
   var mpGaugePath = document.getElementById('mpGaugeFill');
   var mpGaugeLen = mpGaugePath ? mpGaugePath.getTotalLength() : 0;
+  var mpCardRevealed = false;
+  var mpPendingGauge = null; // {frac, color} — ждёт появления карточки в вьюпорте
   var mpCountdownTimer = null;
 
   function mpFmtPrice(v){
@@ -495,8 +592,16 @@ function openLbNew(key){
     var gaugeColor = data.status === 'long' ? 'var(--green)' : data.status === 'short' ? 'var(--red)' : 'var(--gold)';
     if (mpGaugePath && mpGaugeLen){
       var frac = Math.min(100, Math.max(0, data.score)) / 100;
-      mpGaugePath.style.stroke = gaugeColor;
-      mpGaugePath.style.strokeDasharray = (mpGaugeLen*frac) + ' ' + mpGaugeLen;
+      if (mpCardRevealed){
+        mpGaugePath.style.stroke = gaugeColor;
+        mpGaugePath.style.strokeDasharray = (mpGaugeLen*frac) + ' ' + mpGaugeLen;
+      } else {
+        // Карточка ещё не в зоне видимости — держим gauge на нуле и
+        // запоминаем целевое значение; заполнение анимируется, когда
+        // пользователь реально доскроллит (см. IntersectionObserver ниже).
+        mpPendingGauge = {frac: frac, color: gaugeColor};
+        mpGaugePath.style.strokeDasharray = '0 ' + mpGaugeLen;
+      }
     }
 
     var pc = data.price_context;
@@ -564,6 +669,31 @@ function openLbNew(key){
     .catch(function(){ /* тихий fallback — уже рендерим MP_FALLBACK ниже */ });
 
   mpRenderAsset('BTC');
+
+  // Scroll-reveal: анимированное заполнение gauge именно в момент,
+  // когда пользователь доскроллил до Market Pulse, а не сразу при загрузке.
+  var mpCard = document.querySelector('.mp-card');
+  if (mpCard && 'IntersectionObserver' in window){
+    var mpGaugeObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          mpCardRevealed = true;
+          if (mpPendingGauge && mpGaugePath){
+            // небольшая задержка — чтобы браузер успел применить strokeDasharray:0
+            // до перехода на целевое значение, иначе transition не сыграет
+            requestAnimationFrame(function(){
+              mpGaugePath.style.stroke = mpPendingGauge.color;
+              mpGaugePath.style.strokeDasharray = (mpGaugeLen*mpPendingGauge.frac) + ' ' + mpGaugeLen;
+            });
+          }
+          mpGaugeObs.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.35});
+    mpGaugeObs.observe(mpCard);
+  } else {
+    mpCardRevealed = true; // без поддержки IntersectionObserver — просто показываем сразу
+  }
 })();
 
 
