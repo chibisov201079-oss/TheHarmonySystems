@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-21T18:45:10.196823Z",
-  "next_update_at": "2026-08-21T19:15:10.196823Z",
+  "updated_at": "2026-08-21T19:30:02.952203Z",
+  "next_update_at": "2026-08-21T20:00:02.952203Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -33,7 +33,7 @@
         "prev_day_high": 73400.0,
         "prev_day_low": 68902.22,
         "session_high": 79500.0,
-        "session_low": 72330.0
+        "session_low": 72498.0
       },
       "symbol": "BTCUSDT"
     },
