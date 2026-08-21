@@ -1,145 +1,38 @@
 {
-  "updated_at": "2026-08-21T11:35:35.025121Z",
-  "next_update_at": "2026-08-21T12:05:35.025121Z",
+  "updated_at": "2026-08-17T00:00:00Z",
+  "next_update_at": "2026-08-17T00:30:00Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
-      "score": 100,
-      "status": "long",
-      "indicators": {
-        "macd": "buy",
-        "adx": "buy",
-        "rsi": "buy",
-        "mfi": "buy",
-        "bb": "buy"
-      },
-      "history_14d": [
-        80,
-        80,
-        40,
-        30,
-        30,
-        20,
-        10,
-        10,
-        0,
-        40,
-        60,
-        90,
-        100,
-        100
-      ],
-      "price_context": {
-        "prev_day_high": 73400.0,
-        "prev_day_low": 68902.22,
-        "session_high": 79500.0,
-        "session_low": 71132.0
-      },
+      "score": 50,
+      "status": "flat",
+      "indicators": {"macd": "neutral", "adx": "neutral", "rsi": "neutral", "mfi": "neutral", "bb": "neutral"},
+      "history_14d": [50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+      "price_context": {"prev_day_high": 0, "prev_day_low": 0, "session_high": 0, "session_low": 0},
       "symbol": "BTCUSDT"
     },
     "ETH": {
-      "score": 100,
-      "status": "long",
-      "indicators": {
-        "macd": "buy",
-        "adx": "buy",
-        "rsi": "buy",
-        "mfi": "buy",
-        "bb": "buy"
-      },
-      "history_14d": [
-        80,
-        80,
-        50,
-        50,
-        40,
-        40,
-        40,
-        50,
-        40,
-        70,
-        70,
-        100,
-        100,
-        100
-      ],
-      "price_context": {
-        "prev_day_high": 2360.0,
-        "prev_day_low": 2221.54,
-        "session_high": 2447.98,
-        "session_low": 2255.68
-      },
+      "score": 50,
+      "status": "flat",
+      "indicators": {"macd": "neutral", "adx": "neutral", "rsi": "neutral", "mfi": "neutral", "bb": "neutral"},
+      "history_14d": [50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+      "price_context": {"prev_day_high": 0, "prev_day_low": 0, "session_high": 0, "session_low": 0},
       "symbol": "ETHUSDT"
     },
     "XAU": {
       "score": 50,
       "status": "flat",
-      "indicators": {
-        "macd": "neutral",
-        "adx": "neutral",
-        "rsi": "neutral",
-        "mfi": "neutral",
-        "bb": "neutral"
-      },
-      "history_14d": [
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50
-      ],
-      "price_context": {
-        "prev_day_high": 0,
-        "prev_day_low": 0,
-        "session_high": 0,
-        "session_low": 0
-      }
+      "indicators": {"macd": "neutral", "adx": "neutral", "rsi": "neutral", "mfi": "neutral", "bb": "neutral"},
+      "history_14d": [50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+      "price_context": {"prev_day_high": 0, "prev_day_low": 0, "session_high": 0, "session_low": 0}
     },
     "EURUSD": {
       "score": 50,
       "status": "flat",
-      "indicators": {
-        "macd": "neutral",
-        "adx": "neutral",
-        "rsi": "neutral",
-        "mfi": "neutral",
-        "bb": "neutral"
-      },
-      "history_14d": [
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50
-      ],
-      "price_context": {
-        "prev_day_high": 0,
-        "prev_day_low": 0,
-        "session_high": 0,
-        "session_low": 0
-      }
+      "indicators": {"macd": "neutral", "adx": "neutral", "rsi": "neutral", "mfi": "neutral", "bb": "neutral"},
+      "history_14d": [50,50,50,50,50,50,50,50,50,50,50,50,50,50],
+      "price_context": {"prev_day_high": 0, "prev_day_low": 0, "session_high": 0, "session_low": 0}
     }
   },
-  "fear_greed": {
-    "value": 72,
-    "label": "Greed"
-  }
+  "fear_greed": {"value": 50, "label": "Neutral"}
 }
