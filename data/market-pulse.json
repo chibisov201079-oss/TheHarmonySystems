@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-21T03:09:07.849175Z",
-  "next_update_at": "2026-08-21T03:39:07.849175Z",
+  "updated_at": "2026-08-21T04:11:07.480159Z",
+  "next_update_at": "2026-08-21T04:41:07.480159Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -33,7 +33,7 @@
         "prev_day_high": 73400.0,
         "prev_day_low": 68902.22,
         "session_high": 75785.82,
-        "session_low": 68902.22
+        "session_low": 69234.0
       },
       "symbol": "BTCUSDT"
     },
@@ -67,7 +67,7 @@
         "prev_day_high": 2360.0,
         "prev_day_low": 2221.54,
         "session_high": 2380.82,
-        "session_low": 2221.54
+        "session_low": 2238.97
       },
       "symbol": "ETHUSDT"
     },
