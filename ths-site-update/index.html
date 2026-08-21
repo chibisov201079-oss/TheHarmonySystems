@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+
+  <!-- ══ WEB ANALYTICS — loaded only after consent, see consent banner + loadAnalytics() near </body> ══ -->
+  <!-- Google Analytics 4 ID: G-VMQNHNFKMB, Yandex.Metrika ID: 109840293 -->
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Harmony Systems — 21 Профессиональный Индикатор TradingView</title>
+<meta name="description" content="Профессиональная экосистема 21 индикатор для TradingView. SMC/ICT, кластерный анализ, нейронный sentiment. Pine Script v6. Zero Repainting. Invite-Only от $60.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chibisov201079-oss.github.io/TheHarmonySystems/">
+  <meta property="og:title" content="The Harmony Systems — 21 Профессиональный Индикатор TradingView">
+  <meta property="og:description" content="Полная экосистема SMC/ICT для TradingView. 21 индикатор. Pine Script v6. Zero Repainting. Invite-Only от $60.">
+  <meta property="og:image" content="https://chibisov201079-oss.github.io/TheHarmonySystems/logo_hs.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="The Harmony Systems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Harmony Systems — 21 Индикатор TradingView">
+  <meta name="twitter:description" content="SMC/ICT экосистема. 21 индикаторов. Pine Script v6. Zero Repainting. От $60.">
+  <meta name="twitter:image" content="https://chibisov201079-oss.github.io/TheHarmonySystems/logo_hs.png">
+  <meta name="keywords" content="TradingView индикаторы, SMC ICT, Smart Money Concepts, Pine Script, крипто сигналы, forex, BOS CHoCH, Order Blocks, Zero Repainting">
+  <meta name="author" content="The Harmony Systems">
+  <meta name="robots" content="index, follow">
+
+  <!-- ══ SECURITY HEADERS ══ -->
+  <!-- X-Frame-Options и X-Content-Type-Options намеренно не заданы здесь:
+       браузеры игнорируют их при указании через <meta>, реальную защиту
+       дают только настоящие HTTP-заголовки сервера (недоступно на
+       статическом GitHub Pages без прокси вроде Cloudflare). -->
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com https://www.googletagmanager.com https://mc.yandex.ru https://*.yandex.ru; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://mc.yandex.ru https://*.yandex.ru https://data-api.binance.vision; frame-src https://mc.yandex.ru;">
+</head>
+<body>
+<div id="progress-bar"></div>
+<header class="nav">
+  <div class="nav-logo"><span class="nav-dot"></span>THE HARMONY SYSTEMS</div>
+  <nav class="nav-links">
+    <a href="#indicators">ИНДИКАТОРЫ</a><a href="#signals">СИГНАЛЫ</a>
+    <a href="#pricing">ЦЕНЫ</a><a href="#faq">FAQ</a>
+    <a href="https://t.me/TheHarmonySystems/1" target="_blank" class="nav-cta" rel="noopener noreferrer" >ПОЛУЧИТЬ ДОСТУП</a>
+  </nav>
+  
+</header>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="tick"><span class="tick-sym">21 ИНДИКАТОР</span><span class="tick-up">Полная экосистема SMC/ICT</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">ZERO REPAINTING</span><span class="tick-up">Финальный сигнал — никогда не перерисовывается</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">КЛАССЫ A / B / C / D</span><span class="tick-up">Знай качество входа до открытия сделки</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">INVITE-ONLY</span><span class="tick-up">Приватный доступ · Ограниченные места</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">PINE SCRIPT v6</span><span class="tick-up">Новейший стандарт Pine Script · Все индикаторы</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">WHALE TRACKER</span><span class="tick-up">Apex Orca — видишь заявки крупных игроков</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">CRYPTO · FOREX · GOLD</span><span class="tick-up">Все ключевые рынки в одной экосистеме</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">SMC АВТОМАТИЗАЦИЯ</span><span class="tick-up">BOS · <span class="term">CHoCH<span class="term-tip"><strong>Change of Character</strong>Смена характера рынка — ранний сигнал разворота</span></span> · Order Blocks · <span class="term">FVG<span class="term-tip"><strong>Fair Value Gap</strong>Дисбаланс цены — зона возможного возврата рынка</span></span> — мгновенно</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">INVITE-ONLY</span><span class="tick-up">Ежемесячная подписка · Все обновления включены</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">21 ИНДИКАТОР</span><span class="tick-up">Полная экосистема SMC/ICT</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">ZERO REPAINTING</span><span class="tick-up">Финальный сигнал — никогда не перерисовывается</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">КЛАССЫ A / B / C / D</span><span class="tick-up">Знай качество входа до открытия сделки</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">INVITE-ONLY</span><span class="tick-up">Приватный доступ · Ограниченные места</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">PINE SCRIPT v6</span><span class="tick-up">Новейший стандарт Pine Script · Все индикаторы</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">WHALE TRACKER</span><span class="tick-up">Apex Orca — видишь заявки крупных игроков</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">CRYPTO · FOREX · GOLD</span><span class="tick-up">Все ключевые рынки в одной экосистеме</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">SMC АВТОМАТИЗАЦИЯ</span><span class="tick-up">BOS · <span class="term">CHoCH<span class="term-tip"><strong>Change of Character</strong>Смена характера рынка — ранний сигнал разворота</span></span> · Order Blocks · <span class="term">FVG<span class="term-tip"><strong>Fair Value Gap</strong>Дисбаланс цены — зона возможного возврата рынка</span></span> — мгновенно</span></span><span class="tick-sep"></span>
+    <span class="tick"><span class="tick-sym">INVITE-ONLY</span><span class="tick-up">Ежемесячная подписка · Все обновления включены</span></span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-aurora"></div>
+  <div class="hero-bg"></div>
+  <!-- PLANET + AURORA background like TradingView website -->
+  <div class="planet-wrap">
+    <svg class="planet-svg" viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <!-- Planet radial gradient -->
+        <radialGradient id="planetGrad" cx="42%" cy="38%" r="58%">
+          <stop offset="0%" stop-color="#1e3a5f"/>
+          <stop offset="35%" stop-color="#0f2040"/>
+          <stop offset="70%" stop-color="#070f1f"/>
+          <stop offset="100%" stop-color="#030810"/>
+        </radialGradient>
+        <!-- Planet atmosphere glow -->
+        <radialGradient id="atmosGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="75%" stop-color="transparent"/>
+          <stop offset="88%" stop-color="rgba(38,166,154,.12)"/>
+          <stop offset="96%" stop-color="rgba(38,166,154,.25)"/>
+          <stop offset="100%" stop-color="rgba(38,166,154,.06)"/>
+        </radialGradient>
+        <!-- Aurora gradient 1 -->
+        <linearGradient id="aurora1" x1="0%" y1="0%" x2="100%" y2="40%">
+          <stop offset="0%" stop-color="transparent"/>
+          <stop offset="20%" stop-color="rgba(38,166,154,.0)"/>
+          <stop offset="40%" stop-color="rgba(38,166,154,.35)"/>
+          <stop offset="55%" stop-color="rgba(41,98,255,.4)"/>
+          <stop offset="70%" stop-color="rgba(120,40,200,.3)"/>
+          <stop offset="85%" stop-color="rgba(38,166,154,.1)"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </linearGradient>
+        <linearGradient id="aurora2" x1="10%" y1="0%" x2="90%" y2="60%">
+          <stop offset="0%" stop-color="transparent"/>
+          <stop offset="30%" stop-color="rgba(41,98,255,.2)"/>
+          <stop offset="50%" stop-color="rgba(38,166,154,.45)"/>
+          <stop offset="65%" stop-color="rgba(0,200,150,.3)"/>
+          <stop offset="80%" stop-color="rgba(120,40,200,.25)"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </linearGradient>
+        <linearGradient id="aurora3" x1="20%" y1="0%" x2="80%" y2="50%">
+          <stop offset="0%" stop-color="transparent"/>
+          <stop offset="35%" stop-color="rgba(120,40,200,.15)"/>
+          <stop offset="55%" stop-color="rgba(38,166,154,.3)"/>
+          <stop offset="75%" stop-color="rgba(41,98,255,.2)"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </linearGradient>
+        <!-- Planet surface detail gradient -->
+        <linearGradient id="surfaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="rgba(38,166,154,.04)"/>
+          <stop offset="50%" stop-color="rgba(41,98,255,.03)"/>
+          <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+        </linearGradient>
+        <!-- Stars filter -->
+        <filter id="starBlur"><feGaussianBlur stdDeviation="0.4"/></filter>
+        <filter id="glowFilter"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="auroraBlur"><feGaussianBlur stdDeviation="14"/></filter>
+        <filter id="softGlow"><feGaussianBlur stdDeviation="6"/></filter>
+        <clipPath id="planetClip"><circle cx="450" cy="520" r="380"/></clipPath>
+      </defs>
+
+      <!-- Deep space background -->
+      <rect width="900" height="700" fill="#030810"/>
+
+      <!-- Stars layer 1 - small dim -->
+      <g filter="url(#starBlur)" opacity=".7">
+        <circle cx="45" cy="22" r=".8" fill="#fff"/><circle cx="120" cy="8" r=".6" fill="#fff"/>
+        <circle cx="200" cy="35" r=".9" fill="#fff"/><circle cx="280" cy="12" r=".7" fill="#fff"/>
+        <circle cx="350" cy="28" r=".5" fill="#fff"/><circle cx="420" cy="6" r=".8" fill="#fff"/>
+        <circle cx="490" cy="18" r=".6" fill="#fff"/><circle cx="560" cy="32" r=".9" fill="#fff"/>
+        <circle cx="630" cy="10" r=".7" fill="#fff"/><circle cx="700" cy="24" r=".5" fill="#fff"/>
+        <circle cx="770" cy="14" r=".8" fill="#fff"/><circle cx="840" cy="30" r=".6" fill="#fff"/>
+        <circle cx="18" cy="58" r=".7" fill="#fff"/><circle cx="88" cy="72" r=".5" fill="#fff"/>
+        <circle cx="155" cy="48" r=".8" fill="#fff"/><circle cx="228" cy="65" r=".6" fill="#fff"/>
+        <circle cx="310" cy="52" r=".9" fill="#fff"/><circle cx="385" cy="68" r=".7" fill="#fff"/>
+        <circle cx="458" cy="42" r=".5" fill="#fff"/><circle cx="535" cy="75" r=".8" fill="#fff"/>
+        <circle cx="610" cy="55" r=".6" fill="#fff"/><circle cx="685" cy="48" r=".9" fill="#fff"/>
+        <circle cx="755" cy="70" r=".7" fill="#fff"/><circle cx="825" cy="58" r=".5" fill="#fff"/>
+        <circle cx="30" cy="100" r=".6" fill="#fff"/><circle cx="110" cy="115" r=".8" fill="#fff"/>
+        <circle cx="185" cy="95" r=".5" fill="#fff"/><circle cx="265" cy="108" r=".7" fill="#fff"/>
+        <circle cx="340" cy="88" r=".9" fill="#fff"/><circle cx="415" cy="102" r=".6" fill="#fff"/>
+        <circle cx="495" cy="92" r=".8" fill="#fff"/><circle cx="575" cy="118" r=".5" fill="#fff"/>
+        <circle cx="650" cy="85" r=".7" fill="#fff"/><circle cx="725" cy="105" r=".6" fill="#fff"/>
+        <circle cx="800" cy="95" r=".9" fill="#fff"/><circle cx="868" cy="112" r=".5" fill="#fff"/>
+        <circle cx="62" cy="145" r=".8" fill="#fff"/><circle cx="142" cy="130" r=".6" fill="#fff"/>
+        <circle cx="218" cy="158" r=".5" fill="#fff"/><circle cx="295" cy="138" r=".7" fill="#fff"/>
+        <circle cx="372" cy="152" r=".9" fill="#fff"/><circle cx="445" cy="142" r=".6" fill="#fff"/>
+        <circle cx="522" cy="165" r=".8" fill="#fff"/><circle cx="598" cy="128" r=".5" fill="#fff"/>
+        <circle cx="672" cy="148" r=".7" fill="#fff"/><circle cx="748" cy="135" r=".6" fill="#fff"/>
+        <circle cx="820" cy="155" r=".9" fill="#fff"/><circle cx="885" cy="140" r=".5" fill="#fff"/>
+      </g>
+      <!-- Stars layer 2 - brighter -->
+      <g opacity=".9">
+        <circle cx="75" cy="38" r="1.2" fill="#e8f4ff"/><circle cx="190" cy="15" r="1.4" fill="#fff"/>
+        <circle cx="330" cy="42" r="1.1" fill="#e8f4ff"/><circle cx="510" cy="28" r="1.3" fill="#fff"/>
+        <circle cx="660" cy="18" r="1.2" fill="#e8f4ff"/><circle cx="815" cy="44" r="1.5" fill="#fff"/>
+        <circle cx="130" cy="88" r="1.3" fill="#fff"/><circle cx="290" cy="78" r="1.1" fill="#e8f4ff"/>
+        <circle cx="470" cy="95" r="1.4" fill="#fff"/><circle cx="620" cy="72" r="1.2" fill="#e8f4ff"/>
+        <circle cx="780" cy="85" r="1.5" fill="#fff"/><circle cx="52" cy="132" r="1.3" fill="#e8f4ff"/>
+        <circle cx="245" cy="120" r="1.1" fill="#fff"/><circle cx="408" cy="145" r="1.4" fill="#e8f4ff"/>
+        <circle cx="588" cy="118" r="1.2" fill="#fff"/><circle cx="752" cy="138" r="1.5" fill="#e8f4ff"/>
+        <circle cx="870" cy="62" r="1.3" fill="#fff"/>
+      </g>
+
+      <!-- AURORA BOREALIS — above planet, multiple wave layers -->
+      <g class="aurora-group" filter="url(#auroraBlur)">
+        <!-- Main aurora wave 1 -->
+        <path d="M -50 180 Q 100 120 200 155 Q 320 100 420 140 Q 520 90 620 130 Q 720 80 820 115 Q 880 95 950 110" 
+              fill="none" stroke="url(#aurora1)" stroke-width="60" opacity=".8"
+              style="animation: auroraWave1b 24s ease-in-out infinite; transform-origin:450px 130px;"/>
+        <!-- Aurora wave 2 -->
+        <path d="M -30 200 Q 80 145 180 175 Q 300 118 400 155 Q 500 108 600 145 Q 700 98 800 132 Q 860 112 950 128"
+              fill="none" stroke="url(#aurora2)" stroke-width="45" opacity=".6"
+              style="animation: auroraWave2 22s ease-in-out infinite;"/>
+        <!-- Aurora wave 3 - subtle -->
+        <path d="M 0 160 Q 150 108 260 138 Q 380 88 490 125 Q 600 80 710 118 Q 800 92 950 105"
+              fill="none" stroke="url(#aurora3)" stroke-width="35" opacity=".5"
+              style="animation: auroraWave3 28s ease-in-out infinite;"/>
+        <!-- Aurora glow core -->
+        <ellipse cx="450" cy="148" rx="380" ry="40" fill="rgba(38,166,154,.08)" style="animation: auroraGlow 18s ease-in-out infinite;"/>
+      </g>
+
+      <!-- PLANET BODY -->
+      <circle cx="450" cy="520" r="380" fill="url(#planetGrad)"/>
+
+      <!-- Planet surface detail - continent-like shapes -->
+      <g clip-path="url(#planetClip)" opacity=".4">
+        <ellipse cx="300" cy="440" rx="120" ry="60" fill="rgba(38,166,154,.08)" transform="rotate(-15 300 440)"/>
+        <ellipse cx="560" cy="460" rx="90" ry="45" fill="rgba(41,98,255,.06)" transform="rotate(20 560 460)"/>
+        <ellipse cx="420" cy="380" rx="150" ry="50" fill="rgba(38,166,154,.05)" transform="rotate(-8 420 380)"/>
+        <ellipse cx="620" cy="400" rx="70" ry="35" fill="rgba(41,98,255,.05)" transform="rotate(10 620 400)"/>
+        <!-- Grid lines on planet -->
+        <line x1="70" y1="350" x2="830" y2="350" stroke="rgba(38,166,154,.04)" stroke-width="1"/>
+        <line x1="70" y1="400" x2="830" y2="400" stroke="rgba(38,166,154,.04)" stroke-width="1"/>
+        <line x1="70" y1="450" x2="830" y2="450" stroke="rgba(38,166,154,.03)" stroke-width="1"/>
+        <line x1="70" y1="500" x2="830" y2="500" stroke="rgba(38,166,154,.03)" stroke-width="1"/>
+        <line x1="200" y1="140" x2="200" y2="700" stroke="rgba(38,166,154,.03)" stroke-width="1"/>
+        <line x1="350" y1="140" x2="350" y2="700" stroke="rgba(38,166,154,.03)" stroke-width="1"/>
+        <line x1="500" y1="140" x2="500" y2="700" stroke="rgba(38,166,154,.03)" stroke-width="1"/>
+        <line x1="650" y1="140" x2="650" y2="700" stroke="rgba(38,166,154,.03)" stroke-width="1"/>
+      </g>
+
+      <!-- Planet atmosphere rim -->
+      <circle cx="450" cy="520" r="380" fill="url(#atmosGrad)"/>
+
+      <!-- Planet highlight (light source top-left) -->
+      <ellipse cx="340" cy="360" rx="160" ry="100" fill="rgba(255,255,255,.025)" transform="rotate(-20 340 360)"/>
+
+      <!-- Planet horizon glow -->
+      <ellipse cx="450" cy="145" rx="420" ry="28" fill="rgba(38,166,154,.12)" filter="url(#softGlow)"/>
+
+      <!-- Subtle star clusters near aurora -->
+      <g filter="url(#glowFilter)" opacity=".6">
+        <circle cx="165" cy="82" r="1.8" fill="#a0d4ff"/>
+        <circle cx="740" cy="55" r="2" fill="#a0ffd4"/>
+        <circle cx="58" cy="165" r="1.5" fill="#c0a0ff"/>
+        <circle cx="835" cy="135" r="1.8" fill="#a0d4ff"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- TIER PLANETS — 4 пакета на орбите планеты-рынка -->
+  <div class="tier-planets-section">
+    <div class="tier-headline">
+      <h3>THE HARMONY SYSTEMS</h3>
+      <p>Выбери свою орбиту — от первого шага до полной экосистемы</p>
+    </div>
+    <div class="tier-row">
+      <div class="tier-pw" data-tier="free" onclick="showTier('free')">
+        <div class="tier-pl" style="width:52px;height:52px;background:radial-gradient(circle at 35% 35%,#7ec8a0,#2d6b4f,#163828);--tier-glow:rgba(126,200,160,.4)"></div>
+        <div class="tier-label">FREE</div>
+        <div class="tier-price">$0</div>
+        <div class="tier-badge" style="background:rgba(126,200,160,.15);color:#7ec8a0">open source</div>
+      </div>
+      <div class="tier-pw" data-tier="start" onclick="showTier('start')">
+        <div class="tier-pl" style="width:68px;height:68px;background:radial-gradient(circle at 35% 35%,#5db8e8,#2266a0,#0e2d52);--tier-glow:rgba(93,184,232,.4)">
+          <div class="tier-ring" style="width:90px;height:90px"></div>
+        </div>
+        <div class="tier-label">START</div>
+        <div class="tier-price">$60/мес</div>
+        <div class="tier-badge" style="background:rgba(93,184,232,.12);color:#5db8e8">invite-only</div>
+      </div>
+      <div class="tier-pw" data-tier="pro" onclick="showTier('pro')">
+        <div class="tier-pl" style="width:86px;height:86px;background:radial-gradient(circle at 35% 35%,#c084e8,#7b3aad,#3a1560);--tier-glow:rgba(192,132,232,.4)">
+          <div class="tier-ring" style="width:112px;height:112px"></div>
+        </div>
+        <div class="tier-label">PRO</div>
+        <div class="tier-price">$115/мес</div>
+        <div class="tier-badge" style="background:rgba(192,132,232,.15);color:#c084e8">most popular</div>
+      </div>
+      <div class="tier-pw" data-tier="max" onclick="showTier('max')">
+        <div class="tier-pl" style="width:106px;height:106px;background:radial-gradient(circle at 35% 35%,#f0c060,#d4822a,#8b4513);--tier-glow:rgba(240,192,96,.5)">
+          <div class="tier-ring" style="width:136px;height:136px;border-color:rgba(240,192,96,.18)"></div>
+        </div>
+        <div class="tier-label">MAX ALPHA</div>
+        <div class="tier-price">$170/мес</div>
+        <div class="tier-badge" style="background:rgba(240,192,96,.12);color:#f0c060">full ecosystem</div>
+      </div>
+    </div>
+
+    <!-- Animated demo cursor -->
+    <div class="tier-cursor" id="tierCursor">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M5 3l14 9-6 1.5L10.5 20z" fill="#fff" stroke="#0e1116" stroke-width="1.5"/></svg>
+    </div>
+
+    <div class="tier-panel-area">
+      <div class="tier-hint" id="tierHint">▸ Нажми на планету, чтобы увидеть пакет</div>
+
+      <!-- FREE -->
+      <div class="tier-pn" id="tp-free">
+        <button class="tier-close" onclick="closeTier()" title="Закрыть" type="button">✕</button>
+        <div class="tier-pp"><span class="tier-pps tcur" style="background:rgba(126,200,160,.2);color:#7ec8a0">FREE</span><span class="tier-ppa">→</span><span class="tier-pps">START</span><span class="tier-ppa">→</span><span class="tier-pps">PRO</span><span class="tier-ppa">→</span><span class="tier-pps">MAX ALPHA</span></div>
+        <div class="tier-ph"><div class="tier-pd" style="background:#7ec8a0"></div><div class="tier-pt">FREE — Первый взгляд</div><div class="tier-pc">5 индикаторов</div></div>
+        <div class="tier-ps">Попробуй бесплатно → накопи капитал → переходи на START</div>
+        <div class="tier-il">
+          <div class="tier-ii tcr"><span class="tier-ic"><svg class="ico" viewBox="0 0 24 24"><path d="M3 18h18M4 18l1-9 5 4 2-6 2 6 5-4 1 9"/></svg></span><div class="tier-ir"><div><div class="tier-in">Harmony Trinity HMS v2.4.1</div><div class="tier-id">Три стратегии в одном — развороты, ловушки ликвидности, сжатия</div></div><div class="tier-tf"><span>1H</span><span>4H</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#7ec8a0">✓</span><div class="tier-ir"><div><div class="tier-in">Smart Flow [THS]</div><div class="tier-id">Поток умных денег — показывает, куда двигаются крупные игроки</div></div><div class="tier-tf"><span>1H</span><span>4H</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#7ec8a0">✓</span><div class="tier-ir"><div><div class="tier-in">Apex Core v3.7</div><div class="tier-id">Ядро системы — фундамент, на котором строятся стратегии</div></div><div class="tier-tf"><span>15m</span><span>1H</span><span>4H</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#7ec8a0">✓</span><div class="tier-ir"><div><div class="tier-in">Turtle X Terminal v7.0</div><div class="tier-id">Торговый терминал — базовые сигналы и навигация по рынку</div></div><div class="tier-tf"><span>15m</span><span>1H</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#7ec8a0">✓</span><div class="tier-ir"><div><div class="tier-in">Apex Execution Framework v1.2</div><div class="tier-id">Рамка исполнения — помогает входить и выходить дисциплинированно</div></div><div class="tier-tf"><span>5m</span><span>15m</span></div></div></div>
+        </div>
+      </div>
+
+      <!-- START -->
+      <div class="tier-pn" id="tp-start">
+        <button class="tier-close" onclick="closeTier()" title="Закрыть" type="button">✕</button>
+        <div class="tier-pp"><span class="tier-pps" style="background:rgba(126,200,160,.1)">FREE</span><span class="tier-ppa">→</span><span class="tier-pps tcur" style="background:rgba(93,184,232,.2);color:#5db8e8">START</span><span class="tier-ppa">→</span><span class="tier-pps">PRO</span><span class="tier-ppa">→</span><span class="tier-pps">MAX ALPHA</span></div>
+        <div class="tier-ph"><div class="tier-pd" style="background:#5db8e8"></div><div class="tier-pt">START — Система трейдера</div><div class="tier-pc">6 из 21</div></div>
+        <div class="tier-ps">6 ключевых индикаторов · Invite-Only · Приватно</div>
+        <div class="tier-il">
+          <div class="tier-ii tcr"><span class="tier-ic"><svg class="ico" viewBox="0 0 24 24"><path d="M3 18h18M4 18l1-9 5 4 2-6 2 6 5-4 1 9"/></svg></span><div class="tier-ir"><div><div class="tier-in">LCE ATA v2.4.4</div><div class="tier-id">Аналитический движок — самый мощный модуль, думает за вас</div></div><div class="tier-tf"><span>1H</span><span>4H</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#5db8e8">✓</span><div class="tier-ir"><div><div class="tier-in">Radar Harmony v9.2</div><div class="tier-id">Сканер рынка — три режима: скальп, интрадей, тренд</div></div><div class="tier-tf"><span>5m</span><span>15m</span><span>1H</span><span>4H</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#5db8e8">✓</span><div class="tier-ir"><div><div class="tier-in">BTC DCA v3.7</div><div class="tier-id">Стратегия накопления — подсказывает, когда покупать порциями</div></div><div class="tier-tf"><span>1D</span><span>1W</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#5db8e8">✓</span><div class="tier-ir"><div><div class="tier-in">EMA v2 Cloud Squeeze</div><div class="tier-id">Облака тренда — визуально видно, куда идёт рынок</div></div><div class="tier-tf"><span>1H</span><span>4H</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#5db8e8">✓</span><div class="tier-ir"><div><div class="tier-in">Stoch Ultimate</div><div class="tier-id">Детектор перекупленности — показывает, когда рынок устал</div></div><div class="tier-tf"><span>15m</span><span>1H</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#5db8e8">✓</span><div class="tier-ir"><div><div class="tier-in">Octopus Scanner v25.1</div><div class="tier-id">Мультисканер — находит памп и дамп на альтах в начальной стадии</div></div><div class="tier-tf"><span>1H</span><span>4H</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#5db8e8">✓</span><div class="tier-ir"><div><div class="tier-in">Harmony Engine v10.2</div><div class="tier-id">Торговый движок — автоматизирует принятие решений</div></div><div class="tier-tf"><span>15m</span><span>1H</span><span>4H</span></div></div></div>
+        </div>
+      </div>
+
+      <!-- PRO -->
+      <div class="tier-pn" id="tp-pro">
+        <button class="tier-close" onclick="closeTier()" title="Закрыть" type="button">✕</button>
+        <div class="tier-pp"><span class="tier-pps" style="background:rgba(126,200,160,.1)">FREE</span><span class="tier-ppa">→</span><span class="tier-pps" style="background:rgba(93,184,232,.1)">START</span><span class="tier-ppa">→</span><span class="tier-pps tcur" style="background:rgba(192,132,232,.2);color:#c084e8">PRO</span><span class="tier-ppa">→</span><span class="tier-pps">MAX ALPHA</span></div>
+        <div class="tier-ph"><div class="tier-pd" style="background:#c084e8"></div><div class="tier-pt">PRO — Полный арсенал</div><div class="tier-pc">14 из 21</div></div>
+        <div class="tier-ps">Экономия $1,800+ vs рыночная · Invite-Only</div>
+        <div class="tier-ib">✓ Всё из START включено</div>
+        <div class="tier-il">
+          <div class="tier-ii tcr"><span class="tier-ic"><svg class="ico" viewBox="0 0 24 24"><path d="M3 18h18M4 18l1-9 5 4 2-6 2 6 5-4 1 9"/></svg></span><div class="tier-ir"><div><div class="tier-in">Apex Zenith Pro v10.1<span class="tier-tg" style="background:rgba(192,132,232,.2);color:#c084e8">best</span></div><div class="tier-id">Флагман пакета — профессиональная система анализа рынка</div></div><div class="tier-tf"><span>1H</span><span>4H</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#c084e8">✓</span><div class="tier-ir"><div><div class="tier-in">ASM v3.3 PRO</div><div class="tier-id">Тайминг входа — лучший момент для сделки, акцент на скальп</div></div><div class="tier-tf"><span>1m</span><span>5m</span><span>15m</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#c084e8">✓</span><div class="tier-ir"><div><div class="tier-in">LCE ATA v2.4.4</div><div class="tier-id">Аналитический движок — комплексный анализ в одном окне</div></div><div class="tier-tf"><span>1H</span><span>4H</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#c084e8">✓</span><div class="tier-ir"><div><div class="tier-in">ORB Ultimate v2.5</div><div class="tier-id">Ловец открытия — захватывает первое сильное движение дня</div></div><div class="tier-tf"><span>5m</span><span>15m</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#c084e8">✓</span><div class="tier-ir"><div><div class="tier-in">Oracle Goyaline v7.0</div><div class="tier-id">Предсказатель — прогнозирует движения на основе паттернов</div></div><div class="tier-tf"><span>4H</span><span>1D</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#c084e8">✓</span><div class="tier-ir"><div><div class="tier-in">AZP v5.2 Full<span class="tier-tg" style="background:rgba(255,255,255,.06);color:var(--text3)">+8 ещё</span></div><div class="tier-id">Ценовые зоны — точные уровни поддержки и сопротивления</div></div><div class="tier-tf"><span>1H</span><span>4H</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#c084e8">✓</span><div class="tier-ir"><div><div class="tier-in">Персональная настройка</div><div class="tier-id">Индивидуальная подстройка под ваш стиль торговли</div></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#c084e8">✓</span><div class="tier-ir"><div><div class="tier-in">Harmony Engine · Cluster Radar</div><div class="tier-id">Движок + кластерный анализ — глубокий рентген рынка</div></div><div class="tier-tf"><span>1H</span><span>4H</span></div></div></div>
+        </div>
+      </div>
+
+      <!-- MAX ALPHA -->
+      <div class="tier-pn" id="tp-max">
+        <button class="tier-close" onclick="closeTier()" title="Закрыть" type="button">✕</button>
+        <div class="tier-pp"><span class="tier-pps" style="background:rgba(126,200,160,.1)">FREE</span><span class="tier-ppa">→</span><span class="tier-pps" style="background:rgba(93,184,232,.1)">START</span><span class="tier-ppa">→</span><span class="tier-pps" style="background:rgba(192,132,232,.1)">PRO</span><span class="tier-ppa">→</span><span class="tier-pps tcur" style="background:rgba(240,192,96,.2);color:#f0c060">MAX ALPHA</span></div>
+        <div class="tier-ph"><div class="tier-pd" style="background:#f0c060"></div><div class="tier-pt">MAX ALPHA — Всё включено</div><div class="tier-pc">ВСЕ 21</div></div>
+        <div class="tier-ps">$2,500+ рыночная стоимость · Full Ecosystem</div>
+        <div class="tier-ib">✓ Всё из FREE + START + PRO включено</div>
+        <div class="tier-il">
+          <div class="tier-ii"><span class="tier-ic" style="color:#f0c060">✓</span><div class="tier-ir"><div><div class="tier-in">ВСЕ 21 индикатор</div><div class="tier-id">Полная экосистема — ни один инструмент не пропущен</div></div><div class="tier-tf"><span>1m</span><span>→</span><span>1W</span></div></div></div>
+          <div class="tier-ii tcr"><span class="tier-ic"><svg class="ico" viewBox="0 0 24 24"><path d="M3 18h18M4 18l1-9 5 4 2-6 2 6 5-4 1 9"/></svg></span><div class="tier-ir"><div><div class="tier-in">Harmony Engine v10.2<span class="tier-tg" style="background:rgba(240,192,96,.2);color:#f0c060">эксклюзив</span></div><div class="tier-id">Торговый движок нового поколения — только для MAX ALPHA</div></div><div class="tier-tf"><span>15m</span><span>1H</span><span>4H</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#f0c060">✓</span><div class="tier-ir"><div><div class="tier-in">Apex Cluster Radar v2.7</div><div class="tier-id">Кластерный анализ — видим каждую свечку насквозь, как стакан</div></div><div class="tier-tf"><span>1m</span><span>5m</span><span>15m</span></div></div></div>
+          <div class="tier-ii"><span class="tier-ic" style="color:#ff6b35">✓</span><div class="tier-ir"><div><div class="tier-in">Turtle X Terminal v14.6<span class="tier-tg" style="background:rgba(255,107,53,.15);color:#ff6b35">новинка</span></div><div class="tier-id">Продвинутый терминал — новейшая версия с расширенным функционалом</div></div><div class="tier-tf"><span>15m</span><span>1H</span></div></div></div>
+        </div>
+        <div style="margin-top:8px;border-top:1px solid var(--border);padding-top:8px;">
+          <div class="tier-bi"><svg class="ico" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="2.5" y="14" width="4" height="6" rx="1.5"/><rect x="17.5" y="14" width="4" height="6" rx="1.5"/></svg> VIP поддержка разработчика</div>
+          <div class="tier-bi"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5-6-3.5Z"/></svg> Видео-инструкции</div>
+          <div class="tier-bi"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.6V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.6 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1Z"/></svg> Персональная настройка</div>
+          <div class="tier-bi"><svg class="ico" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.3 6.4L3 16M3 12a9 9 0 0 1 15.3-6.4L21 8"/><path d="M3 16v-4h4M21 8h-4v4"/></svg> Обновления включены в подписку</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag"><span class="hero-tag-dot"></span>ПРОФЕССИОНАЛЬНАЯ ТОРГОВАЯ ЭКОСИСТЕМА</div>
+      <h1>
+  <span class="typewriter-line" id="tw1">21 Индикатор.</span><br>
+  <span class="typewriter-line2" style="opacity:1;">Одно <em id="tw2">Преимущество.</em></span>
+</h1>
+      <p class="hero-sub" style="color:var(--green);font-weight:700;font-size:16px;margin-bottom:14px;">Не верьте графику на слово. Проверяйте.</p>
+      <p class="hero-sub">Профессиональные инструменты на базе Smart Money Concepts и ICT. Автоматический анализ структуры рынка — без перерисовки, без задержек, без воды. Pine Script v6.</p>
+      <div class="hero-btns">
+        <a href="https://t.me/TheHarmonySystems/1" target="_blank" class="btn-primary" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg> Получить доступ сейчас</a>
+        <a href="#market-pulse" class="btn-outline"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg> Проверить подход бесплатно</a>
+      </div>
+      <div class="hero-benefits">
+        <div class="hero-benefit"><div class="hero-benefit-icon"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6M12 2v3"/></svg></div><div class="hero-benefit-text"><strong>Часы анализа — секунды</strong><span>SMC-структура строится автоматически</span></div></div>
+        <div class="hero-benefit"><div class="hero-benefit-icon"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div><div class="hero-benefit-text"><strong>Знаешь качество до входа</strong><span>Классы A/B/C/D на каждом сигнале</span></div></div>
+        <div class="hero-benefit"><div class="hero-benefit-icon"><svg class="ico" viewBox="0 0 24 24"><path d="M3 13c2-4 6-6 11-6 4 0 7 2 7 5 0 2-1 3-3 3-1.5 0-2.5-.7-3-1.5-1 1.5-3 2.5-6 2.5-3 0-5-1-6-3Z"/><path d="M9 17c1 1 3 2 5 2M6 10.5l-2-2"/></svg></div><div class="hero-benefit-text"><strong>Видишь умные деньги</strong><span>OB, <span class="term">FVG<span class="term-tip"><strong>Fair Value Gap</strong>Дисбаланс цены — зона возможного возврата рынка</span></span>, Whale заявки — в реальном времени</span></div></div>
+        <div class="hero-benefit"><div class="hero-benefit-icon"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 1.5c1.7 0 2.7-1 2.7-2.1 0-3-5.4-1.5-5.4-4.4 0-1.1 1-2.1 2.7-2.1a2.5 2.5 0 0 1 2.5 1.5M12 6.5v1M12 16.5v1"/></svg></div><div class="hero-benefit-text"><strong>В 14× дешевле рынка</strong><span>21 инструмент за $170 вместо $2500+</span></div></div>
+      </div>
+    </div>
+    <div style="position:relative;">
+      <div class="class-badge"><div class="class-badge-val">A</div><div class="class-badge-lbl">SIGNAL CLASS</div></div>
+      <div class="hero-chart mask-reveal">
+        <div class="chart-bar">
+          <div class="chart-dots"><div class="chart-dot r"></div><div class="chart-dot y"></div><div class="chart-dot g"></div></div>
+          <span class="chart-sym">BTCUSDT · 15M</span>
+          <div class="chart-tfs"><span class="chart-tf">5M</span><span class="chart-tf on">15M</span><span class="chart-tf">1H</span><span class="chart-tf">4H</span></div>
+        </div>
+        <!-- Animated TradingView-style chart -->
+        <div class="chart-body" style="height:300px;">
+          <svg viewBox="0 0 620 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;">
+            <rect width="620" height="300" fill="#131722"/>
+            <!-- Grid lines -->
+            <line x1="0" y1="60" x2="620" y2="60" stroke="#1e2433" stroke-width="1"/>
+            <line x1="0" y1="120" x2="620" y2="120" stroke="#1e2433" stroke-width="1"/>
+            <line x1="0" y1="180" x2="620" y2="180" stroke="#1e2433" stroke-width="1"/>
+            <line x1="0" y1="240" x2="620" y2="240" stroke="#1e2433" stroke-width="1"/>
+            <line x1="100" y1="0" x2="100" y2="300" stroke="#1e2433" stroke-width="1"/>
+            <line x1="200" y1="0" x2="200" y2="300" stroke="#1e2433" stroke-width="1"/>
+            <line x1="300" y1="0" x2="300" y2="300" stroke="#1e2433" stroke-width="1"/>
+            <line x1="400" y1="0" x2="400" y2="300" stroke="#1e2433" stroke-width="1"/>
+            <line x1="500" y1="0" x2="500" y2="300" stroke="#1e2433" stroke-width="1"/>
+            <!-- Price labels -->
+            <text x="4" y="58" fill="#4a4e5a" font-size="9" font-family="monospace">2,450</text>
+            <text x="4" y="118" fill="#4a4e5a" font-size="9" font-family="monospace">2,380</text>
+            <text x="4" y="178" fill="#4a4e5a" font-size="9" font-family="monospace">2,310</text>
+            <text x="4" y="238" fill="#4a4e5a" font-size="9" font-family="monospace">2,240</text>
+            <!-- EMA 200 -->
+            <polyline class="anim-line3" points="0,220 60,210 120,198 180,190 240,178 300,166 360,154 420,145 480,138 540,132 620,128" fill="none" stroke="#f0b90b" stroke-width="1.5" opacity=".6"/>
+            <!-- EMA 50 -->
+            <polyline class="anim-line2" points="0,200 60,185 120,172 180,158 240,145 300,138 360,130 420,118 480,108 540,99 620,92" fill="none" stroke="#2962ff" stroke-width="1.5" opacity=".7"/>
+            <!-- Main price line with area fill -->
+            <defs>
+              <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(38,166,154,.18)"/>
+                <stop offset="100%" stop-color="rgba(38,166,154,0)"/>
+              </linearGradient>
+            </defs>
+            <polygon points="0,280 0,195 40,182 80,165 120,148 160,138 200,145 240,125 280,110 320,118 360,95 400,78 440,88 480,72 520,60 560,52 620,46 620,280" fill="url(#areaGrad)"/>
+            <polyline class="anim-line" points="0,195 40,182 80,165 120,148 160,138 200,145 240,125 280,110 320,118 360,95 400,78 440,88 480,72 520,60 560,52 620,46" fill="none" stroke="#26a69a" stroke-width="2.5"/>
+            <!-- Candles on top of area -->
+            <g style="animation-delay:.2s">
+              <line x1="22" y1="178" x2="22" y2="195" stroke="#26a69a" stroke-width="1"/><rect x="18" y="180" width="8" height="10" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:.3s"/>
+              <line x1="42" y1="174" x2="42" y2="190" stroke="#26a69a" stroke-width="1"/><rect x="38" y="176" width="8" height="10" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:.4s"/>
+              <line x1="62" y1="160" x2="62" y2="176" stroke="#ef5350" stroke-width="1"/><rect x="58" y="162" width="8" height="11" fill="#ef5350" rx="1" class="anim-candle" style="animation-delay:.5s"/>
+              <line x1="82" y1="158" x2="82" y2="172" stroke="#26a69a" stroke-width="1"/><rect x="78" y="160" width="8" height="9" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:.6s"/>
+              <line x1="102" y1="143" x2="102" y2="157" stroke="#26a69a" stroke-width="1"/><rect x="98" y="145" width="8" height="9" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:.7s"/>
+              <line x1="122" y1="140" x2="122" y2="155" stroke="#ef5350" stroke-width="1"/><rect x="118" y="142" width="8" height="10" fill="#ef5350" rx="1" class="anim-candle" style="animation-delay:.75s"/>
+              <line x1="142" y1="135" x2="142" y2="148" stroke="#26a69a" stroke-width="1"/><rect x="138" y="137" width="8" height="8" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:.8s"/>
+              <line x1="162" y1="130" x2="162" y2="144" stroke="#26a69a" stroke-width="1"/><rect x="158" y="132" width="8" height="9" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:.85s"/>
+              <line x1="182" y1="138" x2="182" y2="152" stroke="#ef5350" stroke-width="1"/><rect x="178" y="140" width="8" height="9" fill="#ef5350" rx="1" class="anim-candle" style="animation-delay:.9s"/>
+              <line x1="202" y1="120" x2="202" y2="134" stroke="#26a69a" stroke-width="1"/><rect x="198" y="122" width="8" height="9" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:.95s"/>
+              <line x1="222" y1="115" x2="222" y2="129" stroke="#26a69a" stroke-width="1"/><rect x="218" y="117" width="8" height="9" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:1s"/>
+              <line x1="242" y1="118" x2="242" y2="132" stroke="#ef5350" stroke-width="1"/><rect x="238" y="120" width="8" height="9" fill="#ef5350" rx="1" class="anim-candle" style="animation-delay:1.05s"/>
+              <line x1="262" y1="106" x2="262" y2="119" stroke="#26a69a" stroke-width="1"/><rect x="258" y="108" width="8" height="8" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:1.1s"/>
+              <line x1="282" y1="104" x2="282" y2="117" stroke="#26a69a" stroke-width="1"/><rect x="278" y="106" width="8" height="8" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:1.15s"/>
+              <line x1="302" y1="112" x2="302" y2="126" stroke="#ef5350" stroke-width="1"/><rect x="298" y="114" width="8" height="9" fill="#ef5350" rx="1" class="anim-candle" style="animation-delay:1.2s"/>
+              <line x1="322" y1="90" x2="322" y2="104" stroke="#26a69a" stroke-width="1"/><rect x="318" y="92" width="8" height="9" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:1.25s"/>
+              <line x1="342" y1="88" x2="342" y2="102" stroke="#26a69a" stroke-width="1"/><rect x="338" y="90" width="8" height="9" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:1.3s"/>
+              <line x1="362" y1="92" x2="362" y2="105" stroke="#ef5350" stroke-width="1"/><rect x="358" y="93" width="8" height="9" fill="#ef5350" rx="1" class="anim-candle" style="animation-delay:1.35s"/>
+              <line x1="382" y1="74" x2="382" y2="87" stroke="#26a69a" stroke-width="1"/><rect x="378" y="76" width="8" height="8" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:1.4s"/>
+              <line x1="402" y1="82" x2="402" y2="95" stroke="#ef5350" stroke-width="1"/><rect x="398" y="84" width="8" height="8" fill="#ef5350" rx="1" class="anim-candle" style="animation-delay:1.45s"/>
+              <line x1="422" y1="68" x2="422" y2="82" stroke="#26a69a" stroke-width="1"/><rect x="418" y="70" width="8" height="9" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:1.5s"/>
+              <line x1="442" y1="65" x2="442" y2="78" stroke="#26a69a" stroke-width="1"/><rect x="438" y="67" width="8" height="8" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:1.55s"/>
+              <line x1="462" y1="58" x2="462" y2="71" stroke="#26a69a" stroke-width="1"/><rect x="458" y="60" width="8" height="8" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:1.6s"/>
+              <line x1="482" y1="62" x2="482" y2="75" stroke="#ef5350" stroke-width="1"/><rect x="478" y="64" width="8" height="8" fill="#ef5350" rx="1" class="anim-candle" style="animation-delay:1.65s"/>
+              <line x1="502" y1="52" x2="502" y2="64" stroke="#26a69a" stroke-width="1"/><rect x="498" y="54" width="8" height="7" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:1.7s"/>
+              <line x1="522" y1="48" x2="522" y2="60" stroke="#26a69a" stroke-width="1"/><rect x="518" y="50" width="8" height="7" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:1.75s"/>
+              <line x1="542" y1="45" x2="542" y2="57" stroke="#26a69a" stroke-width="1"/><rect x="538" y="47" width="8" height="7" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:1.8s"/>
+              <line x1="562" y1="50" x2="562" y2="62" stroke="#ef5350" stroke-width="1"/><rect x="558" y="52" width="8" height="7" fill="#ef5350" rx="1" class="anim-candle" style="animation-delay:1.85s"/>
+              <line x1="582" y1="42" x2="582" y2="54" stroke="#26a69a" stroke-width="1"/><rect x="578" y="44" width="8" height="7" fill="#26a69a" rx="1" class="anim-candle" style="animation-delay:1.9s"/>
+            </g>
+            <!-- Signal dots -->
+            <circle cx="322" cy="88" r="7" fill="none" stroke="#26a69a" stroke-width="2" opacity=".8" class="anim-candle" style="animation-delay:1.8s"/>
+            <circle cx="322" cy="88" r="4" fill="#26a69a" class="anim-candle" style="animation-delay:1.9s"/>
+            <circle cx="482" cy="60" r="7" fill="none" stroke="#26a69a" stroke-width="2" opacity=".8" class="anim-candle" style="animation-delay:2.2s"/>
+            <circle cx="482" cy="60" r="4" fill="#26a69a" class="anim-candle" style="animation-delay:2.3s"/>
+            <!-- Signal labels -->
+            <rect x="296" y="68" width="52" height="14" rx="3" fill="rgba(38,166,154,.2)" stroke="rgba(38,166,154,.4)" stroke-width="1" class="anim-candle" style="animation-delay:2s"/>
+            <text x="322" y="78" fill="#26a69a" font-size="8" font-family="monospace" text-anchor="middle" font-weight="700" class="anim-candle" style="animation-delay:2s">CLASS A</text>
+            <!-- Current price line -->
+            <line x1="0" y1="46" x2="590" y2="46" stroke="rgba(38,166,154,.3)" stroke-width="1" stroke-dasharray="4,3"/>
+            <rect x="590" y="38" width="30" height="16" rx="2" fill="#26a69a"/>
+            <text x="605" y="49" fill="#0e1116" font-size="8" font-family="monospace" text-anchor="middle" font-weight="700">LIVE</text>
+            <!-- Indicator labels bottom -->
+            <text x="8" y="295" fill="#f0b90b" font-size="8" font-family="monospace" opacity=".7">EMA 200</text>
+            <text x="65" y="295" fill="#2962ff" font-size="8" font-family="monospace" opacity=".7">EMA 50</text>
+            <text x="118" y="295" fill="#26a69a" font-size="8" font-family="monospace" opacity=".7">APEX ZENITH PRO</text>
+          </svg>
+          <!-- Floating signal badge -->
+          <div class="hero-signal">
+            <div class="hs-row"><span class="hs-dot buy"></span><span class="hs-lbl">LONG · HIGH CONFIDENCE</span></div>
+            <div class="hs-row"><span class="hs-dot buy"></span><span class="hs-lbl">BUY 100% · TF:15</span></div>
+            <div class="hs-row"><span class="hs-dot sell"></span><span class="hs-lbl">SL: 81208 · -0.23%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET PULSE -->
+<section class="section" id="market-pulse">
+  <div class="section-head fade-up">
+    <div class="section-label">БЕСПЛАТНЫЙ ИНСТРУМЕНТ</div>
+    <h2 class="section-title">Market Pulse — рыночный пульс</h2>
+    <p class="section-sub">Агрегированная оценка направления рынка по 5 независимым индикаторам классического технического анализа. Обновляется автоматически.</p>
+  </div>
+
+  <div class="mp-tabs" id="mpTabs">
+    <button class="mp-tab on" data-asset="BTC" type="button">BTC</button>
+    <button class="mp-tab" data-asset="ETH" type="button">ETH</button>
+    <button class="mp-tab" data-asset="XAU" type="button">GOLD</button>
+    <button class="mp-tab" data-asset="EURUSD" type="button">EURUSD</button>
+  </div>
+
+  <div class="mp-wrap fade-up d1">
+    <div class="mp-card">
+      <div class="mp-gauge-wrap">
+        <svg class="mp-gauge" viewBox="0 0 200 110">
+          <path class="mp-gauge-bg" d="M10,100 A90,90 0 0,1 190,100"/>
+          <path class="mp-gauge-fill" id="mpGaugeFill" d="M10,100 A90,90 0 0,1 190,100"/>
+        </svg>
+        <div class="mp-gauge-score" id="mpScore">—</div>
+      </div>
+      <div class="mp-status" id="mpStatus">Загрузка…</div>
+
+      <div class="mp-price-context">
+        <div class="mp-pc-item"><span class="mp-pc-lbl">Hi сессия</span><span class="mp-pc-val" id="mpSessHigh">—</span></div>
+        <div class="mp-pc-item"><span class="mp-pc-lbl">Lo сессия</span><span class="mp-pc-val" id="mpSessLow">—</span></div>
+        <div class="mp-pc-item"><span class="mp-pc-lbl">Hi вчера</span><span class="mp-pc-val" id="mpPrevHigh">—</span></div>
+        <div class="mp-pc-item"><span class="mp-pc-lbl">Lo вчера</span><span class="mp-pc-val" id="mpPrevLow">—</span></div>
+      </div>
+
+      <div class="mp-timeline" id="mpTimeline"></div>
+
+      <div class="mp-meta">
+        <span id="mpUpdated">—</span>
+        <span id="mpCountdown">—</span>
+      </div>
+
+      <button class="mp-share" id="mpShare" type="button">⤴ Поделиться</button>
+    </div>
+
+    <div class="mp-checklist">
+      <div class="mp-check-title">Методология</div>
+      <div class="mp-check-item"><span class="mp-check-dot" id="mpDotMacd"></span>MACD — направление тренда</div>
+      <div class="mp-check-item"><span class="mp-check-dot" id="mpDotAdx"></span>ADX — сила тренда</div>
+      <div class="mp-check-item"><span class="mp-check-dot" id="mpDotRsi"></span>RSI — моментум</div>
+      <div class="mp-check-item"><span class="mp-check-dot" id="mpDotMfi"></span>MFI — подтверждение объёмом</div>
+      <div class="mp-check-item"><span class="mp-check-dot" id="mpDotBb"></span>Bollinger Bands — волатильность</div>
+      <div class="mp-check-item"><span class="mp-check-dot" id="mpDotFg"></span>Fear &amp; Greed Index — сентимент</div>
+      <div class="mp-disclaimer">Классический технический анализ. Не является сигналом платных индикаторов THS и не является инвестиционной рекомендацией.</div>
+      <a href="#indicators" class="mp-cta">Смотреть 21 индикатор THS →</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-cell fade-up"><div class="strip-val" data-counter="21" data-suffix="">0</div><div class="strip-lbl">Индикаторов в экосистеме</div></div>
+    <div class="strip-cell fade-up d1"><div class="strip-val g" data-counter="0" data-suffix="">0</div><div class="strip-lbl">Реальный Repainting</div></div>
+    <div class="strip-cell fade-up d2"><div class="strip-val au" data-counter="2500" data-prefix="$" data-suffix="+">$0</div><div class="strip-lbl">Рыночная стоимость</div></div>
+    <div class="strip-cell fade-up d3"><div class="strip-val b" data-counter="4" data-suffix="+">0</div><div class="strip-lbl">Рынков</div></div>
+    <div class="strip-cell fade-up" style="transition-delay:.4s"><div class="strip-val b">Invite</div><div class="strip-lbl">Only Access · Ограниченно</div></div>
+  </div>
+</div>
+
+<!-- BENTO — AI Empire style expandable directions -->
+<section style="background:var(--bg2);border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="section-head fade-up">
+      <div class="section-label">НАПРАВЛЕНИЯ</div>
+      <h2 class="section-title">Всё для прибыльной торговли</h2>
+      <p class="section-sub">5 специализированных направлений. Нажмите — раскроется детальное описание.</p>
+    </div>
+    <div class="bento-grid fade-up d1">
+      <div class="bento-card open" role="button" tabindex="0" aria-expanded="true" onclick="toggleBento(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleBento(this)}">
+        <div class="bento-head">
+          <span class="bento-num">01 —</span><span class="bento-icon"><svg class="ico" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg></span>
+          <div class="bento-info"><div class="bento-title">SMC / ICT Структура</div><div class="bento-short">BOS, CHoCH, Order Blocks, FVG, Premium/Discount</div></div>
+          <span class="bento-toggle">Открыть</span>
+        </div>
+        <div class="bento-body"><div class="bento-content">
+          <div class="bento-preview" style="height:140px;"><img src="assets/img-001.webp" alt="LCE ATA v2.4.4 — SMC структура BOS CHoCH Order Blocks" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.85;border-radius:6px;" loading="lazy"></div>
+          <p class="bento-desc">LCE ATA автоматически размечает структуру Smart Money: <span class="term">BOS<span class="term-tip"><strong>Break of Structure</strong>Слом рыночной структуры — подтверждение нового тренда</span></span>, CHoCH, Order Blocks, FVG, Premium/Discount Zones. То что трейдер рисует часами — LCE делает мгновенно и без ошибок на любом таймфрейме.</p>
+          <div class="bento-tags"><span class="bento-tag">LCE ATA v2.4.4</span><span class="bento-tag">ORB Ultimate v2.5</span><span class="bento-tag">SMC/ICT</span><span class="bento-tag">5M·15M·1H·4H</span></div>
+        </div></div>
+      </div>
+      <div class="bento-card" role="button" tabindex="0" aria-expanded="false" onclick="toggleBento(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleBento(this)}">
+        <div class="bento-head">
+          <span class="bento-num">02 —</span><span class="bento-icon"><svg class="ico" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span>
+          <div class="bento-info"><div class="bento-title">Нейронный Sentiment</div><div class="bento-short">93.8% Win Rate · Классы A/B/C/D · MTF подтверждение</div></div>
+          <span class="bento-toggle">Открыть</span>
+        </div>
+        <div class="bento-body"><div class="bento-content">
+          <div class="bento-preview" style="height:140px;"><img src="assets/img-002.webp" alt="Apex Zenith Pro v10.1 — нейронный sentiment классы A/B/C/D" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.85;border-radius:6px;" loading="lazy"></div>
+          <p class="bento-desc">Apex Zenith Pro объединяет нейронный sentiment, MTF-подтверждение, поток ордеров и структуру в единый сигнал A/B/C/D. Класс A — 93.8% Win Rate на 800+ сделках. Вы всегда знаете насколько надёжен вход.</p>
+          <div class="bento-tags"><span class="bento-tag">Apex Zenith Pro v10.1</span><span class="bento-tag">Harmony Engine v10.2</span><span class="bento-tag">Radar v9.2</span><span class="bento-tag">ALL TF</span></div>
+        </div></div>
+      </div>
+      <div class="bento-card" role="button" tabindex="0" aria-expanded="false" onclick="toggleBento(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleBento(this)}">
+        <div class="bento-head">
+          <span class="bento-num">03 —</span><span class="bento-icon"><svg class="ico" viewBox="0 0 24 24"><path d="M4 11a8 8 0 0 1 16 0"/><path d="M7.5 14.5a4 4 0 0 1 9 0"/><circle cx="12" cy="18" r="1.5"/></svg></span>
+          <div class="bento-info"><div class="bento-title">Кластерный анализ</div><div class="bento-short">Footprint · Delta · Whale Tracker нативно в TradingView</div></div>
+          <span class="bento-toggle">Открыть</span>
+        </div>
+        <div class="bento-body"><div class="bento-content">
+          <div class="bento-preview" style="height:140px;"><img src="assets/img-003.webp" alt="Apex Orca v2.3 — кластерный анализ Whale Tracker" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.85;border-radius:6px;" loading="lazy"></div>
+          <p class="bento-desc">Apex Orca отслеживает крупные лимитные заявки и китов прямо в TradingView — без внешних платформ. Footprint и delta показывают где именно покупают и продают институционалы.</p>
+          <div class="bento-tags"><span class="bento-tag">Apex Orca v2.3</span><span class="bento-tag">Cluster Radar v2.7</span><span class="bento-tag">Footprint</span><span class="bento-tag">WHALE</span></div>
+        </div></div>
+      </div>
+      <div class="bento-card" role="button" tabindex="0" aria-expanded="false" onclick="toggleBento(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleBento(this)}">
+        <div class="bento-head">
+          <span class="bento-num">04 —</span><span class="bento-icon"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+          <div class="bento-info"><div class="bento-title">Исполнение сделок</div><div class="bento-short">Auto TP/SL · Dynamic R:R · ATR · Session Scalping</div></div>
+          <span class="bento-toggle">Открыть</span>
+        </div>
+        <div class="bento-body"><div class="bento-content">
+          <div class="bento-preview" style="height:140px;"><img src="assets/img-004.webp" alt="AZP v5.2 Full — исполнение сделок динамический R:R" style="width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.85;border-radius:6px;" loading="lazy"></div>
+          <p class="bento-desc">ANP, ASM, AZP автоматически рассчитывают TP/SL с динамическим R:R. ASM Pro — 184 верифицированных сделки, Win Rate 67.4%. Не считаете уровни вручную — система делает за вас.</p>
+          <div class="bento-tags"><span class="bento-tag">ANP v4.4 CRYPTO</span><span class="bento-tag">ASM v3.3 PRO</span><span class="bento-tag">AZP v5.2</span><span class="bento-tag">AUTO TP/SL</span></div>
+        </div></div>
+      </div>
+      <div class="bento-card" role="button" tabindex="0" aria-expanded="false" onclick="toggleBento(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleBento(this)}" style="grid-column:1/-1;">
+        <div class="bento-head">
+          <span class="bento-num">05 —</span><span class="bento-icon"><svg class="ico" viewBox="0 0 24 24"><path d="M3 20V10M10 20V4M17 20v-7"/></svg></span>
+          <div class="bento-info"><div class="bento-title">Аналитика и утилиты</div><div class="bento-short">Order Flow · DCA · Oscillator · Trend · 2 Protected инструмента</div></div>
+          <span class="bento-toggle">Открыть</span>
+        </div>
+        <div class="bento-body"><div class="bento-content">
+          <p class="bento-desc">Zenith TrendFlow — Order Flow в реальном времени. Stoch Ultimate — скрытые дивергенции и экстремальные зоны. Oracle Goyaline — институциональная трендовая система. BTC DCA v3.7 — умные зоны усреднения. Octopus Scanner — мультиактивный сканер на 20+ инструментах. И два бесплатных инструмента: Turtle X Terminal (ADX + Score 0–100) и Apex Execution Framework (17-модульная система).</p>
+          <div class="bento-tags">
+            <span class="bento-tag">Zenith TrendFlow</span><span class="bento-tag">Stoch Ultimate</span><span class="bento-tag">Oracle Goyaline</span>
+            <span class="bento-tag">BTC DCA v3.7</span><span class="bento-tag">Octopus Scanner</span>
+            <span class="bento-tag" style="color:var(--green);border-color:rgba(38,166,154,.3);">🆓 Turtle X Terminal v7.0</span>
+            <span class="bento-tag" style="color:var(--green);border-color:rgba(38,166,154,.3);">🆓 Apex Exec Framework</span>
+            <span class="bento-tag" style="color:var(--green);border-color:rgba(38,166,154,.3);">🆓 Apex Core v3.7</span>
+            <span class="bento-tag" style="color:var(--green);border-color:rgba(38,166,154,.3);">🆓 Harmony Trinity v2.4.1</span>
+            <span class="bento-tag" style="color:var(--gold);border-color:rgba(240,185,11,.3);">★ Turtle X Terminal v14.6</span>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="background:var(--bg);border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="section-head fade-up">
+      <div class="section-label">КАК ЭТО РАБОТАЕТ</div>
+      <h2 class="section-title">3 шага до первого сигнала</h2>
+    </div>
+    <div class="steps-row fade-up d1">
+      <div class="step-card"><div class="step-num">// STEP 01</div><div class="step-icon"><svg class="ico" viewBox="0 0 24 24"><path d="M21.5 4.5 2.5 12l6 2.2m13-9.7L17 20l-8.5-6.2m13-9.3L8.5 13.8m0 0v5.7l3.2-3.4"/></svg></div><div class="step-title">Пишите в Telegram</div><p class="step-desc">Напишите @TheHarmonySystems, выберите тариф. Отвечаем в течение нескольких часов.</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step-card"><div class="step-num">// STEP 02</div><div class="step-icon"><svg class="ico" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 9.5h19M6 14.5h4"/></svg></div><div class="step-title">Оплата и Invite</div><p class="step-desc">Оплата через крипту или перевод. В течение 24 часов — Invite-Only на все скрипты в TradingView.</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step-card"><div class="step-num">// STEP 03</div><div class="step-icon"><svg class="ico" viewBox="0 0 24 24"><path d="M3 20V10M10 20V4M17 20v-7"/></svg></div><div class="step-title">Торгуйте как профи</div><p class="step-desc">Добавляете индикаторы на график, смотрите видео-инструкцию. Персональная настройка в PRO и MAX.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section style="background:var(--bg2);border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="section-head fade-up">
+      <div class="section-label">ИСТОРИЯ</div>
+      <h2 class="section-title">Проблема → Решение → Результат</h2>
+    </div>
+    <div class="timeline fade-up d1">
+      <div class="tl-step">
+        <div class="tl-node red">01</div>
+        <div class="tl-body">
+          <div class="tl-label r">ПРОБЛЕМА</div>
+          <div class="tl-title">7 лет поиска работающей системы</div>
+          <p class="tl-desc">Перепробовал десятки платных индикаторов. Большинство репайнтят. Остальные дают сигналы без контекста — без структуры, без оценки качества. Тратил 3–4 часа на ручной анализ и всё равно пропускал лучшие входы.</p>
+          <div class="tl-quote">"Мне нужна была не просто стрелка. Мне нужно было знать — этот сигнал A-класса или мусор."</div>
+        </div>
+      </div>
+      <div class="tl-line"></div>
+      <div class="tl-step">
+        <div class="tl-node amber">02</div>
+        <div class="tl-body">
+          <div class="tl-label a">РЕШЕНИЕ</div>
+          <div class="tl-title">3+ лет разработки · Написано на Pine Script v6</div>
+          <p class="tl-desc">Написал с нуля, без репайнтинга, с реальной логикой SMC/ICT. Каждый индикатор решал задачу из моей торговли. 1 скрипт превратился в экосистему из 21 инструмента с единой Score System.</p>
+          <div class="tl-stat-row">
+            <div><span class="tl-stat-val">3</span><span class="tl-stat-lbl">года разработки</span></div>
+            <div><span class="tl-stat-val">800+</span><span class="tl-stat-lbl">верифицированных сделок</span></div>
+            <div><span class="tl-stat-val">21</span><span class="tl-stat-lbl">инструмент</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tl-line"></div>
+      <div class="tl-step">
+        <div class="tl-node green">03</div>
+        <div class="tl-body">
+          <div class="tl-label g">РЕЗУЛЬТАТ</div>
+          <div class="tl-title">Система работает. Теперь она доступна вам.</div>
+          <p class="tl-desc">Apex Zenith Pro — 93.8% Win Rate на 800+ сделках класса A. Анализ, который занимал часы — теперь секунды. Invite-Only доступ для ограниченного круга трейдеров.</p>
+          <a href="https://t.me/TheHarmonySystems/1" target="_blank" class="btn-primary" style="margin-top:18px;display:inline-flex;" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg> Получить доступ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section style="background:var(--bg);border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="section-head fade-up">
+      <div class="section-label">ДЛЯ КОГО</div>
+      <h2 class="section-title">Harmony Systems не для всех</h2>
+    </div>
+    <div class="two-cols fade-up d1">
+      <div class="col-card no">
+        <div class="col-head"><span style="font-size:18px;">✕</span><span class="col-head-title" style="color:var(--red);">Не подходит</span></div>
+        <ul class="col-list">
+          <li><span class="col-mark m">✕</span>Ищешь «волшебную кнопку» без участия трейдера</li>
+          <li><span class="col-mark m">✕</span>Депозит меньше $200 — риск-менеджмент не отработает</li>
+          <li><span class="col-mark m">✕</span>Не знаешь базовых понятий: тренд, S/R, свечи</li>
+          <li><span class="col-mark m">✕</span>Думаешь 93.8% = "всегда в плюсе" (это Win Rate класса A, ~20% сигналов)</li>
+          <li><span class="col-mark m">✕</span>Хочешь полностью автоматическую торговлю без участия</li>
+        </ul>
+      </div>
+      <div class="col-card yes">
+        <div class="col-head"><span style="font-size:18px;">✓</span><span class="col-head-title" style="color:var(--green);">Подходит</span></div>
+        <ul class="col-list">
+          <li><span class="col-mark p">✓</span>Торгуешь Crypto · Forex · Gold · Indices от 1M до Daily</li>
+          <li><span class="col-mark p">✓</span>Тратишь часы на ручной SMC-анализ и хочешь автоматизировать</li>
+          <li><span class="col-mark p">✓</span>Не видишь институциональную структуру — <span class="term">OB<span class="term-tip"><strong>Order Block</strong>Институциональный блок заявок крупных игроков</span></span>, FVG, ликвидность</li>
+          <li><span class="col-mark p">✓</span>Хочешь знать качество сигнала до входа: класс A или пропустить</li>
+          <li><span class="col-mark p">✓</span>Устал платить $500–2000 за отдельные инструменты без синергии</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- GALLERY -->
+<div class="gallery-section" id="gallery">
+  <div class="section">
+    <div class="section-head fade-up">
+      <div class="section-label" style="color:var(--green);"><span style="display:inline-block;width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 8px var(--green);animation:pulse 2s infinite;margin-right:6px;"></span>ЖИВЫЕ СИГНАЛЫ</div>
+      <h2 class="section-title">Реальные результаты на графиках</h2>
+      <p class="section-sub">Скриншоты из боевых сессий. Нажмите для увеличения.</p>
+    </div>
+    <div class="gallery-grid fade-up d1">
+      <div class="g-thumb" onclick="openLb(0)"><img src="assets/img-005.webp" alt="BTCUSDT 15M High Confidence сигнал Apex Zenith Pro — реальный результат" loading="lazy"><div class="g-overlay"><div class="g-sig l">▲ LONG · HIGH CONFIDENCE</div><div class="g-meta">BTCUSDT · 15M · BUY 100%</div></div></div>
+      <div class="g-thumb" onclick="openLb(1)"><img src="assets/img-006.webp" alt="ETHUSDT SOLUSDT 2H Trend Up Bias Long — живой сигнал Harmony Systems" loading="lazy"><div class="g-overlay"><div class="g-sig l">▲ TREND UP · BIAS LONG</div><div class="g-meta">ETHUSDT / SOLUSDT · 2H</div></div></div>
+      <div class="g-thumb" onclick="openLb(2)"><img src="assets/img-007.webp" alt="ETHUSDT H4 Score 88.4 Buy Harmony Engine — реальная торговая сессия" loading="lazy"><div class="g-overlay"><div class="g-sig l">▲ SCORE 88.4 · BUY</div><div class="g-meta">ETHUSDT · H4 · HARMONY ENGINE</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- INDICATORS -->
+<div class="ind-section" id="indicators">
+  <div class="section">
+    <div class="section-head fade-up">
+      <div class="section-label">КАТАЛОГ ПРОДУКТОВ</div>
+      <h2 class="section-title">21 Индикатор экосистемы</h2>
+      <p class="section-sub">Каждый инструмент решает конкретную задачу. Вместе — полная система анализа.</p>
+    </div>
+
+    <button class="catalog-toggle-btn" id="catalogToggleBtn" onclick="toggleCatalog()" type="button" aria-expanded="false" aria-controls="catalogCollapse">
+      <span id="catalogToggleText">Показать каталог (21 индикатор)</span>
+      <svg class="ico catalog-toggle-arrow" id="catalogToggleArrow" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+
+    <div class="catalog-collapse" id="catalogCollapse">
+    <div class="filter-bar fade-up">
+      <button class="filter-btn on" onclick="filterInds('all',this)" type="button">ВСЕ (21)</button>
+      <button class="filter-btn filter-flagship" onclick="filterInds('flagship',this)" type="button">★ ФЛАГМАН</button>
+      <span class="filter-sep"></span>
+      <button class="filter-btn" onclick="filterInds('execution',this)" type="button">ИСПОЛНЕНИЕ</button>
+      <button class="filter-btn" onclick="filterInds('analytics',this)" type="button">АНАЛИТИКА</button>
+      <button class="filter-btn" onclick="filterInds('utilities',this)" type="button">УТИЛИТЫ</button>
+      <span class="filter-sep"></span>
+      <button class="filter-btn" onclick="filterInds('smc',this)" type="button">SMC/ICT</button>
+      <button class="filter-btn" onclick="filterInds('scalp',this)" type="button">СКАЛЬПИНГ</button>
+      <button class="filter-btn" onclick="filterInds('crypto',this)" type="button">КРИПТО</button>
+    </div>
+
+
+    <div class="group-label gl-f" data-group="flagship">★ ФЛАГМАН</div>
+    <div class="ind-grid" id="grp-flagship">
+      <div class="ind-card" data-cat="flagship analytics smc crypto" onclick="openLbNew('cluster_radar')">
+        <div class="ind-img"><img src="assets/img-008.webp" alt="Apex Cluster Radar v2.7 — CVD Delta Whales Volume Profile POC Ghost Ice" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"><span class="ind-badge badge-au">★ MAX ALPHA</span></div>
+        <div class="ind-body"><div class="ind-name">Apex Cluster Radar v2.7</div><div class="ind-desc">Институциональный радар: CVD, Delta, Whales Tracker, Volume Profile (VAH/VAL/POC), Ghost/Ice зоны, Imbalance. Полная карта потока ордеров.</div><div class="ind-tags"><span class="ind-tag">CVD</span><span class="ind-tag">WHALES</span><span class="ind-tag">VOLUME</span><span class="ind-tag">POC</span></div></div>
+      </div>
+
+      <div class="ind-card" data-cat="flagship smc trend" onclick="openLb(0)">
+        <div class="ind-img"><img src="assets/img-009.webp" alt="Apex Zenith Pro v10.1 — нейронный sentiment индикатор TradingView SMC" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"><span class="ind-badge badge-au">★ FLAGSHIP</span></div>
+        <div class="ind-body"><div class="ind-name">Apex Zenith Pro v10.1</div><div class="ind-desc">Нейронный sentiment + MTF. 93.8% Win Rate. Классы A/B/C/D.</div><div class="ind-tags"><span class="ind-tag">ALL TF</span><span class="ind-tag">SMC</span><span class="ind-tag">NEURAL</span><span class="ind-tag">MTF</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="flagship smc trend" onclick="openLb(1)">
+        <div class="ind-img"><img src="assets/img-fix-harmony.webp" alt="Harmony Engine v10.2.0 — AI Score Engine 9 потоков данных TradingView" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"><span class="ind-badge badge-au">★ MAX ONLY</span></div>
+        <div class="ind-body"><div class="ind-name">Harmony Engine v10.2.0</div><div class="ind-desc">ИИ-мозг экосистемы. Score 0–100 из 9 потоков данных.</div><div class="ind-tags"><span class="ind-tag">ALL TF</span><span class="ind-tag">AI SCORE</span><span class="ind-tag">9 STREAMS</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="flagship scalp smc" onclick="openLb(2)">
+        <div class="ind-img"><img src="assets/img-011.webp" alt="Radar Harmony v9.2 — sentiment радар 9 потоков данных Cyber Neon UI" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"></div>
+        <div class="ind-body"><div class="ind-name">Radar Harmony v9.2</div><div class="ind-desc">Radar-хаб: 9 потоков → sentiment 0–100. Cyber Neon UI.</div><div class="ind-tags"><span class="ind-tag">ALL TF</span><span class="ind-tag">CRYPTO</span><span class="ind-tag">FOREX</span><span class="ind-tag">GOLD</span></div></div>
+      </div>
+    </div>
+
+    <div class="group-label gl-e" data-group="execution">▶ ИСПОЛНЕНИЕ</div>
+    <div class="ind-grid" id="grp-execution">
+      <div class="ind-card" data-cat="execution scalp smc crypto" onclick="openLb(3)">
+        <div class="ind-img"><img src="assets/img-012.webp" alt="ANP v4.4 CRYPTO — автоматические TP SL динамический R:R криптовалюта" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"></div>
+        <div class="ind-body"><div class="ind-name">ANP v4.4 CRYPTO</div><div class="ind-desc">Авто TP/SL с динамическим R:R. Специализация Crypto.</div><div class="ind-tags"><span class="ind-tag">5M</span><span class="ind-tag">15M</span><span class="ind-tag">CRYPTO</span><span class="ind-tag">AUTO TP/SL</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="execution scalp" onclick="openLb(4)">
+        <div class="ind-img"><img src="assets/img-013.webp" alt="ASM v3.3 PRO — Adaptive Scalp Master 184 верифицированных сделки" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"><span class="ind-badge badge-g">184 TRADES</span></div>
+        <div class="ind-body"><div class="ind-name">ASM v3.3 PRO</div><div class="ind-desc">Сессионный скальпер. 184 сделки, WR 67.4%, avg R:R 2.1.</div><div class="ind-tags"><span class="ind-tag">1M</span><span class="ind-tag">5M</span><span class="ind-tag">SCALPING</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="execution scalp smc" onclick="openLb(5)">
+        <div class="ind-img"><img src="assets/img-014.webp" alt="Apex Orca v2.3 — Whale Tracker крупные лимитные заявки институционалы" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"></div>
+        <div class="ind-body"><div class="ind-name">Apex Orca v2.3</div><div class="ind-desc">Whale Tracker. Крупные лимитки и зоны интереса китов.</div><div class="ind-tags"><span class="ind-tag">5M</span><span class="ind-tag">1H</span><span class="ind-tag">WHALE</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="execution smc" onclick="openLb(6)">
+        <div class="ind-img"><img src="assets/img-015.webp" alt="ORB Ultimate v2.5 — Opening Range Breakout SMC Лондон Нью-Йорк сессии" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"></div>
+        <div class="ind-body"><div class="ind-name">ORB Ultimate v2.5</div><div class="ind-desc">Opening Range Breakout + SMC. Лондон/Нью-Йорк сессии.</div><div class="ind-tags"><span class="ind-tag">5M</span><span class="ind-tag">15M</span><span class="ind-tag">ORB</span><span class="ind-tag">SMC</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="execution scalp trend" onclick="openLb(7)">
+        <div class="ind-img"><img src="assets/img-016.webp" alt="AZP v5.2 Full — интрадей модуль динамический R:R ATR волатильность" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"></div>
+        <div class="ind-body"><div class="ind-name">AZP v5.2 Full</div><div class="ind-desc">Интрадей-модуль. Dynamic R:R, ATR-адаптация к волатильности.</div><div class="ind-tags"><span class="ind-tag">5M</span><span class="ind-tag">15M</span><span class="ind-tag">INTRADAY</span><span class="ind-tag">ATR</span></div></div>
+      </div>
+    </div>
+
+    <div class="group-label gl-a" data-group="analytics">◈ АНАЛИТИКА</div>
+    <div class="ind-grid" id="grp-analytics">
+      <div class="ind-card" data-cat="analytics smc trend" onclick="openLb(8)">
+        <div class="ind-img"><img src="assets/img-017.webp" alt="LCE ATA v2.4.4 — автоматизация SMC BOS CHoCH Order Blocks FVG" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"></div>
+        <div class="ind-body"><div class="ind-name">LCE ATA v2.4.4</div><div class="ind-desc">Полный SMC: BOS, CHoCH, OB, FVG, дивергенции.</div><div class="ind-tags"><span class="ind-tag">5M</span><span class="ind-tag">15M</span><span class="ind-tag">1H</span><span class="ind-tag">SMC/ICT</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="analytics smc crypto" onclick="openLbNew('smart_flow')">
+        <div class="ind-img"><img src="assets/img-018.webp" alt="Smart Flow THS — Radar Unified Analytical Hub Octopus Volume Absorption Engine" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"><span class="ind-badge badge-g">🆓 FREE</span></div>
+        <div class="ind-body"><div class="ind-name">Smart Flow [THS]</div><div class="ind-desc">Radar: аналитический хаб. Octopus Volume Engine, Displacement, Absorption Engine. Price Action + ICT + объёмный анализ.</div><div class="ind-tags"><span class="ind-tag" style="color:var(--green);border-color:rgba(38,166,154,.3);">FREE</span><span class="ind-tag">VOLUME</span><span class="ind-tag">ICT</span><span class="ind-tag">CLUSTER</span></div></div>
+      </div>
+      </div>
+      <div class="ind-card" data-cat="analytics trend" onclick="openLb(9)">
+        <div class="ind-img"><img src="assets/img-019.webp" alt="Stoch Ultimate — осциллятор скрытые дивергенции экстремальные зоны MTF" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"></div>
+        <div class="ind-body"><div class="ind-name">Stoch Ultimate</div><div class="ind-desc">Осциллятор: скрытые дивергенции, экстремальные зоны.</div><div class="ind-tags"><span class="ind-tag">ALL TF</span><span class="ind-tag">OSCILLATOR</span><span class="ind-tag">DIV</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="analytics trend scalp" onclick="openLb(10)">
+        <div class="ind-img"><img src="assets/img-020.webp" alt="Apex Zenith TrendFlow Pro v7.3 — Order Flow анализ покупатели vs продавцы" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"></div>
+        <div class="ind-body"><div class="ind-name">Apex Zenith TrendFlow Pro v7.3</div><div class="ind-desc">Order flow. Покупатели vs продавцы в реальном времени.</div><div class="ind-tags"><span class="ind-tag">5M</span><span class="ind-tag">1H</span><span class="ind-tag">ORDER FLOW</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="analytics trend smc" onclick="openLb(11)">
+        <div class="ind-img"><img src="assets/img-021.webp" alt="Oracle Goyaline v7.0 — институциональная трендовая система Confidence filter" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"></div>
+        <div class="ind-body"><div class="ind-name">Oracle Goyaline v7.0</div><div class="ind-desc">Институциональная трендовая система + Confidence filter.</div><div class="ind-tags"><span class="ind-tag">15M</span><span class="ind-tag">1H</span><span class="ind-tag">INSTITUTIONAL</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="analytics crypto scalp" onclick="openLb(12)">
+        <div class="ind-img"><img src="assets/img-022.webp" alt="Octopus Scanner v25.1 — мультиактивный сканер 20+ инструментов HTF Daily" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"></div>
+        <div class="ind-body"><div class="ind-name">Octopus Scanner v25.1</div><div class="ind-desc">Мультиактивный сканер: импульсы на 20+ инструментах.</div><div class="ind-tags"><span class="ind-tag">HTF</span><span class="ind-tag">DAILY</span><span class="ind-tag">MULTI-ASSET</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="analytics crypto" onclick="openLb(13)">
+        <div class="ind-img"><img src="assets/img-023.webp" alt="BTC DCA v3.7 — умные DCA зоны Bitcoin On-Chain SMC уровни" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"></div>
+        <div class="ind-body"><div class="ind-name">BTC DCA v3.7</div><div class="ind-desc">Умные DCA-зоны для Bitcoin. On-Chain + SMC уровни.</div><div class="ind-tags"><span class="ind-tag">DAILY</span><span class="ind-tag">WEEKLY</span><span class="ind-tag">BTC</span></div></div>
+      </div>
+    </div>
+
+    <div class="group-label gl-u" data-group="utilities"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.6V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.6 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1Z"/></svg> УТИЛИТЫ</div>
+    <div class="ind-grid" id="grp-utilities">
+      <div class="ind-card" data-cat="utilities trend scalp" onclick="openLbNew('apex_core')">
+        <div class="ind-img"><img src="assets/img-024.webp" alt="Apex Core v3.7 — Breakout Pullback Sweep Regime Engine JSON Bridge Free" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"><span class="ind-badge badge-g">🆓 FREE</span></div>
+        <div class="ind-body"><div class="ind-name">Apex Core v3.7</div><div class="ind-desc">Execution движок: Breakout, Pullback, Sweep. Regime Engine, Trailing SL, JSON Telegram Bridge.</div><div class="ind-tags"><span class="ind-tag" style="color:var(--green);border-color:rgba(38,166,154,.3);">FREE</span><span class="ind-tag">REGIME</span><span class="ind-tag">JSON</span><span class="ind-tag">ALL TF</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="utilities scalp smc" onclick="openLbNew('harmony_trinity')">
+        <div class="ind-img"><img src="assets/img-025.webp" alt="Harmony Trinity HMS v2.4.1 — три торговые системы HTF D1 H4 Confluence" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"><span class="ind-badge badge-g">🆓 FREE</span></div>
+        <div class="ind-body"><div class="ind-name">Harmony Trinity HMS v2.4.1</div><div class="ind-desc">Три торговые системы: ТС1 PDH/PDL разворот, ТС2 захват ликвидности, ТС3 нитка. HTF D1+H4 confluence.</div><div class="ind-tags"><span class="ind-tag" style="color:var(--green);border-color:rgba(38,166,154,.3);">FREE</span><span class="ind-tag">ТС1·ТС2·ТС3</span><span class="ind-tag">HTF</span><span class="ind-tag">15-60M</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="flagship utilities scalp smc trend" onclick="openLbNew('turtle_x_v14')">
+        <div class="ind-img"><img src="assets/img-026.webp" alt="Turtle X Terminal — v7.0 FREE и v14.6 MAX ALPHA — черепашья стратегия ADX Score" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"><span class="ind-badge badge-au">★ 2 ВЕРСИИ</span></div>
+        <div class="ind-body"><div class="ind-name">Turtle X Terminal</div><div class="ind-desc"><strong style="color:var(--green);">v7.0</strong> — базовая черепашья стратегия, ADX, Score 0–100 <span style="color:var(--green);">(FREE)</span>. <strong style="color:var(--gold);">v14.6</strong> — Adaptive Scoring, SMC v3, FVG Array, MTF, JSON Bridge <span style="color:var(--gold);">(MAX ALPHA)</span>.</div><div class="ind-tags"><span class="ind-tag" style="color:var(--green);border-color:rgba(38,166,154,.3);">v7.0 FREE</span><span class="ind-tag" style="color:var(--gold);border-color:rgba(240,185,11,.3);">v14.6 MAX</span><span class="ind-tag">ADX</span><span class="ind-tag">SMC</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="utilities trend scalp" onclick="openLb(15)">
+        <div class="ind-img"><img src="assets/img-027.webp" alt="Apex Execution Framework v1.2 — 17 модульная execution система Protected" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"><span class="ind-badge badge-g">🆓 FREE</span></div>
+        <div class="ind-body"><div class="ind-name">Apex Execution Framework v1.2</div><div class="ind-desc">17-модульная система. FSM, 5 режимов рынка, MTF. Protected · Free.</div><div class="ind-tags"><span class="ind-tag" style="color:var(--green);border-color:rgba(38,166,154,.3);">FREE</span><span class="ind-tag">FSM</span><span class="ind-tag">MTF</span></div></div>
+      </div>
+      <div class="ind-card" data-cat="utilities smc trend" onclick="openLb(16)">
+        <div class="ind-img"><img src="assets/img-028.webp" alt="EMA v2 Cloud Squeeze — EMA облака Squeeze детектор зоны поддержки сопротивления" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"></div>
+        <div class="ind-body"><div class="ind-name">EMA v2 Cloud Squeeze</div><div class="ind-desc">EMA облака + Squeeze-детектор + зоны S/R. Все рынки.</div><div class="ind-tags"><span class="ind-tag">ALL TF</span><span class="ind-tag">EMA</span><span class="ind-tag">SQUEEZE</span></div></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- SIGNALS -->
+<section class="section" id="signals">
+  <div class="section-head fade-up">
+    <div class="section-label">СИСТЕМА КАЧЕСТВА</div>
+    <h2 class="section-title">Классы сигналов A / B / C / D</h2>
+    <p class="section-sub">Уникальная классификация позволяет мгновенно оценить качество входа.</p>
+  </div>
+  <div class="signals-grid fade-up d1">
+    <div class="signal-card sc-a-c"><div class="sig-class sc-a">A</div><div class="sig-name">Премиум сигнал</div><p class="sig-desc">Все фильтры совпадают. HTF + LTF, объём, OB. Полный размер позиции.</p><div class="sig-wr a">Win Rate ≥ 75%</div><div class="sig-bar bar-a"></div></div>
+    <div class="signal-card sc-b-c"><div class="sig-class sc-b">B</div><div class="sig-name">Стандартный</div><p class="sig-desc">Хорошее совпадение. Один вторичный фактор отсутствует. Стандартный риск.</p><div class="sig-wr b">Win Rate ≥ 60%</div><div class="sig-bar bar-b"></div></div>
+    <div class="signal-card sc-c-c"><div class="sig-class sc-c">C</div><div class="sig-name">Осторожный</div><p class="sig-desc">Частичное совпадение. Уменьшенный размер или ожидание подтверждения.</p><div class="sig-wr c">Win Rate ≥ 45%</div><div class="sig-bar bar-c"></div></div>
+    <div class="signal-card sc-d-c"><div class="sig-class sc-d">D</div><div class="sig-name">Низкая вероятность</div><p class="sig-desc">Противоречивые сигналы. Не торгуем. Ждём A или B.</p><div class="sig-wr d">Skip / Wait</div><div class="sig-bar bar-d"></div></div>
+  </div>
+</section>
+
+
+
+<!-- VERIFIED STATS -->
+<section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="section-head fade-up">
+      <div class="section-label">ВЕРИФИЦИРОВАННАЯ СТАТИСТИКА</div>
+      <h2 class="section-title">Цифры, которым можно доверять</h2>
+      <p class="section-sub">Реальные счета. Не бэктест.</p>
+    </div>
+    <div class="stats-dash fade-up d1">
+      <div class="stat-main">
+        <div class="stat-main-lbl">APEX ZENITH PRO · 800+ TRADES · CLASS A</div>
+        <div class="stat-main-val" data-counter="93.8" data-suffix="%" data-decimals="1">0%</div>
+        <div class="stat-main-sub">Win Rate на сигналах класса A</div>
+        <div class="stat-verify"><span class="vdot"></span>Верифицировано · Закрытые свечи · Zero Repainting</div>
+        <a href="https://t.me/TheHarmonySystems/1" target="_blank" class="stat-link" rel="noopener noreferrer">Запросить полный отчёт →</a>
+      </div>
+      <div class="stat-minis">
+        <div class="stat-mini"><div class="stat-mini-val" style="color:var(--green);">67.4%</div><div class="stat-mini-lbl">Win Rate · ASM v3.3</div><div class="stat-mini-sub">184 сделки · Gold + Crypto</div></div>
+        <div class="stat-mini"><div class="stat-mini-val" style="color:#5c8bff;">4.8R</div><div class="stat-mini-lbl">Лучшая сделка · AZP v5.2</div><div class="stat-mini-sub">BTCUSDT · 15M · класс A</div></div>
+        <div class="stat-mini"><div class="stat-mini-val" style="color:var(--gold);">2.3R</div><div class="stat-mini-lbl">Средний R:R · ANP v4.4</div><div class="stat-mini-sub">Crypto · 350 сделок</div></div>
+        <div class="stat-mini"><div class="stat-mini-val" style="color:var(--green);">71%</div><div class="stat-mini-lbl">Win Rate · Forex</div><div class="stat-mini-sub">LCE + Zenith в связке</div></div>
+      </div>
+    </div>
+    <div class="stats-disc fade-up d2">
+      <span style="color:var(--text3);font-size:14px;flex-shrink:0;">ℹ</span>
+      <div><strong>Прозрачность:</strong> 93.8% — только сигналы класса A (~20% всех). Общий Win Rate — 64–67%. Детальный отчёт по запросу в Telegram.</div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section style="background:var(--bg);border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="author-grid fade-up">
+      <div class="author-left">
+        <div class="author-avatar-wrap">
+          <img src="assets/img-029.webp" alt="Sergey — основатель и разработчик The Harmony Systems, 7 лет в трейдинге" class="author-avatar" loading="lazy">
+          <div class="author-online"></div>
+        </div>
+        <div class="author-name">Sergey C.</div>
+        <div class="author-role">FOUNDER · LEAD DEVELOPER</div>
+        <div class="author-stats-list">
+          <div class="astat"><span class="astat-key">РЫНКИ</span><span class="astat-val">CRYPTO · FOREX · GOLD</span></div>
+          <div class="astat"><span class="astat-key">МЕТОДОЛОГИЯ</span><span class="astat-val">SMC · ICT</span></div>
+          <div class="astat"><span class="astat-key">ЯЗЫК</span><span class="astat-val">PINE SCRIPT v6</span></div>
+          <div class="astat"><span class="astat-key">ОПЫТ</span><span class="astat-val">7+ ЛЕТ В ТРЕЙДИНГЕ</span></div>
+        </div>
+        <div class="author-btns">
+          <a href="https://t.me/Sergey201079" target="_blank" class="author-btn" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24"><path d="M21.5 4.5 2.5 12l6 2.2m13-9.7L17 20l-8.5-6.2m13-9.3L8.5 13.8m0 0v5.7l3.2-3.4"/></svg> Telegram</a>
+          <a href="https://www.tradingview.com/u/TheHarmonySystems/" target="_blank" class="author-btn" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24"><path d="M3 20V10M10 20V4M17 20v-7"/></svg> TV</a>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">ОБ АВТОРЕ</div>
+        <h2 class="author-h">Инструменты созданы<br><span style="color:var(--green);">трейдером для трейдеров</span></h2>
+        <p class="author-p">7+ лет в трейдинге. Основной фокус — Smart Money Concepts, ICT и алгоритмический анализ рынка. Торгую преимущественно криптовалюту, золото и высоколиквидные активы Forex.</p>
+        <p class="author-p">Разработкой индикаторов занялся после глубокого погружения в SMC/ICT — когда появилась необходимость создавать инструменты под собственный стиль торговли. Каждый инструмент прошёл через реальную торговлю прежде чем стать публичным продуктом.</p>
+        <div class="author-tags">
+          <span class="author-tag at-g">Smart Money Concepts</span><span class="author-tag at-g">ICT Methodology</span>
+          <span class="author-tag at-b">Pine Script v6</span><span class="author-tag at-b">Order Flow</span>
+          <span class="author-tag at-au">Liquidity Concepts</span><span class="author-tag at-au">BOS / CHoCH</span>
+          <span class="author-tag at-n">Cluster Analysis</span><span class="author-tag at-n">Adaptive Execution</span>
+        </div>
+        <a href="https://t.me/Sergey201079" target="_blank" class="btn-primary" style="display:inline-flex;" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24"><path d="M21.5 4.5 2.5 12l6 2.2m13-9.7L17 20l-8.5-6.2m13-9.3L8.5 13.8m0 0v5.7l3.2-3.4"/></svg> Связаться напрямую</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="reviews">
+  <div class="section-head fade-up"><div class="section-label">ОТЗЫВЫ</div><h2 class="section-title">Что говорят трейдеры</h2></div>
+  <div class="t-grid fade-up d1">
+    <div class="t-card"><div class="t-header"><div class="t-avi" style="background:rgba(38,166,154,.15);">AK</div><div><div class="t-name">Alex K.</div><div class="t-handle">@alex_crypto_kz</div></div><div class="t-stars">★★★★★</div></div><p class="t-text">Zenith — другой уровень. Класс A сигналы реально работают. До этого три платных индикатора за $300+, а тут всё в одном и намного точнее.</p><div class="t-result">+340 USDT первая неделя · BTC / ETH</div></div>
+    <div class="t-card"><div class="t-header"><div class="t-avi" style="background:rgba(41,98,255,.15);">DM</div><div><div class="t-name">Denis M.</div><div class="t-handle">@denis_forex_pro</div></div><div class="t-stars">★★★★★</div></div><p class="t-text">Торгую Forex 4 года. Harmony Engine перевернул подход к анализу. Score 80+ = почти гарантированный тренд. LCE показывает структуру лучше любого SMC-инструмента.</p><div class="t-result">Win Rate 71% за месяц · EUR/USD</div></div>
+    <div class="t-card"><div class="t-header"><div class="t-avi" style="background:rgba(240,185,11,.12);">NR</div><div><div class="t-name">Nikita R.</div><div class="t-handle">@nikita_scalper</div></div><div class="t-stars">★★★★★</div></div><p class="t-text">ASM Pro — лучший скальпинг-инструмент из всего что пробовал. Разработчик отвечает лично — это дорогого стоит.</p><div class="t-result">+18% к счёту за первый месяц · Gold</div></div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="section-head fade-up"><div class="section-label">СРАВНЕНИЕ</div><h2 class="section-title">The Harmony Systems vs Конкуренты</h2></div>
+    <div class="comp-wrap fade-up d1">
+      <table class="comp-table">
+        <thead><tr><th>ПАРАМЕТР</th><th>THE HARMONY SYSTEMS</th><th>КОНКУРЕНТЫ</th></tr></thead>
+        <tbody>
+          <tr><td>Стоимость</td><td class="comp-hs">от $60 (full $170)</td><td class="comp-no">$500–2000+</td></tr>
+          <tr><td>Количество инструментов</td><td class="comp-hs">21 индикатор</td><td class="comp-no">1–5 инструментов</td></tr>
+          <tr><td>SMC / ICT автоматизация</td><td class="comp-hs">✓ BOS, CHoCH, OB, FVG</td><td class="comp-no">Частичная</td></tr>
+          <tr><td>Классы сигналов A/B/C/D</td><td class="comp-hs">✓ Встроено</td><td class="comp-no">Нет</td></tr>
+          <tr><td>Zero Repainting</td><td class="comp-hs">✓ Гарантировано</td><td class="comp-no">Часто репайнтят</td></tr>
+          <tr><td>Обновления</td><td class="comp-hs">✓ Включены в подписку</td><td class="comp-no">Платно / ежегодно</td></tr>
+          <tr><td>Поддержка разработчика</td><td class="comp-hs">✓ Персонально (PRO/MAX)</td><td class="comp-no">Только база знаний</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="save-banner fade-up d2"><svg class="ico" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M8 13a4 4 0 1 1 8 0c0 1.5-1 2.3-1.5 3.2-.4.6-.5 1-.5 1.8h-4c0-.8-.1-1.2-.5-1.8C9 15.3 8 14.5 8 13Z"/></svg> Экономия $1,800–2,300 по сравнению с покупкой аналогов по отдельности</div>
+  </div>
+</section>
+
+<!-- PATH AFTER PURCHASE (AI Empire style) -->
+<section style="background:var(--bg);border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="section-head fade-up"><div class="section-label">ЧТО ПРОИЗОЙДЁТ ПОСЛЕ ОПЛАТЫ</div><h2 class="section-title">Конкретный путь до результата</h2></div>
+    <div class="path-grid fade-up d1">
+      <div class="path-card"><div class="path-when">Через 24 часа</div><div class="path-title">Invite-Only доступ открыт</div><p class="path-desc">Все выбранные индикаторы появляются в TradingView. Добавляете на график за 2 минуты.</p></div>
+      <div class="path-card"><div class="path-when">Первая неделя</div><div class="path-title">Видите структуру иначе</div><p class="path-desc">LCE размечает OB и FVG автоматически. Zenith даёт первые сигналы класса A. Понимаете — получается.</p></div>
+      <div class="path-card"><div class="path-when">Месяц 1</div><div class="path-title">Экосистема в связке</div><p class="path-desc">Zenith → тренд. LCE → вход. ASM → позиция. Система, а не набор инструментов.</p></div>
+      <div class="path-card"><div class="path-when">Месяц 2–3</div><div class="path-title">Стабильные результаты</div><p class="path-desc">Win Rate стабилизировался. Понимаете когда торговать класс A, когда пропускать D.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+
+<!-- THS LIBRARY -->
+<section class="section" id="library">
+  <div class="section-head fade-up">
+    <div class="section-label">БИБЛИОТЕКА THS</div>
+    <h2 class="section-title">Прежде чем купить — научитесь проверять</h2>
+    <p class="section-sub">Методология The Harmony Systems в двух книгах: от честной диагностики перерисовки до полной инженерной системы принятия решений.</p>
+  </div>
+
+  <div class="lib-grid fade-up d1">
+    <div class="lib-card">
+      <img class="lib-cover" src="assets/img-030.webp" alt="15 причин перерисовки — обложка книги" loading="lazy">
+      <div class="lib-body">
+        <div class="lib-title">15 причин перерисовки</div>
+        <div class="lib-desc">Которые могут стоить вам депозита. Честный разбор: как отличить реальный сигнал от иллюзии на истории — включая чек-лист «7 тестов за 5 минут» и THS Indicator Passport.</div>
+        <div class="lib-price-row"><span class="lib-price">4,99 €</span></div>
+        <a href="https://web.tribute.tg/l/1HV" target="_blank" rel="noopener noreferrer" class="lib-buy">Купить книгу</a>
+      </div>
+    </div>
+
+    <div class="lib-card">
+      <img class="lib-cover" src="assets/img-031.webp" alt="THS RSI Framework — обложка книги" loading="lazy">
+      <div class="lib-body">
+        <div class="lib-title">THS RSI Framework</div>
+        <div class="lib-desc">От классического индикатора к интеллектуальной системе принятия решений. 25 инженерных схем, 5 уровней — от механики RSI до построения собственной торговой системы.</div>
+        <div class="lib-price-row"><span class="lib-price">9,99 €</span></div>
+        <a href="https://web.tribute.tg/l/1HV" target="_blank" rel="noopener noreferrer" class="lib-buy">Купить книгу</a>
+      </div>
+    </div>
+
+    <div class="lib-card bundle">
+      <div class="lib-badge">ВЫГОДНЕЕ</div>
+      <div class="lib-body" style="padding-top:22px;">
+        <div class="lib-title">Комплект: обе книги THS</div>
+        <div class="lib-desc">«15 причин перерисовки» + «THS RSI Framework» вместе. Полный путь: от проверки инструментов до построения собственной системы решений.</div>
+        <div class="lib-price-row"><span class="lib-price-old">14,98 €</span><span class="lib-price">12,99 €</span></div>
+        <a href="https://web.tribute.tg/l/1HV" target="_blank" rel="noopener noreferrer" class="lib-buy">Купить комплект</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="lib-coupon fade-up">Купили любую книгу THS? Получите <b>купон −10%</b> на тариф START — код придёт в Telegram после подтверждения оплаты.</div>
+
+  <div class="lib-teaser fade-up">
+    <div class="lib-teaser-head">Бесплатный тизер из книги</div>
+    <div class="lib-teaser-title">Чек-лист покупателя: проверка за 5 минут</div>
+    <div class="lib-test-item"><span class="lib-test-num">1.</span><span>Replay-тест (2 мин). Включите Replay Mode на участке с трендом и флэтом. Сигналы в реплее совпадают с сигналами на готовой истории?</span></div>
+    <div class="lib-test-item"><span class="lib-test-num">2.</span><span>Live-bar-тест (1 мин). На младшем ТФ в активную сессию: сигнал появляется на открытой свече и исчезает?</span></div>
+    <div class="lib-test-item lib-test-locked"><span class="lib-test-num">3–7.</span><span>Тест правого края, тест меток, алерт-тест, тест перезагрузки, три вопроса автору — полностью в книге «15 причин перерисовки»</span></div>
+    <a href="https://web.tribute.tg/l/1HV" target="_blank" rel="noopener noreferrer" class="lib-teaser-cta">Получить все 7 тестов →</a>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="section-head fade-up"><div class="section-label">ТАРИФЫ</div><h2 class="section-title">Инвестиция, которая окупается</h2><p class="section-sub">Ежемесячная подписка. Доступ ко всем обновлениям, пока подписка активна.</p></div>
+  <div class="anchor-banner fade-up">
+    <span class="anchor-icon"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></svg></span>
+    <span class="anchor-text">Одна сделка на перерисовывающем индикаторе может стоить <b>−$500…−2000</b>. Весь пакет THS — <b>$170/мес</b>.</span>
+  </div>
+  <div class="urgency-bar fade-up">
+    <span class="urge-dot"></span>
+    <span class="urge-text">Приватный набор — ограниченное число мест, доступ по инвайту в Telegram</span>
+  </div>
+  <div class="guarantee-banner fade-up">
+    <span class="guarantee-icon"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+    <span class="guarantee-text">Гарантия 14 дней — не подошло? Вернём деньги за первый платёж, без лишних вопросов.</span>
+  </div>
+  <div class="pricing-grid fade-up d1">
+    <!-- FREE PACKAGE -->
+    <div class="price-card" style="border-color:rgba(38,166,154,.25);">
+      <div class="price-head" style="background:rgba(38,166,154,.04);">
+        <div class="price-badge">OPEN SOURCE</div>
+        <div class="price-plan">LEAD MAGNET</div>
+        <div class="price-name">FREE</div>
+        <div class="price-amount"><span class="price-cur"></span><span class="price-val" style="color:var(--green);font-size:38px;">$0</span></div>
+        <div class="price-period">НАВСЕГДА БЕСПЛАТНО</div>
+        <div class="price-save">5 Protected индикаторов</div>
+      </div>
+      <div class="price-body">
+        <div class="price-ind">Индикаторов: <span>5 (Protected · Free)</span></div>
+        <ul class="price-list">
+          <li><span class="chk">✓</span>Turtle X Terminal v7.0</li>
+          <li><span class="chk">✓</span>Apex Execution Framework v1.2</li>
+          <li><span class="chk">✓</span>Harmony Trinity HMS v2.4.1</li>
+          <li><span class="chk">✓</span>Apex Core v3.7</li>
+          <li><span class="chk">✓</span>Smart Flow [THS]</li>
+          <li><span class="xm">✗</span>Apex Zenith Pro · Harmony Engine</li>
+          <li><span class="xm">✗</span>Turtle X Terminal v14.6 · и другие...</li>
+        </ul>
+        <a href="https://www.tradingview.com/u/TheHarmonySystems/" target="_blank" class="btn-outline" style="width:100%;justify-content:center;color:var(--green);border-color:rgba(38,166,154,.35);" rel="noopener noreferrer">Найти на TradingView →</a>
+        <div style="margin-top:10px;padding:10px;background:rgba(38,166,154,.06);border-radius:4px;font-family:var(--mono);font-size:9px;color:var(--text2);text-align:center;letter-spacing:.5px;">Попробуй бесплатно → накопи капитал → перейди на START</div>
+      </div>
+    </div>
+    <div class="price-card">
+      <div class="price-head"><div class="price-plan">STARTER</div><div class="price-name">START</div><div class="price-amount"><span class="price-cur">$</span><span class="price-val">60</span><span class="price-suffix">/мес</span></div><div class="price-period">INVITE-ONLY · ПРИВАТНО</div><div class="price-save">6 ключевых индикаторов</div></div>
+      <div class="price-body">
+        <div class="price-ind">Индикаторов: <span>6 из 21</span></div>
+        <ul class="price-list">
+          <li><span class="chk">✓</span>LCE ATA v2.4.4</li><li><span class="chk">✓</span>Radar Harmony v9.2</li>
+          <li><span class="chk">✓</span>BTC DCA v3.7</li><li><span class="chk">✓</span>EMA v2 Cloud Squeeze</li>
+          <li><span class="chk">✓</span>Stoch Ultimate</li>
+          <li><span class="chk">✓</span>Octopus Scanner v25.1</li>
+          <li><span class="xm">✗</span>Apex Zenith Pro v10.1</li><li><span class="xm">✗</span>Harmony Engine v10.2</li>
+        </ul>
+        <a href="https://t.me/TheHarmonySystems/1" target="_blank" class="btn-outline" style="width:100%;justify-content:center;" rel="noopener noreferrer">Выбрать START</a>
+      </div>
+    </div>
+    <div class="price-card featured">
+      <div class="price-head"><div class="price-badge">MOST POPULAR</div><div class="price-plan">ADVANCED</div><div class="price-name">PRO</div><div class="price-amount"><span class="price-cur">$</span><span class="price-val">115</span><span class="price-suffix">/мес</span></div><div class="price-period">INVITE-ONLY · ПРИВАТНО</div><div class="price-save">Экономия $1,800+ vs рыночная</div></div>
+      <div class="price-body">
+        <div class="price-ind">Индикаторов: <span>14 из 21</span></div>
+        <ul class="price-list">
+          <li><span class="chk">✓</span>Apex Zenith Pro v10.1 <svg class="ico" viewBox="0 0 24 24"><path d="m12 3 2.6 5.6 6 .7-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.3l6-.7Z"/></svg></li>
+          <li><span class="chk">✓</span>ASM v3.3 PRO</li><li><span class="chk">✓</span>LCE ATA v2.4.4</li>
+          <li><span class="chk">✓</span>ORB Ultimate v2.5</li><li><span class="chk">✓</span>Oracle Goyaline v7.0</li>
+          <li><span class="chk">✓</span>AZP v5.2 Full + 8 ещё</li>
+          <li><span class="chk">✓</span>Персональная настройка</li>
+          <li><span class="xm">✗</span>Harmony Engine · Cluster Radar</li>
+        </ul>
+        <a href="https://t.me/TheHarmonySystems/1" target="_blank" class="btn-primary" style="width:100%;justify-content:center;" rel="noopener noreferrer">Выбрать PRO</a>
+        <div class="price-anchor"><span class="pa-cross">$1,900</span><span class="pa-text">рыночная →</span><span class="pa-price">$115</span><span class="pa-badge">-94%</span></div>
+      </div>
+    </div>
+    <div class="price-card">
+      <div class="price-head"><div class="price-plan">FULL ECOSYSTEM</div><div class="price-name">MAX ALPHA</div><div class="price-amount"><span class="price-cur">$</span><span class="price-val">170</span><span class="price-suffix">/мес</span></div><div class="price-period">INVITE-ONLY · ПРИВАТНО</div><div class="price-save">$2,500+ рыночная стоимость</div></div>
+      <div class="price-body">
+        <div class="price-ind">Индикаторов: <span>ВСЕ 21</span></div>
+        <ul class="price-list">
+          <li><span class="starm">★</span>ВСЕ 21 индикатор</li>
+          <li><span class="starm">★</span>Harmony Engine v10.2 <svg class="ico" viewBox="0 0 24 24"><path d="m12 3 2.6 5.6 6 .7-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.3l6-.7Z"/></svg> ЭКСКЛЮЗИВ</li>
+          <li><span class="starm">★</span>Apex Cluster Radar v2.7</li>
+          <li><span class="starm">★</span>Turtle X Terminal v14.6 <svg class="ico" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg> НОВИНКА</li>
+          <li><span class="starm">★</span>VIP поддержка разработчика</li>
+          <li><span class="starm">★</span>Видео-инструкции</li>
+          <li><span class="starm">★</span>Персональная настройка</li>
+          <li><span class="starm">★</span>Обновления включены в подписку</li>
+        </ul>
+        <a href="https://t.me/TheHarmonySystems/1" target="_blank" class="btn-outline" style="width:100%;justify-content:center;color:var(--gold);border-color:rgba(240,185,11,.4);" rel="noopener noreferrer">Выбрать MAX ALPHA</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<!-- CALCULATOR -->
+<section id="calculator" style="background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="section-head fade-up">
+      <div class="section-label">КАЛЬКУЛЯТОР</div>
+      <h2 class="section-title">Посчитай свой потенциал</h2>
+      <p class="section-sub">Введи параметры — калькулятор покажет результат при корректном риск-менеджменте.</p>
+    </div>
+    <div class="calc-wrap fade-up d1">
+      <div class="calc-left">
+        <div class="calc-field">
+          <div class="calc-label">Депозит <span class="calc-val-display" id="dep-display">$1,000</span></div>
+          <input type="range" class="calc-slider" id="deposit" min="100" max="50000" step="100" value="1000">
+          <div class="calc-hints"><span>$100</span><span>$50,000</span></div>
+        </div>
+        <div class="calc-field">
+          <div class="calc-label">Риск на сделку <span class="calc-val-display" id="risk-display">1.0%</span></div>
+          <input type="range" class="calc-slider" id="risk" min="0.5" max="3" step="0.5" value="1">
+          <div class="calc-hints"><span>0.5%</span><span>3%</span></div>
+        </div>
+        <div class="calc-field">
+          <div class="calc-label">Сделок в неделю <span class="calc-val-display" id="trades-display">5</span></div>
+          <input type="range" class="calc-slider" id="trades" min="1" max="20" step="1" value="5">
+          <div class="calc-hints"><span>1</span><span>20</span></div>
+        </div>
+        <div class="calc-field">
+          <div class="calc-label">Win Rate (класс сигнала)</div>
+          <div class="calc-wr-btns">
+            <button class="calc-wr-btn" data-wr="0.75" onclick="setWR(this)" type="button">A · 75%</button>
+            <button class="calc-wr-btn active" data-wr="0.64" onclick="setWR(this)" type="button">B · 64%</button>
+            <button class="calc-wr-btn" data-wr="0.50" onclick="setWR(this)" type="button">C · 50%</button>
+          </div>
+        </div>
+        <div class="calc-field">
+          <div class="calc-label">Risk:Reward (среднее по сделке)</div>
+          <div class="calc-wr-btns">
+            <button class="calc-wr-btn" data-rr="1.5" onclick="setRR(this)" type="button">1.5R</button>
+            <button class="calc-wr-btn active" data-rr="2.0" onclick="setRR(this)" type="button">2R</button>
+            <button class="calc-wr-btn" data-rr="3.0" onclick="setRR(this)" type="button">3R</button>
+          </div>
+        </div>
+        <div class="calc-disclaimer">&#9888;&#65039; Расчёт ориентировочный. Реальные результаты зависят от дисциплины и риск-менеджмента.</div>
+      </div>
+      <div class="calc-right">
+        <div class="calc-results">
+          <div class="calc-result-title">РЕЗУЛЬТАТЫ ЗА МЕСЯЦ</div>
+          <div class="calc-result-row"><span class="calc-result-label">Сделок в месяц</span><span class="calc-result-val" id="r-trades">20</span></div>
+          <div class="calc-result-row"><span class="calc-result-label">Выигрышных</span><span class="calc-result-val" id="r-wins" style="color:var(--green)">13</span></div>
+          <div class="calc-result-row"><span class="calc-result-label">Убыточных</span><span class="calc-result-val" id="r-losses" style="color:var(--red)">7</span></div>
+          <div class="calc-result-divider"></div>
+          <div class="calc-result-row"><span class="calc-result-label" id="r-profit-label">Средний профит (2R)</span><span class="calc-result-val" id="r-avg-profit" style="color:var(--green)">+$20</span></div>
+          <div class="calc-result-row"><span class="calc-result-label">Средний убыток (1R)</span><span class="calc-result-val" id="r-avg-loss" style="color:var(--red)">-$10</span></div>
+          <div class="calc-result-divider"></div>
+          <div class="calc-result-main">
+            <div class="calc-result-main-label">ЧИСТЫЙ РЕЗУЛЬТАТ</div>
+            <div class="calc-result-main-val" id="r-net">+$190</div>
+            <div class="calc-result-main-pct" id="r-pct">+19.0%</div>
+          </div>
+          <div class="calc-result-row" style="margin-top:12px;">
+            <span class="calc-result-label">Без системы (~40% WR)</span>
+            <span class="calc-result-val" id="r-without" style="color:var(--red)">-$40</span>
+          </div>
+          <a href="https://t.me/TheHarmonySystems/1" target="_blank" class="btn-primary" style="width:100%;justify-content:center;margin-top:18px;" rel="noopener noreferrer">&#9889; Получить доступ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section" id="faq">
+    <div class="section-head fade-up"><div class="section-label">FAQ</div><h2 class="section-title">Остались вопросы?</h2></div>
+    <div class="faq-list fade-up d1">
+      <div class="faq-item open"><button class="faq-q" aria-expanded="true" onclick="toggleFaq(this)" type="button"><span class="faq-q-text">Нужна ли платная подписка TradingView?</span><span class="faq-arr">▾</span></button><div class="faq-a">Большинство индикаторов работают на бесплатном плане. Некоторые функции (MTF, многие активы) требуют Pro или Pro+. После покупки предоставим полный список совместимости.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)" type="button"><span class="faq-q-text">Работают ли на Forex, Gold, Crypto?</span><span class="faq-arr">▾</span></button><div class="faq-a">Да. Все 21 адаптированы для Crypto, Forex, Gold и Индексов. Часть имеет специализацию — указана в описании каждого.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)" type="button"><span class="faq-q-text">Что такое "без репайнтинга"?</span><span class="faq-arr">▾</span></button><div class="faq-a">Репайнтинг — индикатор перерисовывает исторические сигналы задним числом, создавая иллюзию точности. Все наши индикаторы используют только закрытые свечи. Сигнал финальный — не изменится никогда.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)" type="button"><span class="faq-q-text">Как происходит покупка?</span><span class="faq-arr">▾</span></button><div class="faq-a">1. Пишете @TheHarmonySystems в Telegram, выбираете тариф. 2. Оплата крипто или перевод. 3. В течение 24 часов — Invite-Only на все скрипты в TradingView. 4. Добавляете на график и начинаете.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)" type="button"><span class="faq-q-text">Обновления платные?</span><span class="faq-arr">▾</span></button><div class="faq-a">Нет. Пока подписка активна, вы получаете все обновления и новые версии автоматически.</div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)" type="button"><span class="faq-q-text">93.8% — это Win Rate на всех сделках?</span><span class="faq-arr">▾</span></button><div class="faq-a">Нет. 93.8% — Win Rate на сигналах класса A (~20% всех сигналов). Общий Win Rate по всем классам — 64–67%. Детальный отчёт по запросу.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL ANCHOR (AI Empire: через месяц ты будешь уметь) -->
+<div class="anchor-section">
+  <div class="anchor-inner fade-up">
+    <div class="anchor-vs">
+      <div class="anchor-col no">
+        <div class="anchor-col-head"><span>✕</span>Без Harmony Systems</div>
+        <ul class="anchor-col-list">
+          <li><span class="ac-mark m">✕</span>3–4 часа ручного анализа каждый день</li>
+          <li><span class="ac-mark m">✕</span>Не видишь структуру — торгуешь против умных денег</li>
+          <li><span class="ac-mark m">✕</span>Сигнал есть, но не знаешь — A-класс или мусор</li>
+          <li><span class="ac-mark m">✕</span>Платишь $500–2000 за инструменты без синергии</li>
+          <li><span class="ac-mark m">✕</span>Индикаторы репайнтят — красивая история, не реальность</li>
+        </ul>
+      </div>
+      <div class="anchor-col yes">
+        <div class="anchor-col-head"><span>✓</span>С Harmony Systems</div>
+        <ul class="anchor-col-list">
+          <li><span class="ac-mark p">✓</span>Анализ за секунды: SMC, sentiment, сигнал класса A</li>
+          <li><span class="ac-mark p">✓</span>Видишь OB, FVG, ликвидность — торгуешь вместе с институционалами</li>
+          <li><span class="ac-mark p">✓</span>Класс A = полный риск. Класс D = пропускаем.</li>
+          <li><span class="ac-mark p">✓</span>21 инструмент за $170 — в 14x дешевле рыночной</li>
+          <li><span class="ac-mark p">✓</span>Zero Repainting. Финальный сигнал — всегда.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="anchor-tagline">ЧЕРЕЗ МЕСЯЦ ТЫ БУДЕШЬ УМЕТЬ</div>
+    <h2 class="anchor-h">Торговать по институциональной структуре.<br>С системой — не вслепую.</h2>
+    <p class="anchor-sub">Или через месяц всё останется как есть. Ты сам решаешь.</p>
+    <div class="anchor-price-block">
+      <div><span class="apb-label">Рыночная цена</span><span class="apb-cross">$2,500+</span></div>
+      <span class="apb-eq">=</span>
+      <div><span class="apb-label">У нас от</span><span class="apb-price">$60</span></div>
+      <span class="apb-period">/ мес · подписка</span>
+    </div>
+    <div class="anchor-cta">
+      <a href="https://t.me/TheHarmonySystems/1" target="_blank" class="btn-primary" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24"><path d="M21.5 4.5 2.5 12l6 2.2m13-9.7L17 20l-8.5-6.2m13-9.3L8.5 13.8m0 0v5.7l3.2-3.4"/></svg> Написать в Telegram</a>
+      <a href="https://www.tradingview.com/u/TheHarmonySystems/" target="_blank" class="btn-outline" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24"><path d="M3 20V10M10 20V4M17 20v-7"/></svg> TradingView профиль</a>
+    </div>
+    <div class="anchor-note">Invite-Only · Растущее сообщество трейдеров</div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><span style="width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block;box-shadow:0 0 8px var(--green);"></span>THE HARMONY SYSTEMS</div>
+      <p class="footer-desc">Профессиональная экосистема 21 индикатор для TradingView. SMC/ICT, кластерный анализ, нейронный sentiment.</p>
+      <div class="footer-socials">
+        <a href="https://t.me/TheHarmonySystems/1" target="_blank" class="social-btn" rel="noopener noreferrer" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5 2.5 12l6 2.2m13-9.7L17 20l-8.5-6.2m13-9.3L8.5 13.8m0 0v5.7l3.2-3.4"/></svg></a>
+        <a href="https://www.tradingview.com/u/TheHarmonySystems/" target="_blank" class="social-btn" rel="noopener noreferrer" aria-label="TradingView"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 15l4-5 3 3 5-7"/></svg></a>
+        <a href="https://t.me/Sergey201079" target="_blank" class="social-btn" rel="noopener noreferrer" aria-label="Основатель THS"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></a>
+      </div>
+    </div>
+    <div><div class="footer-col-h">ИНДИКАТОРЫ</div><ul class="footer-links"><li><a href="#indicators">Apex Zenith Pro</a></li><li><a href="#indicators">Harmony Engine</a></li><li><a href="#indicators">Cluster Radar</a></li><li><a href="#indicators">ASM v3.3 PRO</a></li><li><a href="#indicators">LCE ATA v2.4.4</a></li></ul></div>
+    <div><div class="footer-col-h">НАВИГАЦИЯ</div><ul class="footer-links"><li><a href="#indicators">Индикаторы</a></li><li><a href="#signals">Сигналы</a></li><li><a href="#gallery">Галерея</a></li><li><a href="#pricing">Цены</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+    <div><div class="footer-col-h">КОНТАКТЫ</div><ul class="footer-links"><li><a href="https://t.me/TheHarmonySystems/1" target="_blank" rel="noopener noreferrer">@TheHarmonySystems</a></li><li><a href="https://t.me/Sergey201079" target="_blank" rel="noopener noreferrer">@Sergey201079 (VIP)</a></li><li><a href="https://www.tradingview.com/u/TheHarmonySystems/" target="_blank" rel="noopener noreferrer">TradingView</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025–2026 THE HARMONY SYSTEMS · All Rights Reserved · ENGINEERED FOR PRECISION</div>
+    
+    <div class="footer-privacy" style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-family:var(--mono);font-size:10px;color:var(--text3);line-height:1.7;">
+      <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1"/><circle cx="14" cy="8.5" r="1"/><circle cx="15.5" cy="13" r="1"/><circle cx="10" cy="14.5" r="1"/></svg> Этот сайт использует cookie и системы веб-аналитики (Google Analytics, Яндекс.Метрика) для анализа посещаемости. Продолжая пользоваться сайтом, вы соглашаетесь с обработкой данных. Мы не собираем персональные данные и не передаём их третьим лицам, кроме обезличенной статистики посещений.
+    </div>
+    <div class="footer-note">Trading involves risk. Past performance is not indicative of future results. Indicators are analysis tools, not financial advice.</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Просмотр изображения индикатора" onclick="closeLb(event)">
+  <div class="lb-inner">
+    <button type="button" class="lb-close" onclick="closeLb()" aria-label="Закрыть">✕</button>
+    <button type="button" class="lb-nav lb-prev" onclick="event.stopPropagation();navLb(-1)" aria-label="Предыдущее изображение">‹</button>
+    <button type="button" class="lb-nav lb-next" onclick="event.stopPropagation();navLb(1)" aria-label="Следующее изображение">›</button>
+    <img class="lb-img" id="lb-img" src="" alt="The Harmony Systems — профессиональные индикаторы TradingView">
+    <div class="lb-cap" id="lb-cap"></div>
+  </div>
+</div>
+
+<!-- ══ COOKIE / ANALYTICS CONSENT ══ -->
+<div class="grain-overlay" aria-hidden="true"></div>
+<div id="consentBanner" class="consent-banner" role="dialog" aria-label="Согласие на использование аналитики" aria-live="polite">
+  <div class="consent-text"><span class="ico" style="width:16px;height:16px;flex-shrink:0;"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1"/><circle cx="14" cy="8.5" r="1"/><circle cx="15.5" cy="13" r="1"/><circle cx="10" cy="14.5" r="1"/></svg></span>Мы используем аналитику (Google Analytics, Яндекс.Метрика), чтобы понимать, как улучшить сайт. Она включается только с вашего согласия.</div>
+  <div class="consent-btns">
+    <button type="button" class="consent-btn consent-accept" onclick="handleConsent(true)">Принять</button>
+    <button type="button" class="consent-btn consent-decline" onclick="handleConsent(false)">Отклонить</button>
+  </div>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
