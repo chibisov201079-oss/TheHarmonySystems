@@ -740,6 +740,13 @@
       <h2 class="section-title">21 Индикатор экосистемы</h2>
       <p class="section-sub">Каждый инструмент решает конкретную задачу. Вместе — полная система анализа.</p>
     </div>
+
+    <button class="catalog-toggle-btn" id="catalogToggleBtn" onclick="toggleCatalog()" type="button" aria-expanded="false" aria-controls="catalogCollapse">
+      <span id="catalogToggleText">Показать каталог (21 индикатор)</span>
+      <svg class="ico catalog-toggle-arrow" id="catalogToggleArrow" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+
+    <div class="catalog-collapse" id="catalogCollapse">
     <div class="filter-bar fade-up">
       <button class="filter-btn on" onclick="filterInds('all',this)" type="button">ВСЕ (21)</button>
       <button class="filter-btn filter-flagship" onclick="filterInds('flagship',this)" type="button">★ ФЛАГМАН</button>
@@ -752,6 +759,7 @@
       <button class="filter-btn" onclick="filterInds('scalp',this)" type="button">СКАЛЬПИНГ</button>
       <button class="filter-btn" onclick="filterInds('crypto',this)" type="button">КРИПТО</button>
     </div>
+
 
     <div class="group-label gl-f" data-group="flagship">★ ФЛАГМАН</div>
     <div class="ind-grid" id="grp-flagship">
@@ -853,6 +861,7 @@
         <div class="ind-img"><img src="assets/img-028.webp" alt="EMA v2 Cloud Squeeze — EMA облака Squeeze детектор зоны поддержки сопротивления" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92;" loading="lazy"></div>
         <div class="ind-body"><div class="ind-name">EMA v2 Cloud Squeeze</div><div class="ind-desc">EMA облака + Squeeze-детектор + зоны S/R. Все рынки.</div><div class="ind-tags"><span class="ind-tag">ALL TF</span><span class="ind-tag">EMA</span><span class="ind-tag">SQUEEZE</span></div></div>
       </div>
+    </div>
     </div>
   </div>
 </div>

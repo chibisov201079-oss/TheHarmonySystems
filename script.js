@@ -153,6 +153,37 @@ function filterInds(cat,btn){
   });
 }
 function toggleFaq(btn){btn.parentElement.classList.toggle('open');btn.setAttribute('aria-expanded',btn.parentElement.classList.contains('open'));}
+
+function toggleCatalog(){
+  var box = document.getElementById('catalogCollapse');
+  var btn = document.getElementById('catalogToggleBtn');
+  var text = document.getElementById('catalogToggleText');
+  var isOpen = box.classList.contains('open');
+
+  if (isOpen){
+    // закрываем: сначала фиксируем текущую высоту, потом анимируем к 0
+    box.style.maxHeight = box.scrollHeight + 'px';
+    // форсируем reflow, чтобы браузер применил стартовое значение до перехода
+    void box.offsetHeight;
+    requestAnimationFrame(function(){
+      box.classList.remove('open');
+      box.style.maxHeight = '0px';
+    });
+    btn.setAttribute('aria-expanded', 'false');
+    text.textContent = 'Показать каталог (21 индикатор)';
+  } else {
+    box.classList.add('open');
+    box.style.maxHeight = box.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
+    text.textContent = 'Свернуть каталог';
+    box.addEventListener('transitionend', function te(e){
+      if (e.propertyName === 'max-height' && box.classList.contains('open')){
+        box.style.maxHeight = 'none'; // чтобы смена фильтра не обрезалась по старой высоте
+      }
+      box.removeEventListener('transitionend', te);
+    });
+  }
+}
 document.body.classList.add('ready');
 
 
