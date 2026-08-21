@@ -101,10 +101,21 @@ function filterInds(cat,btn){
       // show if 'all' selected, OR the card's categories include the selected filter
       const show = cat==='all' || cats.includes(cat);
       const wasHidden = c.style.display === 'none';
-      c.style.display = show ? '' : 'none';
-      if(show){
+      if (show){
         any=true;
+        c.classList.remove('filter-hiding');
+        c.style.display = '';
         if (!reduceMotion && wasHidden) c.classList.add('filter-entering');
+      } else if (!wasHidden){
+        // была видна — сначала плавно уходим, потом уже display:none
+        if (reduceMotion){
+          c.style.display = 'none';
+        } else {
+          c.classList.add('filter-hiding');
+          setTimeout(function(){
+            if (c.classList.contains('filter-hiding')) c.style.display = 'none';
+          }, 300);
+        }
       }
     });
     // Hide empty group labels and grids
@@ -118,7 +129,7 @@ function filterInds(cat,btn){
   // в сетке, плавно "доезжают" до нового места, а не прыгают мгновенно.
   requestAnimationFrame(function(){
     allCards.forEach(function(c){
-      if (c.style.display === 'none') return;
+      if (c.style.display === 'none' || c.classList.contains('filter-hiding')) return;
       var first = firstRects.get(c);
       if (!first) return; // была скрыта — за неё отвечает filter-entering
       var last = c.getBoundingClientRect();
@@ -164,8 +175,9 @@ document.body.classList.add('ready');
   var aurora = document.querySelector('.hero-aurora');
   var bg = document.querySelector('.hero-bg');
   var planet = document.querySelector('.planet-wrap');
+  var tierRow = document.querySelector('.tier-row');
   var hero = document.querySelector('.hero');
-  if (reduceMotion || !hero || (!aurora && !bg && !planet)) return;
+  if (reduceMotion || !hero || (!aurora && !bg && !planet && !tierRow)) return;
 
   var ticking = false;
   function updateParallax(){
@@ -176,6 +188,7 @@ document.body.classList.add('ready');
     if (aurora) aurora.style.transform = 'translateY(' + (scrolled * 0.12) + 'px)';
     if (bg) bg.style.transform = 'translateY(' + (scrolled * 0.06) + 'px)';
     if (planet) planet.style.transform = 'translateY(' + (scrolled * 0.18) + 'px)';
+    if (tierRow) tierRow.style.transform = 'translateY(' + (scrolled * 0.04) + 'px)';
     ticking = false;
   }
   window.addEventListener('scroll', function(){
@@ -456,6 +469,17 @@ function openLbNew(key){
   });
 })();
 
+// ══ RIPPLE — вспышка от точки клика на кнопках ══
+document.querySelectorAll('.btn-primary, .btn-outline').forEach(function(btn){
+  btn.addEventListener('pointerdown', function(e){
+    var rect = btn.getBoundingClientRect();
+    var rx = ((e.clientX - rect.left) / rect.width * 100).toFixed(1) + '%';
+    var ry = ((e.clientY - rect.top) / rect.height * 100).toFixed(1) + '%';
+    btn.style.setProperty('--rx', rx);
+    btn.style.setProperty('--ry', ry);
+  });
+});
+
 // ══ MAGNETIC BUTTONS — только для точных указателей (мышь), не для touch ══
 (function(){
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -678,6 +702,7 @@ function openLbNew(key){
       entries.forEach(function(entry){
         if (entry.isIntersecting){
           mpCardRevealed = true;
+          mpCard.classList.add('in-view');
           if (mpPendingGauge && mpGaugePath){
             // небольшая задержка — чтобы браузер успел применить strokeDasharray:0
             // до перехода на целевое значение, иначе transition не сыграет
@@ -693,6 +718,7 @@ function openLbNew(key){
     mpGaugeObs.observe(mpCard);
   } else {
     mpCardRevealed = true; // без поддержки IntersectionObserver — просто показываем сразу
+    if (mpCard) mpCard.classList.add('in-view');
   }
 })();
 
