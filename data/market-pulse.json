@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-21T23:54:03.967482Z",
-  "next_update_at": "2026-08-22T00:24:03.967482Z",
+  "updated_at": "2026-08-22T01:36:57.000065Z",
+  "next_update_at": "2026-08-22T02:06:57.000065Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -15,25 +15,25 @@
       },
       "history_14d": [
         80,
-        80,
-        40,
+        30,
         30,
         30,
         20,
         10,
         10,
-        0,
-        40,
+        10,
+        50,
         60,
+        80,
         90,
         100,
         100
       ],
       "price_context": {
-        "prev_day_high": 73400.0,
-        "prev_day_low": 68902.22,
+        "prev_day_high": 79500.0,
+        "prev_day_low": 73027.02,
         "session_high": 79500.0,
-        "session_low": 72998.78
+        "session_low": 74247.46
       },
       "symbol": "BTCUSDT"
     },
@@ -49,25 +49,25 @@
       },
       "history_14d": [
         80,
+        50,
+        60,
+        50,
+        50,
+        50,
+        60,
+        50,
         80,
-        50,
-        50,
-        40,
-        40,
-        40,
-        50,
-        40,
-        70,
-        70,
+        80,
+        100,
         100,
         100,
         100
       ],
       "price_context": {
-        "prev_day_high": 2360.0,
-        "prev_day_low": 2221.54,
+        "prev_day_high": 2546.78,
+        "prev_day_low": 2324.99,
         "session_high": 2546.78,
-        "session_low": 2324.91
+        "session_low": 2337.23
       },
       "symbol": "ETHUSDT"
     },
@@ -139,7 +139,7 @@
     }
   },
   "fear_greed": {
-    "value": 72,
+    "value": 71,
     "label": "Greed"
   }
 }
