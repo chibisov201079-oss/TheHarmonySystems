@@ -533,6 +533,102 @@
   </div>
 </section>
 
+<!-- MARKET CONTEXT -->
+<section class="section" id="market-context">
+  <div class="section-head fade-up">
+    <div class="section-label">БЕСПЛАТНЫЙ ИНСТРУМЕНТ</div>
+    <h2 class="section-title">Рыночный контекст</h2>
+    <p class="section-sub">Не сигнал, а фон, на котором вы принимаете решения: настроение рынка, распределение капитала, структура. Открытые источники, без ключей и платных подписок.</p>
+  </div>
+
+  <div class="mctx-grid fade-up d1">
+
+    <!-- Fear & Greed Index -->
+    <div class="mctx-card" id="mctxFg">
+      <div class="mctx-card-head">
+        <span class="mctx-card-title">Индекс страха и жадности</span>
+        <span class="mctx-card-tag">CRYPTO</span>
+      </div>
+
+      <div class="fg-gauge-wrap">
+        <svg class="fg-gauge" viewBox="0 0 200 110" aria-hidden="true">
+          <path class="fg-gauge-bg" d="M10,100 A90,90 0 0,1 190,100"/>
+          <path class="fg-gauge-fill" id="fgGaugeFill" d="M10,100 A90,90 0 0,1 190,100"/>
+        </svg>
+        <div class="fg-gauge-score" id="fgScore">—</div>
+        <div class="fg-gauge-label" id="fgLabel">Загрузка…</div>
+      </div>
+
+      <div class="fg-scale">
+        <span class="fg-scale-item fear">Страх</span>
+        <span class="fg-scale-item neutral">Нейтрально</span>
+        <span class="fg-scale-item greed">Жадность</span>
+      </div>
+
+      <div class="mctx-meta">
+        <span id="fgUpdated">—</span>
+        <a href="https://alternative.me/crypto/fear-and-greed-index/" target="_blank" rel="noopener noreferrer" class="mctx-source">Источник: Alternative.me →</a>
+      </div>
+    </div>
+
+    <!-- Рыночная аналитика: капитализация / доминация / объём -->
+    <div class="mctx-card mctx-card-wide" id="mctxAn">
+      <div class="mctx-card-head">
+        <span class="mctx-card-title">Рыночная аналитика</span>
+        <span class="mctx-card-tag">GLOBAL</span>
+      </div>
+
+      <div class="an-stats">
+        <div class="an-stat">
+          <span class="an-stat-lbl">Капитализация рынка</span>
+          <span class="an-stat-val" id="anMcap">—</span>
+          <span class="an-stat-chg" id="anMcapChg">—</span>
+        </div>
+        <div class="an-stat">
+          <span class="an-stat-lbl">Объём торгов 24ч</span>
+          <span class="an-stat-val" id="anVol">—</span>
+        </div>
+      </div>
+
+      <div class="an-dominance">
+        <div class="an-dom-row">
+          <span class="an-dom-lbl btc">BTC доминация</span>
+          <div class="an-dom-bar"><div class="an-dom-fill btc" id="anDomBtcFill"></div></div>
+          <span class="an-dom-pct" id="anDomBtcPct">—</span>
+        </div>
+        <div class="an-dom-row">
+          <span class="an-dom-lbl eth">ETH доминация</span>
+          <div class="an-dom-bar"><div class="an-dom-fill eth" id="anDomEthFill"></div></div>
+          <span class="an-dom-pct" id="anDomEthPct">—</span>
+        </div>
+      </div>
+
+      <div class="an-vol-split">
+        <span class="an-vol-split-lbl">Доля объёма BTC / ETH / SOL</span>
+        <div class="an-vol-bar" id="anVolBar">
+          <div class="an-vol-seg btc" id="anVolBtc"></div><div class="an-vol-seg eth" id="anVolEth"></div><div class="an-vol-seg sol" id="anVolSol"></div>
+        </div>
+        <div class="an-vol-legend">
+          <span class="an-vol-leg btc">BTC <b id="anVolBtcPct">—</b></span>
+          <span class="an-vol-leg eth">ETH <b id="anVolEthPct">—</b></span>
+          <span class="an-vol-leg sol">SOL <b id="anVolSolPct">—</b></span>
+        </div>
+      </div>
+
+      <div class="mctx-meta">
+        <span id="anUpdated">—</span>
+        <a href="https://www.coingecko.com/" target="_blank" rel="noopener noreferrer" class="mctx-source">Данные предоставлены CoinGecko →</a>
+      </div>
+    </div>
+
+    <!-- Потоки капитала (TVL/DEX) — следующим шагом -->
+    <div class="mctx-card mctx-soon">
+      <span class="mctx-soon-txt">Потоки капитала — скоро</span>
+    </div>
+
+  </div>
+</section>
+
 <div class="strip">
   <div class="strip-inner">
     <div class="strip-cell fade-up"><div class="strip-val" data-counter="21" data-suffix="">0</div><div class="strip-lbl">Индикаторов в экосистеме</div></div>

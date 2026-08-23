@@ -1381,6 +1381,75 @@ html {
 .mp-disclaimer{font-size:11px;color:var(--text3);line-height:1.6;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);}
 .mp-cta{display:block;margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--green);letter-spacing:.3px;}
 .mp-cta:hover{color:var(--white);}
+
+/* ===== MARKET CONTEXT — Fear & Greed / рыночная аналитика / потоки капитала ===== */
+.mctx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+.mctx-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:26px 24px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;transition:border-color .25s,box-shadow .25s;}
+.mctx-card:hover{border-color:rgba(38,166,154,.35);box-shadow:0 0 0 1px rgba(38,166,154,.08),0 12px 40px rgba(0,0,0,.35);}
+.mctx-card-head{display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:18px;}
+.mctx-card-title{font-family:var(--sans);font-size:14px;font-weight:700;color:var(--white);text-align:left;}
+.mctx-card-tag{font-family:var(--mono);font-size:9px;letter-spacing:1px;color:var(--text3);background:var(--bg3);border:1px solid var(--border);padding:3px 8px;border-radius:20px;flex-shrink:0;}
+
+/* Fear & Greed gauge — та же геометрия, что mp-gauge, но с трёхзонным цветом */
+.fg-gauge-wrap{position:relative;width:190px;max-width:100%;}
+.fg-gauge{width:100%;display:block;}
+.fg-gauge-bg{fill:none;stroke:var(--bg4);stroke-width:14;stroke-linecap:round;}
+.fg-gauge-fill{fill:none;stroke:var(--gold);stroke-width:14;stroke-linecap:round;transition:stroke-dasharray .8s ease,stroke .3s ease;filter:drop-shadow(0 0 6px currentColor);}
+.fg-gauge-score{position:absolute;left:0;right:0;bottom:22px;font-family:var(--mono);font-size:28px;font-weight:700;color:var(--white);}
+.fg-gauge-label{position:absolute;left:0;right:0;bottom:2px;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.2px;}
+.fg-gauge-label.fear{color:var(--red);}
+.fg-gauge-label.neutral{color:var(--gold);}
+.fg-gauge-label.greed{color:var(--green);}
+
+.fg-scale{display:flex;width:100%;margin-top:8px;gap:3px;}
+.fg-scale-item{flex:1;font-family:var(--mono);font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:var(--text3);padding:6px 4px;border-radius:4px;background:var(--bg3);border-top:2px solid var(--border2);}
+.fg-scale-item.fear{border-top-color:var(--red);}
+.fg-scale-item.neutral{border-top-color:var(--gold);}
+.fg-scale-item.greed{border-top-color:var(--green);}
+
+.mctx-meta{display:flex;flex-direction:column;gap:6px;align-items:center;width:100%;margin-top:20px;padding-top:16px;border-top:1px solid var(--border);font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:.3px;}
+.mctx-source{color:var(--text2);transition:color .2s;}
+.mctx-source:hover{color:var(--green);}
+
+.mctx-card.mctx-soon{justify-content:center;min-height:260px;border-style:dashed;opacity:.55;}
+.mctx-soon-txt{font-family:var(--mono);font-size:11px;color:var(--text3);letter-spacing:.4px;}
+
+/* Рыночная аналитика (CoinGecko) — карточка пошире, свои цвета для BTC/ETH/SOL */
+.mctx-card-wide{grid-column:span 2;align-items:stretch;text-align:left;}
+@media(max-width:720px){.mctx-card-wide{grid-column:span 1;}}
+
+.an-stats{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:22px;}
+.an-stat{display:flex;flex-direction:column;gap:4px;}
+.an-stat-lbl{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:.4px;text-transform:uppercase;}
+.an-stat-val{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--white);}
+.an-stat-chg{font-family:var(--mono);font-size:12px;font-weight:700;}
+.an-stat-chg.up{color:var(--green);}
+.an-stat-chg.down{color:var(--red);}
+
+.an-dominance{display:flex;flex-direction:column;gap:10px;margin-bottom:22px;}
+.an-dom-row{display:flex;align-items:center;gap:10px;}
+.an-dom-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.3px;color:var(--text2);width:110px;flex-shrink:0;}
+.an-dom-lbl.btc{color:#f0b90b;}
+.an-dom-lbl.eth{color:#8a92ff;}
+.an-dom-bar{flex:1;height:6px;border-radius:4px;background:var(--bg4);overflow:hidden;}
+.an-dom-fill{height:100%;border-radius:4px;width:0;transition:width .8s ease;}
+.an-dom-fill.btc{background:linear-gradient(90deg,#f0b90b,#d4a017);}
+.an-dom-fill.eth{background:linear-gradient(90deg,#8a92ff,#6b74e8);}
+.an-dom-pct{font-family:var(--mono);font-size:11px;color:var(--text);width:44px;text-align:right;flex-shrink:0;}
+
+.an-vol-split{margin-top:2px;}
+.an-vol-split-lbl{display:block;font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:.4px;text-transform:uppercase;margin-bottom:8px;}
+.an-vol-bar{display:flex;width:100%;height:10px;border-radius:6px;overflow:hidden;background:var(--bg4);}
+.an-vol-seg{height:100%;width:0;transition:width .8s ease;}
+.an-vol-seg.btc{background:#f0b90b;}
+.an-vol-seg.eth{background:#8a92ff;}
+.an-vol-seg.sol{background:#14f195;}
+.an-vol-legend{display:flex;gap:16px;margin-top:8px;flex-wrap:wrap;}
+.an-vol-leg{font-family:var(--mono);font-size:10px;color:var(--text3);display:flex;gap:4px;align-items:center;}
+.an-vol-leg b{color:var(--text);font-weight:700;}
+.an-vol-leg.btc::before{content:'';width:8px;height:8px;border-radius:2px;background:#f0b90b;display:inline-block;margin-right:2px;}
+.an-vol-leg.eth::before{content:'';width:8px;height:8px;border-radius:2px;background:#8a92ff;display:inline-block;margin-right:2px;}
+.an-vol-leg.sol::before{content:'';width:8px;height:8px;border-radius:2px;background:#14f195;display:inline-block;margin-right:2px;}
 .anchor-banner{display:flex;align-items:center;gap:12px;background:rgba(239,83,80,.06);border:1px solid rgba(239,83,80,.25);border-radius:8px;padding:14px 20px;margin-bottom:16px;}
 .anchor-icon{color:var(--red);font-size:16px;flex-shrink:0;}
 .anchor-text{font-size:13px;color:var(--text);line-height:1.5;}

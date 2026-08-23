@@ -556,7 +556,20 @@ document.querySelectorAll('.btn-primary, .btn-outline').forEach(function(btn){
         history_14d:[50,49,52,48,46,47,45,48,47,46,48,47,46,47],
         price_context:{prev_day_high:1.0920,prev_day_low:1.0865,session_high:1.0905,session_low:1.0870} }
     },
-    fear_greed:{value:61,label:'Greed'}
+    fear_greed:{value:61,label:'Greed'},
+    market_analytics:{
+      updated_at: new Date(Date.now() - 40*60*1000).toISOString(),
+      total_market_cap_usd: 3.42e12,
+      market_cap_change_24h_pct: 1.8,
+      total_volume_24h_usd: 148e9,
+      btc_dominance_pct: 54.2,
+      eth_dominance_pct: 12.6,
+      top_volume_distribution:[
+        {symbol:'BTC', volume_24h_usd:52e9, share_pct:56.1},
+        {symbol:'ETH', volume_24h_usd:28e9, share_pct:30.2},
+        {symbol:'SOL', volume_24h_usd:12.7e9, share_pct:13.7}
+      ]
+    }
   };
   var MP_DATA = MP_FALLBACK;
 
@@ -574,6 +587,19 @@ document.querySelectorAll('.btn-primary, .btn-outline').forEach(function(btn){
   var mpCardRevealed = false;
   var mpPendingGauge = null; // {frac, color} — ждёт появления карточки в вьюпорте
   var mpCountdownTimer = null;
+
+  // ── Fear & Greed gauge (тот же полукруг, отдельная карточка "Рыночный контекст") ──
+  var fgGaugePath = document.getElementById('fgGaugeFill');
+  var fgGaugeLen = fgGaugePath ? fgGaugePath.getTotalLength() : 0;
+  var fgCardRevealed = false;
+  var fgPendingGauge = null;
+  var FG_LABELS_RU = {
+    'Extreme Fear': 'Крайний страх',
+    'Fear': 'Страх',
+    'Neutral': 'Нейтрально',
+    'Greed': 'Жадность',
+    'Extreme Greed': 'Крайняя жадность'
+  };
 
   function mpFmtPrice(v){
     if (v == null) return '—';
@@ -616,6 +642,96 @@ document.querySelectorAll('.btn-primary, .btn-outline').forEach(function(btn){
     if (fgDot && fearGreed){
       var fgCls = fearGreed.value >= 65 ? 'buy' : fearGreed.value <= 35 ? 'sell' : 'flat';
       fgDot.className = 'mp-check-dot ' + fgCls;
+    }
+  }
+
+  function mctxFmtCompact(n){
+    // Компактный формат для крупных долларовых чисел: $1.24T / $482.3B
+    if (n === null || n === undefined || isNaN(n)) return '—';
+    var abs = Math.abs(n);
+    if (abs >= 1e12) return '$' + (n/1e12).toFixed(2) + 'T';
+    if (abs >= 1e9)  return '$' + (n/1e9).toFixed(2) + 'B';
+    if (abs >= 1e6)  return '$' + (n/1e6).toFixed(2) + 'M';
+    return '$' + n.toLocaleString('ru-RU');
+  }
+
+  function mctxRenderAnalytics(an, fallbackUpdatedIso){
+    var mcapEl = document.getElementById('anMcap');
+    if (!mcapEl) return; // блок ещё не в разметке
+    var chgEl = document.getElementById('anMcapChg');
+    var volEl = document.getElementById('anVol');
+    var updEl = document.getElementById('anUpdated');
+
+    if (!an){
+      mcapEl.textContent = 'Данные недоступны';
+      return;
+    }
+
+    mcapEl.textContent = mctxFmtCompact(an.total_market_cap_usd);
+    volEl.textContent = mctxFmtCompact(an.total_volume_24h_usd);
+
+    var chg = an.market_cap_change_24h_pct;
+    if (chgEl && typeof chg === 'number'){
+      chgEl.textContent = (chg >= 0 ? '+' : '') + chg.toFixed(2) + '% за 24ч';
+      chgEl.className = 'an-stat-chg ' + (chg >= 0 ? 'up' : 'down');
+    }
+
+    var btcDom = an.btc_dominance_pct || 0;
+    var ethDom = an.eth_dominance_pct || 0;
+    var btcFill = document.getElementById('anDomBtcFill');
+    var ethFill = document.getElementById('anDomEthFill');
+    if (btcFill) btcFill.style.width = Math.min(100, btcDom) + '%';
+    if (ethFill) ethFill.style.width = Math.min(100, ethDom) + '%';
+    var btcPctEl = document.getElementById('anDomBtcPct');
+    var ethPctEl = document.getElementById('anDomEthPct');
+    if (btcPctEl) btcPctEl.textContent = btcDom.toFixed(1) + '%';
+    if (ethPctEl) ethPctEl.textContent = ethDom.toFixed(1) + '%';
+
+    var dist = an.top_volume_distribution || [];
+    var bySym = {};
+    dist.forEach(function(row){ bySym[row.symbol] = row; });
+    ['btc','eth','sol'].forEach(function(sym){
+      var row = bySym[sym.toUpperCase()];
+      var pct = row ? row.share_pct : 0;
+      var segEl = document.getElementById('anVol' + sym.charAt(0).toUpperCase() + sym.slice(1));
+      var pctEl = document.getElementById('anVol' + sym.charAt(0).toUpperCase() + sym.slice(1) + 'Pct');
+      if (segEl) segEl.style.width = pct + '%';
+      if (pctEl) pctEl.textContent = pct.toFixed(1) + '%';
+    });
+
+    if (updEl) updEl.textContent = mpFmtAgo(an.updated_at || fallbackUpdatedIso);
+  }
+
+  function mctxRenderFearGreed(fearGreed, updatedIso){
+    var scoreEl = document.getElementById('fgScore');
+    var labelEl = document.getElementById('fgLabel');
+    var updEl = document.getElementById('fgUpdated');
+    if (!scoreEl || !labelEl) return;
+
+    if (!fearGreed){
+      labelEl.textContent = 'Данные недоступны';
+      return;
+    }
+
+    var value = Math.min(100, Math.max(0, fearGreed.value));
+    var zone = value <= 44 ? 'fear' : value >= 56 ? 'greed' : 'neutral';
+    var zoneColor = zone === 'fear' ? 'var(--red)' : zone === 'greed' ? 'var(--green)' : 'var(--gold)';
+    var labelRu = FG_LABELS_RU[fearGreed.label] || fearGreed.label;
+
+    scoreEl.textContent = value;
+    labelEl.textContent = labelRu;
+    labelEl.className = 'fg-gauge-label ' + zone;
+    if (updEl) updEl.textContent = mpFmtAgo(updatedIso);
+
+    var frac = value / 100;
+    if (fgGaugePath && fgGaugeLen){
+      if (fgCardRevealed){
+        fgGaugePath.style.stroke = zoneColor;
+        fgGaugePath.style.strokeDasharray = (fgGaugeLen*frac) + ' ' + fgGaugeLen;
+      } else {
+        fgPendingGauge = {frac: frac, color: zoneColor};
+        fgGaugePath.style.strokeDasharray = '0 ' + fgGaugeLen;
+      }
     }
   }
 
@@ -669,6 +785,8 @@ document.querySelectorAll('.btn-primary, .btn-outline').forEach(function(btn){
     mpRenderChecklist(data.indicators, MP_DATA.fear_greed);
     document.getElementById('mpUpdated').textContent = mpFmtAgo(MP_DATA.updated_at);
     mpStartCountdown(MP_DATA.next_update_at);
+    mctxRenderFearGreed(MP_DATA.fear_greed, MP_DATA.updated_at);
+    mctxRenderAnalytics(MP_DATA.market_analytics, MP_DATA.updated_at);
 
     // Живое обновление Hi/Lo сессии для крипты через публичный Binance API
     if (data.symbol) mpFetchLivePrice(key, data.symbol);
@@ -750,6 +868,28 @@ document.querySelectorAll('.btn-primary, .btn-outline').forEach(function(btn){
   } else {
     mpCardRevealed = true; // без поддержки IntersectionObserver — просто показываем сразу
     if (mpCard) mpCard.classList.add('in-view');
+  }
+
+  // То же самое для карточки Fear & Greed в блоке "Рыночный контекст"
+  var fgCard = document.getElementById('mctxFg');
+  if (fgCard && 'IntersectionObserver' in window){
+    var fgGaugeObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          fgCardRevealed = true;
+          if (fgPendingGauge && fgGaugePath){
+            requestAnimationFrame(function(){
+              fgGaugePath.style.stroke = fgPendingGauge.color;
+              fgGaugePath.style.strokeDasharray = (fgGaugeLen*fgPendingGauge.frac) + ' ' + fgGaugeLen;
+            });
+          }
+          fgGaugeObs.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.35});
+    fgGaugeObs.observe(fgCard);
+  } else {
+    fgCardRevealed = true;
   }
 })();
 
