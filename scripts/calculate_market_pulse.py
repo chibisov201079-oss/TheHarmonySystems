@@ -13,13 +13,17 @@ THS Market Pulse — расчёт композитного индекса рын
   BTC, ETH        -> Binance public API (бесплатно, без ключа)
   Gold (XAU/USD)  -> Alpha Vantage (бесплатный ключ, ~25 запросов/день)
   EUR/USD         -> Alpha Vantage
+  Fear & Greed    -> Alternative.me (бесплатно, без ключа)
+  Market Analytics-> CoinGecko free tier (бесплатно, без ключа,
+                     обновляется не чаще раза в час — см. ANALYTICS_REFRESH_MINUTES)
 
 Результат пишется в data/market-pulse.json.
 
 Частота запуска (см. workflow): каждые 30 минут.
 Внутри скрипта: крипта пересчитывается каждый запуск, форекс/золото —
 только если с прошлого обновления прошло >= 4 часов (бережём лимит
-бесплатного тарифа Alpha Vantage: 25 запросов/день).
+бесплатного тарифа Alpha Vantage: 25 запросов/день), market analytics —
+не чаще раза в час (бережём лимит бесплатного тарифа CoinGecko).
 """
 
 import json
@@ -37,6 +41,7 @@ from ta.volatility import BollingerBands
 DATA_PATH = "data/market-pulse.json"
 ALPHA_VANTAGE_KEY = os.environ.get("ALPHA_VANTAGE_KEY", "")
 FOREX_REFRESH_HOURS = 4
+ANALYTICS_REFRESH_MINUTES = 60
 UPDATE_CYCLE_MINUTES = 30
 
 WEIGHTS = {"macd": 0.2, "adx": 0.2, "rsi": 0.2, "mfi": 0.2, "bb": 0.2}
@@ -115,6 +120,55 @@ def fetch_fear_greed() -> dict:
     except Exception as e:
         print(f"[warn] Fear & Greed fetch failed: {e}", file=sys.stderr)
         return None
+
+
+def fetch_coingecko_global() -> dict:
+    """Global crypto market snapshot — CoinGecko free tier, no key needed.
+    Gives total market cap / volume and dominance of top coins."""
+    r = requests.get("https://api.coingecko.com/api/v3/global", timeout=20)
+    r.raise_for_status()
+    d = r.json()["data"]
+    mcap_pct = d.get("market_cap_percentage", {})
+    return {
+        "total_market_cap_usd": float(d["total_market_cap"]["usd"]),
+        "market_cap_change_24h_pct": round(float(d["market_cap_change_percentage_24h_usd"]), 2),
+        "total_volume_24h_usd": float(d["total_volume"]["usd"]),
+        "btc_dominance_pct": round(float(mcap_pct.get("btc", 0)), 2),
+        "eth_dominance_pct": round(float(mcap_pct.get("eth", 0)), 2),
+    }
+
+
+def fetch_coingecko_top_volumes() -> list:
+    """24h trading volume for BTC/ETH/SOL — used to show relative share of
+    volume between the three largest assets (not vs. the whole market)."""
+    url = "https://api.coingecko.com/api/v3/simple/price"
+    params = {
+        "ids": "bitcoin,ethereum,solana",
+        "vs_currencies": "usd",
+        "include_24hr_vol": "true",
+    }
+    r = requests.get(url, params=params, timeout=20)
+    r.raise_for_status()
+    js = r.json()
+    rows = [
+        ("BTC", float(js.get("bitcoin", {}).get("usd_24h_vol", 0))),
+        ("ETH", float(js.get("ethereum", {}).get("usd_24h_vol", 0))),
+        ("SOL", float(js.get("solana", {}).get("usd_24h_vol", 0))),
+    ]
+    total = sum(v for _, v in rows) or 1.0
+    return [
+        {"symbol": sym, "volume_24h_usd": vol, "share_pct": round(vol / total * 100, 1)}
+        for sym, vol in rows
+    ]
+
+
+def fetch_market_analytics() -> dict:
+    """Combine global snapshot + top-3 volume split into one payload.
+    Any failure here must not break the rest of the run — Market Pulse's
+    core signals are independent of this block."""
+    global_data = fetch_coingecko_global()
+    volumes = fetch_coingecko_top_volumes()
+    return {**global_data, "top_volume_distribution": volumes}
 
 
 # ───────────────────────── INDICATOR LOGIC ─────────────────────────
@@ -270,6 +324,20 @@ def should_refresh_forex(existing: dict) -> bool:
     return (datetime.now(timezone.utc) - last) >= timedelta(hours=FOREX_REFRESH_HOURS)
 
 
+def should_refresh_analytics(existing: dict) -> bool:
+    """Market analytics (CoinGecko) refresh at most once an hour — keeps us
+    well inside the free-tier rate limit and matches the brief's cadence."""
+    analytics = existing.get("market_analytics") or {}
+    ts = analytics.get("updated_at")
+    if not ts:
+        return True
+    try:
+        last = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+    except Exception:
+        return True
+    return (datetime.now(timezone.utc) - last) >= timedelta(minutes=ANALYTICS_REFRESH_MINUTES)
+
+
 def main():
     existing = load_existing_data()
     now = datetime.now(timezone.utc)
@@ -313,6 +381,22 @@ def main():
 
     fear_greed = fetch_fear_greed() or existing.get("fear_greed")
 
+    # ── Market analytics (CoinGecko): refreshed at most once an hour ──
+    market_analytics = existing.get("market_analytics")
+    if should_refresh_analytics(existing):
+        try:
+            print("[info] Fetching global market analytics from CoinGecko...")
+            analytics_payload = fetch_market_analytics()
+            analytics_payload["updated_at"] = now.isoformat().replace("+00:00", "Z")
+            market_analytics = analytics_payload
+            print(f"[info] Market analytics refreshed: "
+                  f"BTC dom={market_analytics['btc_dominance_pct']}% "
+                  f"ETH dom={market_analytics['eth_dominance_pct']}%")
+        except Exception as e:
+            print(f"[warn] Market analytics fetch failed, keeping previous data: {e}", file=sys.stderr)
+    else:
+        print("[info] Skipping market analytics refresh (within 1h window).")
+
     next_update = now + timedelta(minutes=UPDATE_CYCLE_MINUTES)
     output = {
         "updated_at": now.isoformat().replace("+00:00", "Z"),
@@ -320,6 +404,7 @@ def main():
         "forex_updated_at": forex_updated_at,
         "assets": assets,
         "fear_greed": fear_greed,
+        "market_analytics": market_analytics,
     }
 
     os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
