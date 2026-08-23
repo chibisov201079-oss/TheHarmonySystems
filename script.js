@@ -658,14 +658,17 @@ document.querySelectorAll('.btn-primary, .btn-outline').forEach(function(btn){
   function mctxRenderAnalytics(an, fallbackUpdatedIso){
     var mcapEl = document.getElementById('anMcap');
     if (!mcapEl) return; // блок ещё не в разметке
+
+    if (!an){
+      // Данных ещё нет (например, бэкенд обновили, но Action с новым
+      // полем market_analytics ещё не запускался) — ничего не трогаем,
+      // чтобы не мешать реальные и демо-цифры в одной карточке.
+      return;
+    }
+
     var chgEl = document.getElementById('anMcapChg');
     var volEl = document.getElementById('anVol');
     var updEl = document.getElementById('anUpdated');
-
-    if (!an){
-      mcapEl.textContent = 'Данные недоступны';
-      return;
-    }
 
     mcapEl.textContent = mctxFmtCompact(an.total_market_cap_usd);
     volEl.textContent = mctxFmtCompact(an.total_volume_24h_usd);
@@ -709,7 +712,8 @@ document.querySelectorAll('.btn-primary, .btn-outline').forEach(function(btn){
     if (!scoreEl || !labelEl) return;
 
     if (!fearGreed){
-      labelEl.textContent = 'Данные недоступны';
+      // Аналогично market_analytics: не трогаем DOM, если данных нет —
+      // лучше оставить последнее валидное состояние, чем показать разнобой.
       return;
     }
 
