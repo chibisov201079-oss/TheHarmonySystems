@@ -621,9 +621,43 @@
       </div>
     </div>
 
-    <!-- Потоки капитала (TVL/DEX) — следующим шагом -->
-    <div class="mctx-card mctx-soon">
-      <span class="mctx-soon-txt">Потоки капитала — скоро</span>
+    <!-- Потоки капитала: TVL по риск-тирам (DefiLlama) -->
+    <div class="mctx-card mctx-card-full" id="mctxCf">
+      <div class="mctx-card-head">
+        <span class="mctx-card-title">Потоки капитала</span>
+        <span class="mctx-card-tag">DEFILLAMA</span>
+      </div>
+
+      <div class="cf-tiers">
+        <div class="cf-tier">
+          <span class="cf-tier-head low">Низкий риск</span>
+          <div class="cf-rows" id="cfRowsLow"></div>
+        </div>
+        <div class="cf-tier">
+          <span class="cf-tier-head medium">Средний риск</span>
+          <div class="cf-rows" id="cfRowsMedium"></div>
+        </div>
+        <div class="cf-tier">
+          <span class="cf-tier-head high">Высокий риск</span>
+          <div class="cf-rows" id="cfRowsHigh"></div>
+        </div>
+      </div>
+
+      <div class="an-stats cf-extra">
+        <div class="an-stat">
+          <span class="an-stat-lbl">Объём DEX 24ч</span>
+          <span class="an-stat-val" id="cfDexVol">—</span>
+        </div>
+        <div class="an-stat">
+          <span class="an-stat-lbl">Капа стейблкоинов</span>
+          <span class="an-stat-val" id="cfStableMcap">—</span>
+        </div>
+      </div>
+
+      <div class="mctx-meta">
+        <span id="cfUpdated">—</span>
+        <a href="https://defillama.com/" target="_blank" rel="noopener noreferrer" class="mctx-source">Данные предоставлены DefiLlama →</a>
+      </div>
     </div>
 
   </div>

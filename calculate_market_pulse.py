@@ -16,6 +16,9 @@ THS Market Pulse — расчёт композитного индекса рын
   Fear & Greed    -> Alternative.me (бесплатно, без ключа)
   Market Analytics-> CoinGecko free tier (бесплатно, без ключа,
                      обновляется не чаще раза в час — см. ANALYTICS_REFRESH_MINUTES)
+  Capital Flows   -> DefiLlama (бесплатно, без ключа: TVL по сетям/протоколам,
+                     объём DEX, капа стейблов — обновляется не чаще раза в час,
+                     см. CAPITAL_FLOWS_REFRESH_MINUTES)
 
 Результат пишется в data/market-pulse.json.
 
@@ -42,7 +45,28 @@ DATA_PATH = "data/market-pulse.json"
 ALPHA_VANTAGE_KEY = os.environ.get("ALPHA_VANTAGE_KEY", "")
 FOREX_REFRESH_HOURS = 4
 ANALYTICS_REFRESH_MINUTES = 60
+CAPITAL_FLOWS_REFRESH_MINUTES = 60
 UPDATE_CYCLE_MINUTES = 30
+
+# ── Потоки капитала: активы по риск-уровням ──
+# ETH/SOL считаем по сети (chain TVL), Ethena — это протокол, не сеть,
+# поэтому у него отдельный endpoint (/protocol/{slug} вместо /v2/historicalChainTvl).
+CAPITAL_FLOW_CHAINS = {
+    "ETH": "ethereum",
+    "SOL": "solana",
+    "HYPE": "hyperliquid-l1",
+    "TON": "ton",
+    "MNT": "mantle",
+    "TAO": "bittensor",
+}
+CAPITAL_FLOW_PROTOCOLS = {
+    "ENA": "ethena",
+}
+CAPITAL_FLOW_RISK_TIERS = {
+    "low": ["ETH", "SOL"],
+    "medium": ["HYPE", "TON", "MNT"],
+    "high": ["TAO", "ENA"],
+}
 
 WEIGHTS = {"macd": 0.2, "adx": 0.2, "rsi": 0.2, "mfi": 0.2, "bb": 0.2}
 SIGNAL_SCORE = {"buy": 100, "neutral": 50, "sell": 0}
@@ -169,6 +193,113 @@ def fetch_market_analytics() -> dict:
     global_data = fetch_coingecko_global()
     volumes = fetch_coingecko_top_volumes()
     return {**global_data, "top_volume_distribution": volumes}
+
+
+def fetch_defillama_chain_tvl_series(chain_slug: str) -> list:
+    """Историческая серия TVL сети — DefiLlama, бесплатно, без ключа.
+    Возвращает список {"date": unix_ts, "tvl": float}, отсортированный по дате."""
+    r = requests.get(f"https://api.llama.fi/v2/historicalChainTvl/{chain_slug}", timeout=20)
+    r.raise_for_status()
+    return r.json()
+
+
+def fetch_defillama_protocol_tvl_series(protocol_slug: str) -> list:
+    """То же самое, но для отдельного протокола (не сети) — например Ethena.
+    Формат ответа другой: {"tvl": [{"date":..., "totalLiquidityUSD":...}, ...]}."""
+    r = requests.get(f"https://api.llama.fi/protocol/{protocol_slug}", timeout=20)
+    r.raise_for_status()
+    js = r.json()
+    return [
+        {"date": p["date"], "tvl": p["totalLiquidityUSD"]}
+        for p in js.get("tvl", [])
+        if p.get("totalLiquidityUSD") is not None
+    ]
+
+
+def _pct_change_from_series(series: list, days_ago: int):
+    """% изменения TVL между последней точкой и ближайшей к (последняя дата - days_ago)."""
+    if not series:
+        return None
+    latest = series[-1]
+    target_ts = latest["date"] - days_ago * 86400
+    closest = min(series, key=lambda p: abs(p["date"] - target_ts))
+    if not closest["tvl"]:
+        return None
+    return round((latest["tvl"] - closest["tvl"]) / closest["tvl"] * 100, 2)
+
+
+def fetch_capital_flow_asset(symbol: str) -> dict:
+    """TVL + изменение 7д/30д для одного актива риск-карты (сеть или протокол)."""
+    if symbol in CAPITAL_FLOW_CHAINS:
+        series = fetch_defillama_chain_tvl_series(CAPITAL_FLOW_CHAINS[symbol])
+    elif symbol in CAPITAL_FLOW_PROTOCOLS:
+        series = fetch_defillama_protocol_tvl_series(CAPITAL_FLOW_PROTOCOLS[symbol])
+    else:
+        raise ValueError(f"Unknown capital-flow symbol: {symbol}")
+    if not series:
+        return None
+    return {
+        "symbol": symbol,
+        "tvl_usd": float(series[-1]["tvl"]),
+        "change_7d_pct": _pct_change_from_series(series, 7),
+        "change_30d_pct": _pct_change_from_series(series, 30),
+    }
+
+
+def fetch_dex_volume_24h() -> float:
+    """Суммарный 24ч объём DEX по всему рынку."""
+    r = requests.get(
+        "https://api.llama.fi/overview/dexs",
+        params={"excludeTotalDataChart": "true", "excludeTotalDataChartBreakdown": "true"},
+        timeout=20,
+    )
+    r.raise_for_status()
+    return float(r.json().get("total24h", 0))
+
+
+def fetch_stablecoin_mcap() -> float:
+    """Суммарная капитализация всех стейблкоинов (последняя точка ряда)."""
+    r = requests.get("https://stablecoins.llama.fi/stablecoincharts/all", timeout=20)
+    r.raise_for_status()
+    data = r.json()
+    if not data:
+        return None
+    return float(data[-1]["totalCirculatingUSD"]["peggedUSD"])
+
+
+def fetch_capital_flows() -> dict:
+    """Собирает весь блок 'Потоки капитала': TVL по риск-тирам + DEX-объём +
+    капа стейблов. Ошибка на ОДНОМ активе не должна ронять остальные —
+    каждый актив и каждая доп.метрика оборачиваются в свой try/except."""
+    tiers = {}
+    for tier, symbols in CAPITAL_FLOW_RISK_TIERS.items():
+        rows = []
+        for sym in symbols:
+            try:
+                row = fetch_capital_flow_asset(sym)
+                if row:
+                    rows.append(row)
+            except Exception as e:
+                print(f"[warn] capital flow fetch failed for {sym}: {e}", file=sys.stderr)
+        tiers[tier] = rows
+
+    dex_vol = None
+    try:
+        dex_vol = fetch_dex_volume_24h()
+    except Exception as e:
+        print(f"[warn] DEX volume fetch failed: {e}", file=sys.stderr)
+
+    stable_mcap = None
+    try:
+        stable_mcap = fetch_stablecoin_mcap()
+    except Exception as e:
+        print(f"[warn] Stablecoin mcap fetch failed: {e}", file=sys.stderr)
+
+    return {
+        "risk_tiers": tiers,
+        "dex_volume_24h_usd": dex_vol,
+        "stablecoin_mcap_usd": stable_mcap,
+    }
 
 
 # ───────────────────────── INDICATOR LOGIC ─────────────────────────
@@ -338,6 +469,20 @@ def should_refresh_analytics(existing: dict) -> bool:
     return (datetime.now(timezone.utc) - last) >= timedelta(minutes=ANALYTICS_REFRESH_MINUTES)
 
 
+def should_refresh_capital_flows(existing: dict) -> bool:
+    """Потоки капитала (DefiLlama) — тоже не чаще раза в час: 9 запросов за
+    прогон (6 сетей + Ethena + DEX volume + stablecoins), бережём лимиты."""
+    cf = existing.get("capital_flows") or {}
+    ts = cf.get("updated_at")
+    if not ts:
+        return True
+    try:
+        last = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+    except Exception:
+        return True
+    return (datetime.now(timezone.utc) - last) >= timedelta(minutes=CAPITAL_FLOWS_REFRESH_MINUTES)
+
+
 def main():
     existing = load_existing_data()
     now = datetime.now(timezone.utc)
@@ -397,6 +542,23 @@ def main():
     else:
         print("[info] Skipping market analytics refresh (within 1h window).")
 
+    # ── Потоки капитала (DefiLlama): тоже не чаще раза в час ──
+    capital_flows = existing.get("capital_flows")
+    if should_refresh_capital_flows(existing):
+        try:
+            print("[info] Fetching capital flows (DefiLlama)...")
+            cf_payload = fetch_capital_flows()
+            cf_payload["updated_at"] = now.isoformat().replace("+00:00", "Z")
+            capital_flows = cf_payload
+            low_count = len(cf_payload["risk_tiers"].get("low", []))
+            med_count = len(cf_payload["risk_tiers"].get("medium", []))
+            high_count = len(cf_payload["risk_tiers"].get("high", []))
+            print(f"[info] Capital flows refreshed: low={low_count} medium={med_count} high={high_count} assets")
+        except Exception as e:
+            print(f"[warn] Capital flows fetch failed, keeping previous data: {e}", file=sys.stderr)
+    else:
+        print("[info] Skipping capital flows refresh (within 1h window).")
+
     next_update = now + timedelta(minutes=UPDATE_CYCLE_MINUTES)
     output = {
         "updated_at": now.isoformat().replace("+00:00", "Z"),
@@ -405,6 +567,7 @@ def main():
         "assets": assets,
         "fear_greed": fear_greed,
         "market_analytics": market_analytics,
+        "capital_flows": capital_flows,
     }
 
     os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)

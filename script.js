@@ -569,6 +569,26 @@ document.querySelectorAll('.btn-primary, .btn-outline').forEach(function(btn){
         {symbol:'ETH', volume_24h_usd:28e9, share_pct:30.2},
         {symbol:'SOL', volume_24h_usd:12.7e9, share_pct:13.7}
       ]
+    },
+    capital_flows:{
+      updated_at: new Date(Date.now() - 35*60*1000).toISOString(),
+      risk_tiers:{
+        low:[
+          {symbol:'ETH', tvl_usd:68e9, change_7d_pct:1.4, change_30d_pct:5.2},
+          {symbol:'SOL', tvl_usd:9.8e9, change_7d_pct:3.1, change_30d_pct:11.4}
+        ],
+        medium:[
+          {symbol:'HYPE', tvl_usd:1.47e9, change_7d_pct:4.2, change_30d_pct:9.4},
+          {symbol:'TON', tvl_usd:820e6, change_7d_pct:-1.8, change_30d_pct:2.1},
+          {symbol:'MNT', tvl_usd:410e6, change_7d_pct:0.6, change_30d_pct:-3.4}
+        ],
+        high:[
+          {symbol:'TAO', tvl_usd:40.8e6, change_7d_pct:-1.0, change_30d_pct:6.8},
+          {symbol:'ENA', tvl_usd:4.28e9, change_7d_pct:2.3, change_30d_pct:0.6}
+        ]
+      },
+      dex_volume_24h_usd: 12e9,
+      stablecoin_mcap_usd: 303e9
     }
   };
   var MP_DATA = MP_FALLBACK;
@@ -705,6 +725,44 @@ document.querySelectorAll('.btn-primary, .btn-outline').forEach(function(btn){
     if (updEl) updEl.textContent = mpFmtAgo(an.updated_at || fallbackUpdatedIso);
   }
 
+  function mctxFmtPct(v){
+    if (v === null || v === undefined || isNaN(v)) return '—';
+    return (v >= 0 ? '+' : '') + v.toFixed(1) + '%';
+  }
+
+  function mctxRenderCapitalFlows(cf, fallbackUpdatedIso){
+    var card = document.getElementById('mctxCf');
+    if (!card) return;
+    if (!cf) return; // данных ещё нет — не мешаем реальные и демо-цифры
+
+    var tierMap = {low: 'cfRowsLow', medium: 'cfRowsMedium', high: 'cfRowsHigh'};
+    Object.keys(tierMap).forEach(function(tier){
+      var container = document.getElementById(tierMap[tier]);
+      if (!container) return;
+      var rows = (cf.risk_tiers && cf.risk_tiers[tier]) || [];
+      if (!rows.length) return; // для этого тира данные не пришли — не затираем прежнее
+
+      var html = rows.map(function(r){
+        var chg = r.change_7d_pct;
+        var chgCls = (chg === null || chg === undefined) ? 'flat' : chg > 0.05 ? 'up' : chg < -0.05 ? 'down' : 'flat';
+        return '<div class="cf-row">' +
+          '<span class="cf-row-sym">' + r.symbol + '</span>' +
+          '<span class="cf-row-tvl">' + mctxFmtCompact(r.tvl_usd) + '</span>' +
+          '<span class="cf-row-chg ' + chgCls + '">' + mctxFmtPct(chg) + '</span>' +
+        '</div>';
+      }).join('');
+      container.innerHTML = html;
+    });
+
+    var dexEl = document.getElementById('cfDexVol');
+    var stableEl = document.getElementById('cfStableMcap');
+    if (dexEl && cf.dex_volume_24h_usd != null) dexEl.textContent = mctxFmtCompact(cf.dex_volume_24h_usd);
+    if (stableEl && cf.stablecoin_mcap_usd != null) stableEl.textContent = mctxFmtCompact(cf.stablecoin_mcap_usd);
+
+    var updEl = document.getElementById('cfUpdated');
+    if (updEl) updEl.textContent = mpFmtAgo(cf.updated_at || fallbackUpdatedIso);
+  }
+
   function mctxRenderFearGreed(fearGreed, updatedIso){
     var scoreEl = document.getElementById('fgScore');
     var labelEl = document.getElementById('fgLabel');
@@ -791,6 +849,7 @@ document.querySelectorAll('.btn-primary, .btn-outline').forEach(function(btn){
     mpStartCountdown(MP_DATA.next_update_at);
     mctxRenderFearGreed(MP_DATA.fear_greed, MP_DATA.updated_at);
     mctxRenderAnalytics(MP_DATA.market_analytics, MP_DATA.updated_at);
+    mctxRenderCapitalFlows(MP_DATA.capital_flows, MP_DATA.updated_at);
 
     // Живое обновление Hi/Lo сессии для крипты через публичный Binance API
     if (data.symbol) mpFetchLivePrice(key, data.symbol);
