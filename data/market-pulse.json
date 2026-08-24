@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-24T07:39:31.800538Z",
-  "next_update_at": "2026-08-24T08:09:31.800538Z",
+  "updated_at": "2026-08-24T08:55:38.631318Z",
+  "next_update_at": "2026-08-24T09:25:38.631318Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -33,7 +33,7 @@
         "prev_day_high": 78052.85,
         "prev_day_low": 75545.67,
         "session_high": 78052.85,
-        "session_low": 75907.82
+        "session_low": 76448.37
       },
       "symbol": "BTCUSDT"
     },
@@ -67,7 +67,7 @@
         "prev_day_high": 2484.62,
         "prev_day_low": 2355.71,
         "session_high": 2484.62,
-        "session_low": 2386.84
+        "session_low": 2389.85
       },
       "symbol": "ETHUSDT"
     },
@@ -143,83 +143,83 @@
     "label": "Greed"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2617379905269.364,
-    "market_cap_change_24h_pct": -0.7,
-    "total_volume_24h_usd": 88143562043.41924,
-    "btc_dominance_pct": 59.25,
-    "eth_dominance_pct": 11.3,
+    "total_market_cap_usd": 2607163476623.285,
+    "market_cap_change_24h_pct": -1.22,
+    "total_volume_24h_usd": 89659181509.20966,
+    "btc_dominance_pct": 59.23,
+    "eth_dominance_pct": 11.32,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 30670837529.0536,
-        "share_pct": 60.6
+        "volume_24h_usd": 30736279079.380405,
+        "share_pct": 60.5
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 16273683137.533823,
+        "volume_24h_usd": 16336391180.981966,
         "share_pct": 32.2
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 3642968321.8114753,
-        "share_pct": 7.2
+        "volume_24h_usd": 3734687757.1614456,
+        "share_pct": 7.4
       }
     ],
-    "updated_at": "2026-08-24T07:39:31.800538Z"
+    "updated_at": "2026-08-24T08:55:38.631318Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 48556819129.0,
-          "change_7d_pct": 18.38,
-          "change_30d_pct": 18.1
+          "tvl_usd": 48731228290.0,
+          "change_7d_pct": 18.81,
+          "change_30d_pct": 18.52
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 5536144308.0,
-          "change_7d_pct": 15.89,
-          "change_30d_pct": 15.54
+          "tvl_usd": 5554904923.0,
+          "change_7d_pct": 16.28,
+          "change_30d_pct": 15.93
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 1525375335.0,
-          "change_7d_pct": 24.64,
-          "change_30d_pct": 23.06
+          "tvl_usd": 1531669388.0,
+          "change_7d_pct": 25.15,
+          "change_30d_pct": 23.56
         },
         {
           "symbol": "TON",
-          "tvl_usd": 54789621.0,
-          "change_7d_pct": -2.16,
-          "change_30d_pct": -12.53
+          "tvl_usd": 54659259.0,
+          "change_7d_pct": -2.4,
+          "change_30d_pct": -12.74
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 70096355.0,
-          "change_7d_pct": 1.99,
-          "change_30d_pct": -21.41
+          "tvl_usd": 70330420.0,
+          "change_7d_pct": 2.33,
+          "change_30d_pct": -21.15
         }
       ],
       "high": [
         {
           "symbol": "TAO",
-          "tvl_usd": 48954410.0,
-          "change_7d_pct": 16.1,
-          "change_30d_pct": 19.69
+          "tvl_usd": 49187267.0,
+          "change_7d_pct": 16.65,
+          "change_30d_pct": 20.26
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 4321173920.70063,
-          "change_7d_pct": 1.11,
-          "change_30d_pct": 2.39
+          "tvl_usd": 4319368469.21562,
+          "change_7d_pct": 1.06,
+          "change_30d_pct": 2.35
         }
       ]
     },
     "dex_volume_24h_usd": 9702237824.53,
-    "stablecoin_mcap_usd": 308608022929.98,
-    "updated_at": "2026-08-24T07:39:31.800538Z"
+    "stablecoin_mcap_usd": 308595912505.34,
+    "updated_at": "2026-08-24T08:55:38.631318Z"
   }
 }
