@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-26T06:01:39.149606Z",
-  "next_update_at": "2026-08-26T06:31:39.149606Z",
+  "updated_at": "2026-08-26T07:27:37.835691Z",
+  "next_update_at": "2026-08-26T07:57:37.835691Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -32,7 +32,7 @@
       "price_context": {
         "prev_day_high": 81272.62,
         "prev_day_low": 77851.0,
-        "session_high": 80923.69,
+        "session_high": 80697.79,
         "session_low": 77851.0
       },
       "symbol": "BTCUSDT"
@@ -66,7 +66,7 @@
       "price_context": {
         "prev_day_high": 2532.5,
         "prev_day_low": 2414.64,
-        "session_high": 2515.43,
+        "session_high": 2505.85,
         "session_low": 2414.64
       },
       "symbol": "ETHUSDT"
@@ -143,83 +143,83 @@
     "label": "Greed"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2662668606491.594,
-    "market_cap_change_24h_pct": -4.36,
-    "total_volume_24h_usd": 90582433020.62964,
-    "btc_dominance_pct": 59.26,
+    "total_market_cap_usd": 2665130318007.928,
+    "market_cap_change_24h_pct": -4.28,
+    "total_volume_24h_usd": 88258949823.2861,
+    "btc_dominance_pct": 59.25,
     "eth_dominance_pct": 11.11,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 35508829021.64522,
-        "share_pct": 67.1
+        "volume_24h_usd": 34392656827.090576,
+        "share_pct": 67.3
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 13116803580.586355,
-        "share_pct": 24.8
+        "volume_24h_usd": 12840067030.861822,
+        "share_pct": 25.1
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 4256750417.7208877,
-        "share_pct": 8.0
+        "volume_24h_usd": 3864769528.230791,
+        "share_pct": 7.6
       }
     ],
-    "updated_at": "2026-08-26T05:07:02.703297Z"
+    "updated_at": "2026-08-26T07:27:37.835691Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 49175585835.0,
-          "change_7d_pct": 17.93,
-          "change_30d_pct": 16.92
+          "tvl_usd": 49101849428.0,
+          "change_7d_pct": 17.75,
+          "change_30d_pct": 16.74
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 5600673001.0,
-          "change_7d_pct": 14.37,
-          "change_30d_pct": 13.8
+          "tvl_usd": 5600096516.0,
+          "change_7d_pct": 14.36,
+          "change_30d_pct": 13.79
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 1592697427.0,
-          "change_7d_pct": 27.6,
-          "change_30d_pct": 26.93
+          "tvl_usd": 1602249587.0,
+          "change_7d_pct": 28.37,
+          "change_30d_pct": 27.7
         },
         {
           "symbol": "TON",
-          "tvl_usd": 53603514.0,
-          "change_7d_pct": -2.71,
-          "change_30d_pct": -16.2
+          "tvl_usd": 53675136.0,
+          "change_7d_pct": -2.58,
+          "change_30d_pct": -16.09
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 69712458.0,
-          "change_7d_pct": 0.71,
-          "change_30d_pct": -15.14
+          "tvl_usd": 69594135.0,
+          "change_7d_pct": 0.54,
+          "change_30d_pct": -15.29
         }
       ],
       "high": [
         {
           "symbol": "TAO",
-          "tvl_usd": 48548205.0,
-          "change_7d_pct": 20.43,
-          "change_30d_pct": 13.24
+          "tvl_usd": 48536107.0,
+          "change_7d_pct": 20.4,
+          "change_30d_pct": 13.21
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 4525000548.831961,
-          "change_7d_pct": 3.91,
-          "change_30d_pct": 7.53
+          "tvl_usd": 4499802076.973021,
+          "change_7d_pct": 3.33,
+          "change_30d_pct": 6.93
         }
       ]
     },
     "dex_volume_24h_usd": 10507924130.300001,
-    "stablecoin_mcap_usd": 309059738834.89,
-    "updated_at": "2026-08-26T05:07:02.703297Z"
+    "stablecoin_mcap_usd": 309053383435.46,
+    "updated_at": "2026-08-26T07:27:37.835691Z"
   }
 }
