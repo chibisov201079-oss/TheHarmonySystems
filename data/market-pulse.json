@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-09-03T20:51:14.792620Z",
-  "next_update_at": "2026-09-03T21:21:14.792620Z",
+  "updated_at": "2026-09-03T23:09:54.647532Z",
+  "next_update_at": "2026-09-03T23:39:54.647532Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
-      "score": 100,
+      "score": 90,
       "status": "long",
       "indicators": {
-        "macd": "buy",
+        "macd": "neutral",
         "adx": "buy",
         "rsi": "buy",
         "mfi": "buy",
@@ -27,12 +27,12 @@
         100,
         100,
         80,
-        100
+        90
       ],
       "price_context": {
         "prev_day_high": 77792.0,
         "prev_day_low": 76264.0,
-        "session_high": 81790.0,
+        "session_high": 82300.0,
         "session_low": 76968.0
       },
       "symbol": "BTCUSDT"
@@ -143,83 +143,83 @@
     "label": "Greed"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2748583642836.966,
-    "market_cap_change_24h_pct": 2.2,
-    "total_volume_24h_usd": 100600845855.52896,
+    "total_market_cap_usd": 2739131733543.577,
+    "market_cap_change_24h_pct": 2.15,
+    "total_volume_24h_usd": 105051823081.31163,
     "btc_dominance_pct": 59.39,
     "eth_dominance_pct": 11.1,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 36801289920.0188,
-        "share_pct": 64.9
+        "volume_24h_usd": 39286255269.01338,
+        "share_pct": 65.5
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 15857574179.598196,
-        "share_pct": 28.0
+        "volume_24h_usd": 16534387701.41113,
+        "share_pct": 27.6
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 4043637293.985293,
-        "share_pct": 7.1
+        "volume_24h_usd": 4183587235.003079,
+        "share_pct": 7.0
       }
     ],
-    "updated_at": "2026-09-03T20:51:14.792620Z"
+    "updated_at": "2026-09-03T23:09:54.647532Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 49691565179.0,
-          "change_7d_pct": 0.16,
-          "change_30d_pct": 23.45
+          "tvl_usd": 49698407908.0,
+          "change_7d_pct": 0.18,
+          "change_30d_pct": 23.47
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 5980639607.0,
-          "change_7d_pct": 3.58,
-          "change_30d_pct": 25.52
+          "tvl_usd": 5974411043.0,
+          "change_7d_pct": 3.47,
+          "change_30d_pct": 25.39
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 1529360186.0,
-          "change_7d_pct": -4.05,
-          "change_30d_pct": 25.83
+          "tvl_usd": 1532273239.0,
+          "change_7d_pct": -3.87,
+          "change_30d_pct": 26.07
         },
         {
           "symbol": "TON",
-          "tvl_usd": 50326812.0,
-          "change_7d_pct": -5.04,
-          "change_30d_pct": -16.51
+          "tvl_usd": 50209829.0,
+          "change_7d_pct": -5.26,
+          "change_30d_pct": -16.71
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 98708233.0,
-          "change_7d_pct": 28.08,
-          "change_30d_pct": 45.02
+          "tvl_usd": 98624851.0,
+          "change_7d_pct": 27.98,
+          "change_30d_pct": 44.9
         }
       ],
       "high": [
         {
           "symbol": "TAO",
-          "tvl_usd": 47676690.0,
-          "change_7d_pct": -2.28,
-          "change_30d_pct": 14.25
+          "tvl_usd": 47440549.0,
+          "change_7d_pct": -2.76,
+          "change_30d_pct": 13.69
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 4697949339.55797,
+          "tvl_usd": 4698264357.04572,
           "change_7d_pct": 4.76,
           "change_30d_pct": 11.96
         }
       ]
     },
     "dex_volume_24h_usd": 9176676780.929998,
-    "stablecoin_mcap_usd": 309267758922.44,
-    "updated_at": "2026-09-03T20:51:14.792620Z"
+    "stablecoin_mcap_usd": 309302341922.0,
+    "updated_at": "2026-09-03T23:09:54.647532Z"
   }
 }
