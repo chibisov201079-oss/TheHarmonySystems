@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-06T18:34:23.012164Z",
-  "next_update_at": "2026-09-06T19:04:23.012164Z",
+  "updated_at": "2026-09-06T21:10:28.773946Z",
+  "next_update_at": "2026-09-06T21:40:28.773946Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -143,29 +143,29 @@
     "label": "Greed"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2703232372559.716,
-    "market_cap_change_24h_pct": -3.43,
-    "total_volume_24h_usd": 66374346506.001915,
-    "btc_dominance_pct": 59.23,
-    "eth_dominance_pct": 11.24,
+    "total_market_cap_usd": 2707891564784.711,
+    "market_cap_change_24h_pct": -2.91,
+    "total_volume_24h_usd": 66063721576.507164,
+    "btc_dominance_pct": 59.17,
+    "eth_dominance_pct": 11.26,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 18763323341.380722,
-        "share_pct": 59.6
+        "volume_24h_usd": 18365836624.793736,
+        "share_pct": 58.7
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 9018773349.977068,
-        "share_pct": 28.7
+        "volume_24h_usd": 9228093567.626019,
+        "share_pct": 29.5
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 3691479489.9338126,
-        "share_pct": 11.7
+        "volume_24h_usd": 3690728784.060835,
+        "share_pct": 11.8
       }
     ],
-    "updated_at": "2026-09-06T18:34:23.012164Z"
+    "updated_at": "2026-09-06T21:10:28.773946Z"
   },
   "capital_flows": {
     "risk_tiers": {
@@ -219,7 +219,7 @@
       ]
     },
     "dex_volume_24h_usd": 8288249116.240001,
-    "stablecoin_mcap_usd": 310574361326.54,
-    "updated_at": "2026-09-06T18:34:23.012164Z"
+    "stablecoin_mcap_usd": 310572151181.6,
+    "updated_at": "2026-09-06T21:10:28.773946Z"
   }
 }
