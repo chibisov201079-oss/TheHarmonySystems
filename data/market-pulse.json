@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-07T06:34:13.082509Z",
-  "next_update_at": "2026-09-07T07:04:13.082509Z",
+  "updated_at": "2026-09-07T13:25:39.297614Z",
+  "next_update_at": "2026-09-07T13:55:39.297614Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -33,7 +33,7 @@
         "prev_day_high": 80559.99,
         "prev_day_low": 79233.0,
         "session_high": 80559.99,
-        "session_low": 79233.0
+        "session_low": 79001.1
       },
       "symbol": "BTCUSDT"
     },
@@ -143,29 +143,29 @@
     "label": "Greed"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2701690950254.179,
-    "market_cap_change_24h_pct": -2.89,
-    "total_volume_24h_usd": 70124986148.51324,
-    "btc_dominance_pct": 59.14,
-    "eth_dominance_pct": 11.29,
+    "total_market_cap_usd": 2701482479973.362,
+    "market_cap_change_24h_pct": -2.78,
+    "total_volume_24h_usd": 74556061459.91971,
+    "btc_dominance_pct": 59.05,
+    "eth_dominance_pct": 11.31,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 21601421430.50159,
-        "share_pct": 60.7
+        "volume_24h_usd": 22920870919.694878,
+        "share_pct": 60.5
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 10205726312.729673,
-        "share_pct": 28.7
+        "volume_24h_usd": 11520623138.231295,
+        "share_pct": 30.4
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 3756531708.3605323,
-        "share_pct": 10.6
+        "volume_24h_usd": 3447091622.0016513,
+        "share_pct": 9.1
       }
     ],
-    "updated_at": "2026-09-07T06:34:13.082509Z"
+    "updated_at": "2026-09-07T13:25:39.297614Z"
   },
   "capital_flows": {
     "risk_tiers": {
@@ -219,7 +219,7 @@
       ]
     },
     "dex_volume_24h_usd": 8288249116.240001,
-    "stablecoin_mcap_usd": 310609094900.32,
-    "updated_at": "2026-09-07T06:34:13.082509Z"
+    "stablecoin_mcap_usd": 310620565226.15,
+    "updated_at": "2026-09-07T13:25:39.297614Z"
   }
 }
