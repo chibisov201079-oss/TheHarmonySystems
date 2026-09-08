@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-08T00:07:16.107190Z",
-  "next_update_at": "2026-09-08T00:37:16.107190Z",
+  "updated_at": "2026-09-08T05:04:57.335974Z",
+  "next_update_at": "2026-09-08T05:34:57.335974Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -32,8 +32,8 @@
       "price_context": {
         "prev_day_high": 80443.99,
         "prev_day_low": 78680.0,
-        "session_high": 80430.0,
-        "session_low": 78680.0
+        "session_high": 79926.04,
+        "session_low": 78555.0
       },
       "symbol": "BTCUSDT"
     },
@@ -66,7 +66,7 @@
       "price_context": {
         "prev_day_high": 2536.64,
         "prev_day_low": 2466.0,
-        "session_high": 2536.64,
+        "session_high": 2514.03,
         "session_low": 2466.0
       },
       "symbol": "ETHUSDT"
@@ -143,83 +143,83 @@
     "label": "Greed"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2680480034921.3154,
-    "market_cap_change_24h_pct": -3.6,
-    "total_volume_24h_usd": 73590218152.74619,
-    "btc_dominance_pct": 59.1,
-    "eth_dominance_pct": 11.31,
+    "total_market_cap_usd": 2667967763177.591,
+    "market_cap_change_24h_pct": -3.53,
+    "total_volume_24h_usd": 72174803506.18071,
+    "btc_dominance_pct": 59.03,
+    "eth_dominance_pct": 11.3,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 23082987432.42978,
-        "share_pct": 61.5
+        "volume_24h_usd": 23135815494.453068,
+        "share_pct": 63.0
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 11268907395.645899,
-        "share_pct": 30.0
+        "volume_24h_usd": 10647250063.220472,
+        "share_pct": 29.0
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 3154758103.5262957,
-        "share_pct": 8.4
+        "volume_24h_usd": 2965747035.54878,
+        "share_pct": 8.1
       }
     ],
-    "updated_at": "2026-09-08T00:07:16.107190Z"
+    "updated_at": "2026-09-08T05:04:57.335974Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 49313226812.0,
-          "change_7d_pct": 1.78,
-          "change_30d_pct": 18.25
+          "tvl_usd": 49302696209.0,
+          "change_7d_pct": 0.3,
+          "change_30d_pct": 18.04
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 5900740705.0,
-          "change_7d_pct": 1.96,
-          "change_30d_pct": 24.25
+          "tvl_usd": 5898869393.0,
+          "change_7d_pct": -1.43,
+          "change_30d_pct": 22.68
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 1499749650.0,
-          "change_7d_pct": 2.2,
-          "change_30d_pct": 24.78
+          "tvl_usd": 1454183849.0,
+          "change_7d_pct": -4.93,
+          "change_30d_pct": 19.62
         },
         {
           "symbol": "TON",
-          "tvl_usd": 50413351.0,
-          "change_7d_pct": 1.53,
-          "change_30d_pct": -14.52
+          "tvl_usd": 50290279.0,
+          "change_7d_pct": -1.59,
+          "change_30d_pct": -19.73
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 98143981.0,
-          "change_7d_pct": 9.49,
-          "change_30d_pct": 43.32
+          "tvl_usd": 98140943.0,
+          "change_7d_pct": 8.36,
+          "change_30d_pct": 42.0
         }
       ],
       "high": [
         {
           "symbol": "TAO",
-          "tvl_usd": 53232749.0,
-          "change_7d_pct": 12.41,
-          "change_30d_pct": 23.8
+          "tvl_usd": 52623156.0,
+          "change_7d_pct": 10.03,
+          "change_30d_pct": 14.14
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 4826626086.67252,
-          "change_7d_pct": 5.87,
-          "change_30d_pct": 14.11
+          "tvl_usd": 4827199429.31881,
+          "change_7d_pct": 5.88,
+          "change_30d_pct": 14.12
         }
       ]
     },
-    "dex_volume_24h_usd": 9607081115.75,
-    "stablecoin_mcap_usd": 310630271205.96,
-    "updated_at": "2026-09-08T00:07:16.107190Z"
+    "dex_volume_24h_usd": 10435665282.81,
+    "stablecoin_mcap_usd": 310311080224.9,
+    "updated_at": "2026-09-08T05:04:57.335974Z"
   }
 }
