@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-11T00:25:47.936343Z",
-  "next_update_at": "2026-09-11T00:55:47.936343Z",
+  "updated_at": "2026-09-11T05:04:58.783083Z",
+  "next_update_at": "2026-09-11T05:34:58.783083Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -38,14 +38,14 @@
       "symbol": "BTCUSDT"
     },
     "ETH": {
-      "score": 40,
+      "score": 50,
       "status": "flat",
       "indicators": {
         "macd": "sell",
         "adx": "buy",
         "rsi": "buy",
         "mfi": "sell",
-        "bb": "sell"
+        "bb": "neutral"
       },
       "history_14d": [
         100,
@@ -61,7 +61,7 @@
         70,
         50,
         40,
-        40
+        50
       ],
       "price_context": {
         "prev_day_high": 2484.76,
@@ -143,83 +143,83 @@
     "label": "Greed"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2633017752158.085,
-    "market_cap_change_24h_pct": -4.4,
-    "total_volume_24h_usd": 88587921429.38744,
+    "total_market_cap_usd": 2642394180478.8545,
+    "market_cap_change_24h_pct": -4.09,
+    "total_volume_24h_usd": 496927057863.94147,
     "btc_dominance_pct": 58.47,
     "eth_dominance_pct": 11.33,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 30180343343.961956,
-        "share_pct": 62.1
+        "volume_24h_usd": 30092812106.73936,
+        "share_pct": 61.5
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 15412977045.978092,
-        "share_pct": 31.7
+        "volume_24h_usd": 15793915629.534359,
+        "share_pct": 32.3
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 3005236822.9014115,
+        "volume_24h_usd": 3026126321.5012403,
         "share_pct": 6.2
       }
     ],
-    "updated_at": "2026-09-11T00:25:47.936343Z"
+    "updated_at": "2026-09-11T05:04:58.783083Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 49192675252.0,
-          "change_7d_pct": 2.0,
-          "change_30d_pct": 18.09
+          "tvl_usd": 49066470224.0,
+          "change_7d_pct": -1.83,
+          "change_30d_pct": 18.95
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 5793736309.0,
-          "change_7d_pct": 1.48,
-          "change_30d_pct": 19.52
+          "tvl_usd": 5780570753.0,
+          "change_7d_pct": -2.55,
+          "change_30d_pct": 18.58
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 1390753295.0,
-          "change_7d_pct": -8.2,
-          "change_30d_pct": 15.07
+          "tvl_usd": 1372391225.0,
+          "change_7d_pct": -11.81,
+          "change_30d_pct": 14.44
         },
         {
           "symbol": "TON",
-          "tvl_usd": 55639494.0,
-          "change_7d_pct": 12.53,
-          "change_30d_pct": -5.34
+          "tvl_usd": 55438000.0,
+          "change_7d_pct": 10.37,
+          "change_30d_pct": -5.4
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 95185749.0,
-          "change_7d_pct": -1.94,
-          "change_30d_pct": 34.96
+          "tvl_usd": 94850015.0,
+          "change_7d_pct": -3.76,
+          "change_30d_pct": 37.31
         }
       ],
       "high": [
         {
           "symbol": "TAO",
-          "tvl_usd": 48227168.0,
-          "change_7d_pct": 8.06,
-          "change_30d_pct": 10.18
+          "tvl_usd": 47140659.0,
+          "change_7d_pct": 1.21,
+          "change_30d_pct": 4.3
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 4951141508.79587,
-          "change_7d_pct": 5.2,
-          "change_30d_pct": 16.71
+          "tvl_usd": 4953245711.42344,
+          "change_7d_pct": 5.25,
+          "change_30d_pct": 16.76
         }
       ]
     },
-    "dex_volume_24h_usd": 12395322012.270004,
-    "stablecoin_mcap_usd": 310244165272.9,
-    "updated_at": "2026-09-11T00:25:47.936343Z"
+    "dex_volume_24h_usd": 10886400633.72,
+    "stablecoin_mcap_usd": 309884745791.43,
+    "updated_at": "2026-09-11T05:04:58.783083Z"
   }
 }
