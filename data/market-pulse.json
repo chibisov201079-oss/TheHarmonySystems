@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-23T09:28:18.204097Z",
-  "next_update_at": "2026-09-23T09:58:18.204097Z",
+  "updated_at": "2026-09-23T14:22:20.740658Z",
+  "next_update_at": "2026-09-23T14:52:20.740658Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -33,7 +33,7 @@
         "prev_day_high": 86717.6,
         "prev_day_low": 85114.0,
         "session_high": 87278.54,
-        "session_low": 85461.53
+        "session_low": 84237.56
       },
       "symbol": "BTCUSDT"
     },
@@ -67,7 +67,7 @@
         "prev_day_high": 2777.55,
         "prev_day_low": 2715.91,
         "session_high": 2789.0,
-        "session_low": 2716.02
+        "session_low": 2649.4
       },
       "symbol": "ETHUSDT"
     },
@@ -143,83 +143,77 @@
     "label": "Greed"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2932786012508.0586,
-    "market_cap_change_24h_pct": -2.59,
-    "total_volume_24h_usd": 119580124787.41084,
-    "btc_dominance_pct": 58.66,
-    "eth_dominance_pct": 11.36,
+    "total_market_cap_usd": 2895881048246.255,
+    "market_cap_change_24h_pct": -3.85,
+    "total_volume_24h_usd": 117967177401.38008,
+    "btc_dominance_pct": 58.77,
+    "eth_dominance_pct": 11.29,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 41045182792.65096,
-        "share_pct": 67.0
+        "volume_24h_usd": 41400317334.41583,
+        "share_pct": 65.4
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 15990096145.218397,
-        "share_pct": 26.1
+        "volume_24h_usd": 17235669925.11854,
+        "share_pct": 27.2
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 4192904203.324381,
-        "share_pct": 6.8
+        "volume_24h_usd": 4677956447.901821,
+        "share_pct": 7.4
       }
     ],
-    "updated_at": "2026-09-23T09:28:18.204097Z"
+    "updated_at": "2026-09-23T14:22:20.740658Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 54429792635.0,
-          "change_7d_pct": 11.7,
-          "change_30d_pct": 10.81
+          "tvl_usd": 54086283628.0,
+          "change_7d_pct": 10.99,
+          "change_30d_pct": 10.11
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 6548011885.0,
-          "change_7d_pct": 14.38,
-          "change_30d_pct": 17.47
+          "tvl_usd": 6484821108.0,
+          "change_7d_pct": 13.28,
+          "change_30d_pct": 16.34
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 1334225510.0,
-          "change_7d_pct": 4.58,
-          "change_30d_pct": -14.63
+          "tvl_usd": 1294630189.0,
+          "change_7d_pct": 1.47,
+          "change_30d_pct": -17.16
         },
         {
           "symbol": "TON",
-          "tvl_usd": 54078885.0,
-          "change_7d_pct": -0.44,
-          "change_30d_pct": -1.89
+          "tvl_usd": 53644958.0,
+          "change_7d_pct": -1.24,
+          "change_30d_pct": -2.68
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 98306665.0,
-          "change_7d_pct": 0.78,
-          "change_30d_pct": 40.77
+          "tvl_usd": 97860239.0,
+          "change_7d_pct": 0.32,
+          "change_30d_pct": 40.13
         }
       ],
       "high": [
         {
-          "symbol": "TAO",
-          "tvl_usd": 616320336.0,
-          "change_7d_pct": 1313.6,
-          "change_30d_pct": 1127.95
-        },
-        {
           "symbol": "ENA",
-          "tvl_usd": 5325265660.43153,
-          "change_7d_pct": 4.04,
-          "change_30d_pct": 23.16
+          "tvl_usd": 5327820786.41381,
+          "change_7d_pct": 3.53,
+          "change_30d_pct": 22.07
         }
       ]
     },
-    "dex_volume_24h_usd": 11578841085.640001,
-    "stablecoin_mcap_usd": 311708301405.52,
-    "updated_at": "2026-09-23T09:28:18.204097Z"
+    "dex_volume_24h_usd": 11278222041.640001,
+    "stablecoin_mcap_usd": 311679891197.56,
+    "updated_at": "2026-09-23T14:22:20.740658Z"
   }
 }
