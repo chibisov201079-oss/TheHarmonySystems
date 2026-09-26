@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-26T05:21:03.007861Z",
-  "next_update_at": "2026-09-26T05:51:03.007861Z",
+  "updated_at": "2026-09-26T10:07:47.720340Z",
+  "next_update_at": "2026-09-26T10:37:47.720340Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -67,7 +67,7 @@
         "prev_day_high": 2743.0,
         "prev_day_low": 2667.33,
         "session_high": 2743.0,
-        "session_low": 2667.33
+        "session_low": 2668.84
       },
       "symbol": "ETHUSDT"
     },
@@ -143,83 +143,83 @@
     "label": "Greed"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2887591289471.666,
-    "market_cap_change_24h_pct": -2.51,
-    "total_volume_24h_usd": 103426123488.47948,
-    "btc_dominance_pct": 58.28,
-    "eth_dominance_pct": 11.34,
+    "total_market_cap_usd": 2887336545902.9717,
+    "market_cap_change_24h_pct": -2.15,
+    "total_volume_24h_usd": 95992477204.99861,
+    "btc_dominance_pct": 58.34,
+    "eth_dominance_pct": 11.32,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 33676623570.426117,
-        "share_pct": 63.5
+        "volume_24h_usd": 30409037513.599857,
+        "share_pct": 63.2
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 13178474323.964582,
-        "share_pct": 24.8
+        "volume_24h_usd": 11812888514.316082,
+        "share_pct": 24.5
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 6199776274.630321,
-        "share_pct": 11.7
+        "volume_24h_usd": 5913314241.737101,
+        "share_pct": 12.3
       }
     ],
-    "updated_at": "2026-09-26T05:21:03.007861Z"
+    "updated_at": "2026-09-26T10:07:47.720340Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 53516992852.0,
-          "change_7d_pct": 2.39,
-          "change_30d_pct": 7.17
+          "tvl_usd": 53474352678.0,
+          "change_7d_pct": 2.31,
+          "change_30d_pct": 7.09
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 6613092469.0,
-          "change_7d_pct": 4.87,
-          "change_30d_pct": 14.28
+          "tvl_usd": 6589233407.0,
+          "change_7d_pct": 4.5,
+          "change_30d_pct": 13.87
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 1252108124.0,
-          "change_7d_pct": -12.74,
-          "change_30d_pct": -21.44
+          "tvl_usd": 1250209286.0,
+          "change_7d_pct": -12.87,
+          "change_30d_pct": -21.56
         },
         {
           "symbol": "TON",
-          "tvl_usd": 53736702.0,
-          "change_7d_pct": -4.2,
-          "change_30d_pct": 1.39
+          "tvl_usd": 53864206.0,
+          "change_7d_pct": -3.97,
+          "change_30d_pct": 1.63
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 97236944.0,
-          "change_7d_pct": -2.58,
-          "change_30d_pct": 26.17
+          "tvl_usd": 97464972.0,
+          "change_7d_pct": -2.35,
+          "change_30d_pct": 26.47
         }
       ],
       "high": [
         {
           "symbol": "TAO",
-          "tvl_usd": 619720194.0,
-          "change_7d_pct": 20.58,
-          "change_30d_pct": 1170.23
+          "tvl_usd": 621064100.0,
+          "change_7d_pct": 20.84,
+          "change_30d_pct": 1172.99
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 5358634749.02754,
+          "tvl_usd": 5358543944.78154,
           "change_7d_pct": 2.06,
-          "change_30d_pct": 19.44
+          "change_30d_pct": 19.43
         }
       ]
     },
-    "dex_volume_24h_usd": 10562807829.740002,
-    "stablecoin_mcap_usd": 311603904959.16,
-    "updated_at": "2026-09-26T05:21:03.007861Z"
+    "dex_volume_24h_usd": 10563385963.740002,
+    "stablecoin_mcap_usd": 311601635766.28,
+    "updated_at": "2026-09-26T10:07:47.720340Z"
   }
 }
