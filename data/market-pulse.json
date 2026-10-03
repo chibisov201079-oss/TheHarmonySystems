@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-03T13:39:56.106980Z",
-  "next_update_at": "2026-10-03T14:09:56.106980Z",
+  "updated_at": "2026-10-03T17:51:50.733866Z",
+  "next_update_at": "2026-10-03T18:21:50.733866Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -32,7 +32,7 @@
       "price_context": {
         "prev_day_high": 87220.0,
         "prev_day_low": 83888.0,
-        "session_high": 87120.0,
+        "session_high": 84988.49,
         "session_low": 83888.0
       },
       "symbol": "BTCUSDT"
@@ -66,7 +66,7 @@
       "price_context": {
         "prev_day_high": 2777.33,
         "prev_day_low": 2650.88,
-        "session_high": 2767.26,
+        "session_high": 2689.3,
         "session_low": 2650.88
       },
       "symbol": "ETHUSDT"
@@ -143,83 +143,83 @@
     "label": "Greed"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2901005660589.105,
-    "market_cap_change_24h_pct": -4.76,
-    "total_volume_24h_usd": 83417943832.1218,
-    "btc_dominance_pct": 58.75,
+    "total_market_cap_usd": 2904081531780.3315,
+    "market_cap_change_24h_pct": -2.98,
+    "total_volume_24h_usd": 60243877460.71322,
+    "btc_dominance_pct": 58.68,
     "eth_dominance_pct": 11.27,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 29069234527.75598,
-        "share_pct": 65.6
+        "volume_24h_usd": 19248710945.52122,
+        "share_pct": 66.3
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 12468132100.911175,
-        "share_pct": 28.1
+        "volume_24h_usd": 7637060916.67773,
+        "share_pct": 26.3
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 2762581753.4128437,
-        "share_pct": 6.2
+        "volume_24h_usd": 2141203278.189482,
+        "share_pct": 7.4
       }
     ],
-    "updated_at": "2026-10-03T13:39:56.106980Z"
+    "updated_at": "2026-10-03T17:51:50.733866Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 53429634480.0,
-          "change_7d_pct": -0.22,
-          "change_30d_pct": 10.77
+          "tvl_usd": 53444868094.0,
+          "change_7d_pct": -0.2,
+          "change_30d_pct": 10.8
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 6644265253.0,
-          "change_7d_pct": 0.17,
-          "change_30d_pct": 16.29
+          "tvl_usd": 6654018267.0,
+          "change_7d_pct": 0.32,
+          "change_30d_pct": 16.46
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 1140506786.0,
-          "change_7d_pct": -8.94,
-          "change_30d_pct": -24.72
+          "tvl_usd": 1145129637.0,
+          "change_7d_pct": -8.57,
+          "change_30d_pct": -24.41
         },
         {
           "symbol": "TON",
-          "tvl_usd": 53921378.0,
-          "change_7d_pct": 0.15,
-          "change_30d_pct": 9.06
+          "tvl_usd": 54289477.0,
+          "change_7d_pct": 0.83,
+          "change_30d_pct": 9.8
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 105416621.0,
-          "change_7d_pct": 8.45,
-          "change_30d_pct": 8.6
+          "tvl_usd": 105501647.0,
+          "change_7d_pct": 8.54,
+          "change_30d_pct": 8.68
         }
       ],
       "high": [
         {
           "symbol": "TAO",
-          "tvl_usd": 576070382.0,
-          "change_7d_pct": -6.93,
-          "change_30d_pct": 1190.8
+          "tvl_usd": 576002444.0,
+          "change_7d_pct": -6.94,
+          "change_30d_pct": 1190.65
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 5317320840.13048,
+          "tvl_usd": 5317251571.57269,
           "change_7d_pct": -1.15,
           "change_30d_pct": 12.98
         }
       ]
     },
-    "dex_volume_24h_usd": 10839504246.229998,
-    "stablecoin_mcap_usd": 311889558216.83,
-    "updated_at": "2026-10-03T13:39:56.106980Z"
+    "dex_volume_24h_usd": 10837133935.229998,
+    "stablecoin_mcap_usd": 311900626844.74,
+    "updated_at": "2026-10-03T17:51:50.733866Z"
   }
 }
