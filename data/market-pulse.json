@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-10T19:56:04.069652Z",
-  "next_update_at": "2026-10-10T20:26:04.069652Z",
+  "updated_at": "2026-10-10T23:24:36.687092Z",
+  "next_update_at": "2026-10-10T23:54:36.687092Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -33,7 +33,7 @@
         "prev_day_high": 83528.98,
         "prev_day_low": 81603.52,
         "session_high": 83173.29,
-        "session_low": 82316.23
+        "session_low": 82545.82
       },
       "symbol": "BTCUSDT"
     },
@@ -67,7 +67,7 @@
         "prev_day_high": 2520.54,
         "prev_day_low": 2471.05,
         "session_high": 2519.51,
-        "session_low": 2476.0
+        "session_low": 2486.03
       },
       "symbol": "ETHUSDT"
     },
@@ -143,83 +143,83 @@
     "label": "Greed"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2818152917426.4834,
-    "market_cap_change_24h_pct": -1.87,
-    "total_volume_24h_usd": 48674895815.12855,
-    "btc_dominance_pct": 59.08,
-    "eth_dominance_pct": 10.87,
+    "total_market_cap_usd": 2815802011767.295,
+    "market_cap_change_24h_pct": -2.15,
+    "total_volume_24h_usd": 46717372348.14862,
+    "btc_dominance_pct": 59.1,
+    "eth_dominance_pct": 10.84,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 15848110141.60801,
-        "share_pct": 69.1
+        "volume_24h_usd": 15075848960.674793,
+        "share_pct": 67.7
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 5455949145.5470085,
-        "share_pct": 23.8
+        "volume_24h_usd": 5674501859.6901,
+        "share_pct": 25.5
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 1614427035.6338148,
-        "share_pct": 7.0
+        "volume_24h_usd": 1521182559.3054507,
+        "share_pct": 6.8
       }
     ],
-    "updated_at": "2026-10-10T19:56:04.069652Z"
+    "updated_at": "2026-10-10T23:24:36.687092Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 51457865245.0,
-          "change_7d_pct": -3.27,
-          "change_30d_pct": 4.26
+          "tvl_usd": 51469994335.0,
+          "change_7d_pct": -3.25,
+          "change_30d_pct": 4.29
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 6216863361.0,
-          "change_7d_pct": -6.15,
-          "change_30d_pct": 6.14
+          "tvl_usd": 6224398347.0,
+          "change_7d_pct": -6.04,
+          "change_30d_pct": 6.27
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 1155588466.0,
-          "change_7d_pct": 0.41,
-          "change_30d_pct": -19.44
+          "tvl_usd": 1163425424.0,
+          "change_7d_pct": 1.09,
+          "change_30d_pct": -18.87
         },
         {
           "symbol": "TON",
-          "tvl_usd": 52428811.0,
-          "change_7d_pct": -2.73,
+          "tvl_usd": 52431786.0,
+          "change_7d_pct": -2.72,
           "change_30d_pct": -6.18
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 107714695.0,
-          "change_7d_pct": 2.26,
-          "change_30d_pct": 10.07
+          "tvl_usd": 107726414.0,
+          "change_7d_pct": 2.27,
+          "change_30d_pct": 10.08
         }
       ],
       "high": [
         {
           "symbol": "TAO",
-          "tvl_usd": 567599840.0,
-          "change_7d_pct": -1.82,
-          "change_30d_pct": 1002.08
+          "tvl_usd": 568924113.0,
+          "change_7d_pct": -1.59,
+          "change_30d_pct": 1004.66
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 5207690283.03076,
-          "change_7d_pct": -2.35,
-          "change_30d_pct": 5.13
+          "tvl_usd": 5192389570.45346,
+          "change_7d_pct": -2.64,
+          "change_30d_pct": 4.82
         }
       ]
     },
     "dex_volume_24h_usd": 7320365618.560001,
-    "stablecoin_mcap_usd": 310965374441.47,
-    "updated_at": "2026-10-10T19:56:04.069652Z"
+    "stablecoin_mcap_usd": 310971027873.5,
+    "updated_at": "2026-10-10T23:24:36.687092Z"
   }
 }
