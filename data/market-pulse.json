@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-30T01:17:24.672339Z",
-  "next_update_at": "2026-10-30T01:47:24.672339Z",
+  "updated_at": "2026-10-30T07:40:08.868275Z",
+  "next_update_at": "2026-10-30T08:10:08.868275Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -33,7 +33,7 @@
         "prev_day_high": 81971.0,
         "prev_day_low": 77910.0,
         "session_high": 81971.0,
-        "session_low": 76760.0
+        "session_low": 76500.11
       },
       "symbol": "BTCUSDT"
     },
@@ -67,7 +67,7 @@
         "prev_day_high": 2379.55,
         "prev_day_low": 2233.0,
         "session_high": 2379.55,
-        "session_low": 2197.78
+        "session_low": 2174.08
       },
       "symbol": "ETHUSDT"
     },
@@ -143,83 +143,83 @@
     "label": "Fear"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2605073757750.4395,
-    "market_cap_change_24h_pct": -7.13,
-    "total_volume_24h_usd": 125714573175.3832,
-    "btc_dominance_pct": 59.26,
-    "eth_dominance_pct": 10.35,
+    "total_market_cap_usd": 2647586896219.276,
+    "market_cap_change_24h_pct": -4.35,
+    "total_volume_24h_usd": 142344863128.85022,
+    "btc_dominance_pct": 59.38,
+    "eth_dominance_pct": 10.33,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 45830236315.56062,
-        "share_pct": 63.5
+        "volume_24h_usd": 53193551980.98189,
+        "share_pct": 63.9
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 21257166143.401054,
-        "share_pct": 29.4
+        "volume_24h_usd": 24253461511.270874,
+        "share_pct": 29.1
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 5131201475.027427,
-        "share_pct": 7.1
+        "volume_24h_usd": 5784393493.708015,
+        "share_pct": 6.9
       }
     ],
-    "updated_at": "2026-10-30T01:17:24.672339Z"
+    "updated_at": "2026-10-30T07:40:08.868275Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 44451752219.0,
-          "change_7d_pct": -10.02,
-          "change_30d_pct": -16.39
+          "tvl_usd": 43234764521.0,
+          "change_7d_pct": -12.48,
+          "change_30d_pct": -18.68
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 5379064628.0,
-          "change_7d_pct": -7.99,
-          "change_30d_pct": -16.78
+          "tvl_usd": 5403556980.0,
+          "change_7d_pct": -7.57,
+          "change_30d_pct": -16.4
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 2628046359.0,
-          "change_7d_pct": 9.32,
-          "change_30d_pct": 0.86
+          "tvl_usd": 2697733092.0,
+          "change_7d_pct": 12.21,
+          "change_30d_pct": 3.54
         },
         {
           "symbol": "TON",
-          "tvl_usd": 44093095.0,
-          "change_7d_pct": -6.48,
-          "change_30d_pct": -18.86
+          "tvl_usd": 44753090.0,
+          "change_7d_pct": -5.08,
+          "change_30d_pct": -17.64
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 102422077.0,
-          "change_7d_pct": -5.0,
-          "change_30d_pct": -1.27
+          "tvl_usd": 101531223.0,
+          "change_7d_pct": -5.83,
+          "change_30d_pct": -2.13
         }
       ],
       "high": [
         {
           "symbol": "TAO",
-          "tvl_usd": 1.0,
+          "tvl_usd": 0.0,
           "change_7d_pct": null,
           "change_30d_pct": null
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 4958540296.9533,
-          "change_7d_pct": -2.1,
-          "change_30d_pct": -7.0
+          "tvl_usd": 4964891132.14164,
+          "change_7d_pct": -1.97,
+          "change_30d_pct": -6.88
         }
       ]
     },
-    "dex_volume_24h_usd": 13439643640.860003,
-    "stablecoin_mcap_usd": 299504570258.93,
-    "updated_at": "2026-10-30T01:17:24.672339Z"
+    "dex_volume_24h_usd": 15962306096.490004,
+    "stablecoin_mcap_usd": 299548925310.79,
+    "updated_at": "2026-10-30T07:40:08.868275Z"
   }
 }
