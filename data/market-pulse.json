@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-31T16:15:39.823506Z",
-  "next_update_at": "2026-10-31T16:45:39.823506Z",
+  "updated_at": "2026-10-31T20:12:55.648131Z",
+  "next_update_at": "2026-10-31T20:42:55.648131Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -32,8 +32,8 @@
       "price_context": {
         "prev_day_high": 78804.01,
         "prev_day_low": 76325.98,
-        "session_high": 77745.33,
-        "session_low": 76325.98
+        "session_high": 77796.01,
+        "session_low": 76626.0
       },
       "symbol": "BTCUSDT"
     },
@@ -66,8 +66,8 @@
       "price_context": {
         "prev_day_high": 2262.49,
         "prev_day_low": 2174.08,
-        "session_high": 2255.58,
-        "session_low": 2220.01
+        "session_high": 2259.15,
+        "session_low": 2234.21
       },
       "symbol": "ETHUSDT"
     },
@@ -143,64 +143,64 @@
     "label": "Fear"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2628567726503.0215,
-    "market_cap_change_24h_pct": -2.5,
-    "total_volume_24h_usd": 113653840627.1391,
-    "btc_dominance_pct": 59.23,
-    "eth_dominance_pct": 10.44,
+    "total_market_cap_usd": 2628399318315.65,
+    "market_cap_change_24h_pct": -1.99,
+    "total_volume_24h_usd": 91896268234.44403,
+    "btc_dominance_pct": 59.24,
+    "eth_dominance_pct": 10.45,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 78697914563.90855,
-        "share_pct": 89.5
+        "volume_24h_usd": 62695639819.47361,
+        "share_pct": 90.4
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 6932582956.588306,
-        "share_pct": 7.9
+        "volume_24h_usd": 4748295513.076093,
+        "share_pct": 6.8
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 2337710770.5638857,
-        "share_pct": 2.7
+        "volume_24h_usd": 1940591880.953712,
+        "share_pct": 2.8
       }
     ],
-    "updated_at": "2026-10-31T16:15:39.823506Z"
+    "updated_at": "2026-10-31T20:12:55.648131Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 43998994692.0,
-          "change_7d_pct": -10.57,
-          "change_30d_pct": -17.2
+          "tvl_usd": 44018185299.0,
+          "change_7d_pct": -10.53,
+          "change_30d_pct": -17.17
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 5423607349.0,
-          "change_7d_pct": -5.83,
-          "change_30d_pct": -15.31
+          "tvl_usd": 5423538072.0,
+          "change_7d_pct": -5.84,
+          "change_30d_pct": -15.32
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 2605253765.0,
-          "change_7d_pct": 9.51,
-          "change_30d_pct": -3.04
+          "tvl_usd": 2610766532.0,
+          "change_7d_pct": 9.74,
+          "change_30d_pct": -2.83
         },
         {
           "symbol": "TON",
-          "tvl_usd": 44771416.0,
-          "change_7d_pct": -0.74,
-          "change_30d_pct": -17.33
+          "tvl_usd": 45259774.0,
+          "change_7d_pct": 0.34,
+          "change_30d_pct": -16.43
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 114674184.0,
-          "change_7d_pct": 6.34,
-          "change_30d_pct": 11.13
+          "tvl_usd": 115941208.0,
+          "change_7d_pct": 7.52,
+          "change_30d_pct": 12.36
         }
       ],
       "high": [
@@ -212,14 +212,14 @@
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 4940068286.9129,
-          "change_7d_pct": -1.66,
-          "change_30d_pct": -7.33
+          "tvl_usd": 4937433559.49821,
+          "change_7d_pct": -1.71,
+          "change_30d_pct": -7.38
         }
       ]
     },
-    "dex_volume_24h_usd": 12258104830.550009,
-    "stablecoin_mcap_usd": 298885976949.41,
-    "updated_at": "2026-10-31T16:15:39.823506Z"
+    "dex_volume_24h_usd": 12258104879.240007,
+    "stablecoin_mcap_usd": 298934380123.28,
+    "updated_at": "2026-10-31T20:12:55.648131Z"
   }
 }
