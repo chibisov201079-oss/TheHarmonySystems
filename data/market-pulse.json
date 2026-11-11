@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-11T00:30:08.596108Z",
-  "next_update_at": "2026-11-11T01:00:08.596108Z",
+  "updated_at": "2026-11-11T07:01:34.808773Z",
+  "next_update_at": "2026-11-11T07:31:34.808773Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -32,7 +32,7 @@
       "price_context": {
         "prev_day_high": 75442.01,
         "prev_day_low": 72727.27,
-        "session_high": 75288.42,
+        "session_high": 74996.01,
         "session_low": 72727.27
       },
       "symbol": "BTCUSDT"
@@ -66,7 +66,7 @@
       "price_context": {
         "prev_day_high": 2136.77,
         "prev_day_low": 2006.0,
-        "session_high": 2133.48,
+        "session_high": 2125.22,
         "session_low": 2006.0
       },
       "symbol": "ETHUSDT"
@@ -143,83 +143,83 @@
     "label": "Fear"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2470289238381.603,
-    "market_cap_change_24h_pct": -4.8,
-    "total_volume_24h_usd": 78997270385.08974,
-    "btc_dominance_pct": 59.7,
-    "eth_dominance_pct": 10.11,
+    "total_market_cap_usd": 2469817495942.4395,
+    "market_cap_change_24h_pct": -4.23,
+    "total_volume_24h_usd": 82144071413.30302,
+    "btc_dominance_pct": 59.79,
+    "eth_dominance_pct": 10.15,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 30688901376.921097,
-        "share_pct": 64.9
+        "volume_24h_usd": 32522393748.923615,
+        "share_pct": 65.3
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 13736743153.312717,
-        "share_pct": 29.0
+        "volume_24h_usd": 14244593687.671515,
+        "share_pct": 28.6
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 2878599938.269238,
+        "volume_24h_usd": 3064586091.1660757,
         "share_pct": 6.1
       }
     ],
-    "updated_at": "2026-11-11T00:30:08.596108Z"
+    "updated_at": "2026-11-11T07:01:34.808773Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 40761567439.0,
-          "change_7d_pct": -6.48,
-          "change_30d_pct": -15.85
+          "tvl_usd": 40892347771.0,
+          "change_7d_pct": -6.55,
+          "change_30d_pct": -16.13
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 5032037333.0,
-          "change_7d_pct": -6.88,
-          "change_30d_pct": -18.34
+          "tvl_usd": 5025227551.0,
+          "change_7d_pct": -6.71,
+          "change_30d_pct": -19.0
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 2331018497.0,
-          "change_7d_pct": -9.85,
-          "change_30d_pct": -11.64
+          "tvl_usd": 2332973121.0,
+          "change_7d_pct": -8.19,
+          "change_30d_pct": -11.12
         },
         {
           "symbol": "TON",
-          "tvl_usd": 43904844.0,
-          "change_7d_pct": -1.86,
-          "change_30d_pct": -16.39
+          "tvl_usd": 43950502.0,
+          "change_7d_pct": -0.84,
+          "change_30d_pct": -15.53
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 105019591.0,
-          "change_7d_pct": -8.72,
-          "change_30d_pct": -0.35
+          "tvl_usd": 104874752.0,
+          "change_7d_pct": 3.56,
+          "change_30d_pct": -2.03
         }
       ],
       "high": [
         {
           "symbol": "TAO",
           "tvl_usd": 0.0,
-          "change_7d_pct": null,
+          "change_7d_pct": -100.0,
           "change_30d_pct": null
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 5328251171.94415,
-          "change_7d_pct": 6.6,
+          "tvl_usd": 5328069385.64563,
+          "change_7d_pct": 6.59,
           "change_30d_pct": 2.69
         }
       ]
     },
-    "dex_volume_24h_usd": 8816675713.010004,
-    "stablecoin_mcap_usd": 292007722905.57,
-    "updated_at": "2026-11-11T00:30:08.596108Z"
+    "dex_volume_24h_usd": 8318392027.25,
+    "stablecoin_mcap_usd": 291048201715.18,
+    "updated_at": "2026-11-11T07:01:34.808773Z"
   }
 }
