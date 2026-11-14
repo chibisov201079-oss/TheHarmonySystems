@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-14T16:41:18.591239Z",
-  "next_update_at": "2026-11-14T17:11:18.591239Z",
+  "updated_at": "2026-11-14T21:15:10.835723Z",
+  "next_update_at": "2026-11-14T21:45:10.835723Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -32,8 +32,8 @@
       "price_context": {
         "prev_day_high": 71514.01,
         "prev_day_low": 67568.0,
-        "session_high": 69134.01,
-        "session_low": 65066.66
+        "session_high": 68564.58,
+        "session_low": 64250.0
       },
       "symbol": "BTCUSDT"
     },
@@ -66,8 +66,8 @@
       "price_context": {
         "prev_day_high": 2021.11,
         "prev_day_low": 1895.95,
-        "session_high": 1956.5,
-        "session_low": 1815.35
+        "session_high": 1937.69,
+        "session_low": 1760.0
       },
       "symbol": "ETHUSDT"
     },
@@ -143,64 +143,64 @@
     "label": "Extreme Fear"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2228979619944.7607,
-    "market_cap_change_24h_pct": -7.28,
-    "total_volume_24h_usd": 77709527180.12088,
-    "btc_dominance_pct": 58.79,
-    "eth_dominance_pct": 9.97,
+    "total_market_cap_usd": 2198184669537.7083,
+    "market_cap_change_24h_pct": -8.47,
+    "total_volume_24h_usd": 89143057723.91135,
+    "btc_dominance_pct": 58.92,
+    "eth_dominance_pct": 9.88,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 33749830724.4095,
-        "share_pct": 67.9
+        "volume_24h_usd": 38174406320.02252,
+        "share_pct": 66.8
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 12527509627.318651,
-        "share_pct": 25.2
+        "volume_24h_usd": 15010681815.116928,
+        "share_pct": 26.3
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 3418269930.1776505,
-        "share_pct": 6.9
+        "volume_24h_usd": 3977087236.027148,
+        "share_pct": 7.0
       }
     ],
-    "updated_at": "2026-11-14T16:41:18.591239Z"
+    "updated_at": "2026-11-14T21:15:10.835723Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 38212825620.0,
-          "change_7d_pct": -11.67,
-          "change_30d_pct": -18.86
+          "tvl_usd": 37923283808.0,
+          "change_7d_pct": -12.34,
+          "change_30d_pct": -19.47
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 4780594713.0,
-          "change_7d_pct": -8.52,
-          "change_30d_pct": -19.24
+          "tvl_usd": 4701941119.0,
+          "change_7d_pct": -10.02,
+          "change_30d_pct": -20.57
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 2227195905.0,
-          "change_7d_pct": -9.75,
-          "change_30d_pct": -10.74
+          "tvl_usd": 2178673660.0,
+          "change_7d_pct": -11.72,
+          "change_30d_pct": -12.68
         },
         {
           "symbol": "TON",
-          "tvl_usd": 41423801.0,
-          "change_7d_pct": -3.05,
-          "change_30d_pct": -15.47
+          "tvl_usd": 41224060.0,
+          "change_7d_pct": -3.52,
+          "change_30d_pct": -15.88
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 93916524.0,
-          "change_7d_pct": -11.99,
-          "change_30d_pct": -2.03
+          "tvl_usd": 93296157.0,
+          "change_7d_pct": -12.57,
+          "change_30d_pct": -2.67
         }
       ],
       "high": [
@@ -212,14 +212,14 @@
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 5188553332.99569,
-          "change_7d_pct": -2.01,
-          "change_30d_pct": 0.44
+          "tvl_usd": 5189468563.8046,
+          "change_7d_pct": -1.99,
+          "change_30d_pct": 0.46
         }
       ]
     },
-    "dex_volume_24h_usd": 9964624008.18,
-    "stablecoin_mcap_usd": 286992736175.34,
-    "updated_at": "2026-11-14T16:41:18.591239Z"
+    "dex_volume_24h_usd": 9979720478.18,
+    "stablecoin_mcap_usd": 287019081617.36,
+    "updated_at": "2026-11-14T21:15:10.835723Z"
   }
 }
