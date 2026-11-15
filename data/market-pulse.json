@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-15T01:13:37.450226Z",
-  "next_update_at": "2026-11-15T01:43:37.450226Z",
+  "updated_at": "2026-11-15T08:19:48.795760Z",
+  "next_update_at": "2026-11-15T08:49:48.795760Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -32,8 +32,8 @@
       "price_context": {
         "prev_day_high": 68446.21,
         "prev_day_low": 63320.0,
-        "session_high": 68410.01,
-        "session_low": 62568.0
+        "session_high": 67523.05,
+        "session_low": 62006.0
       },
       "symbol": "BTCUSDT"
     },
@@ -66,8 +66,8 @@
       "price_context": {
         "prev_day_high": 1936.49,
         "prev_day_low": 1729.16,
-        "session_high": 1933.45,
-        "session_low": 1714.35
+        "session_high": 1919.76,
+        "session_low": 1711.08
       },
       "symbol": "ETHUSDT"
     },
@@ -143,64 +143,64 @@
     "label": "Extreme Fear"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2142224463293.4841,
-    "market_cap_change_24h_pct": -9.73,
-    "total_volume_24h_usd": 104505910169.96953,
-    "btc_dominance_pct": 58.59,
-    "eth_dominance_pct": 9.78,
+    "total_market_cap_usd": 2189358248626.924,
+    "market_cap_change_24h_pct": -6.89,
+    "total_volume_24h_usd": 116987011102.4298,
+    "btc_dominance_pct": 58.54,
+    "eth_dominance_pct": 9.91,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 45461570054.43171,
-        "share_pct": 67.2
+        "volume_24h_usd": 51888942786.765076,
+        "share_pct": 67.0
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 18068730857.46506,
-        "share_pct": 26.7
+        "volume_24h_usd": 20532429181.218685,
+        "share_pct": 26.5
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 4165967061.648839,
-        "share_pct": 6.2
+        "volume_24h_usd": 5004749509.49558,
+        "share_pct": 6.5
       }
     ],
-    "updated_at": "2026-11-15T01:13:37.450226Z"
+    "updated_at": "2026-11-15T08:19:48.795760Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 36962439987.0,
-          "change_7d_pct": -14.58,
-          "change_30d_pct": -21.81
+          "tvl_usd": 37424782613.0,
+          "change_7d_pct": -13.51,
+          "change_30d_pct": -20.83
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 4605467588.0,
-          "change_7d_pct": -11.12,
-          "change_30d_pct": -22.79
+          "tvl_usd": 4632205742.0,
+          "change_7d_pct": -10.61,
+          "change_30d_pct": -22.35
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 2142558421.0,
-          "change_7d_pct": -12.2,
-          "change_30d_pct": -15.72
+          "tvl_usd": 2195278019.0,
+          "change_7d_pct": -10.04,
+          "change_30d_pct": -13.64
         },
         {
           "symbol": "TON",
-          "tvl_usd": 40553998.0,
-          "change_7d_pct": -3.08,
-          "change_30d_pct": -18.05
+          "tvl_usd": 41219798.0,
+          "change_7d_pct": -1.48,
+          "change_30d_pct": -16.71
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 92582864.0,
-          "change_7d_pct": -13.29,
-          "change_30d_pct": -3.14
+          "tvl_usd": 91918687.0,
+          "change_7d_pct": -13.91,
+          "change_30d_pct": -3.84
         }
       ],
       "high": [
@@ -212,14 +212,14 @@
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 5189042473.59837,
-          "change_7d_pct": -2.0,
-          "change_30d_pct": 0.45
+          "tvl_usd": 5174800056.13572,
+          "change_7d_pct": -2.27,
+          "change_30d_pct": 0.18
         }
       ]
     },
-    "dex_volume_24h_usd": 9990115625.54,
-    "stablecoin_mcap_usd": 287069392886.89,
-    "updated_at": "2026-11-15T01:13:37.450226Z"
+    "dex_volume_24h_usd": 10760407893.510004,
+    "stablecoin_mcap_usd": 287083326505.18,
+    "updated_at": "2026-11-15T08:19:48.795760Z"
   }
 }
