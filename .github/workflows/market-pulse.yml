@@ -29,6 +29,8 @@ jobs:
         run: |
           if [ -f "scripts/calculate_market_pulse.py" ]; then
             python scripts/calculate_market_pulse.py
+          elif [ -f "calculate_market_pulse.py" ]; then
+            python calculate_market_pulse.py
           elif [ -f ".github/workflows/scripts/calculate_market_pulse.py" ]; then
             python .github/workflows/scripts/calculate_market_pulse.py
           fi
