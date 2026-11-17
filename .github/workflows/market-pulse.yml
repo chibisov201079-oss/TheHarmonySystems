@@ -28,10 +28,13 @@ jobs:
           ALPHA_VANTAGE_KEY: ${{ secrets.ALPHA_VANTAGE_KEY }}
         run: |
           if [ -f "scripts/calculate_market_pulse.py" ]; then
+            sed -i 's|api.binance.com|data-api.binance.vision|g' scripts/calculate_market_pulse.py
             python scripts/calculate_market_pulse.py
           elif [ -f "calculate_market_pulse.py" ]; then
+            sed -i 's|api.binance.com|data-api.binance.vision|g' calculate_market_pulse.py
             python calculate_market_pulse.py
-          elif [ -f ".github/workflows/scripts/calculate_market_pulse.py" ]; then
+          else
+            sed -i 's|api.binance.com|data-api.binance.vision|g' .github/workflows/scripts/calculate_market_pulse.py
             python .github/workflows/scripts/calculate_market_pulse.py
           fi
 
