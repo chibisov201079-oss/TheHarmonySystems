@@ -76,7 +76,7 @@ SIGNAL_SCORE = {"buy": 100, "neutral": 50, "sell": 0}
 
 def fetch_binance_klines(symbol: str, interval: str = "1d", limit: int = 60) -> pd.DataFrame:
     """Fetch OHLCV candles from Binance's public data mirror.
-    Uses data-api.binance.vision instead of api.binance.com — the regular
+    Uses data-api.binance.vision instead of data-api.binance.vision — the regular
     domain returns HTTP 451 (geo-block) from US-hosted CI runners like
     GitHub Actions; this mirror serves the same public market data without
     that restriction."""
