@@ -3,7 +3,7 @@ name: THS Market Pulse — обновление данных
 on:
   schedule:
     - cron: '*/30 * * * *'
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -26,16 +26,22 @@ jobs:
       - name: Calculate Market Pulse
         env:
           ALPHA_VANTAGE_KEY: ${{ secrets.ALPHA_VANTAGE_KEY }}
-        run: python scripts/calculate_market_pulse.py
+        run: |
+          if [ -f "scripts/calculate_market_pulse.py" ]; then
+            python scripts/calculate_market_pulse.py
+          elif [ -f ".github/workflows/scripts/calculate_market_pulse.py" ]; then
+            python .github/workflows/scripts/calculate_market_pulse.py
+          fi
 
       - name: Commit and push if changed
         run: |
           git config user.name "THS Market Pulse Bot"
           git config user.email "actions@github.com"
-          git add data/market-pulse.json
+          git add -A
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
             git commit -m "chore: обновление Market Pulse [skip ci]"
+            git pull --rebase origin main || true
             git push
           fi
