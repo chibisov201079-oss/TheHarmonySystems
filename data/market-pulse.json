@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-28T11:31:50.761348Z",
-  "next_update_at": "2026-11-28T12:01:50.761348Z",
+  "updated_at": "2026-11-28T19:49:29.902692Z",
+  "next_update_at": "2026-11-28T20:19:29.902692Z",
   "forex_updated_at": "2026-08-17T00:00:00Z",
   "assets": {
     "BTC": {
@@ -32,8 +32,8 @@
       "price_context": {
         "prev_day_high": 62248.91,
         "prev_day_low": 58792.37,
-        "session_high": 61833.58,
-        "session_low": 58792.37
+        "session_high": 60266.01,
+        "session_low": 58934.56
       },
       "symbol": "BTCUSDT"
     },
@@ -66,8 +66,8 @@
       "price_context": {
         "prev_day_high": 1755.22,
         "prev_day_low": 1634.03,
-        "session_high": 1731.72,
-        "session_low": 1634.03
+        "session_high": 1672.8,
+        "session_low": 1634.62
       },
       "symbol": "ETHUSDT"
     },
@@ -143,64 +143,64 @@
     "label": "Extreme Fear"
   },
   "market_analytics": {
-    "total_market_cap_usd": 2035527035661.4343,
-    "market_cap_change_24h_pct": -5.93,
-    "total_volume_24h_usd": 65417649915.93674,
-    "btc_dominance_pct": 58.45,
-    "eth_dominance_pct": 9.87,
+    "total_market_cap_usd": 2063350165547.4658,
+    "market_cap_change_24h_pct": -3.59,
+    "total_volume_24h_usd": 45532440275.1588,
+    "btc_dominance_pct": 57.73,
+    "eth_dominance_pct": 9.73,
     "top_volume_distribution": [
       {
         "symbol": "BTC",
-        "volume_24h_usd": 25137634643.98525,
-        "share_pct": 66.9
+        "volume_24h_usd": 15578413527.61878,
+        "share_pct": 64.2
       },
       {
         "symbol": "ETH",
-        "volume_24h_usd": 10180022453.187792,
-        "share_pct": 27.1
+        "volume_24h_usd": 7218332057.575187,
+        "share_pct": 29.8
       },
       {
         "symbol": "SOL",
-        "volume_24h_usd": 2283588406.615466,
-        "share_pct": 6.1
+        "volume_24h_usd": 1458396241.138357,
+        "share_pct": 6.0
       }
     ],
-    "updated_at": "2026-11-28T11:31:50.761348Z"
+    "updated_at": "2026-11-28T19:49:29.902692Z"
   },
   "capital_flows": {
     "risk_tiers": {
       "low": [
         {
           "symbol": "ETH",
-          "tvl_usd": 36139512638.0,
-          "change_7d_pct": 4.2,
-          "change_30d_pct": -20.92
+          "tvl_usd": 36148053138.0,
+          "change_7d_pct": 4.23,
+          "change_30d_pct": -20.9
         },
         {
           "symbol": "SOL",
-          "tvl_usd": 4570966456.0,
-          "change_7d_pct": 0.47,
-          "change_30d_pct": -19.73
+          "tvl_usd": 4547896344.0,
+          "change_7d_pct": -0.04,
+          "change_30d_pct": -20.14
         }
       ],
       "medium": [
         {
           "symbol": "HYPE",
-          "tvl_usd": 2235587430.0,
-          "change_7d_pct": 5.0,
-          "change_30d_pct": -7.38
+          "tvl_usd": 2238277919.0,
+          "change_7d_pct": 5.13,
+          "change_30d_pct": -7.26
         },
         {
           "symbol": "TON",
-          "tvl_usd": 38517440.0,
-          "change_7d_pct": -10.52,
-          "change_30d_pct": -17.18
+          "tvl_usd": 38555038.0,
+          "change_7d_pct": -10.44,
+          "change_30d_pct": -17.1
         },
         {
           "symbol": "MNT",
-          "tvl_usd": 76619509.0,
-          "change_7d_pct": -0.69,
-          "change_30d_pct": -32.86
+          "tvl_usd": 78017804.0,
+          "change_7d_pct": 1.12,
+          "change_30d_pct": -31.64
         }
       ],
       "high": [
@@ -212,14 +212,14 @@
         },
         {
           "symbol": "ENA",
-          "tvl_usd": 5217778542.57252,
-          "change_7d_pct": 0.62,
-          "change_30d_pct": 5.17
+          "tvl_usd": 5217829835.45429,
+          "change_7d_pct": 0.77,
+          "change_30d_pct": 5.31
         }
       ]
     },
-    "dex_volume_24h_usd": 6459119052.63,
-    "stablecoin_mcap_usd": 281371457946.88,
-    "updated_at": "2026-11-28T11:31:50.761348Z"
+    "dex_volume_24h_usd": 6463099501.63,
+    "stablecoin_mcap_usd": 281315158035.57,
+    "updated_at": "2026-11-28T19:49:29.902692Z"
   }
 }
